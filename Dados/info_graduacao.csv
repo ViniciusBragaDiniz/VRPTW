@@ -1,0 +1,750 @@
+CURSO,PERÍODO_ATUAL,BAIRRO,CIDADE,CEP,LOGRADOURO,COMPLEMENTO,ENDERECO_COMPLETO,LONGITUDE,LATITUDE
+ENGENHARIA DE CONTROLE E AUTOMAÇÃO,10,CENTRO,Rio de Janeiro,26215360,Rua Peru,,"Rua Peru, CENTRO, Rio de Janeiro, Rio de Janeiro, Brasil",-43.444002,-22.7509751
+ENGENHARIA DE CONTROLE E AUTOMAÇÃO,10,Cachanbi,Rio de Janeiro,20771410,Rua Cirne Maia,,"Rua Cirne Maia, Cachanbi, Rio de Janeiro, Rio de Janeiro, Brasil",-43.279723,-22.8919972
+ENGENHARIA DE CONTROLE E AUTOMAÇÃO,10,PAVUNA,Rio de Janeiro,21535000,Rua Embau,,"Rua Embau, PAVUNA, Rio de Janeiro, Rio de Janeiro, Brasil",-43.3444065,-22.816903
+ENGENHARIA DE CONTROLE E AUTOMAÇÃO,10,COMENDADOR SOARES,Nova Iguaçu,26280650,Rua Turíbio da Silva,,"Rua Turíbio da Silva, COMENDADOR SOARES, Nova Iguaçu, Rio de Janeiro, Brasil",-43.4814983,-22.7392453
+ENGENHARIA DE CONTROLE E AUTOMAÇÃO,10,CENTRO,Nova Iguaçu,26216000,Rua Antenor Gomes dos Santos,,"Rua Antenor Gomes dos Santos, CENTRO, Nova Iguaçu, Rio de Janeiro, Brasil",-43.4417657,-22.757087
+ENGENHARIA DE CONTROLE E AUTOMAÇÃO,10,Posse,Nova Iguaçu,26022810,Rua Augusto Alves da Silva,,"Rua Augusto Alves da Silva, Posse, Nova Iguaçu, Rio de Janeiro, Brasil",-43.4561838,-22.732619
+ENGENHARIA DE CONTROLE E AUTOMAÇÃO,10,PRATA,Belford Roxo,26130410,Avenida Pastor Ademir Dias Duarte,,"Avenida Pastor Ademir Dias Duarte, PRATA, Belford Roxo, Rio de Janeiro, Brasil",-43.40757259999999,-22.7606992
+ENGENHARIA DE CONTROLE E AUTOMAÇÃO,10,SANTA CECILIA,Belford Roxo,26130660,Rua Nossa Senhora da Paz,,"Rua Nossa Senhora da Paz, SANTA CECILIA, Belford Roxo, Rio de Janeiro, Brasil",-43.4140985,-22.7615232
+ENGENHARIA DE CONTROLE E AUTOMAÇÃO,10,PRAÇA CRUZEIRO,Rio Bonito,28800000,,,"PRAÇA CRUZEIRO, Rio Bonito, Rio de Janeiro, Brasil",-42.6486668,-22.7202137
+ENGENHARIA DE CONTROLE E AUTOMAÇÃO,10,JARDIM DA POSSE,Nova Iguaçu,26022150,Rua Azaléias,,"Rua Azaléias, JARDIM DA POSSE, Nova Iguaçu, Rio de Janeiro, Brasil",-43.4442288,-22.7255695
+ENGENHARIA DE CONTROLE E AUTOMAÇÃO,10,VILA VALQUEIRE,Rio de Janeiro,21330300,Avenida Jambeiro,,"Avenida Jambeiro, VILA VALQUEIRE, Rio de Janeiro, Rio de Janeiro, Brasil",-43.3713756,-22.8819282
+ENGENHARIA DE CONTROLE E AUTOMAÇÃO,10,PARADA DE LUCAS,Rio de Janeiro,21241030,Rua Tinhare,,"Rua Tinhare, PARADA DE LUCAS, Rio de Janeiro, Rio de Janeiro, Brasil",-43.3040586,-22.8148502
+ENGENHARIA DE CONTROLE E AUTOMAÇÃO,10,COMENDADOR SOARES,Nova Iguaçu,26280350,,,"COMENDADOR SOARES, Nova Iguaçu, Rio de Janeiro, Brasil",-43.4861447,-22.7427064
+ENGENHARIA DE CONTROLE E AUTOMAÇÃO,10,Bairro da Luz,Nova Iguaçu,26263130,Rua Ernani Parreiras,,"Rua Ernani Parreiras, Bairro da Luz, Nova Iguaçu, Rio de Janeiro, Brasil",-43.4732355,-22.7518068
+ENGENHARIA DE CONTROLE E AUTOMAÇÃO,9,PAVUNA,Rio de Janeiro,21520460,Rua Sargento Antônio Ernesto,,"Rua Sargento Antônio Ernesto, PAVUNA, Rio de Janeiro, Rio de Janeiro, Brasil",-43.3572055,-22.8096611
+ENGENHARIA DE CONTROLE E AUTOMAÇÃO,10,MOQUETA,Nova Iguaçu,26285270,Rua Apinages,,"Rua Apinages, MOQUETA, Nova Iguaçu, Rio de Janeiro, Brasil",-43.4540097,-22.7453009
+ENGENHARIA DE CONTROLE E AUTOMAÇÃO,7,CENTRO,Nilópolis,26510790,Rua Coronel Teodomiro,,"Rua Coronel Teodomiro, CENTRO, Nilópolis, Rio de Janeiro, Brasil",-43.422399,-22.8138954
+ENGENHARIA DE CONTROLE E AUTOMAÇÃO,10,CENTRO,Mesquita,26551190,Rua Capitão Teles,,"Rua Capitão Teles, CENTRO, Mesquita, Rio de Janeiro, Brasil",-43.4275838,-22.7786957
+ENGENHARIA DE CONTROLE E AUTOMAÇÃO,7,POSSE,Nova Iguaçu,26022810,Rua Augusto Alves da Silva,,"Rua Augusto Alves da Silva, POSSE, Nova Iguaçu, Rio de Janeiro, Brasil",-43.4561838,-22.732619
+ENGENHARIA DE CONTROLE E AUTOMAÇÃO,10,MONTE LIBANORJ,Nova Iguaçu,26010770,Rua Rogéria,,"Rua Rogéria, MONTE LIBANORJ, Nova Iguaçu, Rio de Janeiro, Brasil",-43.4275813,-22.7578976
+ENGENHARIA DE CONTROLE E AUTOMAÇÃO,10,BOTAFOGO,Nova Iguaçu,26035250,Rua Adriano Ribeiro Prado,,"Rua Adriano Ribeiro Prado, BOTAFOGO, Nova Iguaçu, Rio de Janeiro, Brasil",-43.5286486,-22.7086803
+ENGENHARIA DE CONTROLE E AUTOMAÇÃO,9,Sr. DO BONFIM,Duque de Caxias,25025070,Rua José Clemente,,"Rua José Clemente, Sr. DO BONFIM, Duque de Caxias, Rio de Janeiro, Brasil",-43.3206412,-22.7809127
+ENGENHARIA DE CONTROLE E AUTOMAÇÃO,10,ENGENHO DO PORTO,Duque de Caxias,25015290,Rua Pedro Ernesto,,"Rua Pedro Ernesto, ENGENHO DO PORTO, Duque de Caxias, Rio de Janeiro, Brasil",-43.3209263,-22.7927036
+ENGENHARIA DE CONTROLE E AUTOMAÇÃO,8,PARQUE EQUITATIVA,Duque de Caxias,25260430,Rua Almirante Tamandaré,,"Rua Almirante Tamandaré, PARQUE EQUITATIVA, Duque de Caxias, Rio de Janeiro, Brasil",-43.2654141,-22.6293466
+ENGENHARIA DE CONTROLE E AUTOMAÇÃO,10,BARRA DA TIJUCA,Rio de Janeiro,22793340,Avenida Professor Fausto Moreira,,"Avenida Professor Fausto Moreira, BARRA DA TIJUCA, Rio de Janeiro, Rio de Janeiro, Brasil",-43.4275505,-23.0085274
+ENGENHARIA DE CONTROLE E AUTOMAÇÃO,8,TODOS OS SANTOS,Rio de Janeiro,20770240,Rua José Bonifácio,,"Rua José Bonifácio, TODOS OS SANTOS, Rio de Janeiro, Rio de Janeiro, Brasil",-43.2827633,-22.8927169
+ENGENHARIA DE CONTROLE E AUTOMAÇÃO,10,Parque Colúmbia,Rio de Janeiro,21535340,Rua Ruanda,,"Rua Ruanda, Parque Colúmbia, Rio de Janeiro, Rio de Janeiro, Brasil",-43.3416169,-22.8125157
+ENGENHARIA DE CONTROLE E AUTOMAÇÃO,8,Realengo,Rio de Janeiro,21730190,Rua Itapecerica,,"Rua Itapecerica, Realengo, Rio de Janeiro, Rio de Janeiro, Brasil",-43.4392478,-22.8613418
+ENGENHARIA DE CONTROLE E AUTOMAÇÃO,6,Olaria,Rio de Janeiro,21021480,Rua André Azevedo,,"Rua André Azevedo, Olaria, Rio de Janeiro, Rio de Janeiro, Brasil",-43.2604281,-22.8416059
+ENGENHARIA DE CONTROLE E AUTOMAÇÃO,10,Pavuna,Rio de Janeiro,21532120,Rua Malheiros,,"Rua Malheiros, Pavuna, Rio de Janeiro, Rio de Janeiro, Brasil",-43.3610247,-22.8189543
+ENGENHARIA DE CONTROLE E AUTOMAÇÃO,10,Cacuia,Nova Iguaçu,26082035,Estrada de Santana,,"Estrada de Santana, Cacuia, Nova Iguaçu, Rio de Janeiro, Brasil",-43.4929429,-22.7313709
+ENGENHARIA DE CONTROLE E AUTOMAÇÃO,10,CENTRO,Nilópolis,26526030,Rua São Luís,,"Rua São Luís, CENTRO, Nilópolis, Rio de Janeiro, Brasil",-43.419968,-22.8069016
+ENGENHARIA DE CONTROLE E AUTOMAÇÃO,10,CENTRO,Nova Iguaçu,26285090,Rua José Alves Pereira,,"Rua José Alves Pereira, CENTRO, Nova Iguaçu, Rio de Janeiro, Brasil",-43.4551831,-22.7504644
+ENGENHARIA DE CONTROLE E AUTOMAÇÃO,8,JARDIM ESPLANADA,Nova Iguaçu,26013390,Rua Quieve,,"Rua Quieve, JARDIM ESPLANADA, Nova Iguaçu, Rio de Janeiro, Brasil",-43.4435399,-22.7456781
+ENGENHARIA DE CONTROLE E AUTOMAÇÃO,6,CENTRO,Belford Roxo,26112000,Rua Antônia,,"Rua Antônia, CENTRO, Belford Roxo, Rio de Janeiro, Brasil",-43.4041583,-22.7571723
+ENGENHARIA DE CONTROLE E AUTOMAÇÃO,7,REALENGO,Rio de Janeiro,21765360,Rua Laranjal,,"Rua Laranjal, REALENGO, Rio de Janeiro, Rio de Janeiro, Brasil",-43.431622,-22.8861532
+ENGENHARIA DE CONTROLE E AUTOMAÇÃO,8,GRANDE RIO,Rio de Janeiro,25540040,Rua Katar Rechuan,,"Rua Katar Rechuan, GRANDE RIO, Rio de Janeiro, Rio de Janeiro, Brasil",-43.3987146,-22.7821236
+ENGENHARIA DE CONTROLE E AUTOMAÇÃO,7,OURO VERDE,Nova Iguaçu,26275088,Rua Porto Alegre,,"Rua Porto Alegre, OURO VERDE, Nova Iguaçu, Rio de Janeiro, Brasil",-43.4901827,-22.7516704
+ENGENHARIA DE CONTROLE E AUTOMAÇÃO,8,CENTRO,Nilópolis,26525012,Avenida Getúlio Vargas,de 2273/2274 ao fim,"Avenida Getúlio Vargas, CENTRO, Nilópolis, de 2273/2274 ao fim, Rio de Janeiro, Brasil",-43.4226135,-22.8018715
+ENGENHARIA DE CONTROLE E AUTOMAÇÃO,4,SÃO BERNARDO,Belford Roxo,26165160,Rua Fernão Dias Paes Leme,,"Rua Fernão Dias Paes Leme, SÃO BERNARDO, Belford Roxo, Rio de Janeiro, Brasil",-43.3902812,-22.734857
+ENGENHARIA DE CONTROLE E AUTOMAÇÃO,9,CAMBOINHAS,Niterói,24358600,Rua Jayme Bittencourt,,"Rua Jayme Bittencourt, CAMBOINHAS, Niterói, Rio de Janeiro, Brasil",-43.0545702,-22.961258
+ENGENHARIA DE CONTROLE E AUTOMAÇÃO,5,VILA DA PENHA,Rio de Janeiro,21221250,Rua Apia,,"Rua Apia, VILA DA PENHA, Rio de Janeiro, Rio de Janeiro, Brasil",-43.3042178,-22.8408228
+ENGENHARIA DE CONTROLE E AUTOMAÇÃO,10,Riachão,Nova Iguaçu,26084280,Rua Geraldino Machado,,"Rua Geraldino Machado, Riachão, Nova Iguaçu, Rio de Janeiro, Brasil",-43.5255465,-22.7356247
+ENGENHARIA DE CONTROLE E AUTOMAÇÃO,10,Campo Grande,Rio de Janeiro,23093510,Rua Ronaldo dos Santos,(Isadora II),"Rua Ronaldo dos Santos, Campo Grande, Rio de Janeiro, (Isadora II), Rio de Janeiro, Brasil",-43.5351671,-22.8806679
+ENGENHARIA DE CONTROLE E AUTOMAÇÃO,10,Centro,Nova Iguaçu,26255230,Avenida Doutor Mário Guimarães,,"Avenida Doutor Mário Guimarães, Centro, Nova Iguaçu, Rio de Janeiro, Brasil",-43.4581266,-22.758661
+ENGENHARIA DE CONTROLE E AUTOMAÇÃO,2,Parque Alvorada,Nova Iguaçu,26053090,Rua Jaçanã,,"Rua Jaçanã, Parque Alvorada, Nova Iguaçu, Rio de Janeiro, Brasil",-43.4491587,-22.6709425
+ENGENHARIA DE CONTROLE E AUTOMAÇÃO,8,Bangu,Rio de Janeiro,21725620,Rua Cabo Milton Cosme dos Santos,,"Rua Cabo Milton Cosme dos Santos, Bangu, Rio de Janeiro, Rio de Janeiro, Brasil",-43.4560131,-22.8537753
+ENGENHARIA DE CONTROLE E AUTOMAÇÃO,2,Vila do Tinguá,Queimados,26385210,Rua Printer,,"Rua Printer, Vila do Tinguá, Queimados, Rio de Janeiro, Brasil",-43.558372,-22.7023038
+ENGENHARIA DE CONTROLE E AUTOMAÇÃO,1,Campo Grande,Rio de Janeiro,23045510,Rua Sargento Abdiel,,"Rua Sargento Abdiel, Campo Grande, Rio de Janeiro, Rio de Janeiro, Brasil",-43.5697622,-22.9259225
+ENGENHARIA DE CONTROLE E AUTOMAÇÃO,6,Bangu,Rio de Janeiro,21830380,Avenida Embaixador Pimentel Brandão,,"Avenida Embaixador Pimentel Brandão, Bangu, Rio de Janeiro, Rio de Janeiro, Brasil",-43.4756335,-22.8761998
+ENGENHARIA DE CONTROLE E AUTOMAÇÃO,7,Granja Rosalina,Queimados,26321170,Rua Comandante Eduardo,,"Rua Comandante Eduardo, Granja Rosalina, Queimados, Rio de Janeiro, Brasil",-43.5724939,-22.7078915
+ENGENHARIA DE CONTROLE E AUTOMAÇÃO,10,Centro,Belford Roxo,26130050,Rua João Fernandes Neto,até 1174/1175,"Rua João Fernandes Neto, Centro, Belford Roxo, até 1174/1175, Rio de Janeiro, Brasil",-43.398256,-22.7666759
+ENGENHARIA DE CONTROLE E AUTOMAÇÃO,8,Rocha,São Gonçalo,24422280,Rua Major Peixoto Guimarães,,"Rua Major Peixoto Guimarães, Rocha, São Gonçalo, Rio de Janeiro, Brasil",-43.0299462,-22.8293474
+ENGENHARIA DE CONTROLE E AUTOMAÇÃO,6,Centro,Nova Iguaçu,26215100,Rua Doutor Ery Martuscello,,"Rua Doutor Ery Martuscello, Centro, Nova Iguaçu, Rio de Janeiro, Brasil",-43.4522521,-22.7579931
+ENGENHARIA DE CONTROLE E AUTOMAÇÃO,8,Taquara,Rio de Janeiro,22720400,Avenida dos Mananciais,lado ímpar,"Avenida dos Mananciais, Taquara, Rio de Janeiro, lado ímpar, Rio de Janeiro, Brasil",-43.3871753,-22.9171709
+ENGENHARIA DE CONTROLE E AUTOMAÇÃO,8,Realengo,Rio de Janeiro,21760190,Rua Três Coracões,,"Rua Três Coracões, Realengo, Rio de Janeiro, Rio de Janeiro, Brasil",-43.4198219,-22.889986
+ENGENHARIA DE CONTROLE E AUTOMAÇÃO,9,Engenho do Porto,Duque de Caxias,25010275,Rua Raul Pompéia,de 122/123 ao fim,"Rua Raul Pompéia, Engenho do Porto, Duque de Caxias, de 122/123 ao fim, Rio de Janeiro, Brasil",-43.3185004,-22.7930686
+ENGENHARIA DE CONTROLE E AUTOMAÇÃO,8,Carolina,Nova Iguaçu,26012720,Rua Pedro Reis,,"Rua Pedro Reis, Carolina, Nova Iguaçu, Rio de Janeiro, Brasil",-43.4365756,-22.7515682
+ENGENHARIA DE CONTROLE E AUTOMAÇÃO,7,Cosmorama,Mesquita,26582020,Rua Cosmorama,,"Rua Cosmorama, Cosmorama, Mesquita, Rio de Janeiro, Brasil",-43.4177205,-22.7934362
+ENGENHARIA DE CONTROLE E AUTOMAÇÃO,9,Rocha Sobrinho,Belford Roxo,26130150,Rua São José,,"Rua São José, Rocha Sobrinho, Belford Roxo, Rio de Janeiro, Brasil",-43.3988212,-22.7725325
+ENGENHARIA DE CONTROLE E AUTOMAÇÃO,5,Centro,Mendes,26700000,,,"Centro, Mendes, Rio de Janeiro, Brasil",-43.7334089,-22.5284121
+ENGENHARIA DE CONTROLE E AUTOMAÇÃO,1,Cachambi,Rio de Janeiro,20771445,Rua Tenente Franca,,"Rua Tenente Franca, Cachambi, Rio de Janeiro, Rio de Janeiro, Brasil",-43.2788653,-22.8904567
+ENGENHARIA DE CONTROLE E AUTOMAÇÃO,1,LINS DE VASCONCELOS,Rio de Janeiro,20710310,Rua Baronesa de Uruguaiana,,"Rua Baronesa de Uruguaiana, LINS DE VASCONCELOS, Rio de Janeiro, Rio de Janeiro, Brasil",-43.2782324,-22.9115992
+ENGENHARIA DE CONTROLE E AUTOMAÇÃO,1,Centro,Mesquita,26553360,Avenida São Paulo,de 252/253 ao fim,"Avenida São Paulo, Centro, Mesquita, de 252/253 ao fim, Rio de Janeiro, Brasil",-43.4342165,-22.7745578
+ENGENHARIA DE CONTROLE E AUTOMAÇÃO,1,Recreio Itapuã,Nova Iguaçu,26270130,Rua Perseverança,,"Rua Perseverança, Recreio Itapuã, Nova Iguaçu, Rio de Janeiro, Brasil",-43.506585,-22.7696984
+ENGENHARIA DE CONTROLE E AUTOMAÇÃO,1,Centro,São João de Meriti,25525060,Rua Waldemar Ribeiro,,"Rua Waldemar Ribeiro, Centro, São João de Meriti, Rio de Janeiro, Brasil",-43.3771396,-22.7986508
+ENGENHARIA DE CONTROLE E AUTOMAÇÃO,9,Shangri-lá,Belford Roxo,26127150,Rua Caete,,"Rua Caete, Shangri-lá, Belford Roxo, Rio de Janeiro, Brasil",-43.4108947,-22.722909
+ENGENHARIA DE CONTROLE E AUTOMAÇÃO,4,Austin,Nova Iguaçu,26087100,Rua Bela Vista,,"Rua Bela Vista, Austin, Nova Iguaçu, Rio de Janeiro, Brasil",-43.5198074,-22.7181518
+ENGENHARIA DE CONTROLE E AUTOMAÇÃO,3,Centro,Nilópolis,26520534,Rua Pedro Álvares Cabral,de 616 ao fim - lado par,"Rua Pedro Álvares Cabral, Centro, Nilópolis, de 616 ao fim - lado par, Rio de Janeiro, Brasil",-43.4281464,-22.8113944
+ENGENHARIA DE CONTROLE E AUTOMAÇÃO,5,VILA CAMARIM,Queimados,26383140,Avenida Camarim,,"Avenida Camarim, VILA CAMARIM, Queimados, Rio de Janeiro, Brasil",-43.5602409,-22.7090678
+ENGENHARIA DE CONTROLE E AUTOMAÇÃO,5,EDEN,São João de Meriti,25535202,Rua Araci,até 720/721,"Rua Araci, EDEN, São João de Meriti, até 720/721, Rio de Janeiro, Brasil",-43.3992997,-22.7940288
+ENGENHARIA DE CONTROLE E AUTOMAÇÃO,8,Camboinhas,Niterói,24358600,Rua Jayme Bittencourt,,"Rua Jayme Bittencourt, Camboinhas, Niterói, Rio de Janeiro, Brasil",-43.0545702,-22.961258
+ENGENHARIA DE CONTROLE E AUTOMAÇÃO,8,Barra da Tijuca,Rio de Janeiro,22630210,Rua Santo Arquinimio,,"Rua Santo Arquinimio, Barra da Tijuca, Rio de Janeiro, Rio de Janeiro, Brasil",-43.3542005,-23.0075602
+ENGENHARIA DE CONTROLE E AUTOMAÇÃO,5,Jardim Guanabara,Rio de Janeiro,21940480,Rua Uca,,"Rua Uca, Jardim Guanabara, Rio de Janeiro, Rio de Janeiro, Brasil",-43.2016845,-22.8170464
+ENGENHARIA DE CONTROLE E AUTOMAÇÃO,5,Centro,Nova Iguaçu,26250070,Rua Comendador Francisco Baroni,,"Rua Comendador Francisco Baroni, Centro, Nova Iguaçu, Rio de Janeiro, Brasil",-43.442602,-22.7656132
+ENGENHARIA DE CONTROLE E AUTOMAÇÃO,3,Marechal Hermes,Rio de Janeiro,21610440,Rua Frei Sampaio,,"Rua Frei Sampaio, Marechal Hermes, Rio de Janeiro, Rio de Janeiro, Brasil",-43.3734379,-22.8699922
+ENGENHARIA DE CONTROLE E AUTOMAÇÃO,8,Ponto Chic,Nova Iguaçu,26032730,Estrada Velha de São José,,"Estrada Velha de São José, Ponto Chic, Nova Iguaçu, Rio de Janeiro, Brasil",-43.4752333,-22.727082
+ENGENHARIA DE CONTROLE E AUTOMAÇÃO,5,ABATEDOURO,Cantagalo,28500000,,,"ABATEDOURO, Cantagalo, Rio de Janeiro, Brasil",-42.36471,-21.9809133
+ENGENHARIA DE CONTROLE E AUTOMAÇÃO,4,São José,Belford Roxo,26187180,Estrada da Ligação,,"Estrada da Ligação, São José, Belford Roxo, Rio de Janeiro, Brasil",-43.3377481,-22.7311371
+ENGENHARIA DE CONTROLE E AUTOMAÇÃO,10,Centro,Nova Iguaçu,26255230,Avenida Doutor Mário Guimarães,,"Avenida Doutor Mário Guimarães, Centro, Nova Iguaçu, Rio de Janeiro, Brasil",-43.4581266,-22.758661
+ENGENHARIA DE CONTROLE E AUTOMAÇÃO,6,Centro,Nilópolis,26535350,Rua Natividade,até 674 - lado par,"Rua Natividade, Centro, Nilópolis, até 674 - lado par, Rio de Janeiro, Brasil",-43.4066761,-22.8007824
+ENGENHARIA DE CONTROLE E AUTOMAÇÃO,6,Jardim Tropical,Nova Iguaçu,26011060,Rua Hermínia Soares,,"Rua Hermínia Soares, Jardim Tropical, Nova Iguaçu, Rio de Janeiro, Brasil",-43.4294623,-22.7556514
+ENGENHARIA DE CONTROLE E AUTOMAÇÃO,2,CENTRO,São João de Meriti,25520572,Rua Jorge Assis Tanus Bedran,,"Rua Jorge Assis Tanus Bedran, CENTRO, São João de Meriti, Rio de Janeiro, Brasil",-43.3702244,-22.8033927
+ENGENHARIA DE CONTROLE E AUTOMAÇÃO,5,GALEÃO,Rio de Janeiro,21941350,Rua Sessenta e Oito,,"Rua Sessenta e Oito, GALEÃO, Rio de Janeiro, Rio de Janeiro, Brasil",-43.6008447,-22.922744
+ENGENHARIA DE CONTROLE E AUTOMAÇÃO,4,Figueiras,Nova Iguaçu,26060730,Rua Projetada A,,"Rua Projetada A, Figueiras, Nova Iguaçu, Rio de Janeiro, Brasil",-43.4638531,-22.7220632
+ENGENHARIA DE CONTROLE E AUTOMAÇÃO,8,Anchieta,Rio de Janeiro,21655740,Rua Zélia de Souza,,"Rua Zélia de Souza, Anchieta, Rio de Janeiro, Rio de Janeiro, Brasil",-43.3811764,-22.8173539
+ENGENHARIA DE CONTROLE E AUTOMAÇÃO,4,Rocha Miranda,Rio de Janeiro,21510002,Rua dos Diamantes,até 929 - lado ímpar,"Rua dos Diamantes, Rocha Miranda, Rio de Janeiro, até 929 - lado ímpar, Rio de Janeiro, Brasil",-43.3528851,-22.8486752
+ENGENHARIA DE CONTROLE E AUTOMAÇÃO,2,SANTA EUGÊNIA,Nova Iguaçu,26285700,Rua Amauri Nunes de Almeida,,"Rua Amauri Nunes de Almeida, SANTA EUGÊNIA, Nova Iguaçu, Rio de Janeiro, Brasil",-43.4624733,-22.7512167
+ENGENHARIA DE CONTROLE E AUTOMAÇÃO,4,NOVA AURORA,Belford Roxo,26155125,Caminho da Glória,,"Caminho da Glória, NOVA AURORA, Belford Roxo, Rio de Janeiro, Brasil",-43.4070523,-22.7167102
+ENGENHARIA DE CONTROLE E AUTOMAÇÃO,7,Jardim Monte Castelo,Nova Iguaçu,26041680,Rua Valéria Guimarães,,"Rua Valéria Guimarães, Jardim Monte Castelo, Nova Iguaçu, Rio de Janeiro, Brasil",-43.4603928,-22.7031231
+ENGENHARIA DE CONTROLE E AUTOMAÇÃO,3,JARDIM OLAVO BILAC,Duque de Caxias,25036210,Rua Aquidabá,,"Rua Aquidabá, JARDIM OLAVO BILAC, Duque de Caxias, Rio de Janeiro, Brasil",-43.3233274,-22.7632815
+ENGENHARIA DE CONTROLE E AUTOMAÇÃO,3,Miguel Couto,Nova Iguaçu,26070132,Rua Oscar,,"Rua Oscar, Miguel Couto, Nova Iguaçu, Rio de Janeiro, Brasil",-43.4327176,-22.7135747
+ENGENHARIA DE CONTROLE E AUTOMAÇÃO,2,Santa Rita,Nova Iguaçu,26050085,Rua Domingos da Silva,,"Rua Domingos da Silva, Santa Rita, Nova Iguaçu, Rio de Janeiro, Brasil",-43.4670154,-22.6910441
+ENGENHARIA DE CONTROLE E AUTOMAÇÃO,3,Bangu,Rio de Janeiro,21850020,Rua Joaquim Pires Cerveira,,"Rua Joaquim Pires Cerveira, Bangu, Rio de Janeiro, Rio de Janeiro, Brasil",-43.4844054,-22.8617142
+ENGENHARIA DE CONTROLE E AUTOMAÇÃO,6,Vila de Cava,Nova Iguaçu,26052320,Rua Antônio Salema,,"Rua Antônio Salema, Vila de Cava, Nova Iguaçu, Rio de Janeiro, Brasil",-43.4392094,-22.6790164
+ENGENHARIA DE CONTROLE E AUTOMAÇÃO,5,Centro,Nova Iguaçu,26255020,Rua Humberto Gentil Baroni,,"Rua Humberto Gentil Baroni, Centro, Nova Iguaçu, Rio de Janeiro, Brasil",-43.4484078,-22.7631668
+ENGENHARIA DE CONTROLE E AUTOMAÇÃO,5,Riachuelo,Rio de Janeiro,20960080,Rua Barbosa da Silva,,"Rua Barbosa da Silva, Riachuelo, Rio de Janeiro, Rio de Janeiro, Brasil",-43.2537562,-22.898963
+ENGENHARIA DE CONTROLE E AUTOMAÇÃO,8,Imbariê,Duque de Caxias,25266070,Rua Goindira,,"Rua Goindira, Imbariê, Duque de Caxias, Rio de Janeiro, Brasil",-43.2185858,-22.6392174
+ENGENHARIA DE CONTROLE E AUTOMAÇÃO,8,Areia Branca,Belford Roxo,26112420,Rua Margem Direita,,"Rua Margem Direita, Areia Branca, Belford Roxo, Rio de Janeiro, Brasil",-43.4083226,-22.7462642
+ENGENHARIA DE CONTROLE E AUTOMAÇÃO,2,Cruzeiro do Sul,Mesquita,26551070,Rua Egídio,até 445 - lado ímpar,"Rua Egídio, Cruzeiro do Sul, Mesquita, até 445 - lado ímpar, Rio de Janeiro, Brasil",-43.4248322,-22.7814837
+ENGENHARIA DE CONTROLE E AUTOMAÇÃO,2,Santa Rita,Nova Iguaçu,26050005,Rua Ahiva,até 270/271,"Rua Ahiva, Santa Rita, Nova Iguaçu, até 270/271, Rio de Janeiro, Brasil",-43.4708286,-22.6925654
+ENGENHARIA DE CONTROLE E AUTOMAÇÃO,1,Penha Circular,Rio de Janeiro,21221240,Rua Flaminia,,"Rua Flaminia, Penha Circular, Rio de Janeiro, Rio de Janeiro, Brasil",-43.3025255,-22.8458803
+ENGENHARIA DE CONTROLE E AUTOMAÇÃO,4,Imperador,Nova Iguaçu,26225660,Rua Joaquim Nabuco,,"Rua Joaquim Nabuco, Imperador, Nova Iguaçu, Rio de Janeiro, Brasil",-43.4267352,-22.7655221
+ENGENHARIA DE CONTROLE E AUTOMAÇÃO,5,Recreio dos Bandeirantes,Rio de Janeiro,22790710,Avenida Alfredo Balthazar da Silveira,,"Avenida Alfredo Balthazar da Silveira, Recreio dos Bandeirantes, Rio de Janeiro, Rio de Janeiro, Brasil",-43.4467057,-23.0145503
+ENGENHARIA DE CONTROLE E AUTOMAÇÃO,7,Xerém,Duque de Caxias,25250583,Rua Minas Gerais,,"Rua Minas Gerais, Xerém, Duque de Caxias, Rio de Janeiro, Brasil",-43.2919019,-22.5983617
+ENGENHARIA DE CONTROLE E AUTOMAÇÃO,4,Centro,Belford Roxo,26130010,Avenida Prefeito Jorge Júlio Costa dos Santos,,"Avenida Prefeito Jorge Júlio Costa dos Santos, Centro, Belford Roxo, Rio de Janeiro, Brasil",-43.3986852,-22.7740687
+ENGENHARIA DE CONTROLE E AUTOMAÇÃO,2,Santa Teresa,Rio de Janeiro,20240020,Rua Costa Bastos,,"Rua Costa Bastos, Santa Teresa, Rio de Janeiro, Rio de Janeiro, Brasil",-43.1899669,-22.9159535
+ENGENHARIA DE CONTROLE E AUTOMAÇÃO,1,Santo Elias,Mesquita,26560500,Rua Nestor,,"Rua Nestor, Santo Elias, Mesquita, Rio de Janeiro, Brasil",-43.4250342,-22.7724518
+ENGENHARIA DE CONTROLE E AUTOMAÇÃO,4,Vila Valqueire,Rio de Janeiro,21330330,Rua Cipriano Baptista,,"Rua Cipriano Baptista, Vila Valqueire, Rio de Janeiro, Rio de Janeiro, Brasil",-43.3744463,-22.8846953
+ENGENHARIA DE CONTROLE E AUTOMAÇÃO,2,Vila São João,São João de Meriti,25570191,Rua Dona Angelina,,"Rua Dona Angelina, Vila São João, São João de Meriti, Rio de Janeiro, Brasil",-43.3594405,-22.7684514
+ENGENHARIA DE CONTROLE E AUTOMAÇÃO,2,Floresta,Nova Iguaçu,26031390,Rua Laurinda,,"Rua Laurinda, Floresta, Nova Iguaçu, Rio de Janeiro, Brasil",-43.4796821,-22.7351548
+ENGENHARIA DE CONTROLE E AUTOMAÇÃO,6,Vila São João,São João de Meriti,25570311,Rua Malva,,"Rua Malva, Vila São João, São João de Meriti, Rio de Janeiro, Brasil",-43.3515059,-22.7683673
+ENGENHARIA DE CONTROLE E AUTOMAÇÃO,4,São Cristóvão,Queimados,26313050,Rua Américo Pinho,,"Rua Américo Pinho, São Cristóvão, Queimados, Rio de Janeiro, Brasil",-43.56749,-22.7266378
+ENGENHARIA DE CONTROLE E AUTOMAÇÃO,4,Mutuá,São Gonçalo,24460440,Rua Coronel Rodrigo de Carvalho,,"Rua Coronel Rodrigo de Carvalho, Mutuá, São Gonçalo, Rio de Janeiro, Brasil",-43.0429529,-22.8135302
+ENGENHARIA DE CONTROLE E AUTOMAÇÃO,5,Jardim Monte Castelo,Nova Iguaçu,26041680,Rua Valéria Guimarães,,"Rua Valéria Guimarães, Jardim Monte Castelo, Nova Iguaçu, Rio de Janeiro, Brasil",-43.4603928,-22.7031231
+ENGENHARIA DE CONTROLE E AUTOMAÇÃO,2,Madureira,Rio de Janeiro,21351160,Rua Manacéa,,"Rua Manacéa, Madureira, Rio de Janeiro, Rio de Janeiro, Brasil",-43.3445386,-22.8707151
+ENGENHARIA DE CONTROLE E AUTOMAÇÃO,4,Carmari,Nova Iguaçu,26022193,Rua Quinze de Novembro,até 626 - lado par,"Rua Quinze de Novembro, Carmari, Nova Iguaçu, até 626 - lado par, Rio de Janeiro, Brasil",-43.4484455,-22.7275216
+ENGENHARIA DE CONTROLE E AUTOMAÇÃO,2,Corumbá,Nova Iguaçu,26042480,Rua Maria Lúcia Schwerotner,,"Rua Maria Lúcia Schwerotner, Corumbá, Nova Iguaçu, Rio de Janeiro, Brasil",-43.4693444,-22.6977105
+ENGENHARIA DE CONTROLE E AUTOMAÇÃO,2,Jardim América,Rio de Janeiro,21240380,Rua Mozart,,"Rua Mozart, Jardim América, Rio de Janeiro, Rio de Janeiro, Brasil",-43.3229738,-22.8076253
+ENGENHARIA DE CONTROLE E AUTOMAÇÃO,5,Penha Circular,Rio de Janeiro,21210750,Rua Engenheiro Coriolano de Góis,,"Rua Engenheiro Coriolano de Góis, Penha Circular, Rio de Janeiro, Rio de Janeiro, Brasil",-43.3017131,-22.8395586
+ENGENHARIA DE CONTROLE E AUTOMAÇÃO,2,Gerard Danon,Nova Iguaçu,26042350,Rua Juvenil de Sousa Lópes,,"Rua Juvenil de Sousa Lópes, Gerard Danon, Nova Iguaçu, Rio de Janeiro, Brasil",-43.4707099,-22.7074979
+ENGENHARIA DE CONTROLE E AUTOMAÇÃO,4,Vila Itamarati,Duque de Caxias,25070170,Rua Itacibá,,"Rua Itacibá, Vila Itamarati, Duque de Caxias, Rio de Janeiro, Brasil",-43.3056008,-22.777657
+ENGENHARIA DE CONTROLE E AUTOMAÇÃO,3,Jacutinga,Mesquita,26562370,Rua Josué Farias,,"Rua Josué Farias, Jacutinga, Mesquita, Rio de Janeiro, Brasil",-43.4208617,-22.7713344
+ENGENHARIA DE CONTROLE E AUTOMAÇÃO,3,Costazul,Rio das Ostras,28895254,Rua Hernani Coutinho da Costa,,"Rua Hernani Coutinho da Costa, Costazul, Rio das Ostras, Rio de Janeiro, Brasil",-41.9273013,-22.5167953
+ENGENHARIA DE CONTROLE E AUTOMAÇÃO,2,Parque Antártica,Nova Iguaçu,26052720,Rua dos Pinheiros,,"Rua dos Pinheiros, Parque Antártica, Nova Iguaçu, Rio de Janeiro, Brasil",-43.4498895,-22.6755182
+ENGENHARIA DE CONTROLE E AUTOMAÇÃO,2,Coelho da rocha,São João de Meriti,25555170,Rua Doutor Satamini,,"Rua Doutor Satamini, Coelho da rocha, São João de Meriti, Rio de Janeiro, Brasil",-43.3793753,-22.7793571
+ENGENHARIA DE CONTROLE E AUTOMAÇÃO,5,Vilar dos Teles,São João de Meriti,25555760,Rua Barra Mansa,,"Rua Barra Mansa, Vilar dos Teles, São João de Meriti, Rio de Janeiro, Brasil",-43.3632979,-22.7755552
+ENGENHARIA DE CONTROLE E AUTOMAÇÃO,6,ENGENHEIRO PEDREIRA,Japeri,26420200,Rua Guaraci,,"Rua Guaraci, ENGENHEIRO PEDREIRA, Japeri, Rio de Janeiro, Brasil",-43.6475563,-22.6811411
+ENGENHARIA DE CONTROLE E AUTOMAÇÃO,3,Ponto Chic,Nova Iguaçu,26030520,Rua João Ferreira Pinto,até 720/721,"Rua João Ferreira Pinto, Ponto Chic, Nova Iguaçu, até 720/721, Rio de Janeiro, Brasil",-43.470659,-22.7273762
+ENGENHARIA DE CONTROLE E AUTOMAÇÃO,4,Coelho da Rocha,São João de Meriti,25540270,Rua Pelourinho,,"Rua Pelourinho, Coelho da Rocha, São João de Meriti, Rio de Janeiro, Brasil",-43.3933765,-22.781423
+ENGENHARIA DE CONTROLE E AUTOMAÇÃO,3,Valverde,Nova Iguaçu,26291063,Rua Joaquim da Silva Maia,,"Rua Joaquim da Silva Maia, Valverde, Nova Iguaçu, Rio de Janeiro, Brasil",-43.5331188,-22.7746993
+ENGENHARIA DE CONTROLE E AUTOMAÇÃO,2,Cerrado,Mangaratiba,23860000,,,"Cerrado, Mangaratiba, Rio de Janeiro, Brasil",-44.03895540000001,-22.9161789
+ENGENHARIA DE CONTROLE E AUTOMAÇÃO,2,Viga,Nova Iguaçu,26013590,Rua Alagoas,,"Rua Alagoas, Viga, Nova Iguaçu, Rio de Janeiro, Brasil",-43.4422224,-22.7400829
+ENGENHARIA DE CONTROLE E AUTOMAÇÃO,3,Grajaú,Nova Iguaçu,26030750,Rua Engenheiro Alberto,,"Rua Engenheiro Alberto, Grajaú, Nova Iguaçu, Rio de Janeiro, Brasil",-43.4694942,-22.7346338
+ENGENHARIA DE CONTROLE E AUTOMAÇÃO,2,Santa Eugênia,Nova Iguaçu,26286450,Avenida Alberto Fernandes,,"Avenida Alberto Fernandes, Santa Eugênia, Nova Iguaçu, Rio de Janeiro, Brasil",-43.4709575,-22.7471671
+ENGENHARIA DE CONTROLE E AUTOMAÇÃO,2,Agostinho Porto,São João de Meriti,25545202,Avenida Getúlio de Moura,de 1232 ao fim - lado par,"Avenida Getúlio de Moura, Agostinho Porto, São João de Meriti, de 1232 ao fim - lado par, Rio de Janeiro, Brasil",-43.3834192,-22.7927889
+ENGENHARIA DE CONTROLE E AUTOMAÇÃO,2,Parque José Bonifácio,São João de Meriti,25515350,Rua Goiás,,"Rua Goiás, Parque José Bonifácio, São João de Meriti, Rio de Janeiro, Brasil",-43.3613371,-22.7951924
+ENGENHARIA DE CONTROLE E AUTOMAÇÃO,1,Rua dona Odília,São João de Meriti,25525270,Rua Dona Odília,,"Rua Dona Odília, Rua dona Odília, São João de Meriti, Rio de Janeiro, Brasil",-43.3847596,-22.7936765
+ENGENHARIA DE CONTROLE E AUTOMAÇÃO,2,Penha Circular,Rio de Janeiro,21221120,Rua Conde Pereira Carneiro,,"Rua Conde Pereira Carneiro, Penha Circular, Rio de Janeiro, Rio de Janeiro, Brasil",-43.2982023,-22.8490167
+ENGENHARIA DE CONTROLE E AUTOMAÇÃO,2,Venda Velha,São João de Meriti,25565541,Avenida João de Deus Menezes,,"Avenida João de Deus Menezes, Venda Velha, São João de Meriti, Rio de Janeiro, Brasil",-43.3510932,-22.7875656
+ENGENHARIA DE CONTROLE E AUTOMAÇÃO,2,Santa Eugênia,Nova Iguaçu,26286240,Rua Divisa,,"Rua Divisa, Santa Eugênia, Nova Iguaçu, Rio de Janeiro, Brasil",-43.4707517,-22.7494806
+ENGENHARIA DE CONTROLE E AUTOMAÇÃO,2,Centro,Belford Roxo,26130010,Avenida Prefeito Jorge Júlio Costa dos Santos,,"Avenida Prefeito Jorge Júlio Costa dos Santos, Centro, Belford Roxo, Rio de Janeiro, Brasil",-43.3986852,-22.7740687
+ENGENHARIA DE CONTROLE E AUTOMAÇÃO,4,SANTA EUGENIA,Nova Iguaçu,26286030,Rua Doutor Laureano,,"Rua Doutor Laureano, SANTA EUGENIA, Nova Iguaçu, Rio de Janeiro, Brasil",-43.4640653,-22.7515492
+ENGENHARIA DE CONTROLE E AUTOMAÇÃO,3,Madureira,Rio de Janeiro,21351050,Estrada do Portela,até 279 - lado ímpar,"Estrada do Portela, Madureira, Rio de Janeiro, até 279 - lado ímpar, Rio de Janeiro, Brasil",-43.3431066,-22.8687449
+ENGENHARIA DE CONTROLE E AUTOMAÇÃO,2,Pavuna,Rio de Janeiro,21525690,Rua Netuno,,"Rua Netuno, Pavuna, Rio de Janeiro, Rio de Janeiro, Brasil",-43.3594294,-22.8069168
+ENGENHARIA DE CONTROLE E AUTOMAÇÃO,3,Nova Cidade,Nilópolis,26530210,Estrada Rúbens dos Reis Sales,,"Estrada Rúbens dos Reis Sales, Nova Cidade, Nilópolis, Rio de Janeiro, Brasil",-43.4154115,-22.8008052
+ENGENHARIA DE CONTROLE E AUTOMAÇÃO,1,Comendador Soares,Nova Iguaçu,26281012,Rua Santa Rita de Cassia,,"Rua Santa Rita de Cassia, Comendador Soares, Nova Iguaçu, Rio de Janeiro, Brasil",-43.4788548,-22.7446854
+ENGENHARIA DE CONTROLE E AUTOMAÇÃO,3,Km 32,Nova Iguaçu,26298563,Estrada Velha do Tingui,,"Estrada Velha do Tingui, Km 32, Nova Iguaçu, Rio de Janeiro, Brasil",-43.5961906,-22.8527053
+ENGENHARIA DE CONTROLE E AUTOMAÇÃO,4,Campo Grande,Rio de Janeiro,23040150,Estrada Cachamorra,até 1554 - lado par,"Estrada Cachamorra, Campo Grande, Rio de Janeiro, até 1554 - lado par, Rio de Janeiro, Brasil",-43.5572198,-22.935448
+ENGENHARIA DE CONTROLE E AUTOMAÇÃO,3,Piam,Belford Roxo,26112600,Rua Astolfo,,"Rua Astolfo, Piam, Belford Roxo, Rio de Janeiro, Brasil",-43.4031211,-22.7482078
+ENGENHARIA DE CONTROLE E AUTOMAÇÃO,2,Centro,Belford Roxo,26112230,Rua Joana Angélica,,"Rua Joana Angélica, Centro, Belford Roxo, Rio de Janeiro, Brasil",-43.4033811,-22.7549467
+ENGENHARIA DE CONTROLE E AUTOMAÇÃO,3,Jardim Gramacho,Duque de Caxias,25056390,Rua Brigadeiro Melo,,"Rua Brigadeiro Melo, Jardim Gramacho, Duque de Caxias, Rio de Janeiro, Brasil",-43.2771895,-22.7627068
+ENGENHARIA DE CONTROLE E AUTOMAÇÃO,2,da Luz,Nova Iguaçu,26260030,Rua Ana Costa,,"Rua Ana Costa, da Luz, Nova Iguaçu, Rio de Janeiro, Brasil",-43.4727577,-22.7551664
+ENGENHARIA DE CONTROLE E AUTOMAÇÃO,1,Divino,Duque de Caxias,25046340,Rua Santo Elías,,"Rua Santo Elías, Divino, Duque de Caxias, Rio de Janeiro, Brasil",-43.3197171,-22.7241155
+ENGENHARIA DE CONTROLE E AUTOMAÇÃO,1,Parque São Benedito,Japeri,26480150,Rua Doutor Jaime Poggi Filho,,"Rua Doutor Jaime Poggi Filho, Parque São Benedito, Japeri, Rio de Janeiro, Brasil",-43.5821442,-22.6665478
+ENGENHARIA DE CONTROLE E AUTOMAÇÃO,3,Três Corações,Nova Iguaçu,26041051,Avenida Henrique Duque Estrada Meyer,de 2253/2254 a 2970/2971,"Avenida Henrique Duque Estrada Meyer, Três Corações, Nova Iguaçu, de 2253/2254 a 2970/2971, Rio de Janeiro, Brasil",-43.4524093,-22.7158399
+ENGENHARIA DE CONTROLE E AUTOMAÇÃO,3,Joaquim de Oliveira,Itaboraí,24813556,Rua Anápio da Costa Almeida,,"Rua Anápio da Costa Almeida, Joaquim de Oliveira, Itaboraí, Rio de Janeiro, Brasil",-42.8808103,-22.746027
+ENGENHARIA DE CONTROLE E AUTOMAÇÃO,2,Da luz,Nova Iguaçu,26260260,Rua Expedicionários,de 493/494 ao fim,"Rua Expedicionários, Da luz, Nova Iguaçu, de 493/494 ao fim, Rio de Janeiro, Brasil",-43.4691908,-22.7553404
+ENGENHARIA DE CONTROLE E AUTOMAÇÃO,2,Barro Vermelho,Belford Roxo,26110066,Rua Luther King,,"Rua Luther King, Barro Vermelho, Belford Roxo, Rio de Janeiro, Brasil",-43.3787182,-22.7437942
+ENGENHARIA DE CONTROLE E AUTOMAÇÃO,3,Palhada,Nova Iguaçu,26290006,Estrada Governador Leonel Brizola,de 998 a 1772 - lado par,"Estrada Governador Leonel Brizola, Palhada, Nova Iguaçu, de 998 a 1772 - lado par, Rio de Janeiro, Brasil",-43.5209653,-22.7602122
+ENGENHARIA DE CONTROLE E AUTOMAÇÃO,2,Santo Elias,Mesquita,26562090,Rua Canuto,,"Rua Canuto, Santo Elias, Mesquita, Rio de Janeiro, Brasil",-43.4243071,-22.7671852
+ENGENHARIA DE CONTROLE E AUTOMAÇÃO,1,Paciência,Rio de Janeiro,23570480,Rua Antônio Carlos Teixeira,,"Rua Antônio Carlos Teixeira, Paciência, Rio de Janeiro, Rio de Janeiro, Brasil",-43.6562735,-22.9148332
+ENGENHARIA DE CONTROLE E AUTOMAÇÃO,1,Nova Belém,Japeri,26433280,Rua Isaac,,"Rua Isaac, Nova Belém, Japeri, Rio de Janeiro, Brasil",-43.6475993,-22.6466944
+ENGENHARIA DE CONTROLE E AUTOMAÇÃO,1,Vila de Cava,Nova Iguaçu,26052140,Rua Dulce,,"Rua Dulce, Vila de Cava, Nova Iguaçu, Rio de Janeiro, Brasil",-43.4528642,-22.6844199
+ENGENHARIA DE CONTROLE E AUTOMAÇÃO,2,Parque Lafaiete,Duque de Caxias,25015327,Rua Prefeito Ribeiro,até 1508 - lado par,"Rua Prefeito Ribeiro, Parque Lafaiete, Duque de Caxias, até 1508 - lado par, Rio de Janeiro, Brasil",-43.3261158,-22.7916691
+ENGENHARIA DE CONTROLE E AUTOMAÇÃO,2,Ponto Chic,Nova Iguaçu,26032662,Rua Geni Saraiva,até 978 - lado par,"Rua Geni Saraiva, Ponto Chic, Nova Iguaçu, até 978 - lado par, Rio de Janeiro, Brasil",-43.4687563,-22.7280946
+ENGENHARIA DE CONTROLE E AUTOMAÇÃO,2,Vilar dos Teles,São João de Meriti,25565150,Rua Doutor César Nascimento Monteiro,,"Rua Doutor César Nascimento Monteiro, Vilar dos Teles, São João de Meriti, Rio de Janeiro, Brasil",-43.3613728,-22.7839298
+ENGENHARIA DE CONTROLE E AUTOMAÇÃO,1,Galo Branco,São Gonçalo,24422490,Rua Domingos Duque Estrada,,"Rua Domingos Duque Estrada, Galo Branco, São Gonçalo, Rio de Janeiro, Brasil",-43.0289985,-22.8275893
+ENGENHARIA DE CONTROLE E AUTOMAÇÃO,1,Palhada,Nova Iguaçu,26290123,Rua Bambuzal,,"Rua Bambuzal, Palhada, Nova Iguaçu, Rio de Janeiro, Brasil",-43.5236609,-22.7634393
+ENGENHARIA DE CONTROLE E AUTOMAÇÃO,1,Vila São Luis,Nova Iguaçu,26012640,Rua Celso Martins da Costa,,"Rua Celso Martins da Costa, Vila São Luis, Nova Iguaçu, Rio de Janeiro, Brasil",-43.4396919,-22.7351234
+ENGENHARIA DE CONTROLE E AUTOMAÇÃO,1,Parque Fluminense,Duque de Caxias,25045100,Avenida General Carlos Marciano de Medeiros,,"Avenida General Carlos Marciano de Medeiros, Parque Fluminense, Duque de Caxias, Rio de Janeiro, Brasil",-43.321423,-22.7269947
+ENGENHARIA DE CONTROLE E AUTOMAÇÃO,1,Parque Anchieta,Rio de Janeiro,21635170,Rua Elzo Ferreira,,"Rua Elzo Ferreira, Parque Anchieta, Rio de Janeiro, Rio de Janeiro, Brasil",-43.4110411,-22.8361256
+ENGENHARIA DE CONTROLE E AUTOMAÇÃO,1,Das Graças,Belford Roxo,26113480,Rua Itaie,,"Rua Itaie, Das Graças, Belford Roxo, Rio de Janeiro, Brasil",-43.4000546,-22.758909
+ENGENHARIA DE CONTROLE E AUTOMAÇÃO,1,Corumbá,Nova Iguaçu,26042400,Rua Luís Rodolfo Vilena,,"Rua Luís Rodolfo Vilena, Corumbá, Nova Iguaçu, Rio de Janeiro, Brasil",-43.4712754,-22.6987205
+ENGENHARIA DE CONTROLE E AUTOMAÇÃO,2,raia,Paracambi,26600000,,,"raia, Paracambi, Rio de Janeiro, Brasil",-43.7004721,-22.6030208
+ENGENHARIA DE CONTROLE E AUTOMAÇÃO,1,Tomazinho,São João de Meriti,25530270,Rua João Serra,,"Rua João Serra, Tomazinho, São João de Meriti, Rio de Janeiro, Brasil",-43.3950505,-22.8059381
+ENGENHARIA DE CONTROLE E AUTOMAÇÃO,1,Bom Pastor,Belford Roxo,26110296,Beco Salunia,,"Beco Salunia, Bom Pastor, Belford Roxo, Rio de Janeiro, Brasil",-43.369259,-22.7555993
+ENGENHARIA DE CONTROLE E AUTOMAÇÃO,1,Senador Camará,Rio de Janeiro,21832220,Rua Artur Luz,,"Rua Artur Luz, Senador Camará, Rio de Janeiro, Rio de Janeiro, Brasil",-43.4905624,-22.89242
+ENGENHARIA DE CONTROLE E AUTOMAÇÃO,1,Corumbá,Nova Iguaçu,26042360,Rua Eliana Azevedo,,"Rua Eliana Azevedo, Corumbá, Nova Iguaçu, Rio de Janeiro, Brasil",-43.470452,-22.6997508
+ENGENHARIA DE CONTROLE E AUTOMAÇÃO,1,Danon,Nova Iguaçu,26270120,Rua Patrícia Zilberg,,"Rua Patrícia Zilberg, Danon, Nova Iguaçu, Rio de Janeiro, Brasil",-43.5076389,-22.7704536
+ENGENHARIA DE CONTROLE E AUTOMAÇÃO,1,Nova Iguaçu,Nova Iguaçu,26041271,Estrada Adrianópolis,de 1273/1274 a 1820/1821,"Estrada Adrianópolis, Nova Iguaçu, Nova Iguaçu, de 1273/1274 a 1820/1821, Rio de Janeiro, Brasil",-43.4689425,-22.6962116
+ENGENHARIA DE CONTROLE E AUTOMAÇÃO,1,Alto da Posse,Nova Iguaçu,26030200,Estrada da Gama,até 1460/1461,"Estrada da Gama, Alto da Posse, Nova Iguaçu, até 1460/1461, Rio de Janeiro, Brasil",-43.4664698,-22.7336938
+ENGENHARIA DE CONTROLE E AUTOMAÇÃO,1,Marechal Hermes,Rio de Janeiro,21610600,Rua Esmeraldina,,"Rua Esmeraldina, Marechal Hermes, Rio de Janeiro, Rio de Janeiro, Brasil",-43.3762405,-22.8680329
+ENGENHARIA DE CONTROLE E AUTOMAÇÃO,1,Areia Branca,Belford Roxo,26112250,Rua Henrique Dias,,"Rua Henrique Dias, Areia Branca, Belford Roxo, Rio de Janeiro, Brasil",-43.405652,-22.7522871
+ENGENHARIA DE CONTROLE E AUTOMAÇÃO,5,Heliópolis,Belford Roxo,26140460,Rua Monsenhor Solano,,"Rua Monsenhor Solano, Heliópolis, Belford Roxo, Rio de Janeiro, Brasil",-43.4234251,-22.7398421
+ENGENHARIA DE CONTROLE E AUTOMAÇÃO,2,Jardim Tropical,Nova Iguaçu,26015060,Rua Frederico de Castro Pereira,de 618/619 a 1176/1177,"Rua Frederico de Castro Pereira, Jardim Tropical, Nova Iguaçu, de 618/619 a 1176/1177, Rio de Janeiro, Brasil",-43.4305292,-22.7509603
+ENGENHARIA DE CONTROLE E AUTOMAÇÃO,1,Santa Maria,Belford Roxo,26165500,Rua Breno de Souza Alves,,"Rua Breno de Souza Alves, Santa Maria, Belford Roxo, Rio de Janeiro, Brasil",-43.3822043,-22.7259417
+ENGENHARIA DE CONTROLE E AUTOMAÇÃO,1,Anchieta,Rio de Janeiro,21630140,Rua Giudita Reale,,"Rua Giudita Reale, Anchieta, Rio de Janeiro, Rio de Janeiro, Brasil",-43.4097903,-22.8214573
+ENGENHARIA DE CONTROLE E AUTOMAÇÃO,2,SANTA TEREZINHA,Mesquita,26554040,Rua Serra,,"Rua Serra, SANTA TEREZINHA, Mesquita, Rio de Janeiro, Brasil",-43.4397286,-22.7897643
+ENGENHARIA DE CONTROLE E AUTOMAÇÃO,1,Engenho Novo,Rio de Janeiro,20780340,Rua Peçanha da Silva,,"Rua Peçanha da Silva, Engenho Novo, Rio de Janeiro, Rio de Janeiro, Brasil",-43.2659108,-22.8957959
+ENGENHARIA DE CONTROLE E AUTOMAÇÃO,2,Portuguesa,Rio de Janeiro,21931597,Rua Joffre Motta,,"Rua Joffre Motta, Portuguesa, Rio de Janeiro, Rio de Janeiro, Brasil",-43.2088345,-22.7972173
+ENGENHARIA DE CONTROLE E AUTOMAÇÃO,1,Vista Alegre,Rio de Janeiro,21230770,Rua Paratinga,até 605 - lado ímpar,"Rua Paratinga, Vista Alegre, Rio de Janeiro, até 605 - lado ímpar, Rio de Janeiro, Brasil",-43.316055,-22.8307042
+ENGENHARIA DE CONTROLE E AUTOMAÇÃO,1,Brás de Pina,Rio de Janeiro,21211120,Rua Almirante Ingran,,"Rua Almirante Ingran, Brás de Pina, Rio de Janeiro, Rio de Janeiro, Brasil",-43.3041885,-22.832156
+ENGENHARIA DE CONTROLE E AUTOMAÇÃO,1,Centro,Nova Iguaçu,26210320,Travessa Granado,,"Travessa Granado, Centro, Nova Iguaçu, Rio de Janeiro, Brasil",-43.4481696,-22.7567176
+ENGENHARIA DE CONTROLE E AUTOMAÇÃO,1,Dos Ferreiras,Belford Roxo,26185665,Rua Taveira,,"Rua Taveira, Dos Ferreiras, Belford Roxo, Rio de Janeiro, Brasil",-43.334587,-22.7206681
+ENGENHARIA DE CONTROLE E AUTOMAÇÃO,1,Senador Camará,Rio de Janeiro,21832300,Rua Capitão Borges Couto,,"Rua Capitão Borges Couto, Senador Camará, Rio de Janeiro, Rio de Janeiro, Brasil",-43.4936188,-22.8963808
+ENGENHARIA DE CONTROLE E AUTOMAÇÃO,1,Ilha de Guaratiba,Rio de Janeiro,23020116,Caminho Vital,,"Caminho Vital, Ilha de Guaratiba, Rio de Janeiro, Rio de Janeiro, Brasil",-43.5521603,-22.991285
+ENGENHARIA DE CONTROLE E AUTOMAÇÃO,1,Bom Pastor,Belford Roxo,26113040,Avenida Marcovaldi,,"Avenida Marcovaldi, Bom Pastor, Belford Roxo, Rio de Janeiro, Brasil",-43.3819893,-22.7540348
+ENGENHARIA DE CONTROLE E AUTOMAÇÃO,1,Jardim da Posse,Nova Iguaçu,26021200,Rua Jequitibá,,"Rua Jequitibá, Jardim da Posse, Nova Iguaçu, Rio de Janeiro, Brasil",-43.4424312,-22.7314835
+ENGENHARIA DE CONTROLE E AUTOMAÇÃO,1,Chatuba,Mesquita,26585510,Rua Magno de Carvalho,de 1416/1417 ao fim,"Rua Magno de Carvalho, Chatuba, Mesquita, de 1416/1417 ao fim, Rio de Janeiro, Brasil",-43.4396184,-22.8057706
+ENGENHARIA DE CONTROLE E AUTOMAÇÃO,2,Santa Rita,Nova Iguaçu,26050515,Rua Virgílio Braga,,"Rua Virgílio Braga, Santa Rita, Nova Iguaçu, Rio de Janeiro, Brasil",-43.4746826,-22.6873725
+ENGENHARIA DE CONTROLE E AUTOMAÇÃO,1,Centro,Queimados,26325270,Rua Doutor José Maria Coelho,,"Rua Doutor José Maria Coelho, Centro, Queimados, Rio de Janeiro, Brasil",-43.5569108,-22.7176261
+ENGENHARIA DE CONTROLE E AUTOMAÇÃO,1,Parque Santa Marta,Duque de Caxias,25085180,Rua Paes Leme,,"Rua Paes Leme, Parque Santa Marta, Duque de Caxias, Rio de Janeiro, Brasil",-43.2885257,-22.7939851
+ENGENHARIA DE CONTROLE E AUTOMAÇÃO,1,Olinda,Nilópolis,26545010,Rua José Couto Guimarães,até 958 - lado par,"Rua José Couto Guimarães, Olinda, Nilópolis, até 958 - lado par, Rio de Janeiro, Brasil",-43.4016063,-22.8133694
+ENGENHARIA DE CONTROLE E AUTOMAÇÃO,1,Parque Marilandia,Duque de Caxias,25225660,Avenida São Paulo,,"Avenida São Paulo, Parque Marilandia, Duque de Caxias, Rio de Janeiro, Brasil",-43.2655011,-22.6979058
+ENGENHARIA DE CONTROLE E AUTOMAÇÃO,1,VILA DA PENHA,Rio de Janeiro,21221240,Rua Flaminia,,"Rua Flaminia, VILA DA PENHA, Rio de Janeiro, Rio de Janeiro, Brasil",-43.3025255,-22.8458803
+ENGENHARIA DE CONTROLE E AUTOMAÇÃO,1,Vila Rosário,Duque de Caxias,25040140,Rua Mário Behring,,"Rua Mário Behring, Vila Rosário, Duque de Caxias, Rio de Janeiro, Brasil",-43.3125125,-22.7412119
+ENGENHARIA DE CONTROLE E AUTOMAÇÃO,1,Parque Paulista,Duque de Caxias,25261300,Rua Manuel Bonfim,,"Rua Manuel Bonfim, Parque Paulista, Duque de Caxias, Rio de Janeiro, Brasil",-43.2601793,-22.6374293
+ENGENHARIA DE CONTROLE E AUTOMAÇÃO,1,Ponto Chic,Nova Iguaçu,26030480,Rua Bolivar,,"Rua Bolivar, Ponto Chic, Nova Iguaçu, Rio de Janeiro, Brasil",-43.4095022,-22.6466286
+ENGENHARIA DE CONTROLE E AUTOMAÇÃO,1,Éden,São João de Meriti,25545100,Avenida Doutor Délio Guarana,,"Avenida Doutor Délio Guarana, Éden, São João de Meriti, Rio de Janeiro, Brasil",-43.3917162,-22.7874354
+ENGENHARIA DE CONTROLE E AUTOMAÇÃO,1,Kennedy,Nova Iguaçu,26020155,Rua Curtinha,,"Rua Curtinha, Kennedy, Nova Iguaçu, Rio de Janeiro, Brasil",-43.4485283,-22.7406629
+ENGENHARIA DE CONTROLE E AUTOMAÇÃO,1,Parque das Palmeiras,Nova Iguaçu,26290381,Rua Um,(Prq Palmeiras),"Rua Um, Parque das Palmeiras, Nova Iguaçu, (Prq Palmeiras), Rio de Janeiro, Brasil",-43.5287249,-22.7512279
+ENGENHARIA DE CONTROLE E AUTOMAÇÃO,2,Corumbá,Nova Iguaçu,26042390,Rua João Dalla Bernardino,,"Rua João Dalla Bernardino, Corumbá, Nova Iguaçu, Rio de Janeiro, Brasil",-43.4722072,-22.6991186
+ENGENHARIA DE CONTROLE E AUTOMAÇÃO,1,Bento Ribeiro,Rio de Janeiro,21555150,Rua Conde de Rezende,de 166/167 ao fim,"Rua Conde de Rezende, Bento Ribeiro, Rio de Janeiro, de 166/167 ao fim, Rio de Janeiro, Brasil",-43.363141,-22.8577596
+ENGENHARIA DE CONTROLE E AUTOMAÇÃO,1,Santa Luzia,Queimados,26385450,Estrada Carlos Sampaio,até 528/529,"Estrada Carlos Sampaio, Santa Luzia, Queimados, até 528/529, Rio de Janeiro, Brasil",-43.5373545,-22.7034293
+ENGENHARIA DE CONTROLE E AUTOMAÇÃO,1,Palhada,Nova Iguaçu,26271285,Rua Carlos Latufo,,"Rua Carlos Latufo, Palhada, Nova Iguaçu, Rio de Janeiro, Brasil",-43.5274765,-22.7687441
+ENGENHARIA DE CONTROLE E AUTOMAÇÃO,1,Ouro Verde,Nova Iguaçu,26263175,Rodovia RJ 081,(Via Light),"Rodovia RJ 081, Ouro Verde, Nova Iguaçu, (Via Light), Rio de Janeiro, Brasil",-43.4255175,-22.7748119
+ENGENHARIA DE CONTROLE E AUTOMAÇÃO,1,Vigário geral,Rio de Janeiro,21241240,Rua La Paz,,"Rua La Paz, Vigário geral, Rio de Janeiro, Rio de Janeiro, Brasil",-43.3047404,-22.8102638
+ENGENHARIA DE CONTROLE E AUTOMAÇÃO,1,Cidade Jardim Marajoara,Japeri,26413080,Rua Horácio Vernet,,"Rua Horácio Vernet, Cidade Jardim Marajoara, Japeri, Rio de Janeiro, Brasil",-43.6279205,-22.6998409
+ENGENHARIA DE CONTROLE E AUTOMAÇÃO,1,Japeri,Japeri,26435370,Rua Ferreira da Graça,,"Rua Ferreira da Graça, Japeri, Japeri, Rio de Janeiro, Brasil",-43.6606581,-22.6492664
+ENGENHARIA DE CONTROLE E AUTOMAÇÃO,1,Riachão,Nova Iguaçu,26279030,Rua Habilidade,,"Rua Habilidade, Riachão, Nova Iguaçu, Rio de Janeiro, Brasil",-43.5101912,-22.746094
+ENGENHARIA DE CONTROLE E AUTOMAÇÃO,1,Farrula,São João de Meriti,25550710,Rua Itaperu,,"Rua Itaperu, Farrula, São João de Meriti, Rio de Janeiro, Brasil",-43.3787593,-22.7823619
+ENGENHARIA DE CONTROLE E AUTOMAÇÃO,1,Jardim Santa Fé,Nova Iguaçu,26041110,Rua Doutor Benedito Costa,,"Rua Doutor Benedito Costa, Jardim Santa Fé, Nova Iguaçu, Rio de Janeiro, Brasil",-43.4521495,-22.7172515
+ENGENHARIA DE CONTROLE E AUTOMAÇÃO,1,Padre Miguel,Rio de Janeiro,21720330,Rua Guaiaca,,"Rua Guaiaca, Padre Miguel, Rio de Janeiro, Rio de Janeiro, Brasil",-43.4516179,-22.8655727
+ENGENHARIA DE CONTROLE E AUTOMAÇÃO,1,Comendador Soares,Nova Iguaçu,26280420,Rua Presidente Vargas,,"Rua Presidente Vargas, Comendador Soares, Nova Iguaçu, Rio de Janeiro, Brasil",-43.4917525,-22.7426797
+ENGENHARIA DE CONTROLE E AUTOMAÇÃO,1,Ponto Chic,Nova Iguaçu,26030520,Rua João Ferreira Pinto,até 720/721,"Rua João Ferreira Pinto, Ponto Chic, Nova Iguaçu, até 720/721, Rio de Janeiro, Brasil",-43.470659,-22.7273762
+ENGENHARIA DE CONTROLE E AUTOMAÇÃO,1,Jardim América,Rio de Janeiro,21240060,Rua Jorge Lacerda,,"Rua Jorge Lacerda, Jardim América, Rio de Janeiro, Rio de Janeiro, Brasil",-43.3230737,-22.8134259
+ENGENHARIA DE CONTROLE E AUTOMAÇÃO,1,Kennedy,Nova Iguaçu,26022220,Rua Zodiacal,,"Rua Zodiacal, Kennedy, Nova Iguaçu, Rio de Janeiro, Brasil",-43.4488641,-22.7291061
+ENGENHARIA DE CONTROLE E AUTOMAÇÃO,1,Carlos Sampaio,Nova Iguaçu,26089425,Estrada das Palmeiras,,"Estrada das Palmeiras, Carlos Sampaio, Nova Iguaçu, Rio de Janeiro, Brasil",-43.5145073,-22.7034222
+ENGENHARIA DE CONTROLE E AUTOMAÇÃO,1,São Miguel,Seropédica,23893775,Rua Isabel de Souza Magalhães,,"Rua Isabel de Souza Magalhães, São Miguel, Seropédica, Rio de Janeiro, Brasil",-43.4095283,-22.6818635
+ENGENHARIA DE CONTROLE E AUTOMAÇÃO,1,Vila Zulmira,SAO JOAO DE MERITI,25545050,Avenida Ipameri,,"Avenida Ipameri, Vila Zulmira, SAO JOAO DE MERITI, Rio de Janeiro, Brasil",-43.3922426,-22.7851029
+ENGENHARIA DE CONTROLE E AUTOMAÇÃO,1,Vila Santa Alice,Duque de Caxias,25250310,Estrada da Igreja Velha,,"Estrada da Igreja Velha, Vila Santa Alice, Duque de Caxias, Rio de Janeiro, Brasil",-43.314249,-22.6005052
+ENGENHARIA DE CONTROLE E AUTOMAÇÃO,1,Copacabana,Rio de Janeiro,22031071,Rua Siqueira Campos,de 1 ao fim - lado ímpar,"Rua Siqueira Campos, Copacabana, Rio de Janeiro, de 1 ao fim - lado ímpar, Rio de Janeiro, Brasil",-43.1870582,-22.9664282
+ENGENHARIA DE PRODUÇÃO,10,Engenho de Dentro,Rio de Janeiro,20730070,Rua Itapema,,"Rua Itapema, Engenho de Dentro, Rio de Janeiro, Rio de Janeiro, Brasil",-43.2946836,-22.9019304
+ENGENHARIA DE PRODUÇÃO,10,ANCHIETA,Rio de Janeiro,21655510,Rua Medgar Evers,,"Rua Medgar Evers, ANCHIETA, Rio de Janeiro, Rio de Janeiro, Brasil",-43.3822691,-22.8170963
+ENGENHARIA DE PRODUÇÃO,10,CENTRO,Nilópolis,26520760,Rua Maria Tomasia,,"Rua Maria Tomasia, CENTRO, Nilópolis, Rio de Janeiro, Brasil",-43.429867,-22.8142287
+ENGENHARIA DE PRODUÇÃO,10,TIJUCA,Rio de Janeiro,20270212,Rua Campos Sales,até 63 - lado ímpar,"Rua Campos Sales, TIJUCA, Rio de Janeiro, até 63 - lado ímpar, Rio de Janeiro, Brasil",-43.2168469,-22.9192559
+ENGENHARIA DE PRODUÇÃO,10,CACHAMBI,Rio de Janeiro,20771001,Avenida Dom Hélder Câmara,de 4597 a 5529 - lado ímpar,"Avenida Dom Hélder Câmara, CACHAMBI, Rio de Janeiro, de 4597 a 5529 - lado ímpar, Rio de Janeiro, Brasil",-43.2795475,-22.8860986
+ENGENHARIA DE PRODUÇÃO,10,PADRE MIGUEL,Rio de Janeiro,21720540,Rua General Jacques Ourique,,"Rua General Jacques Ourique, PADRE MIGUEL, Rio de Janeiro, Rio de Janeiro, Brasil",-43.4465446,-22.868561
+ENGENHARIA DE PRODUÇÃO,10,JARDIM ANÁPOLIS,Belford Roxo,26110435,Rua São Vicente,,"Rua São Vicente, JARDIM ANÁPOLIS, Belford Roxo, Rio de Janeiro, Brasil",-43.3778181,-22.758672
+ENGENHARIA DE PRODUÇÃO,10,JARDIM GUANABARA,Rio de Janeiro,21940180,Rua Itua,até 1624 - lado par,"Rua Itua, JARDIM GUANABARA, Rio de Janeiro, até 1624 - lado par, Rio de Janeiro, Brasil",-43.202322,-22.8112591
+ENGENHARIA DE PRODUÇÃO,10,Da Luz,Nova Iguaçu,26263150,Rua Gérson Chernicharo,,"Rua Gérson Chernicharo, Da Luz, Nova Iguaçu, Rio de Janeiro, Brasil",-43.4746245,-22.7532696
+ENGENHARIA DE PRODUÇÃO,10,CENTRO,Belford Roxo,26112055,Avenida Joaquim da Costa Lima,,"Avenida Joaquim da Costa Lima, CENTRO, Belford Roxo, Rio de Janeiro, Brasil",-43.3650618,-22.7326484
+ENGENHARIA DE PRODUÇÃO,10,ENGENHEIRO BELFORT,São João de Meriti,25520330,Rua Albertina,,"Rua Albertina, ENGENHEIRO BELFORT, São João de Meriti, Rio de Janeiro, Brasil",-43.3698444,-22.8089839
+ENGENHARIA DE PRODUÇÃO,10,Nossa Senhora das Graças,Nova Iguaçu,26263150,Rua Gérson Chernicharo,,"Rua Gérson Chernicharo, Nossa Senhora das Graças, Nova Iguaçu, Rio de Janeiro, Brasil",-43.4746245,-22.7532696
+ENGENHARIA DE PRODUÇÃO,10,Jardim Metrópole,São João de Meriti,25575570,Rua Carmelita Vilard de Andrade,,"Rua Carmelita Vilard de Andrade, Jardim Metrópole, São João de Meriti, Rio de Janeiro, Brasil",-43.3381653,-22.7764699
+ENGENHARIA DE PRODUÇÃO,6,CORDOVIL,Rio de Janeiro,21010300,Rua Serra do Navio,,"Rua Serra do Navio, CORDOVIL, Rio de Janeiro, Rio de Janeiro, Brasil",-43.2927393,-22.8179002
+ENGENHARIA DE PRODUÇÃO,10,VILA SÃO LUIZ,Duque de Caxias,23065190,Rua Antônio Ferreira,(Cj Manguariba),"Rua Antônio Ferreira, VILA SÃO LUIZ, Duque de Caxias, (Cj Manguariba), Rio de Janeiro, Brasil",-43.2968632,-22.7767789
+ENGENHARIA DE PRODUÇÃO,10,JARDIM ESPLANADA,Nova Iguaçu,26013470,Estrada da Fazenda,,"Estrada da Fazenda, JARDIM ESPLANADA, Nova Iguaçu, Rio de Janeiro, Brasil",-43.4465238,-22.7422704
+ENGENHARIA DE PRODUÇÃO,10,OLAVO BILAC,Duque de Caxias,25035170,Rua Aristides Caire,,"Rua Aristides Caire, OLAVO BILAC, Duque de Caxias, Rio de Janeiro, Brasil",-43.3224401,-22.7688831
+ENGENHARIA DE PRODUÇÃO,10,MOQUETA,Nova Iguaçu,23285090,,,"MOQUETA, Nova Iguaçu, Rio de Janeiro, Brasil",-43.4584606,-22.7461173
+ENGENHARIA DE PRODUÇÃO,9,COELHO DA ROCHA,Rio de Janeiro,25550560,Rua Prata,,"Rua Prata, COELHO DA ROCHA, Rio de Janeiro, Rio de Janeiro, Brasil",-43.3824001,-22.7750819
+ENGENHARIA DE PRODUÇÃO,10,MEIER,Rio de Janeiro,20752010,,,"MEIER, Rio de Janeiro, Rio de Janeiro, Brasil",-43.2803793,-22.9020826
+ENGENHARIA DE PRODUÇÃO,10,HELIÓPOLIS,Belford Roxo,26125550,Rua da Mina,,"Rua da Mina, HELIÓPOLIS, Belford Roxo, Rio de Janeiro, Brasil",-43.4107685,-22.7290277
+ENGENHARIA DE PRODUÇÃO,10,CENTRO,Nova Iguaçu,26250070,Rua Comendador Francisco Baroni,,"Rua Comendador Francisco Baroni, CENTRO, Nova Iguaçu, Rio de Janeiro, Brasil",-43.442602,-22.7656132
+ENGENHARIA DE PRODUÇÃO,9,Rocha sobrinho,Mesquita,26572290,Rua Inar Figueiredo,,"Rua Inar Figueiredo, Rocha sobrinho, Mesquita, Rio de Janeiro, Brasil",-43.4055224,-22.7819365
+ENGENHARIA DE PRODUÇÃO,10,CERÂMICA,Nova Iguaçu,26030005,Rua A,(Ac Est da Gama),"Rua A, CERÂMICA, Nova Iguaçu, (Ac Est da Gama), Rio de Janeiro, Brasil",-43.4659825,-22.7340831
+ENGENHARIA DE PRODUÇÃO,10,Penha,Rio de Janeiro,21021060,Rua Santa Camila Pia,,"Rua Santa Camila Pia, Penha, Rio de Janeiro, Rio de Janeiro, Brasil",-43.2675554,-22.837137
+ENGENHARIA DE PRODUÇÃO,9,CENTRO,Nova Iguaçu,26215160,Rua Otávio Ascoli,,"Rua Otávio Ascoli, CENTRO, Nova Iguaçu, Rio de Janeiro, Brasil",-43.4496057,-22.7517898
+ENGENHARIA DE PRODUÇÃO,10,IRAJÁ,Rio de Janeiro,21231032,,,"IRAJÁ, Rio de Janeiro, Rio de Janeiro, Brasil",-43.3231669,-22.844329
+ENGENHARIA DE PRODUÇÃO,10,VILA DE CAVA,Rio de Janeiro,26052300,Rua Álvaro Gonçalves,,"Rua Álvaro Gonçalves, VILA DE CAVA, Rio de Janeiro, Rio de Janeiro, Brasil",-43.4415259,-22.6829353
+ENGENHARIA DE PRODUÇÃO,4,Pavuna,Rio de Janeiro,21655340,Rua Iguaba Grande,,"Rua Iguaba Grande, Pavuna, Rio de Janeiro, Rio de Janeiro, Brasil",-43.3751749,-22.8166373
+ENGENHARIA DE PRODUÇÃO,10,POSSE,Nova Iguaçu,26020115,Rua Professora Katia Batista do Carmo,,"Rua Professora Katia Batista do Carmo, POSSE, Nova Iguaçu, Rio de Janeiro, Brasil",-43.4594823,-22.7381141
+ENGENHARIA DE PRODUÇÃO,10,PALMITAL - VILA,Três Rios,25811030,Travessa Remo Righi,,"Travessa Remo Righi, PALMITAL - VILA, Três Rios, Rio de Janeiro, Brasil",-43.1875462,-22.1057565
+ENGENHARIA DE PRODUÇÃO,9,Vila Rosali,São João de Meriti,25510142,Avenida Fluminense,até 1089 - lado ímpar,"Avenida Fluminense, Vila Rosali, São João de Meriti, até 1089 - lado ímpar, Rio de Janeiro, Brasil",-43.3766831,-22.7899204
+ENGENHARIA DE PRODUÇÃO,5,Penha Circular,Rio de Janeiro,21211360,Rua do Coqueiro,,"Rua do Coqueiro, Penha Circular, Rio de Janeiro, Rio de Janeiro, Brasil",-43.2965143,-22.8470694
+ENGENHARIA DE PRODUÇÃO,10,Primavera,Queimados,26380465,Rua Henrique Castrioto,,"Rua Henrique Castrioto, Primavera, Queimados, Rio de Janeiro, Brasil",-43.5497608,-22.7011576
+ENGENHARIA DE PRODUÇÃO,10,Jardim Sulacap,Rio de Janeiro,21741160,Rua Pacífico Pereira,,"Rua Pacífico Pereira, Jardim Sulacap, Rio de Janeiro, Rio de Janeiro, Brasil",-43.390304,-22.8880889
+ENGENHARIA DE PRODUÇÃO,10,Coelho Neto,Rio de Janeiro,21510420,Rua Guaiauna,,"Rua Guaiauna, Coelho Neto, Rio de Janeiro, Rio de Janeiro, Brasil",-43.3482265,-22.830999
+ENGENHARIA DE PRODUÇÃO,8,Ambaí,Nova Iguaçu,26041450,Rua César Sá Carvalho,,"Rua César Sá Carvalho, Ambaí, Nova Iguaçu, Rio de Janeiro, Brasil",-43.4540593,-22.7067362
+ENGENHARIA DE PRODUÇÃO,10,Barra da Tijuca,Rio de Janeiro,22775036,Avenida Cláudio Besserman Vianna,(Vl Pan),"Avenida Cláudio Besserman Vianna, Barra da Tijuca, Rio de Janeiro, (Vl Pan), Rio de Janeiro, Brasil",-43.3580369,-22.9730351
+ENGENHARIA DE PRODUÇÃO,7,Realengo,Rio de Janeiro,21755030,Rua da Gazela,,"Rua da Gazela, Realengo, Rio de Janeiro, Rio de Janeiro, Brasil",-43.427444,-22.8847446
+ENGENHARIA DE PRODUÇÃO,10,Heliópolis,Belford Roxo,26120260,Rua Pedro Eliphas,,"Rua Pedro Eliphas, Heliópolis, Belford Roxo, Rio de Janeiro, Brasil",-43.4077775,-22.7402276
+ENGENHARIA DE PRODUÇÃO,9,Engenho do Porto,Duque de Caxias,25015210,Rua General Solon Ribeiro,,"Rua General Solon Ribeiro, Engenho do Porto, Duque de Caxias, Rio de Janeiro, Brasil",-43.3212185,-22.7911842
+ENGENHARIA DE PRODUÇÃO,10,Centro,Nilópolis,26510182,Estrada Doutor Manuel Reis,até 788 - lado par,"Estrada Doutor Manuel Reis, Centro, Nilópolis, até 788 - lado par, Rio de Janeiro, Brasil",-43.412735,-22.8132838
+ENGENHARIA DE PRODUÇÃO,9,Luz,Nova Iguaçu,26255550,Rua Humberto de Campos,,"Rua Humberto de Campos, Luz, Nova Iguaçu, Rio de Janeiro, Brasil",-43.4666201,-22.7576863
+ENGENHARIA DE PRODUÇÃO,9,Centro,Nova Iguaçu,26215072,Rua Doutor Barros Júnior,de 273 a 1599 - lado ímpar,"Rua Doutor Barros Júnior, Centro, Nova Iguaçu, de 273 a 1599 - lado ímpar, Rio de Janeiro, Brasil",-43.4485845,-22.7525864
+ENGENHARIA DE PRODUÇÃO,4,Japeri,Japeri,26443050,Estrada Miguel Pereira,até 15000/15001,"Estrada Miguel Pereira, Japeri, Japeri, até 15000/15001, Rio de Janeiro, Brasil",-43.524699,-22.4948833
+ENGENHARIA DE PRODUÇÃO,10,MONTE LIBANO,Nova Iguaçu,26010790,Rua Maria Helena,,"Rua Maria Helena, MONTE LIBANO, Nova Iguaçu, Rio de Janeiro, Brasil",-43.4282825,-22.757199
+ENGENHARIA DE PRODUÇÃO,10,Alto da Posse,Nova Iguaçu,26030200,Estrada da Gama,até 1460/1461,"Estrada da Gama, Alto da Posse, Nova Iguaçu, até 1460/1461, Rio de Janeiro, Brasil",-43.4664698,-22.7336938
+ENGENHARIA DE PRODUÇÃO,10,Kennedy,Nova Iguaçu,26020330,Estrada Gonçalves Dias,,"Estrada Gonçalves Dias, Kennedy, Nova Iguaçu, Rio de Janeiro, Brasil",-43.4524,-22.7364419
+ENGENHARIA DE PRODUÇÃO,10,Vila de Cava,Nova Iguaçu,26052060,Rua Bernardino de Melo,,"Rua Bernardino de Melo, Vila de Cava, Nova Iguaçu, Rio de Janeiro, Brasil",-43.442019,-22.685976
+ENGENHARIA DE PRODUÇÃO,1,Jardim Meriti,São João de Meriti,25555181,Rua Mariana Mageli Medeiros,,"Rua Mariana Mageli Medeiros, Jardim Meriti, São João de Meriti, Rio de Janeiro, Brasil",-43.3716841,-22.788432
+ENGENHARIA DE PRODUÇÃO,8,Jardim Alzira,Queimados,26311140,Estrada do Lazareto,,"Estrada do Lazareto, Jardim Alzira, Queimados, Rio de Janeiro, Brasil",-43.5684132,-22.7179682
+ENGENHARIA DE PRODUÇÃO,10,Bom Pastor,Belford Roxo,26110460,Rua Itamarandiba,,"Rua Itamarandiba, Bom Pastor, Belford Roxo, Rio de Janeiro, Brasil",-43.3745163,-22.7492384
+ENGENHARIA DE PRODUÇÃO,6,Luz,Nova Iguaçu,26260400,Rua Marcone,,"Rua Marcone, Luz, Nova Iguaçu, Rio de Janeiro, Brasil",-43.4694516,-22.7539713
+ENGENHARIA DE PRODUÇÃO,9,Portuguesa,Rio de Janeiro,21920430,Rua Fernando de Azevedo,,"Rua Fernando de Azevedo, Portuguesa, Rio de Janeiro, Rio de Janeiro, Brasil",-43.2032194,-22.8009917
+ENGENHARIA DE PRODUÇÃO,10,Parque Mucaja,Japeri,26415050,Rua Umbuzeiro,,"Rua Umbuzeiro, Parque Mucaja, Japeri, Rio de Janeiro, Brasil",-43.6195336,-22.6844656
+ENGENHARIA DE PRODUÇÃO,2,Comendador Soares,Nova Iguaçu,26280440,Rua Wilson Gomes de Oliveira,de 789/790 ao fim,"Rua Wilson Gomes de Oliveira, Comendador Soares, Nova Iguaçu, de 789/790 ao fim, Rio de Janeiro, Brasil",-43.4756258,-22.7482788
+ENGENHARIA DE PRODUÇÃO,8,Engenho do Porto,Duque de Caxias,25015290,Rua Pedro Ernesto,,"Rua Pedro Ernesto, Engenho do Porto, Duque de Caxias, Rio de Janeiro, Brasil",-43.3209263,-22.7927036
+ENGENHARIA DE PRODUÇÃO,6,Piedade,Rio de Janeiro,20740340,Rua Doutor Luís Masson,,"Rua Doutor Luís Masson, Piedade, Rio de Janeiro, Rio de Janeiro, Brasil",-43.309386,-22.8946857
+ENGENHARIA DE PRODUÇÃO,9,Nossa Senhora de Fátima,Nilópolis,26520541,Rua Roldão Gonçalves,de 1493 ao fim - lado ímpar,"Rua Roldão Gonçalves, Nossa Senhora de Fátima, Nilópolis, de 1493 ao fim - lado ímpar, Rio de Janeiro, Brasil",-43.4286799,-22.810629
+ENGENHARIA DE PRODUÇÃO,10,CABRAL,Nilópolis,26515021,Rua Coronel França Leite,até 1642 - lado par,"Rua Coronel França Leite, CABRAL, Nilópolis, até 1642 - lado par, Rio de Janeiro, Brasil",-43.4260943,-22.8177356
+ENGENHARIA DE PRODUÇÃO,10,Recantus,Belford Roxo,26157336,Rua Maria Luísa,,"Rua Maria Luísa, Recantus, Belford Roxo, Rio de Janeiro, Brasil",-43.4094464,-22.7025155
+ENGENHARIA DE PRODUÇÃO,2,Tinguá,Nova Iguaçu,26063355,Estrada Zumbi dos Palmares,de 6801/6802 ao fim,"Estrada Zumbi dos Palmares, Tinguá, Nova Iguaçu, de 6801/6802 ao fim, Rio de Janeiro, Brasil",-43.4147842,-22.5991055
+ENGENHARIA DE PRODUÇÃO,3,Pavuna,Rio de Janeiro,21520070,Rua Sargento Edison de Oliveira,,"Rua Sargento Edison de Oliveira, Pavuna, Rio de Janeiro, Rio de Janeiro, Brasil",-43.3636384,-22.8108534
+ENGENHARIA DE PRODUÇÃO,7,Jardim Iguaçu,Nova Iguaçu,26282110,Rua Moni,,"Rua Moni, Jardim Iguaçu, Nova Iguaçu, Rio de Janeiro, Brasil",-43.4661169,-22.7426045
+ENGENHARIA DE PRODUÇÃO,10,POSSE,Nova Iguaçu,26020090,Rua São José de Calazans,,"Rua São José de Calazans, POSSE, Nova Iguaçu, Rio de Janeiro, Brasil",-43.4525851,-22.7341057
+ENGENHARIA DE PRODUÇÃO,10,ESPLANADA,Rio de Janeiro,2601330,,,"ESPLANADA, Rio de Janeiro, Rio de Janeiro, Brasil",-43.4306318,-22.7829449
+ENGENHARIA DE PRODUÇÃO,10,Campo Grande,Rio de Janeiro,23045480,Rua Ângelo Gils,,"Rua Ângelo Gils, Campo Grande, Rio de Janeiro, Rio de Janeiro, Brasil",-43.5655441,-22.9123019
+ENGENHARIA DE PRODUÇÃO,8,Jardim Vinte e Cinco de Agosto,Duque de Caxias,25070420,Rua Ana Neri,,"Rua Ana Neri, Jardim Vinte e Cinco de Agosto, Duque de Caxias, Rio de Janeiro, Brasil",-43.3062277,-22.7873153
+ENGENHARIA DE PRODUÇÃO,8,SANTA EUGÊNIA,Nova Iguaçu,26285670,Rua Raimundo Marques Belford,,"Rua Raimundo Marques Belford, SANTA EUGÊNIA, Nova Iguaçu, Rio de Janeiro, Brasil",-43.4619871,-22.7527316
+ENGENHARIA DE PRODUÇÃO,7,Senador Camará,Rio de Janeiro,21818,,,"Senador Camará, Rio de Janeiro, Rio de Janeiro, Brasil",-43.4949441,-22.8727268
+ENGENHARIA DE PRODUÇÃO,10,PARQUE FLORA,Nova Iguaçu,26041051,Avenida Henrique Duque Estrada Meyer,de 2253/2254 a 2970/2971,"Avenida Henrique Duque Estrada Meyer, PARQUE FLORA, Nova Iguaçu, de 2253/2254 a 2970/2971, Rio de Janeiro, Brasil",-43.4524093,-22.7158399
+ENGENHARIA DE PRODUÇÃO,7,FLAMENGO,Rio de Janeiro,22230001,Rua Senador Vergueiro,lado par,"Rua Senador Vergueiro, FLAMENGO, Rio de Janeiro, lado par, Rio de Janeiro, Brasil",-43.1759213,-22.9372578
+ENGENHARIA DE PRODUÇÃO,1,Barra da Tijuca,Rio de Janeiro,22793520,Rua Ataulpho Coutinho,,"Rua Ataulpho Coutinho, Barra da Tijuca, Rio de Janeiro, Rio de Janeiro, Brasil",-43.3764434,-23.0022305
+ENGENHARIA DE PRODUÇÃO,9,VILA MARIA HELENA,Duque de Caxias,25251285,Rua Própria,,"Rua Própria, VILA MARIA HELENA, Duque de Caxias, Rio de Janeiro, Brasil",-43.2793393,-22.6629489
+ENGENHARIA DE PRODUÇÃO,5,Vila Paula,Duque de Caxias,25020270,Rua Nilo Vieira,,"Rua Nilo Vieira, Vila Paula, Duque de Caxias, Rio de Janeiro, Brasil",-43.3157854,-22.7854437
+ENGENHARIA DE PRODUÇÃO,9,Olinda,Nilópolis,26510111,Estrada Senador Salgado Filho,até 1212 - lado par,"Estrada Senador Salgado Filho, Olinda, Nilópolis, até 1212 - lado par, Rio de Janeiro, Brasil",-43.4162772,-22.8189806
+ENGENHARIA DE PRODUÇÃO,6,Vila Nova,Nova Iguaçu,26225390,Rua Olegário Maciel,,"Rua Olegário Maciel, Vila Nova, Nova Iguaçu, Rio de Janeiro, Brasil",-43.4343242,-22.7636747
+ENGENHARIA DE PRODUÇÃO,3,Prata,Nova Iguaçu,26010390,Rua Dona Clara de Araújo,,"Rua Dona Clara de Araújo, Prata, Nova Iguaçu, Rio de Janeiro, Brasil",-43.4228329,-22.7553004
+ENGENHARIA DE PRODUÇÃO,9,Comendador Soares,Nova Iguaçu,26281150,Rua Célia,,"Rua Célia, Comendador Soares, Nova Iguaçu, Rio de Janeiro, Brasil",-43.4780898,-22.7408194
+ENGENHARIA DE PRODUÇÃO,6,Guaratiba,Rio de Janeiro,23033270,Rua Itumirim,,"Rua Itumirim, Guaratiba, Rio de Janeiro, Rio de Janeiro, Brasil",-43.6008348,-22.9511181
+ENGENHARIA DE PRODUÇÃO,10,SANTA RITA,Nova Iguaçu,26051025,Rua João Boato Jorge Filho,,"Rua João Boato Jorge Filho, SANTA RITA, Nova Iguaçu, Rio de Janeiro, Brasil",-43.4586621,-22.6922632
+ENGENHARIA DE PRODUÇÃO,1,Autódromo,Nova Iguaçu,26042320,Rua Zumbi dos Palmares,,"Rua Zumbi dos Palmares, Autódromo, Nova Iguaçu, Rio de Janeiro, Brasil",-43.4720227,-22.7082478
+ENGENHARIA DE PRODUÇÃO,4,Corumbá,Nova Iguaçu,26042420,Rua Gimenes,,"Rua Gimenes, Corumbá, Nova Iguaçu, Rio de Janeiro, Brasil",-43.4733007,-22.6975004
+ENGENHARIA DE PRODUÇÃO,7,Carlos Guinle,Teresópolis,25959205,Rua Joaquim Nabuco,,"Rua Joaquim Nabuco, Carlos Guinle, Teresópolis, Rio de Janeiro, Brasil",-42.985225,-22.4577392
+ENGENHARIA DE PRODUÇÃO,2,Parque Ulisses,Nova Iguaçu,26010760,Rua Dona Adélia,até 299/300,"Rua Dona Adélia, Parque Ulisses, Nova Iguaçu, até 299/300, Rio de Janeiro, Brasil",-43.427228,-22.7558372
+ENGENHARIA DE PRODUÇÃO,10,Rocha Miranda,Rio de Janeiro,21550020,Rua Concepcion,,"Rua Concepcion, Rocha Miranda, Rio de Janeiro, Rio de Janeiro, Brasil",-43.351736,-22.8570887
+ENGENHARIA DE PRODUÇÃO,1,Kennedy,Nova Iguaçu,26020560,Rua Itapicuru,,"Rua Itapicuru, Kennedy, Nova Iguaçu, Rio de Janeiro, Brasil",-43.4457981,-22.7385245
+ENGENHARIA DE PRODUÇÃO,6,Jardim Parque Estoril,Nova Iguaçu,26062570,Avenida Getúlio,,"Avenida Getúlio, Jardim Parque Estoril, Nova Iguaçu, Rio de Janeiro, Brasil",-43.4051126,-22.6396913
+ENGENHARIA DE PRODUÇÃO,5,Jardim Carioca,Rio de Janeiro,21920230,Rua Eneida de Morais,,"Rua Eneida de Morais, Jardim Carioca, Rio de Janeiro, Rio de Janeiro, Brasil",-43.1992314,-22.8029338
+ENGENHARIA DE PRODUÇÃO,6,Heliopolis,Belford Roxo,26140330,Rua Tupinambás,,"Rua Tupinambás, Heliopolis, Belford Roxo, Rio de Janeiro, Brasil",-43.4202886,-22.7385937
+ENGENHARIA DE PRODUÇÃO,8,Sulacap,Rio de Janeiro,21741050,Rua Bárbara Heliodora,de 1102/1103 ao fim,"Rua Bárbara Heliodora, Sulacap, Rio de Janeiro, de 1102/1103 ao fim, Rio de Janeiro, Brasil",-43.3927583,-22.8885124
+ENGENHARIA DE PRODUÇÃO,5,Juscelino,Mesquita,26557610,Rua Rio Grande do Sul,até 378/379 (trecho posterior pert,"Rua Rio Grande do Sul, Juscelino, Mesquita, até 378/379 (trecho posterior pert, Rio de Janeiro, Brasil",-43.4353482,-22.7702041
+ENGENHARIA DE PRODUÇÃO,9,Andaraí,Rio de Janeiro,20541280,Rua Ferreira Pontes,até 596/597,"Rua Ferreira Pontes, Andaraí, Rio de Janeiro, até 596/597, Rio de Janeiro, Brasil",-43.2545032,-22.9264697
+ENGENHARIA DE PRODUÇÃO,10,ENGENHO DA RAINHA,Rio de Janeiro,20766721,Estrada Adhemar Bebiano,de 3678 ao fim - lado par,"Estrada Adhemar Bebiano, ENGENHO DA RAINHA, Rio de Janeiro, de 3678 ao fim - lado par, Rio de Janeiro, Brasil",-43.2953793,-22.8654534
+ENGENHARIA DE PRODUÇÃO,5,Santa Rita,Nova Iguaçu,26041700,Estrada Nova Iguaçu José Bulhões,,"Estrada Nova Iguaçu José Bulhões, Santa Rita, Nova Iguaçu, Rio de Janeiro, Brasil",-43.4602362,-22.703038
+ENGENHARIA DE PRODUÇÃO,6,Pavuna,Rio de Janeiro,21535200,Rua Brigadeiro Samuel Pereira,,"Rua Brigadeiro Samuel Pereira, Pavuna, Rio de Janeiro, Rio de Janeiro, Brasil",-43.3368945,-22.8159818
+ENGENHARIA DE PRODUÇÃO,6,PANTANAL,Duque de Caxias,25040290,Rua Paijussara,,"Rua Paijussara, PANTANAL, Duque de Caxias, Rio de Janeiro, Brasil",-43.3173933,-22.7472326
+ENGENHARIA DE PRODUÇÃO,2,Centenario,Duque de Caxias,25025530,Rua José Freire Lima,,"Rua José Freire Lima, Centenario, Duque de Caxias, Rio de Janeiro, Brasil",-43.3174313,-22.7795358
+ENGENHARIA DE PRODUÇÃO,6,Comendador Soares,Nova Iguaçu,26280020,Rua Adriano,,"Rua Adriano, Comendador Soares, Nova Iguaçu, Rio de Janeiro, Brasil",-43.487231,-22.7422766
+ENGENHARIA DE PRODUÇÃO,6,CAMPO ALEGRE,Nova Iguaçu,26292312,Rua Governador Valadares,,"Rua Governador Valadares, CAMPO ALEGRE, Nova Iguaçu, Rio de Janeiro, Brasil",-43.5545562,-22.7611817
+ENGENHARIA DE PRODUÇÃO,3,Vilar dos Teles,São João de Meriti,21275143,,,"Vilar dos Teles, São João de Meriti, Rio de Janeiro, Brasil",-43.3632538,-22.772296
+ENGENHARIA DE PRODUÇÃO,5,Aero Clube,Nova Iguaçu,26285480,Praça Rui Barbosa,,"Praça Rui Barbosa, Aero Clube, Nova Iguaçu, Rio de Janeiro, Brasil",-43.4473029,-22.7603868
+ENGENHARIA DE PRODUÇÃO,2,Ramos,Rio de Janeiro,21060620,Rua Nage,,"Rua Nage, Ramos, Rio de Janeiro, Rio de Janeiro, Brasil",-43.2619112,-22.8613265
+ENGENHARIA DE PRODUÇÃO,5,Cacuia,Nova Iguaçu,26082370,Rua Miguel Furtado,,"Rua Miguel Furtado, Cacuia, Nova Iguaçu, Rio de Janeiro, Brasil",-43.5160197,-22.7232553
+ENGENHARIA DE PRODUÇÃO,3,Tomazinho,São João de Meriti,25525520,Rua Doutor Luís Sobral,de 60/61 ao fim,"Rua Doutor Luís Sobral, Tomazinho, São João de Meriti, de 60/61 ao fim, Rio de Janeiro, Brasil",-43.3917845,-22.8026126
+ENGENHARIA DE PRODUÇÃO,2,Olinda,Nilópolis,26510193,Rua Joaquim Máximo Soares,até 1037 - lado ímpar,"Rua Joaquim Máximo Soares, Olinda, Nilópolis, até 1037 - lado ímpar, Rio de Janeiro, Brasil",-43.4186037,-22.817856
+ENGENHARIA DE PRODUÇÃO,7,Vila de Cava,Nova Iguaçu,26052450,Rua Vítor Hugo,,"Rua Vítor Hugo, Vila de Cava, Nova Iguaçu, Rio de Janeiro, Brasil",-43.4428565,-22.6804758
+ENGENHARIA DE PRODUÇÃO,5,Magalhães Bastos,Rio de Janeiro,21735100,Rua Major Parentes,,"Rua Major Parentes, Magalhães Bastos, Rio de Janeiro, Rio de Janeiro, Brasil",-43.4194178,-22.8667325
+ENGENHARIA DE PRODUÇÃO,6,Heliópolis,Belford Roxo,26120210,Rua Londres,,"Rua Londres, Heliópolis, Belford Roxo, Rio de Janeiro, Brasil",-43.4106286,-22.7440685
+ENGENHARIA DE PRODUÇÃO,7,Jardim Palmares,Nova Iguaçu,26277715,Rua Pessegueiros,,"Rua Pessegueiros, Jardim Palmares, Nova Iguaçu, Rio de Janeiro, Brasil",-43.5131349,-22.7605641
+ENGENHARIA DE PRODUÇÃO,1,Centro,Belford Roxo,26130610,Rua Félix da Costa,,"Rua Félix da Costa, Centro, Belford Roxo, Rio de Janeiro, Brasil",-43.4076251,-22.7565531
+ENGENHARIA DE PRODUÇÃO,2,Engenho Novo,Rio de Janeiro,20715260,Rua Porto Alegre,,"Rua Porto Alegre, Engenho Novo, Rio de Janeiro, Rio de Janeiro, Brasil",-43.2700896,-22.9123078
+ENGENHARIA DE PRODUÇÃO,5,Parque Barreto,São João de Meriti,25565470,Rua Eugênio de Menezes,,"Rua Eugênio de Menezes, Parque Barreto, São João de Meriti, Rio de Janeiro, Brasil",-43.3553481,-22.7899953
+ENGENHARIA DE PRODUÇÃO,6,Grajau,Nova Iguaçu,26030730,Rua Engenheiro Paulo Pires,,"Rua Engenheiro Paulo Pires, Grajau, Nova Iguaçu, Rio de Janeiro, Brasil",-43.471537,-22.7367877
+ENGENHARIA DE PRODUÇÃO,1,Santa Rita,Nova Iguaçu,26050530,Rua Virgínia Lemos de Azevedo,,"Rua Virgínia Lemos de Azevedo, Santa Rita, Nova Iguaçu, Rio de Janeiro, Brasil",-43.4708378,-22.6878476
+ENGENHARIA DE PRODUÇÃO,6,Braz de Pina,Rio de Janeiro,21211740,Rua Cabo Herculano,,"Rua Cabo Herculano, Braz de Pina, Rio de Janeiro, Rio de Janeiro, Brasil",-43.3082897,-22.8339908
+ENGENHARIA DE PRODUÇÃO,6,Chacrinha,Nova Iguaçu,26285550,Rua Professor Gilberto Alves dos Santos,,"Rua Professor Gilberto Alves dos Santos, Chacrinha, Nova Iguaçu, Rio de Janeiro, Brasil",-43.4573956,-22.7529829
+ENGENHARIA DE PRODUÇÃO,2,Jardim Monte Castelo,Nova Iguaçu,26041630,Rua Eliana Cotrim,,"Rua Eliana Cotrim, Jardim Monte Castelo, Nova Iguaçu, Rio de Janeiro, Brasil",-43.4620225,-22.7006897
+ENGENHARIA DE PRODUÇÃO,4,Miguel Couto,Nova Iguaçu,26070224,Rua Vera Maria Guida,,"Rua Vera Maria Guida, Miguel Couto, Nova Iguaçu, Rio de Janeiro, Brasil",-43.4271463,-22.7103419
+ENGENHARIA DE PRODUÇÃO,5,Kennedy,Nova Iguaçu,26020620,Rua Sebastião Caldeira,,"Rua Sebastião Caldeira, Kennedy, Nova Iguaçu, Rio de Janeiro, Brasil",-43.4424964,-22.7375336
+ENGENHARIA DE PRODUÇÃO,5,Itatiquara,Araruama,28985690,Avenida Natal,,"Avenida Natal, Itatiquara, Araruama, Rio de Janeiro, Brasil",-42.3602955,-22.836505
+ENGENHARIA DE PRODUÇÃO,5,Engenho Pequeno,Nova Iguaçu,26015140,Rua Jean Casemiro,,"Rua Jean Casemiro, Engenho Pequeno, Nova Iguaçu, Rio de Janeiro, Brasil",-43.4321154,-22.740539
+ENGENHARIA DE PRODUÇÃO,3,Santa Isabel,São Gonçalo,24738795,Estrada de Itaitindiba,,"Estrada de Itaitindiba, Santa Isabel, São Gonçalo, Rio de Janeiro, Brasil",-42.931135,-22.8589431
+ENGENHARIA DE PRODUÇÃO,2,Praça da Bandeira,Rio de Janeiro,20270120,Travessa Soledade,,"Travessa Soledade, Praça da Bandeira, Rio de Janeiro, Rio de Janeiro, Brasil",-43.2155,-22.914174
+ENGENHARIA DE PRODUÇÃO,2,Cacuia,Nova Iguaçu,26082010,Travessa Tinguá,,"Travessa Tinguá, Cacuia, Nova Iguaçu, Rio de Janeiro, Brasil",-43.4987393,-22.7352288
+ENGENHARIA DE PRODUÇÃO,4,Nova Piam,Belford Roxo,26165050,Rua Ernesto Pinheiro Barcelos,,"Rua Ernesto Pinheiro Barcelos, Nova Piam, Belford Roxo, Rio de Janeiro, Brasil",-43.3870946,-22.7358269
+ENGENHARIA DE PRODUÇÃO,5,Alvarez,Nova Iguaçu,26255560,Rua José Alvarez,,"Rua José Alvarez, Alvarez, Nova Iguaçu, Rio de Janeiro, Brasil",-43.4607996,-22.759954
+ENGENHARIA DE PRODUÇÃO,6,Pe Pequeno,Niterói,24240110,Rua Maricá,,"Rua Maricá, Pe Pequeno, Niterói, Rio de Janeiro, Brasil",-43.1035383,-22.8953745
+ENGENHARIA DE PRODUÇÃO,2,Comendador Soares,Nova Iguaçu,26276600,Rua Lafaiete Pimenta,,"Rua Lafaiete Pimenta, Comendador Soares, Nova Iguaçu, Rio de Janeiro, Brasil",-43.4916607,-22.7431949
+ENGENHARIA DE PRODUÇÃO,2,Parque Saudade,Nova Iguaçu,26052520,Rua Cândida,,"Rua Cândida, Parque Saudade, Nova Iguaçu, Rio de Janeiro, Brasil",-43.5160331,-22.7646427
+ENGENHARIA DE PRODUÇÃO,5,Vilar dos Teles,São João de Meriti,25561062,Rua Dom Pedro II,,"Rua Dom Pedro II, Vilar dos Teles, São João de Meriti, Rio de Janeiro, Brasil",-43.369758,-22.7749208
+ENGENHARIA DE PRODUÇÃO,2,CASCADURA,Rio de Janeiro,21380020,Rua Iguape,,"Rua Iguape, CASCADURA, Rio de Janeiro, Rio de Janeiro, Brasil",-43.326421,-22.8825809
+ENGENHARIA DE PRODUÇÃO,5,Olinda,Nilópolis,26510120,Rua Lúcio Ribeiro dos Santos,,"Rua Lúcio Ribeiro dos Santos, Olinda, Nilópolis, Rio de Janeiro, Brasil",-43.4119236,-22.8183947
+ENGENHARIA DE PRODUÇÃO,10,PARQUE HORIZONTE,Nova Iguaçu,26285090,Rua José Alves Pereira,,"Rua José Alves Pereira, PARQUE HORIZONTE, Nova Iguaçu, Rio de Janeiro, Brasil",-43.4551831,-22.7504644
+ENGENHARIA DE PRODUÇÃO,10,Guadalupe,Rio de Janeiro,21670340,Rua Ildefonso Albano,,"Rua Ildefonso Albano, Guadalupe, Rio de Janeiro, Rio de Janeiro, Brasil",-43.3746026,-22.8488628
+ENGENHARIA DE PRODUÇÃO,10,CENTRO,Nova Iguaçu,26210171,Rua Otávio Tarquino,até 295 - lado ímpar,"Rua Otávio Tarquino, CENTRO, Nova Iguaçu, até 295 - lado ímpar, Rio de Janeiro, Brasil",-43.4506103,-22.7588
+ENGENHARIA DE PRODUÇÃO,2,Grande Rio,São João de Meriti,25540010,Rua Nelson Belém,,"Rua Nelson Belém, Grande Rio, São João de Meriti, Rio de Janeiro, Brasil",-43.4000005,-22.7816695
+ENGENHARIA DE PRODUÇÃO,2,Bento Ribeiro,Rio de Janeiro,21331130,Rua Sargento Ananias de Oliveira,,"Rua Sargento Ananias de Oliveira, Bento Ribeiro, Rio de Janeiro, Rio de Janeiro, Brasil",-43.366129,-22.8750415
+ENGENHARIA DE PRODUÇÃO,3,Juscelino,Mesquita,26550070,Avenida Getúlio de Moura,de 638 ao fim - lado par,"Avenida Getúlio de Moura, Juscelino, Mesquita, de 638 ao fim - lado par, Rio de Janeiro, Brasil",-43.4322288,-22.7744779
+ENGENHARIA DE PRODUÇÃO,2,Cruzeiro do Sul,Mesquita,26551070,Rua Egídio,até 445 - lado ímpar,"Rua Egídio, Cruzeiro do Sul, Mesquita, até 445 - lado ímpar, Rio de Janeiro, Brasil",-43.4248322,-22.7814837
+ENGENHARIA DE PRODUÇÃO,3,Parque São João,Duque de Caxias,25233280,Rua Pedro Sousa,,"Rua Pedro Sousa, Parque São João, Duque de Caxias, Rio de Janeiro, Brasil",-43.301275,-22.7086316
+ENGENHARIA DE PRODUÇÃO,1,Andrade Araujo,Belford Roxo,26135464,Rua Mauro Gomes,,"Rua Mauro Gomes, Andrade Araujo, Belford Roxo, Rio de Janeiro, Brasil",-43.4201063,-22.7442305
+ENGENHARIA DE PRODUÇÃO,3,Parque Ambaí,Nova Iguaçu,26070751,Rua Belo Horizonte,,"Rua Belo Horizonte, Parque Ambaí, Nova Iguaçu, Rio de Janeiro, Brasil",-43.439517,-22.7058794
+ENGENHARIA DE PRODUÇÃO,2,Santa Catarina,Nova Iguaçu,26215090,Rua Guilherme,,"Rua Guilherme, Santa Catarina, Nova Iguaçu, Rio de Janeiro, Brasil",-43.4480286,-22.7485016
+ENGENHARIA DE PRODUÇÃO,2,Irajá,Rio de Janeiro,21235120,Rua Marquês de Queluz,,"Rua Marquês de Queluz, Irajá, Rio de Janeiro, Rio de Janeiro, Brasil",-43.3257914,-22.8434591
+ENGENHARIA DE PRODUÇÃO,2,Miguel Couto,Nova Iguaçu,26070371,Rua Doutor Daniel de Melo,,"Rua Doutor Daniel de Melo, Miguel Couto, Nova Iguaçu, Rio de Janeiro, Brasil",-43.4232801,-22.7064105
+ENGENHARIA DE PRODUÇÃO,2,Coelho da Rocha,São João de Meriti,25550026,Avenida Presidente Kennedy,até 350 - lado par,"Avenida Presidente Kennedy, Coelho da Rocha, São João de Meriti, até 350 - lado par, Rio de Janeiro, Brasil",-43.3932963,-22.7833687
+ENGENHARIA DE PRODUÇÃO,2,Nova Belém,Japeri,26435120,Rua Simão,,"Rua Simão, Nova Belém, Japeri, Rio de Janeiro, Brasil",-43.6568783,-22.6521803
+ENGENHARIA DE PRODUÇÃO,3,Centro,Nilópolis,26525122,Estrada Marechal Castelo Branco,até 1029 - lado ímpar,"Estrada Marechal Castelo Branco, Centro, Nilópolis, até 1029 - lado ímpar, Rio de Janeiro, Brasil",-43.4239464,-22.8053986
+ENGENHARIA DE PRODUÇÃO,3,Rancho Novo,Nova Iguaçu,26013130,Rua Brasil,,"Rua Brasil, Rancho Novo, Nova Iguaçu, Rio de Janeiro, Brasil",-43.4389216,-22.7472417
+ENGENHARIA DE PRODUÇÃO,4,Figueiras,Nova Iguaçu,26060220,Rua Dona Marieta,,"Rua Dona Marieta, Figueiras, Nova Iguaçu, Rio de Janeiro, Brasil",-43.4360559,-22.7005458
+ENGENHARIA DE PRODUÇÃO,3,Jacutinga,Mesquita,26564160,Rua Areia Branca,,"Rua Areia Branca, Jacutinga, Mesquita, Rio de Janeiro, Brasil",-43.4184589,-22.7757837
+ENGENHARIA DE PRODUÇÃO,2,Vilar dos Teles,São João de Meriti,25560050,Avenida Minas Gerais,,"Avenida Minas Gerais, Vilar dos Teles, São João de Meriti, Rio de Janeiro, Brasil",-43.3745295,-22.7697077
+ENGENHARIA DE PRODUÇÃO,4,Vila Pacaembu,Queimados,26323532,Rua Sales,(Lot Pacaembu),"Rua Sales, Vila Pacaembu, Queimados, (Lot Pacaembu), Rio de Janeiro, Brasil",-43.561004,-22.7226951
+ENGENHARIA DE PRODUÇÃO,3,Autódromo,Nova Iguaçu,26042320,Rua Zumbi dos Palmares,,"Rua Zumbi dos Palmares, Autódromo, Nova Iguaçu, Rio de Janeiro, Brasil",-43.4720227,-22.7082478
+ENGENHARIA DE PRODUÇÃO,1,Caonze,Nova Iguaçu,26250390,Rua Samuel Moreno,,"Rua Samuel Moreno, Caonze, Nova Iguaçu, Rio de Janeiro, Brasil",-43.4394881,-22.7700204
+ENGENHARIA DE PRODUÇÃO,2,Vila Rosali,São João de Meriti,25510210,Rua Doutor Mário Cabral,,"Rua Doutor Mário Cabral, Vila Rosali, São João de Meriti, Rio de Janeiro, Brasil",-43.3746979,-22.7907834
+ENGENHARIA DE PRODUÇÃO,3,Parque Analândia,São João de Meriti,25585630,Rua Gil Queiros,,"Rua Gil Queiros, Parque Analândia, São João de Meriti, Rio de Janeiro, Brasil",-43.3322514,-22.7987865
+ENGENHARIA DE PRODUÇÃO,3,PARQUE ANTARTICA,Rio de Janeiro,26052760,Rua Zenith,,"Rua Zenith, PARQUE ANTARTICA, Rio de Janeiro, Rio de Janeiro, Brasil",-43.4485158,-22.675302
+ENGENHARIA DE PRODUÇÃO,2,Vicente de Carvalho,Rio de Janeiro,21220290,Rua Bernardo Taveira,,"Rua Bernardo Taveira, Vicente de Carvalho, Rio de Janeiro, Rio de Janeiro, Brasil",-43.3134692,-22.8510459
+ENGENHARIA DE PRODUÇÃO,1,Porto Novo,São Gonçalo,24435575,Travessa Hilda Ornelas Barbosa,,"Travessa Hilda Ornelas Barbosa, Porto Novo, São Gonçalo, Rio de Janeiro, Brasil",-43.0767946,-22.8209007
+ENGENHARIA DE PRODUÇÃO,2,Cerâmica,Nova Iguaçu,26030720,Rua Dona Júlia,,"Rua Dona Júlia, Cerâmica, Nova Iguaçu, Rio de Janeiro, Brasil",-43.4702655,-22.7357679
+ENGENHARIA DE PRODUÇÃO,1,Pilares,Rio de Janeiro,20760670,Rua Raul Penna Firme,,"Rua Raul Penna Firme, Pilares, Rio de Janeiro, Rio de Janeiro, Brasil",-43.2932903,-22.8776789
+ENGENHARIA DE PRODUÇÃO,1,Corumbá,Nova Iguaçu,26043170,Rua Quatro,,"Rua Quatro, Corumbá, Nova Iguaçu, Rio de Janeiro, Brasil",-43.4761259,-22.7015045
+ENGENHARIA DE PRODUÇÃO,1,Parque Fluminense,Duque de Caxias,25045110,Rua Maurício Maia Ramos,,"Rua Maurício Maia Ramos, Parque Fluminense, Duque de Caxias, Rio de Janeiro, Brasil",-43.3169804,-22.7266082
+ENGENHARIA DE PRODUÇÃO,1,Botafogo,Nova Iguaçu,26041370,Rua Conde de Irajá,,"Rua Conde de Irajá, Botafogo, Nova Iguaçu, Rio de Janeiro, Brasil",-43.4626823,-22.7120246
+ENGENHARIA DE PRODUÇÃO,1,Primavera,Queimados,26380470,Rua Nossa Senhora da Conceição,,"Rua Nossa Senhora da Conceição, Primavera, Queimados, Rio de Janeiro, Brasil",-43.5479043,-22.7018002
+ENGENHARIA DE PRODUÇÃO,1,Areia Branca,Belford Roxo,26135190,Rua Maria Angélica,,"Rua Maria Angélica, Areia Branca, Belford Roxo, Rio de Janeiro, Brasil",-43.4112135,-22.750172
+ENGENHARIA DE PRODUÇÃO,2,Barreto,Niterói,24110651,Rua Doutor March,(Continua em São Gonçalo) - lado ímp,"Rua Doutor March, Barreto, Niterói, (Continua em São Gonçalo) - lado ímp, Rio de Janeiro, Brasil",-43.08954,-22.86195
+ENGENHARIA DE PRODUÇÃO,2,Cacuia,Nova Iguaçu,26082135,Rua Barão de Cotegipe,,"Rua Barão de Cotegipe, Cacuia, Nova Iguaçu, Rio de Janeiro, Brasil",-43.5037169,-22.7333987
+ENGENHARIA DE PRODUÇÃO,1,Barra da Tijuca,Rio de Janeiro,22775040,Avenida Embaixador Abelardo Bueno,de 1502 ao fim - lado par,"Avenida Embaixador Abelardo Bueno, Barra da Tijuca, Rio de Janeiro, de 1502 ao fim - lado par, Rio de Janeiro, Brasil",-43.3819549,-22.9730498
+ENGENHARIA DE PRODUÇÃO,1,Saco,Magé,25901670,Rua Francelina Ulmann,,"Rua Francelina Ulmann, Saco, Magé, Rio de Janeiro, Brasil",-43.0270243,-22.6500324
+ENGENHARIA DE PRODUÇÃO,1,Guadalupe,Rio de Janeiro,21675510,Rua Laura Brandão,,"Rua Laura Brandão, Guadalupe, Rio de Janeiro, Rio de Janeiro, Brasil",-43.3645165,-22.8455595
+ENGENHARIA DE PRODUÇÃO,1,Anchieta,Rio de Janeiro,21635160,Rua Elvio de Moura,,"Rua Elvio de Moura, Anchieta, Rio de Janeiro, Rio de Janeiro, Brasil",-43.4108018,-22.8374528
+ENGENHARIA DE PRODUÇÃO,1,Pavuna,Rio de Janeiro,21520010,Rua Afonso Terra,,"Rua Afonso Terra, Pavuna, Rio de Janeiro, Rio de Janeiro, Brasil",-43.3610059,-22.8138952
+ENGENHARIA DE PRODUÇÃO,7,CABUÇU,Nova Iguaçu,26291242,Rua José Gomes da Silva,,"Rua José Gomes da Silva, CABUÇU, Nova Iguaçu, Rio de Janeiro, Brasil",-43.5393804,-22.7771629
+ENGENHARIA DE PRODUÇÃO,1,Bangu,Rio de Janeiro,21840030,Travessa Chavantes,,"Travessa Chavantes, Bangu, Rio de Janeiro, Rio de Janeiro, Brasil",-43.4709742,-22.8731298
+ENGENHARIA DE PRODUÇÃO,1,Anchieta,Rio de Janeiro,21630090,Rua Ciere,,"Rua Ciere, Anchieta, Rio de Janeiro, Rio de Janeiro, Brasil",-43.4127928,-22.8256826
+ENGENHARIA DE PRODUÇÃO,1,Vila de Cava,Nova Iguaçu,26052050,Rua Coronel Alberto de Melo,,"Rua Coronel Alberto de Melo, Vila de Cava, Nova Iguaçu, Rio de Janeiro, Brasil",-43.449479,-22.6897439
+ENGENHARIA DE PRODUÇÃO,1,jardim panama,Duque de Caxias,25086415,Rua Souza Caldas,,"Rua Souza Caldas, jardim panama, Duque de Caxias, Rio de Janeiro, Brasil",-43.2929294,-22.7891306
+ENGENHARIA DE PRODUÇÃO,1,Jardim Sulacap,Rio de Janeiro,21740462,Rua Euzebio de Almeida,de 2 a 1000 - lado par,"Rua Euzebio de Almeida, Jardim Sulacap, Rio de Janeiro, de 2 a 1000 - lado par, Rio de Janeiro, Brasil",-43.3773724,-22.8883611
+ENGENHARIA DE PRODUÇÃO,1,Penha Circular,Rio de Janeiro,21215060,Rua Irapua,,"Rua Irapua, Penha Circular, Rio de Janeiro, Rio de Janeiro, Brasil",-43.2946962,-22.8372432
+ENGENHARIA DE PRODUÇÃO,1,Inhaúma,Rio de Janeiro,21051280,Rua Aporá,,"Rua Aporá, Inhaúma, Rio de Janeiro, Rio de Janeiro, Brasil",-43.2762815,-22.8731396
+ENGENHARIA DE PRODUÇÃO,1,Jardim Santa Rosa,São João de Meriti,25570393,Avenida Coronel Raimundo Sampaio,,"Avenida Coronel Raimundo Sampaio, Jardim Santa Rosa, São João de Meriti, Rio de Janeiro, Brasil",-43.3509679,-22.7690148
+ENGENHARIA DE PRODUÇÃO,2,Vila Zulmira,São João de Meriti,25545090,Rua Ananias Antero da Costa,,"Rua Ananias Antero da Costa, Vila Zulmira, São João de Meriti, Rio de Janeiro, Brasil",-43.3941248,-22.7880532
+ENGENHARIA DE PRODUÇÃO,5,Kennedy,Nova Iguaçu,26020137,Rua Doutor Bolivar Gomes Assunção,,"Rua Doutor Bolivar Gomes Assunção, Kennedy, Nova Iguaçu, Rio de Janeiro, Brasil",-43.4476902,-22.7344786
+ENGENHARIA DE PRODUÇÃO,2,Santa Rita,Nova Iguaçu,26050400,Rua Noel Rosa,,"Rua Noel Rosa, Santa Rita, Nova Iguaçu, Rio de Janeiro, Brasil",-43.4704196,-22.6850164
+ENGENHARIA DE PRODUÇÃO,1,Vila de Cava,Nova Iguaçu,26052800,Rua Santana,,"Rua Santana, Vila de Cava, Nova Iguaçu, Rio de Janeiro, Brasil",-43.4468253,-22.673127
+ENGENHARIA DE PRODUÇÃO,1,Carmari,Nova Iguaçu,26022252,Rua Manoel Rocha,,"Rua Manoel Rocha, Carmari, Nova Iguaçu, Rio de Janeiro, Brasil",-43.4459108,-22.7313461
+ENGENHARIA DE PRODUÇÃO,1,Braz de Pina,Rio de Janeiro,21011240,Rua Taborari,,"Rua Taborari, Braz de Pina, Rio de Janeiro, Rio de Janeiro, Brasil",-43.2862685,-22.8261993
+ENGENHARIA DE PRODUÇÃO,1,Centro,Belford Roxo,26130165,Rua Suelem Santana Bastos,,"Rua Suelem Santana Bastos, Centro, Belford Roxo, Rio de Janeiro, Brasil",-43.3824594,-22.7571611
+ENGENHARIA DE PRODUÇÃO,1,Vicente de Carvalho,Rio de Janeiro,21371090,Rua Juliano de Miranda,,"Rua Juliano de Miranda, Vicente de Carvalho, Rio de Janeiro, Rio de Janeiro, Brasil",-43.3195822,-22.8560049
+ENGENHARIA DE PRODUÇÃO,1,Vila Isabel,Rio de Janeiro,20551070,Rua Torres Homem,até 549/550,"Rua Torres Homem, Vila Isabel, Rio de Janeiro, até 549/550, Rio de Janeiro, Brasil",-43.2457131,-22.9139101
+ENGENHARIA DE PRODUÇÃO,1,Porto da Madama,São Gonçalo,24431140,Rua Capitão Antônio Inácio da Silva,,"Rua Capitão Antônio Inácio da Silva, Porto da Madama, São Gonçalo, Rio de Janeiro, Brasil",-43.0844427,-22.8319973
+ENGENHARIA DE PRODUÇÃO,1,Ponto Chic,Nova Iguaçu,26032830,Estrada Velha de Santa Rita,,"Estrada Velha de Santa Rita, Ponto Chic, Nova Iguaçu, Rio de Janeiro, Brasil",-43.4692889,-22.719485
+ENGENHARIA DE PRODUÇÃO,1,Taquara,Rio de Janeiro,22725031,Estrada do Cafundá,de 1190 a 2330 - lado par,"Estrada do Cafundá, Taquara, Rio de Janeiro, de 1190 a 2330 - lado par, Rio de Janeiro, Brasil",-43.3784403,-22.910342
+ENGENHARIA DE PRODUÇÃO,1,Cocotá,Rio de Janeiro,21921549,Rua Wilde Lustosa,,"Rua Wilde Lustosa, Cocotá, Rio de Janeiro, Rio de Janeiro, Brasil",-43.1786817,-22.8119012
+ENGENHARIA DE PRODUÇÃO,2,Vila Esperança,Nova Iguaçu,26020090,Rua São José de Calazans,,"Rua São José de Calazans, Vila Esperança, Nova Iguaçu, Rio de Janeiro, Brasil",-43.4525851,-22.7341057
+ENGENHARIA DE PRODUÇÃO,2,Nova Cidade,Nilópolis,26535100,Rua Marechal Deodoro,,"Rua Marechal Deodoro, Nova Cidade, Nilópolis, Rio de Janeiro, Brasil",-43.413575,-22.7964054
+ENGENHARIA DE PRODUÇÃO,1,Parque Colúmbia,Rio de Janeiro,21535130,Rua Fausto e Castro,,"Rua Fausto e Castro, Parque Colúmbia, Rio de Janeiro, Rio de Janeiro, Brasil",-43.3405068,-22.8162944
+ENGENHARIA DE PRODUÇÃO,2,Parque Estrela,Duque de Caxias,25275210,Rua Delfim Moreira,,"Rua Delfim Moreira, Parque Estrela, Duque de Caxias, Rio de Janeiro, Brasil",-43.21789,-22.6466407
+ENGENHARIA DE PRODUÇÃO,1,Piabetá (Inhomirim),Magé,25931822,Rua Magé,,"Rua Magé, Piabetá (Inhomirim), Magé, Rio de Janeiro, Brasil",-43.17322,-22.6065518
+ENGENHARIA DE PRODUÇÃO,1,Parque Anchieta,Rio de Janeiro,21635350,Rua Minervina Nunes da Costa,,"Rua Minervina Nunes da Costa, Parque Anchieta, Rio de Janeiro, Rio de Janeiro, Brasil",-43.4146893,-22.8333893
+ENGENHARIA DE PRODUÇÃO,1,Jacarepaguá,Rio de Janeiro,22775046,Rua Mário Agostinelli,,"Rua Mário Agostinelli, Jacarepaguá, Rio de Janeiro, Rio de Janeiro, Brasil",-43.3821623,-22.9720498
+ENGENHARIA DE PRODUÇÃO,1,JARDIM DA VIGA,Nova Iguaçu,26013510,Rua do Imperador,,"Rua do Imperador, JARDIM DA VIGA, Nova Iguaçu, Rio de Janeiro, Brasil",-43.4446646,-22.7422855
+ENGENHARIA DE PRODUÇÃO,1,Jardim Meriti,São João de Meriti,25555550,Rua Arlindo Alves Ferreira,,"Rua Arlindo Alves Ferreira, Jardim Meriti, São João de Meriti, Rio de Janeiro, Brasil",-43.3678298,-22.7854272
+ENGENHARIA DE PRODUÇÃO,1,Iraja,Rio de Janeiro,21371340,Rua Roruima,,"Rua Roruima, Iraja, Rio de Janeiro, Rio de Janeiro, Brasil",-43.324219,-22.8504417
+ENGENHARIA DE PRODUÇÃO,2,Vila Militar,Rio de Janeiro,21750001,Avenida Marechal Fontenelle,de 2906 a 4126 - lado par,"Avenida Marechal Fontenelle, Vila Militar, Rio de Janeiro, de 2906 a 4126 - lado par, Rio de Janeiro, Brasil",-43.4045087,-22.8844697
+ENGENHARIA DE PRODUÇÃO,1,Comendador soares,Nova Iguaçu,26031440,Rua Maciel Soares,,"Rua Maciel Soares, Comendador soares, Nova Iguaçu, Rio de Janeiro, Brasil",-43.4818683,-22.7373312
+ENGENHARIA DE PRODUÇÃO,1,Freguesia - Jacarepaguá,Rio de Janeiro,22745200,Estrada do Guanumbi,,"Estrada do Guanumbi, Freguesia - Jacarepaguá, Rio de Janeiro, Rio de Janeiro, Brasil",-43.3275406,-22.9350161
+ENGENHARIA DE PRODUÇÃO,1,Vila kosmos,Rio de Janeiro,21210024,Avenida Vicente de Carvalho,de 818 a 1234 - lado par,"Avenida Vicente de Carvalho, Vila kosmos, Rio de Janeiro, de 818 a 1234 - lado par, Rio de Janeiro, Brasil",-43.3072542,-22.8490039
+ENGENHARIA DE PRODUÇÃO,1,Santo Elias,Mesquita,26562420,Rua Cesário,lado par,"Rua Cesário, Santo Elias, Mesquita, lado par, Rio de Janeiro, Brasil",-43.4235963,-22.773
+ENGENHARIA DE PRODUÇÃO,1,Vigário Geral,Rio de Janeiro,21241340,Rua Furquim Mendes,,"Rua Furquim Mendes, Vigário Geral, Rio de Janeiro, Rio de Janeiro, Brasil",-43.3149972,-22.8060539
+ENGENHARIA DE PRODUÇÃO,1,Santa Rita,Nova Iguaçu,26050730,Estrada dos Bandeirantes,,"Estrada dos Bandeirantes, Santa Rita, Nova Iguaçu, Rio de Janeiro, Brasil",-43.4611055,-22.6908663
+ENGENHARIA DE PRODUÇÃO,1,Campinho,Rio de Janeiro,21341370,Rua Comendador Pinto,,"Rua Comendador Pinto, Campinho, Rio de Janeiro, Rio de Janeiro, Brasil",-43.3433405,-22.8859628
+ENGENHARIA DE PRODUÇÃO,1,Cabuçu,Nova Iguaçu,26291338,Rua Fernando Antônio,,"Rua Fernando Antônio, Cabuçu, Nova Iguaçu, Rio de Janeiro, Brasil",-43.5437532,-22.7731658
+ENGENHARIA DE PRODUÇÃO,1,Vila Rosali,São João de Meriti,25510210,Rua Doutor Mário Cabral,,"Rua Doutor Mário Cabral, Vila Rosali, São João de Meriti, Rio de Janeiro, Brasil",-43.3746979,-22.7907834
+ENGENHARIA DE PRODUÇÃO,1,Itaipú,Belford Roxo,26127340,Rua Barão de Cotegipe,,"Rua Barão de Cotegipe, Itaipú, Belford Roxo, Rio de Janeiro, Brasil",-43.4224945,-22.7249156
+ENGENHARIA DE PRODUÇÃO,1,Jardim América,Rio de Janeiro,21240650,Travessa Antônio Lópes,,"Travessa Antônio Lópes, Jardim América, Rio de Janeiro, Rio de Janeiro, Brasil",-43.3178822,-22.8116966
+ENGENHARIA DE PRODUÇÃO,1,Heliópolis,Belford Roxo,26140290,Rua Augusto Froner,,"Rua Augusto Froner, Heliópolis, Belford Roxo, Rio de Janeiro, Brasil",-43.4189597,-22.7417833
+ENGENHARIA DE PRODUÇÃO,1,Parada Amaral,Nova Iguaçu,26040026,Rua do Sol,,"Rua do Sol, Parada Amaral, Nova Iguaçu, Rio de Janeiro, Brasil",-43.4725009,-22.6906723
+ENGENHARIA DE PRODUÇÃO,1,Vilar Novo,Belford Roxo,26116085,Avenida Parque Várzea do Carmo,,"Avenida Parque Várzea do Carmo, Vilar Novo, Belford Roxo, Rio de Janeiro, Brasil",-43.3944938,-22.7518825
+ENGENHARIA DE PRODUÇÃO,1,Santa Eufenia,Nova Iguaçu,26285630,Rua Humberto Assunção,,"Rua Humberto Assunção, Santa Eufenia, Nova Iguaçu, Rio de Janeiro, Brasil",-43.4603177,-22.7508298
+ENGENHARIA DE PRODUÇÃO,1,Vila São João,São João de Meriti,25570311,Rua Malva,,"Rua Malva, Vila São João, São João de Meriti, Rio de Janeiro, Brasil",-43.3515059,-22.7683673
+ENGENHARIA DE PRODUÇÃO,6,Paiol de Pólvora,Nilópolis,26545250,Rua Maria Gama,,"Rua Maria Gama, Paiol de Pólvora, Nilópolis, Rio de Janeiro, Brasil",-43.4005219,-22.8139627
+ENGENHARIA DE PRODUÇÃO,1,Bangu,Rio de Janeiro,21815430,Rua José Vilela,,"Rua José Vilela, Bangu, Rio de Janeiro, Rio de Janeiro, Brasil",-43.4542205,-22.8843676
+ENGENHARIA DE PRODUÇÃO,1,Augusto vasconcelos,Rio de Janeiro,23012120,Avenida Joaquim Magalhães,até 986/987,"Avenida Joaquim Magalhães, Augusto vasconcelos, Rio de Janeiro, até 986/987, Rio de Janeiro, Brasil",-43.53716319999999,-22.8928385
+ENGENHARIA DE PRODUÇÃO,3,Chacrinha,Nova Iguaçu,26285651,Rua Luís Augusto Pinho,,"Rua Luís Augusto Pinho, Chacrinha, Nova Iguaçu, Rio de Janeiro, Brasil",-43.4604363,-22.7527541
+ENGENHARIA DE PRODUÇÃO,2,PARQUE PAULISTA,Duque de Caxias,25261450,Rua Colônia,,"Rua Colônia, PARQUE PAULISTA, Duque de Caxias, Rio de Janeiro, Brasil",-43.257082,-22.6474175
+ENGENHARIA DE PRODUÇÃO,1,Santo Antônio da Prata,Belford Roxo,26135000,Rua José da Cunha,,"Rua José da Cunha, Santo Antônio da Prata, Belford Roxo, Rio de Janeiro, Brasil",-43.4082634,-22.7556213
+ENGENHARIA DE PRODUÇÃO,1,Parque Fluminense,Duque de Caxias,25045110,Rua Maurício Maia Ramos,,"Rua Maurício Maia Ramos, Parque Fluminense, Duque de Caxias, Rio de Janeiro, Brasil",-43.3169804,-22.7266082
+ENGENHARIA DE PRODUÇÃO,1,Valverde,Nova Iguaçu,26290615,Rua Joana,,"Rua Joana, Valverde, Nova Iguaçu, Rio de Janeiro, Brasil",-43.5206666,-22.7722176
+ENGENHARIA DE PRODUÇÃO,1,Jardim Alegria,São João de Meriti,25570750,Rua Pele,,"Rua Pele, Jardim Alegria, São João de Meriti, Rio de Janeiro, Brasil",-43.3441393,-22.764595
+ENGENHARIA DE PRODUÇÃO,1,Penha,Rio de Janeiro,21020300,Rua Luísa Figueiredo,,"Rua Luísa Figueiredo, Penha, Rio de Janeiro, Rio de Janeiro, Brasil",-43.274903,-22.8358118
+ENGENHARIA DE PRODUÇÃO,1,Jardim Monte Castelo,Nova Iguaçu,26041680,Rua Valéria Guimarães,,"Rua Valéria Guimarães, Jardim Monte Castelo, Nova Iguaçu, Rio de Janeiro, Brasil",-43.4603928,-22.7031231
+ENGENHARIA DE PRODUÇÃO,1,Engenho Novo,Rio de Janeiro,20950360,Rua Juiz Jorge Salomão,,"Rua Juiz Jorge Salomão, Engenho Novo, Rio de Janeiro, Rio de Janeiro, Brasil",-43.2668791,-22.9075126
+ENGENHARIA DE PRODUÇÃO,1,Santa Terezinha,Mesquita,26554040,Rua Serra,,"Rua Serra, Santa Terezinha, Mesquita, Rio de Janeiro, Brasil",-43.4397286,-22.7897643
+ENGENHARIA DE PRODUÇÃO,1,Barro Vermelho,Belford Roxo,26115747,Rua Sidônio Paes,,"Rua Sidônio Paes, Barro Vermelho, Belford Roxo, Rio de Janeiro, Brasil",-43.3771859,-22.7388668
+ENGENHARIA DE PRODUÇÃO,1,Jardim Pitoresco,Nova Iguaçu,26265600,Rua Vânia,,"Rua Vânia, Jardim Pitoresco, Nova Iguaçu, Rio de Janeiro, Brasil",-43.49525,-22.7577825
+ENGENHARIA DE PRODUÇÃO,1,Areia Branca,Belford Roxo,26112430,Rua Andes,,"Rua Andes, Areia Branca, Belford Roxo, Rio de Janeiro, Brasil",-43.4096097,-22.7455862
+ENGENHARIA DE PRODUÇÃO,1,Vila Guanabara,Duque de Caxias,25070250,Rua Encantada,,"Rua Encantada, Vila Guanabara, Duque de Caxias, Rio de Janeiro, Brasil",-43.296849,-22.7807567
+ENGENHARIA DE PRODUÇÃO,1,Jardim Guanabara,Rio de Janeiro,21931170,Rua Conquista,,"Rua Conquista, Jardim Guanabara, Rio de Janeiro, Rio de Janeiro, Brasil",-43.1933382,-22.8181958
+ENGENHARIA DE PRODUÇÃO,1,Jardim Sulacap,Rio de Janeiro,21741080,Rua Gonçalo Rolemberg,,"Rua Gonçalo Rolemberg, Jardim Sulacap, Rio de Janeiro, Rio de Janeiro, Brasil",-43.3927583,-22.8885124
+ENGENHARIA DE PRODUÇÃO,1,Vila Verde,Belford Roxo,26176070,Rua Euridice Cristóvão,,"Rua Euridice Cristóvão, Vila Verde, Belford Roxo, Rio de Janeiro, Brasil",-43.3597146,-22.7246889
+ENGENHARIA DE PRODUÇÃO,1,Vila Formosa,NOVA IGUACU,26051440,Rua das Hortênsias,,"Rua das Hortênsias, Vila Formosa, NOVA IGUACU, Rio de Janeiro, Brasil",-43.459789,-22.6972854
+ENGENHARIA DE PRODUÇÃO,1,Brás de Pina,Rio de Janeiro,21011030,Rua da Irmandade,,"Rua da Irmandade, Brás de Pina, Rio de Janeiro, Rio de Janeiro, Brasil",-43.286561,-22.8249073
+ENGENHARIA DE PRODUÇÃO,1,Caonze,Rio de Janeiro,26240230,,,"Caonze, Rio de Janeiro, Rio de Janeiro, Brasil",-43.4416018,-22.768471
+ENGENHARIA DE PRODUÇÃO,1,Rocha Miranda,Rio de Janeiro,21540650,Rua Pinhara,,"Rua Pinhara, Rocha Miranda, Rio de Janeiro, Rio de Janeiro, Brasil",-43.340037,-22.8505295
+ENGENHARIA MECÂNICA,9,VILA DONA BRANCA,Queimados,26321190,Rua Boituva,,"Rua Boituva, VILA DONA BRANCA, Queimados, Rio de Janeiro, Brasil",-43.5701578,-22.7094432
+ENGENHARIA MECÂNICA,10,ABOLIÇÃO,Rio de Janeiro,20756000,Rua Engenheiro Nazaré,,"Rua Engenheiro Nazaré, ABOLIÇÃO, Rio de Janeiro, Rio de Janeiro, Brasil",-43.3018608,-22.8869594
+ENGENHARIA MECÂNICA,10,MEIER,Rio de Janeiro,20725220,Rua Vilela Tavares,,"Rua Vilela Tavares, MEIER, Rio de Janeiro, Rio de Janeiro, Brasil",-43.2875565,-22.9075153
+ENGENHARIA MECÂNICA,7,POSSE,Rio de Janeiro,26020810,Estrada Luís Lemos,até 1126/1127,"Estrada Luís Lemos, POSSE, Rio de Janeiro, até 1126/1127, Rio de Janeiro, Brasil",-43.4549457,-22.7295589
+ENGENHARIA MECÂNICA,10,JARDIM PRIMAVERA,Duque de Caxias,25215255,Avenida Perimetral Primavera,,"Avenida Perimetral Primavera, JARDIM PRIMAVERA, Duque de Caxias, Rio de Janeiro, Brasil",-43.2725169,-22.6833821
+ENGENHARIA MECÂNICA,10,RAUL VEIGA,São Gonçalo,24710620,Rua Ilza Silveira,,"Rua Ilza Silveira, RAUL VEIGA, São Gonçalo, Rio de Janeiro, Brasil",-42.9996933,-22.8285355
+ENGENHARIA MECÂNICA,10,JARDIM PRIMAVERA,Duque de Caxias,25225730,Estrada Pernambuco,,"Estrada Pernambuco, JARDIM PRIMAVERA, Duque de Caxias, Rio de Janeiro, Brasil",-43.2636348,-22.6967428
+ENGENHARIA MECÂNICA,10,SARGENTO RONCALLE,Belford Roxo,26178350,Rua Subtenente Paschoal da Silva Leite,,"Rua Subtenente Paschoal da Silva Leite, SARGENTO RONCALLE, Belford Roxo, Rio de Janeiro, Brasil",-43.3798136,-22.7153995
+ENGENHARIA MECÂNICA,10,PAVUNA,Rio de Janeiro,21520360,Rua Palas,,"Rua Palas, PAVUNA, Rio de Janeiro, Rio de Janeiro, Brasil",-43.3587216,-22.8135948
+ENGENHARIA MECÂNICA,10,POSSE,Nova Iguaçu,26020280,Rua Antônio Pinto,,"Rua Antônio Pinto, POSSE, Nova Iguaçu, Rio de Janeiro, Brasil",-43.4518336,-22.7376185
+ENGENHARIA MECÂNICA,10,FRADE,Angra dos Reis,23946185,Rua Hipólito Travassos,,"Rua Hipólito Travassos, FRADE, Angra dos Reis, Rio de Janeiro, Brasil",-44.4413058,-22.9623877
+ENGENHARIA MECÂNICA,10,Dois Irmãos,Nova Iguaçu,26022350,Rua Conselheiro Galvão,,"Rua Conselheiro Galvão, Dois Irmãos, Nova Iguaçu, Rio de Janeiro, Brasil",-43.4525697,-22.7272174
+ENGENHARIA MECÂNICA,4,Tauá,Rio de Janeiro,21920070,Rua Capanema,,"Rua Capanema, Tauá, Rio de Janeiro, Rio de Janeiro, Brasil",-43.1837567,-22.7940107
+ENGENHARIA MECÂNICA,5,Vila Operária,Nova Iguaçu,26012120,Rua Machado Coelho,,"Rua Machado Coelho, Vila Operária, Nova Iguaçu, Rio de Janeiro, Brasil",-43.4330554,-22.7428915
+ENGENHARIA MECÂNICA,10,Vila Emil,Mesquita,26580070,Vila São Jerônimo,,"Vila São Jerônimo, Vila Emil, Mesquita, Rio de Janeiro, Brasil",-43.4205883,-22.7867284
+ENGENHARIA MECÂNICA,9,COMENDADOR SOARES,Nova Iguaçu,26980610,,,"COMENDADOR SOARES, Nova Iguaçu, Rio de Janeiro, Brasil",-43.4861447,-22.7427064
+ENGENHARIA MECÂNICA,10,CENTRO,Nova Iguaçu,26215360,Rua Peru,,"Rua Peru, CENTRO, Nova Iguaçu, Rio de Janeiro, Brasil",-43.444002,-22.7509751
+ENGENHARIA MECÂNICA,10,VILA CAMARIN,Queimados,26383520,Rua Maurício Chulan,,"Rua Maurício Chulan, VILA CAMARIN, Queimados, Rio de Janeiro, Brasil",-43.5661632,-22.70308
+ENGENHARIA MECÂNICA,10,SÃO MATEUS,São João de Meriti,25520280,Rua Elineu Ribeiro dos Santos,,"Rua Elineu Ribeiro dos Santos, SÃO MATEUS, São João de Meriti, Rio de Janeiro, Brasil",-43.3813749,-22.8073381
+ENGENHARIA MECÂNICA,10,CENTRO,Nova Iguaçu,26215342,Rua Otávio Tarquino,de 296 ao fim - lado par,"Rua Otávio Tarquino, CENTRO, Nova Iguaçu, de 296 ao fim - lado par, Rio de Janeiro, Brasil",-43.4456535,-22.7539595
+ENGENHARIA MECÂNICA,10,VILAR DOS TELES,São João de Meriti,25560150,Rua José de Alencar,,"Rua José de Alencar, VILAR DOS TELES, São João de Meriti, Rio de Janeiro, Brasil",-43.3758225,-22.7700842
+ENGENHARIA MECÂNICA,6,SÃO MATEUS,São João de Meriti,25520460,Rua Dolores Peixoto,,"Rua Dolores Peixoto, SÃO MATEUS, São João de Meriti, Rio de Janeiro, Brasil",-43.3819203,-22.8038833
+ENGENHARIA MECÂNICA,10,DOM RODRIGO,Nova Iguaçu,26260290,Rua Emília de Jesus,,"Rua Emília de Jesus, DOM RODRIGO, Nova Iguaçu, Rio de Janeiro, Brasil",-43.4777336,-22.7589694
+ENGENHARIA MECÂNICA,6,PARQUE LAFAIETE,Rio de Janeiro,25015525,Rua Luís de Jesus,,"Rua Luís de Jesus, PARQUE LAFAIETE, Rio de Janeiro, Rio de Janeiro, Brasil",-43.328083,-22.7898964
+ENGENHARIA MECÂNICA,9,Copacabana,Rio de Janeiro,22031012,Rua Figueiredo Magalhães,de 2 ao fim - lado par,"Rua Figueiredo Magalhães, Copacabana, Rio de Janeiro, de 2 ao fim - lado par, Rio de Janeiro, Brasil",-43.1879147,-22.9680134
+ENGENHARIA MECÂNICA,6,CENTRO,Nilópolis,26520331,Estrada Mirandela,até 1255 - lado ímpar,"Estrada Mirandela, CENTRO, Nilópolis, até 1255 - lado ímpar, Rio de Janeiro, Brasil",-43.4239958,-22.8117526
+ENGENHARIA MECÂNICA,9,COMENDADOR SOARES,Rio de Janeiro,26276605,Rua Artur Magalhães,,"Rua Artur Magalhães, COMENDADOR SOARES, Rio de Janeiro, Rio de Janeiro, Brasil",-43.4866366,-22.7459115
+ENGENHARIA MECÂNICA,10,NOVA CIDADE,Nilópolis,26535130,Rua Quintino Bocaiúva,,"Rua Quintino Bocaiúva, NOVA CIDADE, Nilópolis, Rio de Janeiro, Brasil",-43.4136922,-22.7972196
+ENGENHARIA MECÂNICA,5,CENTRO,Rio de Janeiro,26525015,Rua João Pessoa,de 1620/1621 ao fim,"Rua João Pessoa, CENTRO, Rio de Janeiro, de 1620/1621 ao fim, Rio de Janeiro, Brasil",-43.2433333,-22.8559721
+ENGENHARIA MECÂNICA,5,VILAR DOS TELES,São João de Meriti,25576281,Rua Aldenor Ribeiro de Matos,,"Rua Aldenor Ribeiro de Matos, VILAR DOS TELES, São João de Meriti, Rio de Janeiro, Brasil",-43.3596998,-22.7770781
+ENGENHARIA MECÂNICA,5,DOM RODRIGO,Nova Iguaçu,26260210,Rua Dom Joaquim,,"Rua Dom Joaquim, DOM RODRIGO, Nova Iguaçu, Rio de Janeiro, Brasil",-43.4751157,-22.7589673
+ENGENHARIA MECÂNICA,10,PARADA DE LUCAS,Rio de Janeiro,21010724,Rua Geraldo Ramos,(Parque Jardim Beira Mar),"Rua Geraldo Ramos, PARADA DE LUCAS, Rio de Janeiro, (Parque Jardim Beira Mar), Rio de Janeiro, Brasil",-43.3028834,-22.8185145
+ENGENHARIA MECÂNICA,6,TODOS OS SANTOS,Rio de Janeiro,20770130,Rua Piauí,,"Rua Piauí, TODOS OS SANTOS, Rio de Janeiro, Rio de Janeiro, Brasil",-43.2877361,-22.8917764
+ENGENHARIA MECÂNICA,10,VILA SANTO ANTONIO,Nova Iguaçu,26010080,Rua Natal,,"Rua Natal, VILA SANTO ANTONIO, Nova Iguaçu, Rio de Janeiro, Brasil",-43.4173009,-22.7632355
+ENGENHARIA MECÂNICA,10,DOM RODRIGO,Nova Iguaçu,26260290,Rua Emília de Jesus,,"Rua Emília de Jesus, DOM RODRIGO, Nova Iguaçu, Rio de Janeiro, Brasil",-43.4777336,-22.7589694
+ENGENHARIA MECÂNICA,2,CENTRO,Rio de Janeiro,26225260,Rua Grassani,,"Rua Grassani, CENTRO, Rio de Janeiro, Rio de Janeiro, Brasil",-43.4368347,-22.7647278
+ENGENHARIA MECÂNICA,4,Realengo,Rio de Janeiro,21765310,Rua Cosmorama,,"Rua Cosmorama, Realengo, Rio de Janeiro, Rio de Janeiro, Brasil",-43.4317544,-22.8874487
+ENGENHARIA MECÂNICA,7,Lagoa,Macaé,27925397,Rua Maria do Carmo Vasconcelos,,"Rua Maria do Carmo Vasconcelos, Lagoa, Macaé, Rio de Janeiro, Brasil",-41.8375354,-22.4038357
+ENGENHARIA MECÂNICA,7,Tanque,Rio de Janeiro,22735120,Rua Renato Meira Lima,,"Rua Renato Meira Lima, Tanque, Rio de Janeiro, Rio de Janeiro, Brasil",-43.3543488,-22.9191913
+ENGENHARIA MECÂNICA,10,Santo Antônio da Prata,Belford Roxo,26135350,Rua Nunes Sampaio,até 1080/1081,"Rua Nunes Sampaio, Santo Antônio da Prata, Belford Roxo, até 1080/1081, Rio de Janeiro, Brasil",-43.4144807,-22.7540837
+ENGENHARIA MECÂNICA,6,Praça da Bandeira,Araruama,28970000,,,"Praça da Bandeira, Araruama, Rio de Janeiro, Brasil",-42.3507921,-22.8674002
+ENGENHARIA MECÂNICA,7,Vila Centenário,Duque de Caxias,25030300,Rua Boa Viagem,,"Rua Boa Viagem, Vila Centenário, Duque de Caxias, Rio de Janeiro, Brasil",-43.3198018,-22.7746559
+ENGENHARIA MECÂNICA,3,Pinhão,Tanguá,24890000,,,"Pinhão, Tanguá, Rio de Janeiro, Brasil",-42.7339494,-22.739519
+ENGENHARIA MECÂNICA,4,Pavuna,Rio de Janeiro,21520290,Rua Nina Ribeiro,,"Rua Nina Ribeiro, Pavuna, Rio de Janeiro, Rio de Janeiro, Brasil",-43.3720095,-22.8099346
+ENGENHARIA MECÂNICA,5,Parque Paulicéia,Duque de Caxias,25070030,Rua Bahia,,"Rua Bahia, Parque Paulicéia, Duque de Caxias, Rio de Janeiro, Brasil",-43.3036694,-22.7831348
+ENGENHARIA MECÂNICA,9,Miguel Couto,Nova Iguaçu,26070218,Rua José Guida,,"Rua José Guida, Miguel Couto, Nova Iguaçu, Rio de Janeiro, Brasil",-43.4263898,-22.7119423
+ENGENHARIA MECÂNICA,10,MIGUEL COUTO,Nova Iguaçu,26070602,Avenida Henrique Duque Estrada Meyer,de 3148/3149 ao fim,"Avenida Henrique Duque Estrada Meyer, MIGUEL COUTO, Nova Iguaçu, de 3148/3149 ao fim, Rio de Janeiro, Brasil",-43.4369873,-22.7065471
+ENGENHARIA MECÂNICA,8,Marechal Hermes,Rio de Janeiro,21675270,Rua Joana Pinto de Oliveira,,"Rua Joana Pinto de Oliveira, Marechal Hermes, Rio de Janeiro, Rio de Janeiro, Brasil",-43.372072,-22.8519779
+ENGENHARIA MECÂNICA,6,Alto da Serra,Petrópolis,25625050,Travessa João Batista Maul,,"Travessa João Batista Maul, Alto da Serra, Petrópolis, Rio de Janeiro, Brasil",-43.1697129,-22.5164224
+ENGENHARIA MECÂNICA,9,Honório Gurgel,Rio de Janeiro,21512002,Estrada João Paulo,até 1448 - lado par,"Estrada João Paulo, Honório Gurgel, Rio de Janeiro, até 1448 - lado par, Rio de Janeiro, Brasil",-43.3617285,-22.8424524
+ENGENHARIA MECÂNICA,9,Jardim Nova Era,Nova Iguaçu,26272120,Rua Carolina Sender,,"Rua Carolina Sender, Jardim Nova Era, Nova Iguaçu, Rio de Janeiro, Brasil",-43.5021474,-22.7653078
+ENGENHARIA MECÂNICA,10,Comendador Soares,Nova Iguaçu,26281260,Rua Dublin,,"Rua Dublin, Comendador Soares, Nova Iguaçu, Rio de Janeiro, Brasil",-43.4742993,-22.7444235
+ENGENHARIA MECÂNICA,2,Vila Zulmira,São João de Meriti,25540480,Rua Célia Regina,,"Rua Célia Regina, Vila Zulmira, São João de Meriti, Rio de Janeiro, Brasil",-43.3928849,-22.78388
+ENGENHARIA MECÂNICA,7,Parque Novo Rio,São João de Meriti,25585000,Avenida Estácio de Sá,,"Avenida Estácio de Sá, Parque Novo Rio, São João de Meriti, Rio de Janeiro, Brasil",-43.3423374,-22.7938525
+ENGENHARIA MECÂNICA,7,Doutor Laureano,Duque de Caxias,25060030,Rua Icarai,,"Rua Icarai, Doutor Laureano, Duque de Caxias, Rio de Janeiro, Brasil",-43.3006821,-22.7733984
+ENGENHARIA MECÂNICA,4,Vilar dos Teles,São João de Meriti,25576260,Rua Cléber de Carvalho,,"Rua Cléber de Carvalho, Vilar dos Teles, São João de Meriti, Rio de Janeiro, Brasil",-43.3544187,-22.7779724
+ENGENHARIA MECÂNICA,10,Queimados,Queimados,26385220,Rua Alésia Santos do Nascimento,,"Rua Alésia Santos do Nascimento, Queimados, Queimados, Rio de Janeiro, Brasil",-43.5493304,-22.700052
+ENGENHARIA MECÂNICA,5,Parque Lafaiete,Duque de Caxias,25025104,Avenida Manuel Duarte,de 1593 ao fim - lado ímpar,"Avenida Manuel Duarte, Parque Lafaiete, Duque de Caxias, de 1593 ao fim - lado ímpar, Rio de Janeiro, Brasil",-43.3245287,-22.785312
+ENGENHARIA MECÂNICA,3,Cabuçu,Nova Iguaçu,26291587,Rua Princesa Leopoldina,,"Rua Princesa Leopoldina, Cabuçu, Nova Iguaçu, Rio de Janeiro, Brasil",-43.5445032,-22.7887971
+ENGENHARIA MECÂNICA,2,Parque Perequê (Mambucaba),Angra dos Reis,23953020,Avenida Francisco Magalhães de Castro,,"Avenida Francisco Magalhães de Castro, Parque Perequê (Mambucaba), Angra dos Reis, Rio de Janeiro, Brasil",-44.5380404,-23.0156378
+ENGENHARIA MECÂNICA,9,Jacarepaguá,Rio de Janeiro,22775046,Rua Mário Agostinelli,,"Rua Mário Agostinelli, Jacarepaguá, Rio de Janeiro, Rio de Janeiro, Brasil",-43.3821623,-22.9720498
+ENGENHARIA MECÂNICA,2,Rocha Miranda,Rio de Janeiro,21510004,Rua dos Diamantes,de 931 ao fim - lado ímpar,"Rua dos Diamantes, Rocha Miranda, Rio de Janeiro, de 931 ao fim - lado ímpar, Rio de Janeiro, Brasil",-43.3517878,-22.8436282
+ENGENHARIA MECÂNICA,5,Pavuna,Rio de Janeiro,21520670,Alameda Pai Benedito,,"Alameda Pai Benedito, Pavuna, Rio de Janeiro, Rio de Janeiro, Brasil",-43.3537636,-22.8122221
+ENGENHARIA MECÂNICA,10,VILA DA PENHA,Rio de Janeiro,21221300,Avenida Oliveira Belo,,"Avenida Oliveira Belo, VILA DA PENHA, Rio de Janeiro, Rio de Janeiro, Brasil",-43.3100291,-22.844639
+ENGENHARIA MECÂNICA,1,DEODORO,Rio de Janeiro,21615460,Rua Enfermeira Mercedes Sanches Bastos,,"Rua Enfermeira Mercedes Sanches Bastos, DEODORO, Rio de Janeiro, Rio de Janeiro, Brasil",-43.3903344,-22.8552277
+ENGENHARIA MECÂNICA,1,Santo Antônio da Prata,Belford Roxo,26135100,Rua Heráclito Tinoco de Lima,,"Rua Heráclito Tinoco de Lima, Santo Antônio da Prata, Belford Roxo, Rio de Janeiro, Brasil",-43.4104032,-22.7553249
+ENGENHARIA MECÂNICA,1,Vigario Geral,Rio de Janeiro,21241090,Rua Otranto,,"Rua Otranto, Vigario Geral, Rio de Janeiro, Rio de Janeiro, Brasil",-43.3077085,-22.8159248
+ENGENHARIA MECÂNICA,1,São Francisco de Assis,Belford Roxo,26125340,Rua Cinco de Julho,,"Rua Cinco de Julho, São Francisco de Assis, Belford Roxo, Rio de Janeiro, Brasil",-43.4042998,-22.7283371
+ENGENHARIA MECÂNICA,7,Vila Itamarati,Duque de Caxias,25070190,Rua Itajubá,,"Rua Itajubá, Vila Itamarati, Duque de Caxias, Rio de Janeiro, Brasil",-43.3056008,-22.777657
+ENGENHARIA MECÂNICA,4,Vila São Francisco,Queimados,26385230,Rua Belmonte,,"Rua Belmonte, Vila São Francisco, Queimados, Rio de Janeiro, Brasil",-43.5523805,-22.7028845
+ENGENHARIA MECÂNICA,5,Vilar dos Teles,São João de Meriti,25576261,Rua Cleber Santos de Carvalho,,"Rua Cleber Santos de Carvalho, Vilar dos Teles, São João de Meriti, Rio de Janeiro, Brasil",-43.3546906,-22.7778066
+ENGENHARIA MECÂNICA,4,Vila Araci (Imbariê),Duque de Caxias,25266000,Avenida Coronel Sisson,,"Avenida Coronel Sisson, Vila Araci (Imbariê), Duque de Caxias, Rio de Janeiro, Brasil",-43.2019685,-22.6190138
+ENGENHARIA MECÂNICA,7,Jardim Vinte e Cinco de Agosto,Duque de Caxias,25070350,Rua Conde de Porto Alegre,,"Rua Conde de Porto Alegre, Jardim Vinte e Cinco de Agosto, Duque de Caxias, Rio de Janeiro, Brasil",-43.3084396,-22.7876792
+ENGENHARIA MECÂNICA,7,Vila Verde,Belford Roxo,26178080,Rua Mousinho de Albuquerque,,"Rua Mousinho de Albuquerque, Vila Verde, Belford Roxo, Rio de Janeiro, Brasil",-43.3645028,-22.7248852
+ENGENHARIA MECÂNICA,10,Cascadura,Rio de Janeiro,21310310,Avenida Ernani Cardoso,,"Avenida Ernani Cardoso, Cascadura, Rio de Janeiro, Rio de Janeiro, Brasil",-43.3352074,-22.8824151
+ENGENHARIA MECÂNICA,4,Jardim da Posse,Nova Iguaçu,26021730,Rua Margarida,,"Rua Margarida, Jardim da Posse, Nova Iguaçu, Rio de Janeiro, Brasil",-43.4385707,-22.7257841
+ENGENHARIA MECÂNICA,4,Vila Sueli,Nova Iguaçu,26010432,Rua Waldette Chamon do Carmo Lima,até 381 - lado ímpar,"Rua Waldette Chamon do Carmo Lima, Vila Sueli, Nova Iguaçu, até 381 - lado ímpar, Rio de Janeiro, Brasil",-43.4254175,-22.7574039
+ENGENHARIA MECÂNICA,5,Três Corações,Nova Iguaçu,26030480,Rua Bolivar,,"Rua Bolivar, Três Corações, Nova Iguaçu, Rio de Janeiro, Brasil",-43.4095022,-22.6466286
+ENGENHARIA MECÂNICA,2,Realengo,Rio de Janeiro,21735330,Rua Marechal Modestino,,"Rua Marechal Modestino, Realengo, Rio de Janeiro, Rio de Janeiro, Brasil",-43.4320685,-22.871743
+ENGENHARIA MECÂNICA,6,Botafogo,Nova Iguaçu,26041160,Rua da Passagem,,"Rua da Passagem, Botafogo, Nova Iguaçu, Rio de Janeiro, Brasil",-43.4597599,-22.7139415
+ENGENHARIA MECÂNICA,6,Senador Camará,Rio de Janeiro,21833180,Rua Saída,,"Rua Saída, Senador Camará, Rio de Janeiro, Rio de Janeiro, Brasil",-43.4936341,-22.8797384
+ENGENHARIA MECÂNICA,4,vila valqueire,Rio de Janeiro,21321550,Rua Rosário Oeste,,"Rua Rosário Oeste, vila valqueire, Rio de Janeiro, Rio de Janeiro, Brasil",-43.3671498,-22.8865174
+ENGENHARIA MECÂNICA,9,Caioaba,Nova Iguaçu,25934,,,"Caioaba, Nova Iguaçu, Rio de Janeiro, Brasil",-43.440191,-22.735895
+ENGENHARIA MECÂNICA,5,Olaria,Rio de Janeiro,21021020,Rua Comandante Vergueiro da Cruz,,"Rua Comandante Vergueiro da Cruz, Olaria, Rio de Janeiro, Rio de Janeiro, Brasil",-43.2649135,-22.8367601
+ENGENHARIA MECÂNICA,9,Santa Terezinha,Mesquita,26551170,Rua Estela,,"Rua Estela, Santa Terezinha, Mesquita, Rio de Janeiro, Brasil",-43.4348029,-22.7943736
+ENGENHARIA MECÂNICA,2,Venda da Cruz,São Gonçalo,24410150,Alameda Dom Pedro Segundo,,"Alameda Dom Pedro Segundo, Venda da Cruz, São Gonçalo, Rio de Janeiro, Brasil",-43.0924238,-22.8602126
+ENGENHARIA MECÂNICA,7,Madureira,Rio de Janeiro,21360080,Rua Buriti,,"Rua Buriti, Madureira, Rio de Janeiro, Rio de Janeiro, Brasil",-43.3375579,-22.8632457
+ENGENHARIA MECÂNICA,3,Jardim Botânico,Rio de Janeiro,22461240,Rua Pio Correia,,"Rua Pio Correia, Jardim Botânico, Rio de Janeiro, Rio de Janeiro, Brasil",-43.2036006,-22.9589572
+ENGENHARIA MECÂNICA,7,São Jorge,Belford Roxo,26155700,Rua Doutor Valente,,"Rua Doutor Valente, São Jorge, Belford Roxo, Rio de Janeiro, Brasil",-43.4045972,-22.7247405
+ENGENHARIA MECÂNICA,4,Miguel Couto,Nova Iguaçu,26070524,Rua Ermelinda,,"Rua Ermelinda, Miguel Couto, Nova Iguaçu, Rio de Janeiro, Brasil",-43.4359473,-22.7102084
+ENGENHARIA MECÂNICA,7,TOMAZINHO,São João de Meriti,25530580,Rua Maria Gama,de 151/152 ao fim,"Rua Maria Gama, TOMAZINHO, São João de Meriti, de 151/152 ao fim, Rio de Janeiro, Brasil",-43.3978458,-22.799507
+ENGENHARIA MECÂNICA,4,Parque São Nicolau,São João de Meriti,25530060,Rua Antônio Martins de Oliveira,,"Rua Antônio Martins de Oliveira, Parque São Nicolau, São João de Meriti, Rio de Janeiro, Brasil",-43.3890749,-22.8106189
+ENGENHARIA MECÂNICA,9,Centro,Nilópolis,26540120,Rua Maestro Djalma do Carmo,até 482 - lado par,"Rua Maestro Djalma do Carmo, Centro, Nilópolis, até 482 - lado par, Rio de Janeiro, Brasil",-43.409531,-22.8068031
+ENGENHARIA MECÂNICA,8,Centro,Belford Roxo,26130010,Avenida Prefeito Jorge Júlio Costa dos Santos,,"Avenida Prefeito Jorge Júlio Costa dos Santos, Centro, Belford Roxo, Rio de Janeiro, Brasil",-43.3986852,-22.7740687
+ENGENHARIA MECÂNICA,4,PARQUE ALVORADA,Nova Iguaçu,26053230,Rua Nove,,"Rua Nove, PARQUE ALVORADA, Nova Iguaçu, Rio de Janeiro, Brasil",-43.4639899,-22.6795859
+ENGENHARIA MECÂNICA,3,Vila Guanabara,Duque de Caxias,25086020,Avenida Guanabara,,"Avenida Guanabara, Vila Guanabara, Duque de Caxias, Rio de Janeiro, Brasil",-43.294123,-22.7825271
+ENGENHARIA MECÂNICA,6,Inconfidência,Nova Iguaçu,26085285,Rua Freire de Andrade,,"Rua Freire de Andrade, Inconfidência, Nova Iguaçu, Rio de Janeiro, Brasil",-43.5372578,-22.7193558
+ENGENHARIA MECÂNICA,4,NOSSA SENHORA DAS GRAÇAS,Belford Roxo,26157020,Rua Maia,,"Rua Maia, NOSSA SENHORA DAS GRAÇAS, Belford Roxo, Rio de Janeiro, Brasil",-43.4177115,-22.7050536
+ENGENHARIA MECÂNICA,5,BAIRRO DA LUZ,Nova Iguaçu,26255155,Avenida Abílio Augusto Távora,,"Avenida Abílio Augusto Távora, BAIRRO DA LUZ, Nova Iguaçu, Rio de Janeiro, Brasil",-43.4704323,-22.761211
+ENGENHARIA MECÂNICA,5,BNH - ROCHA SOBRINHO,Mesquita,26574490,Rua Maria Amélia,,"Rua Maria Amélia, BNH - ROCHA SOBRINHO, Mesquita, Rio de Janeiro, Brasil",-43.4018397,-22.7779674
+ENGENHARIA MECÂNICA,7,Jardim Meriti,São João de Meriti,25555221,Rua Jornalista Geraldo Rocha,,"Rua Jornalista Geraldo Rocha, Jardim Meriti, São João de Meriti, Rio de Janeiro, Brasil",-43.3735616,-22.7791735
+ENGENHARIA MECÂNICA,7,Cerâmica,Nova Iguaçu,26031482,Rua Geni Saraiva,de 980 ao fim - lado par,"Rua Geni Saraiva, Cerâmica, Nova Iguaçu, de 980 ao fim - lado par, Rio de Janeiro, Brasil",-43.4773175,-22.7349237
+ENGENHARIA MECÂNICA,5,Praça Seca,Rio de Janeiro,21320160,Rua General Vóssio Brigido,,"Rua General Vóssio Brigido, Praça Seca, Rio de Janeiro, Rio de Janeiro, Brasil",-43.3490911,-22.8947
+ENGENHARIA MECÂNICA,4,Parque Equitativa,Duque de Caxias,25260434,Rua da Jaqueira,,"Rua da Jaqueira, Parque Equitativa, Duque de Caxias, Rio de Janeiro, Brasil",-43.2642598,-22.6338546
+ENGENHARIA MECÂNICA,5,Das Graças,Duque de Caxias,25041090,Rua Manissa,,"Rua Manissa, Das Graças, Duque de Caxias, Rio de Janeiro, Brasil",-43.3141003,-22.7324584
+ENGENHARIA MECÂNICA,5,Nossa Senhora de Fátima,Nilópolis,26521030,Rua Associação Lar Próprio,,"Rua Associação Lar Próprio, Nossa Senhora de Fátima, Nilópolis, Rio de Janeiro, Brasil",-43.4356979,-22.8093615
+ENGENHARIA MECÂNICA,7,Vila São Luís,Duque de Caxias,25065120,Rua Cabuçu,,"Rua Cabuçu, Vila São Luís, Duque de Caxias, Rio de Janeiro, Brasil",-43.2991204,-22.7735907
+ENGENHARIA MECÂNICA,2,Comendador Soares,Nova Iguaçu,26262005,Rua Álvaro Teixeira,,"Rua Álvaro Teixeira, Comendador Soares, Nova Iguaçu, Rio de Janeiro, Brasil",-43.4860479,-22.7466393
+ENGENHARIA MECÂNICA,4,PONTO CHIC,Nova Iguaçu,26033050,Rua Edmundo Bitencourt,,"Rua Edmundo Bitencourt, PONTO CHIC, Nova Iguaçu, Rio de Janeiro, Brasil",-43.4712785,-22.7222193
+ENGENHARIA MECÂNICA,2,CAMPO GRANDE,Rio de Janeiro,23095470,Rua James Osborne,,"Rua James Osborne, CAMPO GRANDE, Rio de Janeiro, Rio de Janeiro, Brasil",-43.5593133,-22.8714351
+ENGENHARIA MECÂNICA,5,Nova América,Nova Iguaçu,26022040,Rua Júlio Louzada,,"Rua Júlio Louzada, Nova América, Nova Iguaçu, Rio de Janeiro, Brasil",-43.4415443,-22.7216149
+ENGENHARIA MECÂNICA,5,Centro,Nilópolis,26510182,Estrada Doutor Manuel Reis,até 788 - lado par,"Estrada Doutor Manuel Reis, Centro, Nilópolis, até 788 - lado par, Rio de Janeiro, Brasil",-43.412735,-22.8132838
+ENGENHARIA MECÂNICA,6,Parque São Francisco de Paula,Nova Iguaçu,26298671,Rua São Luiz Gonzaga,,"Rua São Luiz Gonzaga, Parque São Francisco de Paula, Nova Iguaçu, Rio de Janeiro, Brasil",-50.5815754,-29.4475013
+ENGENHARIA MECÂNICA,4,Coréia,Mesquita,26556000,Avenida Brasil,lado par,"Avenida Brasil, Coréia, Mesquita, lado par, Rio de Janeiro, Brasil",-43.4384893,-22.7782762
+ENGENHARIA MECÂNICA,5,Vilar dos Teles,São João de Meriti,25565150,Rua Doutor César Nascimento Monteiro,,"Rua Doutor César Nascimento Monteiro, Vilar dos Teles, São João de Meriti, Rio de Janeiro, Brasil",-43.3613728,-22.7839298
+ENGENHARIA MECÂNICA,4,Jardim Guanabara,Rio de Janeiro,21940240,Rua Henrique Lacombe,,"Rua Henrique Lacombe, Jardim Guanabara, Rio de Janeiro, Rio de Janeiro, Brasil",-43.1975875,-22.8168927
+ENGENHARIA MECÂNICA,5,Vicente de Carvalho,Rio de Janeiro,21220290,Rua Bernardo Taveira,,"Rua Bernardo Taveira, Vicente de Carvalho, Rio de Janeiro, Rio de Janeiro, Brasil",-43.3134692,-22.8510459
+ENGENHARIA MECÂNICA,5,Vila Kosmos,Rio de Janeiro,21221060,Rua Detetive Parada,,"Rua Detetive Parada, Vila Kosmos, Rio de Janeiro, Rio de Janeiro, Brasil",-43.301908,-22.8533143
+ENGENHARIA MECÂNICA,5,Jardim Lumar,Nova Iguaçu,26262350,Rua Mural,,"Rua Mural, Jardim Lumar, Nova Iguaçu, Rio de Janeiro, Brasil",-43.4834706,-22.7538252
+ENGENHARIA MECÂNICA,2,Padre Miguel,Rio de Janeiro,21720330,Rua Guaiaca,,"Rua Guaiaca, Padre Miguel, Rio de Janeiro, Rio de Janeiro, Brasil",-43.4516179,-22.8655727
+ENGENHARIA MECÂNICA,1,Vila Meriti,Duque de Caxias,25020220,Rua Professor Henrique Gomes,,"Rua Professor Henrique Gomes, Vila Meriti, Duque de Caxias, Rio de Janeiro, Brasil",-43.3147043,-22.7840275
+ENGENHARIA MECÂNICA,4,Irajá,Rio de Janeiro,21361210,Rua Capintuba,,"Rua Capintuba, Irajá, Rio de Janeiro, Rio de Janeiro, Brasil",-43.3238502,-22.8540848
+ENGENHARIA MECÂNICA,2,Piam,Belford Roxo,26116370,Rua Jerico,,"Rua Jerico, Piam, Belford Roxo, Rio de Janeiro, Brasil",-43.3940753,-22.7456654
+ENGENHARIA MECÂNICA,5,Palhada,Nova Iguaçu,26290411,Rua Rafael Luiz,,"Rua Rafael Luiz, Palhada, Nova Iguaçu, Rio de Janeiro, Brasil",-43.521203,-22.7527537
+ENGENHARIA MECÂNICA,4,Cabral,Nilópolis,26515230,Rua Otacília Dias Pereira,,"Rua Otacília Dias Pereira, Cabral, Nilópolis, Rio de Janeiro, Brasil",-43.4178436,-22.825239
+ENGENHARIA MECÂNICA,4,Coelho da Rocha,São João de Meriti,25540260,Avenida Farol da Barra,,"Avenida Farol da Barra, Coelho da Rocha, São João de Meriti, Rio de Janeiro, Brasil",-43.3937445,-22.7816627
+ENGENHARIA MECÂNICA,4,BNH,Paracambi,26600000,,,"BNH, Paracambi, Rio de Janeiro, Brasil",-43.6963293,-22.6024584
+ENGENHARIA MECÂNICA,5,Vila São Roque,Queimados,26310020,Rua Paulo Soares,,"Rua Paulo Soares, Vila São Roque, Queimados, Rio de Janeiro, Brasil",-43.5660615,-22.7209985
+ENGENHARIA MECÂNICA,3,Santa Catarina,Nova Iguaçu,26215090,Rua Guilherme,,"Rua Guilherme, Santa Catarina, Nova Iguaçu, Rio de Janeiro, Brasil",-43.4480286,-22.7485016
+ENGENHARIA MECÂNICA,2,Vila Rosário,Duque de Caxias,25040020,Rua Frei Mauro Chagas,,"Rua Frei Mauro Chagas, Vila Rosário, Duque de Caxias, Rio de Janeiro, Brasil",-43.3109667,-22.7408798
+ENGENHARIA MECÂNICA,6,Nova Cidade,Nilópolis,26535130,Rua Quintino Bocaiúva,,"Rua Quintino Bocaiúva, Nova Cidade, Nilópolis, Rio de Janeiro, Brasil",-43.4136922,-22.7972196
+ENGENHARIA MECÂNICA,3,Vila Matilde,Nova Iguaçu,26051380,Rua Violeta,,"Rua Violeta, Vila Matilde, Nova Iguaçu, Rio de Janeiro, Brasil",-43.4496924,-22.6678665
+ENGENHARIA MECÂNICA,4,Santa Catarina,Nova Iguaçu,26215221,Travessa Virgínia,,"Travessa Virgínia, Santa Catarina, Nova Iguaçu, Rio de Janeiro, Brasil",-43.4474632,-22.7493584
+ENGENHARIA MECÂNICA,3,Ponte Preta,Queimados,26310360,Rua Francisco Borges de Carvalho,,"Rua Francisco Borges de Carvalho, Ponte Preta, Queimados, Rio de Janeiro, Brasil",-43.5665982,-22.7139739
+ENGENHARIA MECÂNICA,6,Centro,Nova Iguaçu,26210310,Rua Frutuoso Rangel,,"Rua Frutuoso Rangel, Centro, Nova Iguaçu, Rio de Janeiro, Brasil",-43.4450084,-22.7571331
+ENGENHARIA MECÂNICA,3,Parque Horizonte,Nova Iguaçu,26285090,Rua José Alves Pereira,,"Rua José Alves Pereira, Parque Horizonte, Nova Iguaçu, Rio de Janeiro, Brasil",-43.4551831,-22.7504644
+ENGENHARIA MECÂNICA,2,Centro,Nova Iguaçu,26220099,Rua Oscar Soares,(continuação como Est Dr Plínio Casa,"Rua Oscar Soares, Centro, Nova Iguaçu, (continuação como Est Dr Plínio Casa, Rio de Janeiro, Brasil",-43.433693,-22.7588379
+ENGENHARIA MECÂNICA,4,Jardim Nova Era,Nova Iguaçu,26272230,Rua Célia Lain,,"Rua Célia Lain, Jardim Nova Era, Nova Iguaçu, Rio de Janeiro, Brasil",-43.5028931,-22.760921
+ENGENHARIA MECÂNICA,2,Viga,Nova Iguaçu,26013630,Rua Artur Bernardes Filho,,"Rua Artur Bernardes Filho, Viga, Nova Iguaçu, Rio de Janeiro, Brasil",-43.4423709,-22.7414602
+ENGENHARIA MECÂNICA,1,Palhada,Nova Iguaçu,26290423,Rua Eliane,,"Rua Eliane, Palhada, Nova Iguaçu, Rio de Janeiro, Brasil",-43.5203223,-22.7524756
+ENGENHARIA MECÂNICA,2,magalhães bastos,Rio de Janeiro,21750170,Rua Visconde de Nacar,,"Rua Visconde de Nacar, magalhães bastos, Rio de Janeiro, Rio de Janeiro, Brasil",-43.4137383,-22.8767234
+ENGENHARIA MECÂNICA,4,Centro,Nilópolis,26525051,Rua Pedro Álvares Cabral,até 607 - lado ímpar,"Rua Pedro Álvares Cabral, Centro, Nilópolis, até 607 - lado ímpar, Rio de Janeiro, Brasil",-43.4200199,-22.8079398
+ENGENHARIA MECÂNICA,1,Glaucia,Belford Roxo,26195180,Rua Nabucodonosor,,"Rua Nabucodonosor, Glaucia, Belford Roxo, Rio de Janeiro, Brasil",-43.3565944,-22.7594904
+ENGENHARIA MECÂNICA,3,Olinda,Nilópolis,26510780,Rua Almeida Júnior,,"Rua Almeida Júnior, Olinda, Nilópolis, Rio de Janeiro, Brasil",-43.4178482,-22.816528
+ENGENHARIA MECÂNICA,2,Carmari,Nova Iguaçu,26022133,Rua Severino Henriques de Araújo,,"Rua Severino Henriques de Araújo, Carmari, Nova Iguaçu, Rio de Janeiro, Brasil",-43.44495930000001,-22.7173487
+ENGENHARIA MECÂNICA,2,Recreio dos Bandeirantes,Rio de Janeiro,22795491,Rua Joaquim da Silveira,,"Rua Joaquim da Silveira, Recreio dos Bandeirantes, Rio de Janeiro, Rio de Janeiro, Brasil",-43.4689339,-23.0199583
+ENGENHARIA MECÂNICA,2,Chacrinha,Nova Iguaçu,26285651,Rua Luís Augusto Pinho,,"Rua Luís Augusto Pinho, Chacrinha, Nova Iguaçu, Rio de Janeiro, Brasil",-43.4604363,-22.7527541
+ENGENHARIA MECÂNICA,4,Paraíso,Queimados,26381763,Rua Dora,,"Rua Dora, Paraíso, Queimados, Rio de Janeiro, Brasil",-43.5526312,-22.6955355
+ENGENHARIA MECÂNICA,1,Parque Floresta,Belford Roxo,26171390,Alameda das Magnólias,,"Alameda das Magnólias, Parque Floresta, Belford Roxo, Rio de Janeiro, Brasil",-43.3532594,-22.7334976
+ENGENHARIA MECÂNICA,1,Chacrinha,Japeri,26440500,Avenida São José,,"Avenida São José, Chacrinha, Japeri, Rio de Janeiro, Brasil",-43.6436995,-22.6475227
+ENGENHARIA MECÂNICA,1,Agostinho Porto,São João de Meriti,25545335,Rua José Antônio Nora,até 933 - lado ímpar,"Rua José Antônio Nora, Agostinho Porto, São João de Meriti, até 933 - lado ímpar, Rio de Janeiro, Brasil",-43.38973,-22.7844982
+ENGENHARIA MECÂNICA,2,Éden,São João de Meriti,25540510,Rua Pires do Rio,,"Rua Pires do Rio, Éden, São João de Meriti, Rio de Janeiro, Brasil",-43.3956024,-22.7866096
+ENGENHARIA MECÂNICA,1,TAQUARA,Rio de Janeiro,22720360,Rua Atali Aguiar,,"Rua Atali Aguiar, TAQUARA, Rio de Janeiro, Rio de Janeiro, Brasil",-43.3920291,-22.9188045
+ENGENHARIA MECÂNICA,1,Shangri-lá,Belford Roxo,26127040,Rua Arlete Afonso,,"Rua Arlete Afonso, Shangri-lá, Belford Roxo, Rio de Janeiro, Brasil",-43.4150323,-22.7253271
+ENGENHARIA MECÂNICA,1,Rancho Novo,Nova Iguaçu,26013100,Rua Dona Eulália,,"Rua Dona Eulália, Rancho Novo, Nova Iguaçu, Rio de Janeiro, Brasil",-43.438485,-22.7483238
+ENGENHARIA MECÂNICA,4,Anchieta,Rio de Janeiro,21630160,Rua Itajobi,,"Rua Itajobi, Anchieta, Rio de Janeiro, Rio de Janeiro, Brasil",-43.4159865,-22.8255896
+ENGENHARIA MECÂNICA,4,BANGU,Rio de Janeiro,21820110,Rua da Fábrica,,"Rua da Fábrica, BANGU, Rio de Janeiro, Rio de Janeiro, Brasil",-43.4696542,-22.8777982
+ENGENHARIA MECÂNICA,3,APOLLO  XI,Belford Roxo,26185526,Rua Projetada L,(Apolo XI),"Rua Projetada L, APOLLO  XI, Belford Roxo, (Apolo XI), Rio de Janeiro, Brasil",-43.3258705,-22.7170448
+ENGENHARIA MECÂNICA,5,JARDIM MATO GROSSO,Nova Iguaçu,26041740,Rua Maria Quitéria,,"Rua Maria Quitéria, JARDIM MATO GROSSO, Nova Iguaçu, Rio de Janeiro, Brasil",-43.4703595,-22.7022057
+ENGENHARIA MECÂNICA,3,Dos Ferreiras,Belford Roxo,26183604,Avenida Joaquim da Costa Lima,lado par,"Avenida Joaquim da Costa Lima, Dos Ferreiras, Belford Roxo, lado par, Rio de Janeiro, Brasil",-43.3367851,-22.720547
+ENGENHARIA MECÂNICA,2,Fonseca,Niterói,24130001,Alameda São Boaventura,de 441 a 819 - lado ímpar,"Alameda São Boaventura, Fonseca, Niterói, de 441 a 819 - lado ímpar, Rio de Janeiro, Brasil",-43.094011,-22.8811123
+ENGENHARIA MECÂNICA,2,São Vicente,Belford Roxo,26170480,Boulevard São Vicente,,"Boulevard São Vicente, São Vicente, Belford Roxo, Rio de Janeiro, Brasil",-43.3755087,-22.7246319
+ENGENHARIA MECÂNICA,2,Sargento Roncalli,Belford Roxo,26178400,Avenida Tenente Armindo Leal Gonçalves,,"Avenida Tenente Armindo Leal Gonçalves, Sargento Roncalli, Belford Roxo, Rio de Janeiro, Brasil",-43.3721787,-22.7183315
+ENGENHARIA MECÂNICA,1,Jardim Carioca,Rio de Janeiro,21921600,Rua Uruaçu,,"Rua Uruaçu, Jardim Carioca, Rio de Janeiro, Rio de Janeiro, Brasil",-43.1902768,-22.8075821
+ENGENHARIA MECÂNICA,2,Éden,São João de Meriti,25535220,Travessa Sirléia,,"Travessa Sirléia, Éden, São João de Meriti, Rio de Janeiro, Brasil",-43.4010797,-22.7903141
+ENGENHARIA MECÂNICA,2,Catumbi,Rio de Janeiro,20251033,Rua Itapiru,de 918 ao fim - lado par,"Rua Itapiru, Catumbi, Rio de Janeiro, de 918 ao fim - lado par, Rio de Janeiro, Brasil",-43.2020733,-22.9252309
+ENGENHARIA MECÂNICA,2,Palhada,Nova Iguaçu,26290138,Rua Iasi,,"Rua Iasi, Palhada, Nova Iguaçu, Rio de Janeiro, Brasil",-43.5237892,-22.7610489
+ENGENHARIA MECÂNICA,1,Anchieta,Rio de Janeiro,21630130,Rua Ernesto Vieira,,"Rua Ernesto Vieira, Anchieta, Rio de Janeiro, Rio de Janeiro, Brasil",-43.4097819,-22.82435
+ENGENHARIA MECÂNICA,1,Fanchem,Queimados,26383533,Rua H,,"Rua H, Fanchem, Queimados, Rio de Janeiro, Brasil",-43.5679729,-22.7013551
+ENGENHARIA MECÂNICA,1,Cabral,Nilópolis,26515366,Rua Joaquim Máximo Soares,de 1039 ao fim - lado ímpar,"Rua Joaquim Máximo Soares, Cabral, Nilópolis, de 1039 ao fim - lado ímpar, Rio de Janeiro, Brasil",-43.422375,-22.8194814
+ENGENHARIA MECÂNICA,2,Agostinho Porto,São João de Meriti,25545390,Rua Florisbela,até 544/545,"Rua Florisbela, Agostinho Porto, São João de Meriti, até 544/545, Rio de Janeiro, Brasil",-43.3875324,-22.7800058
+ENGENHARIA MECÂNICA,1,Banco de Areia,Mesquita,26570120,Rua Machado,,"Rua Machado, Banco de Areia, Mesquita, Rio de Janeiro, Brasil",-43.414736,-22.782906
+ENGENHARIA MECÂNICA,1,SANTA RITA,Nova Iguaçu,26050070,Rua Gurupi,,"Rua Gurupi, SANTA RITA, Nova Iguaçu, Rio de Janeiro, Brasil",-43.4660807,-22.6927524
+ENGENHARIA MECÂNICA,1,Rancho Novo,Nova Iguaçu,26013240,Rua Edmundo Lopes,,"Rua Edmundo Lopes, Rancho Novo, Nova Iguaçu, Rio de Janeiro, Brasil",-43.4374483,-22.7484101
+ENGENHARIA MECÂNICA,1,Vila Emil,Mesquita,26551491,Rua Hipólito,até 391 - lado ímpar,"Rua Hipólito, Vila Emil, Mesquita, até 391 - lado ímpar, Rio de Janeiro, Brasil",-43.4216572,-22.7834837
+ENGENHARIA MECÂNICA,1,SANTA CATARINA,Queimados,26327065,Rua Glória Pereira,,"Rua Glória Pereira, SANTA CATARINA, Queimados, Rio de Janeiro, Brasil",-43.5577542,-22.726171
+ENGENHARIA MECÂNICA,1,Vila Rosali,São João de Meriti,25510143,Avenida Fluminense,até 1032 - lado par,"Avenida Fluminense, Vila Rosali, São João de Meriti, até 1032 - lado par, Rio de Janeiro, Brasil",-43.3766831,-22.7899204
+ENGENHARIA MECÂNICA,2,Guadalupe,Rio de Janeiro,21660000,Avenida Brasil,de 22328 a 23328 - lado par,"Avenida Brasil, Guadalupe, Rio de Janeiro, de 22328 a 23328 - lado par, Rio de Janeiro, Brasil",-43.3792773,-22.846237
+ENGENHARIA MECÂNICA,2,Parque Horizonte,Nova Iguaçu,26285200,Rua de Vila Gilda,,"Rua de Vila Gilda, Parque Horizonte, Nova Iguaçu, Rio de Janeiro, Brasil",-43.4556023,-22.7493516
+ENGENHARIA MECÂNICA,2,Jardim América,Rio de Janeiro,21240090,Rua Franz Schubert,,"Rua Franz Schubert, Jardim América, Rio de Janeiro, Rio de Janeiro, Brasil",-43.3230605,-22.8127766
+ENGENHARIA MECÂNICA,1,Cerâmica,Nova Iguaçu,26031520,Rua Missionário Francisco Shuet,,"Rua Missionário Francisco Shuet, Cerâmica, Nova Iguaçu, Rio de Janeiro, Brasil",-43.4753731,-22.7356817
+ENGENHARIA MECÂNICA,2,Vila Canaan,Duque de Caxias,25255136,Rua Sete,,"Rua Sete, Vila Canaan, Duque de Caxias, Rio de Janeiro, Brasil",-43.2782717,-22.627154
+ENGENHARIA MECÂNICA,1,Sabugo,Paracambi,26600000,,,"Sabugo, Paracambi, Rio de Janeiro, Brasil",-43.7136495,-22.6104123
+ENGENHARIA MECÂNICA,1,Jardim Nova Era,Nova Iguaçu,26265310,Rua São Bartolomeu,,"Rua São Bartolomeu, Jardim Nova Era, Nova Iguaçu, Rio de Janeiro, Brasil",-43.496927,-22.7627417
+ENGENHARIA MECÂNICA,1,Boa Esperança,Nova Iguaçu,26070072,Rua Benjamim Ferreira Guimarães,,"Rua Benjamim Ferreira Guimarães, Boa Esperança, Nova Iguaçu, Rio de Janeiro, Brasil",-43.4300666,-22.7156424
+ENGENHARIA MECÂNICA,1,São José,Belford Roxo,26190080,Rua Áries,,"Rua Áries, São José, Belford Roxo, Rio de Janeiro, Brasil",-43.3414475,-22.73734
+ENGENHARIA MECÂNICA,2,Rodilândia,Nova Iguaçu,26083365,Rua Ubá,,"Rua Ubá, Rodilândia, Nova Iguaçu, Rio de Janeiro, Brasil",-43.5109894,-22.7411026
+ENGENHARIA MECÂNICA,1,Chácaras Rio-Petrópolis,Duque de Caxias,25245140,Rua Eider,,"Rua Eider, Chácaras Rio-Petrópolis, Duque de Caxias, Rio de Janeiro, Brasil",-43.3147062,-22.6528871
+ENGENHARIA MECÂNICA,2,Estrada do camorim,Rio de Janeiro,22780070,Estrada de Camorim,,"Estrada de Camorim, Estrada do camorim, Rio de Janeiro, Rio de Janeiro, Brasil",-43.425766,-22.9693031
+ENGENHARIA MECÂNICA,1,Parque Marilandia,Duque de Caxias,25225656,Rua Vitória,,"Rua Vitória, Parque Marilandia, Duque de Caxias, Rio de Janeiro, Brasil",-43.2670538,-22.6984001
+ENGENHARIA MECÂNICA,1,Kennedy,Nova Iguaçu,26020097,Travessa Rosalina,,"Travessa Rosalina, Kennedy, Nova Iguaçu, Rio de Janeiro, Brasil",-43.4457954,-22.7328978
+ENGENHARIA MECÂNICA,2,Campo Grande,Rio de Janeiro,23075077,Rua Dom Oscar Romero,,"Rua Dom Oscar Romero, Campo Grande, Rio de Janeiro, Rio de Janeiro, Brasil",-43.593335,-22.8790522
+ENGENHARIA MECÂNICA,2,Braz de pina,Rio de Janeiro,21235770,Rua Uaca,,"Rua Uaca, Braz de pina, Rio de Janeiro, Rio de Janeiro, Brasil",-43.314575,-22.8336589
+ENGENHARIA MECÂNICA,1,Vilar dos teles,São João de Meriti,25555570,Rua Guianas,,"Rua Guianas, Vilar dos teles, São João de Meriti, Rio de Janeiro, Brasil",-43.365631,-22.7848624
+ENGENHARIA MECÂNICA,1,Parque Novo Rio,São João de Meriti,25580245,Rua Iracema,,"Rua Iracema, Parque Novo Rio, São João de Meriti, Rio de Janeiro, Brasil",-43.3404235,-22.7947243
+ENGENHARIA MECÂNICA,2,Madureira,Rio de Janeiro,21360300,Rua Operário Saddock de Sá,,"Rua Operário Saddock de Sá, Madureira, Rio de Janeiro, Rio de Janeiro, Brasil",-43.202615,-22.9804501
+ENGENHARIA MECÂNICA,1,Vila Guimarães,Nova Iguaçu,26088050,Rua Mário Ramona,,"Rua Mário Ramona, Vila Guimarães, Nova Iguaçu, Rio de Janeiro, Brasil",-43.5214812,-22.7021716
+ENGENHARIA MECÂNICA,2,Cosmorama,Mesquita,26582660,Vila Tulipas,,"Vila Tulipas, Cosmorama, Mesquita, Rio de Janeiro, Brasil",-43.4178766,-22.794596
+ENGENHARIA MECÂNICA,1,Santa Cruz,Rio de Janeiro,23555100,Rua dos Jesuítas,,"Rua dos Jesuítas, Santa Cruz, Rio de Janeiro, Rio de Janeiro, Brasil",-43.6922179,-22.9153041
+ENGENHARIA MECÂNICA,5,Andaraí,Rio de Janeiro,20540210,Rua Araripe Júnior,,"Rua Araripe Júnior, Andaraí, Rio de Janeiro, Rio de Janeiro, Brasil",-43.2519457,-22.925754
+ENGENHARIA MECÂNICA,1,Jardim jurema,São João de Meriti,25580163,Rua Doutor Brasil Valério,,"Rua Doutor Brasil Valério, Jardim jurema, São João de Meriti, Rio de Janeiro, Brasil",-43.344085,-22.7836825
+ENGENHARIA MECÂNICA,1,Chatuba,Mesquita,26587330,Rua Coronel Azevedo Júnior,até 599/600,"Rua Coronel Azevedo Júnior, Chatuba, Mesquita, até 599/600, Rio de Janeiro, Brasil",-43.4346542,-22.8057807
+ENGENHARIA MECÂNICA,4,Pechincha,Rio de Janeiro,22743010,Avenida Geremário Dantas,de 702 a 1064 - lado par,"Avenida Geremário Dantas, Pechincha, Rio de Janeiro, de 702 a 1064 - lado par, Rio de Janeiro, Brasil",-43.3527475,-22.933097
+ENGENHARIA MECÂNICA,1,Nova Cidade,Nilópolis,26535580,Beco Manoel Mathias,,"Beco Manoel Mathias, Nova Cidade, Nilópolis, Rio de Janeiro, Brasil",-43.409291,-22.8007665
+ENGENHARIA MECÂNICA,2,Viga,Nova Iguaçu,26013440,Rua Viga,,"Rua Viga, Viga, Nova Iguaçu, Rio de Janeiro, Brasil",-43.4410535,-22.7440487
+ENGENHARIA MECÂNICA,1,Santa Eugênia,Nova Iguaçu,26285640,Rua Benedito Kelly,,"Rua Benedito Kelly, Santa Eugênia, Nova Iguaçu, Rio de Janeiro, Brasil",-43.4630679,-22.7509742
+ENGENHARIA MECÂNICA,2,Do Carmo,Queimados,26383435,Rua Divino Alcides dos Santos,,"Rua Divino Alcides dos Santos, Do Carmo, Queimados, Rio de Janeiro, Brasil",-43.5627092,-22.7009431
+ENGENHARIA MECÂNICA,1,Juscelino,Mesquita,26550800,Rua Marcial,,"Rua Marcial, Juscelino, Mesquita, Rio de Janeiro, Brasil",-43.4313357,-22.7707393
+ENGENHARIA MECÂNICA,2,Tinguazinho,Nova Iguaçu,26395470,,,"Tinguazinho, Nova Iguaçu, Rio de Janeiro, Brasil",-43.5138192,-22.7241013
+ENGENHARIA MECÂNICA,2,São Geraldo,Nova Iguaçu,26276410,Rua Carlos Gomes,,"Rua Carlos Gomes, São Geraldo, Nova Iguaçu, Rio de Janeiro, Brasil",-43.4967007,-22.7465697
+ENGENHARIA MECÂNICA,1,Vila Santo Antônio,Duque de Caxias,25040350,Rua Eça de Queiroz,,"Rua Eça de Queiroz, Vila Santo Antônio, Duque de Caxias, Rio de Janeiro, Brasil",-43.3235053,-22.7419521
+ENGENHARIA MECÂNICA,1,Penha circular,Rio de Janeiro,21020122,Avenida Lobo Júnior,de 1188 a 2086 - lado par,"Avenida Lobo Júnior, Penha circular, Rio de Janeiro, de 1188 a 2086 - lado par, Rio de Janeiro, Brasil",-43.2806043,-22.8335061
+ENGENHARIA MECÂNICA,1,Jacarepaguá,Rio de Janeiro,22775060,Rua Aroazes,,"Rua Aroazes, Jacarepaguá, Rio de Janeiro, Rio de Janeiro, Brasil",-43.3930075,-22.9709827
+ENGENHARIA MECÂNICA,1,Santo Elias,Mesquita,26562011,Rua Albérico Gomes Pereira,de 355 ao fim - lado ímpar,"Rua Albérico Gomes Pereira, Santo Elias, Mesquita, de 355 ao fim - lado ímpar, Rio de Janeiro, Brasil",-43.423458,-22.768655
+ENGENHARIA MECÂNICA,1,Posse,Nova Iguaçu,26022710,Rua Maria José de Souza Borba,,"Rua Maria José de Souza Borba, Posse, Nova Iguaçu, Rio de Janeiro, Brasil",-43.4481671,-22.7254694
+ENGENHARIA MECÂNICA,1,Centro,Belford Roxo,26112250,Rua Henrique Dias,,"Rua Henrique Dias, Centro, Belford Roxo, Rio de Janeiro, Brasil",-43.4052592,-22.7541713
+ENGENHARIA MECÂNICA,1,Vila Norma,São João de Meriti,25535460,Rua Dinamerico Gonzaga,,"Rua Dinamerico Gonzaga, Vila Norma, São João de Meriti, Rio de Janeiro, Brasil",-43.4034121,-22.7869609
+ENGENHARIA MECÂNICA,1,Barros Filho,Rio de Janeiro,21512050,Rua Mambituba,,"Rua Mambituba, Barros Filho, Rio de Janeiro, Rio de Janeiro, Brasil",-43.3630229,-22.8410694
+ENGENHARIA MECÂNICA,1,Engenho da rainha,Rio de Janeiro,20765171,Estrada Adhemar Bebiano,de 3677 ao fim - lado ímpar,"Estrada Adhemar Bebiano, Engenho da rainha, Rio de Janeiro, de 3677 ao fim - lado ímpar, Rio de Janeiro, Brasil",-43.2973135,-22.8652685
+ENGENHARIA MECÂNICA,2,Vila Rosali,São João de Meriti,25510390,Rua João Cândido,,"Rua João Cândido, Vila Rosali, São João de Meriti, Rio de Janeiro, Brasil",-43.3724169,-22.7950831
+ENGENHARIA MECÂNICA,1,Rocha Sobrinho,Mesquita,26572520,Rua Meriti,,"Rua Meriti, Rocha Sobrinho, Mesquita, Rio de Janeiro, Brasil",-43.4108232,-22.7853042
+ENGENHARIA MECÂNICA,1,Pinhão,Tanguá,24890000,,,"Pinhão, Tanguá, Rio de Janeiro, Brasil",-42.7339494,-22.739519
+ENGENHARIA MECÂNICA,1,Vicente de Carvalho,Rio de Janeiro,21371170,Rua Tiuba,,"Rua Tiuba, Vicente de Carvalho, Rio de Janeiro, Rio de Janeiro, Brasil",-43.3201714,-22.8568914
+ENGENHARIA MECÂNICA,1,São Matheus,São João de Meriti,25525711,Rua Lourenço Campos,,"Rua Lourenço Campos, São Matheus, São João de Meriti, Rio de Janeiro, Brasil",-43.3824717,-22.7992688
+ENGENHARIA MECÂNICA,2,Carmary,Nova Iguaçu,26022145,Rua Maria José Toledo,,"Rua Maria José Toledo, Carmary, Nova Iguaçu, Rio de Janeiro, Brasil",-43.4462529,-22.7214474
+ENGENHARIA MECÂNICA,1,Coelho da Rocha,São João de Meriti,25555020,Rua Elisabete Câmara Luna,,"Rua Elisabete Câmara Luna, Coelho da Rocha, São João de Meriti, Rio de Janeiro, Brasil",-43.3815276,-22.7778346
+ENGENHARIA MECÂNICA,1,vila Norma,Mesquita,26572400,Rua Célio de Azevedo,,"Rua Célio de Azevedo, vila Norma, Mesquita, Rio de Janeiro, Brasil",-43.4087675,-22.78892
+ENGENHARIA MECÂNICA,1,Coelho da Rocha,São João de Meriti,25550790,Rua Senador Vergueiro,,"Rua Senador Vergueiro, Coelho da Rocha, São João de Meriti, Rio de Janeiro, Brasil",-43.379408,-22.7824262
+ENGENHARIA MECÂNICA,1,Austin,Nova Iguaçu,26087190,Avenida Beira Rio,,"Avenida Beira Rio, Austin, Nova Iguaçu, Rio de Janeiro, Brasil",-43.5314681,-22.7176408
+ENGENHARIA MECÂNICA,1,Carmari,Nova Iguaçu,26022150,Rua Azaléias,,"Rua Azaléias, Carmari, Nova Iguaçu, Rio de Janeiro, Brasil",-43.4443244,-22.7250209
+ENGENHARIA MECÂNICA,1,Parque Vitória,Duque de Caxias,25045490,Rua Álvaro Lins,,"Rua Álvaro Lins, Parque Vitória, Duque de Caxias, Rio de Janeiro, Brasil",-43.3184979,-22.7177401
+ENGENHARIA MECÂNICA,1,vila leopoldina,Duque de Caxias,25035185,Rua Joaquim José Soares,,"Rua Joaquim José Soares, vila leopoldina, Duque de Caxias, Rio de Janeiro, Brasil",-43.3054448,-22.756182
+ENGENHARIA MECÂNICA,1,EDSON PASSOS,Mesquita,26585681,Rua Manoel Pereira Reis,de 654 ao fim - lado par,"Rua Manoel Pereira Reis, EDSON PASSOS, Mesquita, de 654 ao fim - lado par, Rio de Janeiro, Brasil",-43.4307058,-22.7954895
+ENGENHARIA MECÂNICA,1,Comendador Soares,Nova Iguaçu,26280050,Estrada Luís Soares,,"Estrada Luís Soares, Comendador Soares, Nova Iguaçu, Rio de Janeiro, Brasil",-43.4896215,-22.7397064
+ENGENHARIA MECÂNICA,1,Vila Isabel,Rio de Janeiro,20540120,Rua Ambrosina,,"Rua Ambrosina, Vila Isabel, Rio de Janeiro, Rio de Janeiro, Brasil",-43.2391725,-22.9210366
+ENGENHARIA MECÂNICA,1,Cabuis,Nilópolis,26540222,Rua Júlio Berkowitz,de 798 ao fim - lado par,"Rua Júlio Berkowitz, Cabuis, Nilópolis, de 798 ao fim - lado par, Rio de Janeiro, Brasil",-43.4049311,-22.8060039
+ENGENHARIA MECÂNICA,1,Fanchem,Queimados,26383370,Rua Cristiane,,"Rua Cristiane, Fanchem, Queimados, Rio de Janeiro, Brasil",-43.5629189,-22.7026677
+ENGENHARIA MECÂNICA,1,Parque alvorada,Nova Iguaçu,26053201,Rua Seis,,"Rua Seis, Parque alvorada, Nova Iguaçu, Rio de Janeiro, Brasil",-43.4651878,-22.6804617
+ENGENHARIA MECÂNICA,1,Jardim Carioca,Rio de Janeiro,21920240,Rua Jaime Perdigão,,"Rua Jaime Perdigão, Jardim Carioca, Rio de Janeiro, Rio de Janeiro, Brasil",-43.1986187,-22.800363
+ENGENHARIA MECÂNICA,1,Posse,Nova Iguaçu,26035200,Rua A,,"Rua A, Posse, Nova Iguaçu, Rio de Janeiro, Brasil",-43.4607255,-22.7348019
+ENGENHARIA MECÂNICA,1,Maria da luz,Nova Iguaçu,26216115,Rua Luís Sobral,de 392 a 758 - lado par,"Rua Luís Sobral, Maria da luz, Nova Iguaçu, de 392 a 758 - lado par, Rio de Janeiro, Brasil",-43.4375343,-22.7534598
+ENGENHARIA MECÂNICA,1,Wona,Belford Roxo,26175030,Rua Wona,,"Rua Wona, Wona, Belford Roxo, Rio de Janeiro, Brasil",-43.3401716,-22.726251
+ENGENHARIA MECÂNICA,1,Vilar dos Teles,São João de Meriti,25560140,Rua Machado de Assis,,"Rua Machado de Assis, Vilar dos Teles, São João de Meriti, Rio de Janeiro, Brasil",-43.3764639,-22.7695031
+ENGENHARIA MECÂNICA,1,Tinguá,Nova Iguaçu,26063390,Rua Paraíba,,"Rua Paraíba, Tinguá, Nova Iguaçu, Rio de Janeiro, Brasil",-43.4155202,-22.5974784
+ENGENHARIA MECÂNICA,4,Parque Lafaiete,Duque de Caxias,25015590,Rua Valença,,"Rua Valença, Parque Lafaiete, Duque de Caxias, Rio de Janeiro, Brasil",-43.3254665,-22.7973742
+ENGENHARIA MECÂNICA,1,Jardim Anhangá,Duque de Caxias,25264560,Rua C,,"Rua C, Jardim Anhangá, Duque de Caxias, Rio de Janeiro, Brasil",-43.2323392,-22.6421233
+ENGENHARIA MECÂNICA,1,Luz,Nova Iguaçu,26260560,Rua José Antônio de Araújo,de 161/162 ao fim,"Rua José Antônio de Araújo, Luz, Nova Iguaçu, de 161/162 ao fim, Rio de Janeiro, Brasil",-43.4695963,-22.7539518
+ENGENHARIA MECÂNICA,1,Austin,Nova Iguaçu,26086415,Rua José Soares da Silva,,"Rua José Soares da Silva, Austin, Nova Iguaçu, Rio de Janeiro, Brasil",-43.5241258,-22.7225596
+ENGENHARIA MECÂNICA,1,Chacrinha,Nova Iguaçu,26285570,Rua Bliz B. Palladino,,"Rua Bliz B. Palladino, Chacrinha, Nova Iguaçu, Rio de Janeiro, Brasil",-43.4576113,-22.7529849
+ENGENHARIA MECÂNICA,1,Guadalupe,Rio de Janeiro,21675380,Rua Orélia,,"Rua Orélia, Guadalupe, Rio de Janeiro, Rio de Janeiro, Brasil",-43.3768595,-22.8457187
+ENGENHARIA MECÂNICA,1,Madureira,Rio de Janeiro,21351021,Rua Carolina Machado,de 92/93 a 666/667,"Rua Carolina Machado, Madureira, Rio de Janeiro, de 92/93 a 666/667, Rio de Janeiro, Brasil",-43.3402538,-22.8748527
+ENGENHARIA MECÂNICA,1,Pechincha,Rio de Janeiro,22770235,Rua Professor Henrique Costa,de 728 ao fim - lado par,"Rua Professor Henrique Costa, Pechincha, Rio de Janeiro, de 728 ao fim - lado par, Rio de Janeiro, Brasil",-43.3636112,-22.934068
+ENGENHARIA MECÂNICA,1,Mantiquira,Duque de Caxias,25250405,Rua Farias Soares,,"Rua Farias Soares, Mantiquira, Duque de Caxias, Rio de Janeiro, Brasil",-43.3063386,-22.5904271
+ENGENHARIA MECÂNICA,1,Santa Rita,Nova Iguaçu,26050095,Rua Faixa Auxiliar,,"Rua Faixa Auxiliar, Santa Rita, Nova Iguaçu, Rio de Janeiro, Brasil",-43.4613009,-22.6977686
+ENGENHARIA MECÂNICA,1,Jardim da Paz,Magé,25926816,Avenida Canal B,,"Avenida Canal B, Jardim da Paz, Magé, Rio de Janeiro, Brasil",-43.1746088,-22.7073777
+ENGENHARIA MECÂNICA,1,Bom pastor,Belford Roxo,26110745,Rua Doutor Sérgio Rodrigues,,"Rua Doutor Sérgio Rodrigues, Bom pastor, Belford Roxo, Rio de Janeiro, Brasil",-43.3731564,-22.7426017
+ENGENHARIA MECÂNICA,1,Vila Santo Antônio,Duque de Caxias,25040240,Rua Delgado de Carvalho,,"Rua Delgado de Carvalho, Vila Santo Antônio, Duque de Caxias, Rio de Janeiro, Brasil",-43.3185905,-22.7456066
+ENGENHARIA MECÂNICA,1,Anchieta,Rio de Janeiro,21630110,Rua Cristóvão Jaques,,"Rua Cristóvão Jaques, Anchieta, Rio de Janeiro, Rio de Janeiro, Brasil",-43.409209,-22.8220749
+ENGENHARIA MECÂNICA,1,Chácaras Arcampo,Duque de Caxias,25251170,Rua Córrego,,"Rua Córrego, Chácaras Arcampo, Duque de Caxias, Rio de Janeiro, Brasil",-43.2771532,-22.6599677
+ENGENHARIA MECÂNICA,1,Jardim das Acácias,Belford Roxo,26143400,Rua Arari,,"Rua Arari, Jardim das Acácias, Belford Roxo, Rio de Janeiro, Brasil",-43.4299865,-22.7244596
+ENGENHARIA MECÂNICA,1,Méier,Rio de Janeiro,20725001,Rua Vinte e Quatro de Maio,de 1116/1117 ao fim,"Rua Vinte e Quatro de Maio, Méier, Rio de Janeiro, de 1116/1117 ao fim, Rio de Janeiro, Brasil",-43.2754202,-22.904458
+ENGENHARIA MECÂNICA,1,Cerâmica,Nova Iguaçu,26030680,Rua Dona Catarina,,"Rua Dona Catarina, Cerâmica, Nova Iguaçu, Rio de Janeiro, Brasil",-43.4693372,-22.7354695
+ENGENHARIA MECÂNICA,1,Imperador,Nova Iguaçu,26225700,Rua Machado de Assis,,"Rua Machado de Assis, Imperador, Nova Iguaçu, Rio de Janeiro, Brasil",-43.4280603,-22.7659371
+ENGENHARIA MECÂNICA,1,Oswaldo Cruz,Rio de Janeiro,21341130,Rua Paulo Prado,,"Rua Paulo Prado, Oswaldo Cruz, Rio de Janeiro, Rio de Janeiro, Brasil",-43.3540509,-22.8784337
+ENGENHARIA MECÂNICA,1,Maracanã,Rio de Janeiro,20270021,Rua Senador Furtado,lado ímpar,"Rua Senador Furtado, Maracanã, Rio de Janeiro, lado ímpar, Rio de Janeiro, Brasil",-43.2186921,-22.9116797
+ENGENHARIA MECÂNICA,1,Moquetá,Nova Iguaçu,26285340,Rua Jorge Alves da Silva,,"Rua Jorge Alves da Silva, Moquetá, Nova Iguaçu, Rio de Janeiro, Brasil",-43.4511615,-22.7470538
+ENGENHARIA MECÂNICA,1,LUZ,Nova Iguaçu,26255530,Rua Antônio Vieira,,"Rua Antônio Vieira, LUZ, Nova Iguaçu, Rio de Janeiro, Brasil",-43.4674119,-22.759913
+ENGENHARIA MECÂNICA,1,SANTA TEREZINHA,Mesquita,26556200,Rua José Dias Guimarães,,"Rua José Dias Guimarães, SANTA TEREZINHA, Mesquita, Rio de Janeiro, Brasil",-43.4397749,-22.7790706

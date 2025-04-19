@@ -1,0 +1,398 @@
+CURSO,PERÍODO_ATUAL,BAIRRO,CIDADE,CEP,TURNO_ENTRADA,TURNO_SAIDA,COMPLEMENTO,LOGRADOURO,ENDERECO_COMPLETO,LONGITUDE,LATITUDE
+AUTOMAÇÃO INDUSTRIAL,3,PONTO CHIC,Nova Iguaçu,26033050,manhã,tarde,,Rua Edmundo Bitencourt,"Rua Edmundo Bitencourt, PONTO CHIC, Nova Iguaçu, Rio de Janeiro, Brasil",-43.4712785,-22.7222193
+AUTOMAÇÃO INDUSTRIAL,3,SANTA CATARINA,Queimados,26327065,manhã,tarde,,Rua Glória Pereira,"Rua Glória Pereira, SANTA CATARINA, Queimados, Rio de Janeiro, Brasil",-43.5577542,-22.726171
+AUTOMAÇÃO INDUSTRIAL,3,CACRINHA,Nova Iguaçu,26285590,manhã,tarde,,Rua José de Assis Ferreira,"Rua José de Assis Ferreira, CACRINHA, Nova Iguaçu, Rio de Janeiro, Brasil",-43.4583212,-22.7544524
+AUTOMAÇÃO INDUSTRIAL,3,VILA CENTENARIO,Duque de Caxias,25030050,manhã,tarde,,Rua Leopoldina Tomé,"Rua Leopoldina Tomé, VILA CENTENARIO, Duque de Caxias, Rio de Janeiro, Brasil",-43.3106917,-22.7751273
+AUTOMAÇÃO INDUSTRIAL,3,SANTA EUGENIA,Nova Iguaçu,26286030,manhã,tarde,,Rua Doutor Laureano,"Rua Doutor Laureano, SANTA EUGENIA, Nova Iguaçu, Rio de Janeiro, Brasil",-43.4640653,-22.7515492
+AUTOMAÇÃO INDUSTRIAL,3,Jardim Maracanã,Seropédica,23891820,manhã,tarde,,Rua Magno de Sá,"Rua Magno de Sá, Jardim Maracanã, Seropédica, Rio de Janeiro, Brasil",-43.6543707,-22.7266786
+AUTOMAÇÃO INDUSTRIAL,3,São Vicente,Belford Roxo,26178540,manhã,tarde,,Rua Tenente Raimundo Feitosa da Silva,"Rua Tenente Raimundo Feitosa da Silva, São Vicente, Belford Roxo, Rio de Janeiro, Brasil",-43.3789931,-22.7199378
+AUTOMAÇÃO INDUSTRIAL,3,Recreio Itapoã,Nova Iguaçu,26270140,manhã,tarde,,Rua Serra,"Rua Serra, Recreio Itapoã, Nova Iguaçu, Rio de Janeiro, Brasil",-43.5055889,-22.7695736
+AUTOMAÇÃO INDUSTRIAL,3,Cerâmica,Nova Iguaçu,26030310,manhã,tarde,,Rua Albina,"Rua Albina, Cerâmica, Nova Iguaçu, Rio de Janeiro, Brasil",-43.4674607,-22.7340547
+AUTOMAÇÃO INDUSTRIAL,3,tres coraçoes,Nova Iguaçu,26041047,manhã,tarde,,Rua Professor Augusto Rodrigues,"Rua Professor Augusto Rodrigues, tres coraçoes, Nova Iguaçu, Rio de Janeiro, Brasil",-43.4608942,-22.7198958
+AUTOMAÇÃO INDUSTRIAL,3,SANTA RITA,Nova Iguaçu,26050410,manhã,tarde,,Rua Ari Barroso,"Rua Ari Barroso, SANTA RITA, Nova Iguaçu, Rio de Janeiro, Brasil",-43.4713497,-22.6852481
+AUTOMAÇÃO INDUSTRIAL,3,VILA NASCENTE,Queimados,26325090,manhã,tarde,,Rua Agulhas Negras,"Rua Agulhas Negras, VILA NASCENTE, Queimados, Rio de Janeiro, Brasil",-43.5535923,-22.723304
+AUTOMAÇÃO INDUSTRIAL,2,HELIOPOLIS,Belford Roxo,26140100,tarde,noite,até 534/535,Avenida Heliópolis,"Avenida Heliópolis, HELIOPOLIS, Belford Roxo, até 534/535, Rio de Janeiro, Brasil",-43.4135568,-22.7420245
+AUTOMAÇÃO INDUSTRIAL,1,VILA NASCENTE,Queimados,26325090,manhã,tarde,,Rua Agulhas Negras,"Rua Agulhas Negras, VILA NASCENTE, Queimados, Rio de Janeiro, Brasil",-43.5535923,-22.723304
+AUTOMAÇÃO INDUSTRIAL,1,Vila São Jorge,Nova Iguaçu,26260540,manhã,tarde,,Rua Tertuliano Pimenta,"Rua Tertuliano Pimenta, Vila São Jorge, Nova Iguaçu, Rio de Janeiro, Brasil",-43.4703257,-22.7582819
+AUTOMAÇÃO INDUSTRIAL,1,Ambaí,Nova Iguaçu,26040215,manhã,tarde,,Rua Renato,"Rua Renato, Ambaí, Nova Iguaçu, Rio de Janeiro, Brasil",-43.5026406,-22.7366014
+AUTOMAÇÃO INDUSTRIAL,3,Jardim do trevo,Queimados,26379010,manhã,tarde,,Avenida Nossa Senhora de Copacabana,"Avenida Nossa Senhora de Copacabana, Jardim do trevo, Queimados, Rio de Janeiro, Brasil",-43.5579874,-22.7355506
+AUTOMAÇÃO INDUSTRIAL,3,Pacaembu,Queimados,26323520,manhã,tarde,,Avenida Maracanã,"Avenida Maracanã, Pacaembu, Queimados, Rio de Janeiro, Brasil",-43.5585324,-22.7217076
+AUTOMAÇÃO INDUSTRIAL,3,Miguel couto,Nova Iguaçu,26070374,manhã,tarde,,Rua Carlos Henrique,"Rua Carlos Henrique, Miguel couto, Nova Iguaçu, Rio de Janeiro, Brasil",-43.4247838,-22.708265
+AUTOMAÇÃO INDUSTRIAL,3,Nova América,Nova Iguaçu,26022080,manhã,tarde,,Rua Marechal Rondon,"Rua Marechal Rondon, Nova América, Nova Iguaçu, Rio de Janeiro, Brasil",-43.4425511,-22.7222761
+AUTOMAÇÃO INDUSTRIAL,3,Jardim Palmares,Nova Iguaçu,26277555,manhã,tarde,,Rua Murici,"Rua Murici, Jardim Palmares, Nova Iguaçu, Rio de Janeiro, Brasil",-43.5187896,-22.7629013
+AUTOMAÇÃO INDUSTRIAL,3,Parque Flora,Nova Iguaçu,26041040,manhã,tarde,,Alameda Flora,"Alameda Flora, Parque Flora, Nova Iguaçu, Rio de Janeiro, Brasil",-43.4562036,-22.716119
+AUTOMAÇÃO INDUSTRIAL,3,JARDIM SULACAP,Rio de Janeiro,21741360,manhã,tarde,,Rua Teodoro Sampaio,"Rua Teodoro Sampaio, JARDIM SULACAP, Rio de Janeiro, Rio de Janeiro, Brasil",-43.3985204,-22.891043
+AUTOMAÇÃO INDUSTRIAL,3,Campo grande,Campo Grande,23095842,manhã,tarde,de 4363 a 5805 - lado ímpar,Estrada do Mendanha,"Estrada do Mendanha, Campo grande, Campo Grande, de 4363 a 5805 - lado ímpar, Rio de Janeiro, Brasil",-43.5539083,-22.8679597
+AUTOMAÇÃO INDUSTRIAL,3,Anchieta,Rio de Janeiro,21655590,manhã,tarde,,Rua Padre Antônio Esperandio,"Rua Padre Antônio Esperandio, Anchieta, Rio de Janeiro, Rio de Janeiro, Brasil",-43.3868066,-22.8244721
+AUTOMAÇÃO INDUSTRIAL,3,Jardim Xavantes,Belford Roxo,26160000,manhã,tarde,,Avenida Adamastor,"Avenida Adamastor, Jardim Xavantes, Belford Roxo, Rio de Janeiro, Brasil",-43.4004545,-22.7388666
+AUTOMAÇÃO INDUSTRIAL,3,Austin,Nova Iguaçu,26086190,manhã,tarde,,Rua Joaquina Gomes Barbosa,"Rua Joaquina Gomes Barbosa, Austin, Nova Iguaçu, Rio de Janeiro, Brasil",-43.5259331,-22.7281926
+AUTOMAÇÃO INDUSTRIAL,3,Santa Rita,Nova Iguaçu,26050400,manhã,tarde,,Rua Noel Rosa,"Rua Noel Rosa, Santa Rita, Nova Iguaçu, Rio de Janeiro, Brasil",-43.4704196,-22.6850164
+AUTOMAÇÃO INDUSTRIAL,3,Ambaí,Nova Iguaçu,26070718,manhã,tarde,,Rua João Hasche,"Rua João Hasche, Ambaí, Nova Iguaçu, Rio de Janeiro, Brasil",-43.4387599,-22.7038823
+AUTOMAÇÃO INDUSTRIAL,3,Mesquita,Mesquita,26556180,manhã,tarde,,Rua Manaus,"Rua Manaus, Mesquita, Mesquita, Rio de Janeiro, Brasil",-43.4382567,-22.7792257
+AUTOMAÇÃO INDUSTRIAL,3,Austin,Nova Iguaçu,26086090,manhã,tarde,,Rua Itagibá,"Rua Itagibá, Austin, Nova Iguaçu, Rio de Janeiro, Brasil",-43.5231629,-22.7279721
+AUTOMAÇÃO INDUSTRIAL,3,Cavalcanti,Rio de Janeiro,21370250,manhã,tarde,,Rua Antônio Saraiva,"Rua Antônio Saraiva, Cavalcanti, Rio de Janeiro, Rio de Janeiro, Brasil",-43.3164386,-22.8710993
+AUTOMAÇÃO INDUSTRIAL,3,PALHADA,Nova Iguaçu,26290024,manhã,tarde,,Rua Jacira Lavinas,"Rua Jacira Lavinas, PALHADA, Nova Iguaçu, Rio de Janeiro, Brasil",-43.5185839,-22.7703436
+AUTOMAÇÃO INDUSTRIAL,3,Éden,São João de Meriti,25535162,manhã,tarde,,Rua Peri,"Rua Peri, Éden, São João de Meriti, Rio de Janeiro, Brasil",-43.4020736,-22.79407
+AUTOMAÇÃO INDUSTRIAL,3,Vila Operária,Nova Iguaçu,26012315,manhã,tarde,,Estrada Deputado Darcílio Ayres Raunheitti,"Estrada Deputado Darcílio Ayres Raunheitti, Vila Operária, Nova Iguaçu, Rio de Janeiro, Brasil",-43.4342548,-22.738145
+AUTOMAÇÃO INDUSTRIAL,3,Anchieta,Rio de Janeiro,21630250,manhã,tarde,de 478/479 ao fim,Rua Lúcio José Filho,"Rua Lúcio José Filho, Anchieta, Rio de Janeiro, de 478/479 ao fim, Rio de Janeiro, Brasil",-43.4138189,-22.8317999
+AUTOMAÇÃO INDUSTRIAL,3,heliopolis,Belford Roxo,26140110,manhã,tarde,,Rua Aimorés,"Rua Aimorés, heliopolis, Belford Roxo, Rio de Janeiro, Brasil",-43.4193796,-22.740302
+AUTOMAÇÃO INDUSTRIAL,3,Miguel Couto,Nova Iguaçu,26070470,manhã,tarde,,Rua Valentina,"Rua Valentina, Miguel Couto, Nova Iguaçu, Rio de Janeiro, Brasil",-43.4336413,-22.7094667
+AUTOMAÇÃO INDUSTRIAL,3,itaguare,Japeri,26455020,manhã,tarde,,Rua Neusa,"Rua Neusa, itaguare, Japeri, Rio de Janeiro, Brasil",-43.602338,-22.6763303
+AUTOMAÇÃO INDUSTRIAL,3,Parque Alvorada,Nova Iguaçu,26053230,manhã,tarde,,Rua Nove,"Rua Nove, Parque Alvorada, Nova Iguaçu, Rio de Janeiro, Brasil",-43.4639899,-22.6795859
+AUTOMAÇÃO INDUSTRIAL,3,Vila São João,São João de Meriti,25570200,manhã,tarde,,Rua Campos,"Rua Campos, Vila São João, São João de Meriti, Rio de Janeiro, Brasil",-43.3558253,-22.7686188
+AUTOMAÇÃO INDUSTRIAL,3,Km32,Nova Iguaçu,26298629,manhã,tarde,,Rua Santa Margarida,"Rua Santa Margarida, Km32, Nova Iguaçu, Rio de Janeiro, Brasil",-43.6143625,-22.8544949
+AUTOMAÇÃO INDUSTRIAL,3,AUSTIN,Nova Iguaçu,26087150,manhã,tarde,até 777/778,Rua Coronel Monteiro de Barros,"Rua Coronel Monteiro de Barros, AUSTIN, Nova Iguaçu, até 777/778, Rio de Janeiro, Brasil",-43.5271147,-22.7153776
+AUTOMAÇÃO INDUSTRIAL,1,BOTAFOGO,Nova Iguaçu,26041355,manhã,tarde,,Rua Santa Clara,"Rua Santa Clara, BOTAFOGO, Nova Iguaçu, Rio de Janeiro, Brasil",-43.4586085,-22.7087819
+AUTOMAÇÃO INDUSTRIAL,1,SANTO ANTONIO DA PRATA,Belford Roxo,26130650,manhã,tarde,,Rua Carneiro Marinho,"Rua Carneiro Marinho, SANTO ANTONIO DA PRATA, Belford Roxo, Rio de Janeiro, Brasil",-43.4146959,-22.7620399
+AUTOMAÇÃO INDUSTRIAL,2,CERAMICA,Nova Iguaçu,26031160,tarde,noite,,Rua Darci Pinto de Souza,"Rua Darci Pinto de Souza, CERAMICA, Nova Iguaçu, Rio de Janeiro, Brasil",-43.4746415,-22.7349949
+AUTOMAÇÃO INDUSTRIAL,2,AUTODROMO,Nova Iguaçu,26042350,tarde,noite,,Rua Juvenil de Sousa Lópes,"Rua Juvenil de Sousa Lópes, AUTODROMO, Nova Iguaçu, Rio de Janeiro, Brasil",-43.4710894,-22.7080186
+AUTOMAÇÃO INDUSTRIAL,2,JARDIM DA POSSE,Nova Iguaçu,26020115,tarde,noite,,Rua Professora Katia Batista do Carmo,"Rua Professora Katia Batista do Carmo, JARDIM DA POSSE, Nova Iguaçu, Rio de Janeiro, Brasil",-43.4594823,-22.7381141
+AUTOMAÇÃO INDUSTRIAL,2,FRATERNIDADE,Nova Iguaçu,26220380,tarde,noite,,Rua Sousa Lima,"Rua Sousa Lima, FRATERNIDADE, Nova Iguaçu, Rio de Janeiro, Brasil",-43.4393796,-22.7561627
+AUTOMAÇÃO INDUSTRIAL,1,VILA GUIMARAES,Nova Iguaçu,26088130,manhã,tarde,,Rua Raimundo Gonçalves Carreiro,"Rua Raimundo Gonçalves Carreiro, VILA GUIMARAES, Nova Iguaçu, Rio de Janeiro, Brasil",-43.5246361,-22.7059091
+AUTOMAÇÃO INDUSTRIAL,2,JARDIM MARACANA,Seropédica,23891820,tarde,noite,,Rua Magno de Sá,"Rua Magno de Sá, JARDIM MARACANA, Seropédica, Rio de Janeiro, Brasil",-43.6543707,-22.7266786
+AUTOMAÇÃO INDUSTRIAL,2,AUSTIN,Nova Iguaçu,26087515,tarde,noite,,Rua Alcione,"Rua Alcione, AUSTIN, Nova Iguaçu, Rio de Janeiro, Brasil",-43.5206631,-22.7101682
+AUTOMAÇÃO INDUSTRIAL,2,CARMARI,Nova Iguaçu,26022210,tarde,noite,,Rua Polar,"Rua Polar, CARMARI, Nova Iguaçu, Rio de Janeiro, Brasil",-43.449756,-22.7280967
+AUTOMAÇÃO INDUSTRIAL,2,CERAMICA,Nova Iguaçu,26030200,tarde,noite,até 1460/1461,Estrada da Gama,"Estrada da Gama, CERAMICA, Nova Iguaçu, até 1460/1461, Rio de Janeiro, Brasil",-43.4692551,-22.7316521
+AUTOMAÇÃO INDUSTRIAL,2,CENTRO,Nova Iguaçu,26220120,tarde,noite,,Rua Áurea Fonseca de Jesus,"Rua Áurea Fonseca de Jesus, CENTRO, Nova Iguaçu, Rio de Janeiro, Brasil",-43.4383095,-22.7562479
+AUTOMAÇÃO INDUSTRIAL,2,FIGUEIRAS,Nova Iguaçu,26051720,tarde,noite,,Rua Sacadura Cabral,"Rua Sacadura Cabral, FIGUEIRAS, Nova Iguaçu, Rio de Janeiro, Brasil",-43.4406467,-22.6944543
+AUTOMAÇÃO INDUSTRIAL,2,SANTA EUGENIA,Nova Iguaçu,26286395,tarde,noite,,Rua Lourenço Taques,"Rua Lourenço Taques, SANTA EUGENIA, Nova Iguaçu, Rio de Janeiro, Brasil",-43.4786776,-22.7472843
+AUTOMAÇÃO INDUSTRIAL,1,PALHADA,Nova Iguaçu,26290375,manhã,tarde,(Prq Palmeiras),Avenida A,"Avenida A, PALHADA, Nova Iguaçu, (Prq Palmeiras), Rio de Janeiro, Brasil",-43.5287249,-22.7512279
+AUTOMAÇÃO INDUSTRIAL,1,Sao Benedito,Nova Iguaçu,26022308,manhã,tarde,de 304 ao fim - lado par,Rua Plínio Carneiro Jordão,"Rua Plínio Carneiro Jordão, Sao Benedito, Nova Iguaçu, de 304 ao fim - lado par, Rio de Janeiro, Brasil",-43.4554423,-22.7272695
+AUTOMAÇÃO INDUSTRIAL,1,Valverde,Nova Iguaçu,26290825,manhã,tarde,,Rua Manuel Luiz Neto,"Rua Manuel Luiz Neto, Valverde, Nova Iguaçu, Rio de Janeiro, Brasil",-43.524846,-22.770664
+AUTOMAÇÃO INDUSTRIAL,1,Éden,São João de Meriti,25540510,manhã,tarde,,Rua Pires do Rio,"Rua Pires do Rio, Éden, São João de Meriti, Rio de Janeiro, Brasil",-43.3956024,-22.7866096
+AUTOMAÇÃO INDUSTRIAL,1,Coelho da Rocha,São João de Meriti,25545400,manhã,tarde,até 298/299,Rua Eulina,"Rua Eulina, Coelho da Rocha, São João de Meriti, até 298/299, Rio de Janeiro, Brasil",-43.3882684,-22.7825343
+AUTOMAÇÃO INDUSTRIAL,1,Ponto Chic,Nova Iguaçu,26035120,manhã,tarde,,Rua Liberdade,"Rua Liberdade, Ponto Chic, Nova Iguaçu, Rio de Janeiro, Brasil",-43.468108,-22.7225467
+AUTOMAÇÃO INDUSTRIAL,1,Centro,Nova Iguaçu,26215460,manhã,tarde,,Rua Itaci,"Rua Itaci, Centro, Nova Iguaçu, Rio de Janeiro, Brasil",-43.4337242,-22.7684558
+AUTOMAÇÃO INDUSTRIAL,1,Sao Luiz Gonzaga,Nova Iguaçu,26033460,manhã,tarde,,Rua Júlio Kengen,"Rua Júlio Kengen, Sao Luiz Gonzaga, Nova Iguaçu, Rio de Janeiro, Brasil",-43.4657633,-22.7210151
+AUTOMAÇÃO INDUSTRIAL,1,parque mucaja,Japeri,26425045,manhã,tarde,,Rua Boqueirão,"Rua Boqueirão, parque mucaja, Japeri, Rio de Janeiro, Brasil",-43.6177116,-22.6806792
+AUTOMAÇÃO INDUSTRIAL,1,Grama,Nova Iguaçu,26061200,manhã,tarde,,Rua Graziela,"Rua Graziela, Grama, Nova Iguaçu, Rio de Janeiro, Brasil",-43.4240656,-22.6963634
+AUTOMAÇÃO INDUSTRIAL,1,Vila de Cava,Nova Iguaçu,26051590,manhã,tarde,,Rua Roldão,"Rua Roldão, Vila de Cava, Nova Iguaçu, Rio de Janeiro, Brasil",-43.4518195,-22.6908881
+AUTOMAÇÃO INDUSTRIAL,1,Engenheiro Pedreira,Japeri,26445020,manhã,tarde,,Rua Nilton,"Rua Nilton, Engenheiro Pedreira, Japeri, Rio de Janeiro, Brasil",-43.6041635,-22.6769027
+AUTOMAÇÃO INDUSTRIAL,1,Olaria,Rio de Janeiro,21021370,manhã,tarde,,Rua Doutor Nunes,"Rua Doutor Nunes, Olaria, Rio de Janeiro, Rio de Janeiro, Brasil",-43.262544,-22.8412311
+AUTOMAÇÃO INDUSTRIAL,1,Jardim Montevidéu,Nova Iguaçu,26062050,manhã,tarde,,Estrada Graúna,"Estrada Graúna, Jardim Montevidéu, Nova Iguaçu, Rio de Janeiro, Brasil",-43.3950802,-22.6239246
+AUTOMAÇÃO INDUSTRIAL,1,Sacopa,Nova Iguaçu,26040390,manhã,tarde,,Rua Lima e Silva,"Rua Lima e Silva, Sacopa, Nova Iguaçu, Rio de Janeiro, Brasil",-43.4461488,-22.7056497
+AUTOMAÇÃO INDUSTRIAL,1,Parque Anchieta,Rio de Janeiro,21635380,manhã,tarde,,Rua Otacílio Pedro Vasco,"Rua Otacílio Pedro Vasco, Parque Anchieta, Rio de Janeiro, Rio de Janeiro, Brasil",-43.4158006,-22.8355342
+AUTOMAÇÃO INDUSTRIAL,1,Mucajá 2,Japeri,26425070,manhã,tarde,,Avenida Macaiba,"Avenida Macaiba, Mucajá 2, Japeri, Rio de Janeiro, Brasil",-43.6157086,-22.6832725
+AUTOMAÇÃO INDUSTRIAL,1,Virgem de Fátima,Japeri,26443090,manhã,tarde,,Rua Eni,"Rua Eni, Virgem de Fátima, Japeri, Rio de Janeiro, Brasil",-43.6543235,-22.6334965
+AUTOMAÇÃO INDUSTRIAL,1,Jacutinga,Mesquita,26564051,manhã,tarde,de 384 a 1300 - lado par,Rua Ana Peixoto,"Rua Ana Peixoto, Jacutinga, Mesquita, de 384 a 1300 - lado par, Rio de Janeiro, Brasil",-43.4164223,-22.7737483
+AUTOMAÇÃO INDUSTRIAL,1,Sao Jorge,Japeri,26453110,manhã,tarde,,Rua Lópes de Sousa,"Rua Lópes de Sousa, Sao Jorge, Japeri, Rio de Janeiro, Brasil",-43.6150467,-22.6713057
+AUTOMAÇÃO INDUSTRIAL,1,Engenheiro Pedreira,Japeri,26420240,manhã,tarde,,Estrada do Daniel,"Estrada do Daniel, Engenheiro Pedreira, Japeri, Rio de Janeiro, Brasil",-43.6155964,-22.6802001
+AUTOMAÇÃO INDUSTRIAL,1,Cerâmica,Nova Iguaçu,26030690,manhã,tarde,,Rua Roberto Vicenzi,"Rua Roberto Vicenzi, Cerâmica, Nova Iguaçu, Rio de Janeiro, Brasil",-43.4695603,-22.7360289
+AUTOMAÇÃO INDUSTRIAL,1,VILA EMIL,Mesquita,26580020,manhã,tarde,,Rua Egídio II,"Rua Egídio II, VILA EMIL, Mesquita, Rio de Janeiro, Brasil",-43.4180869,-22.7864718
+AUTOMAÇÃO INDUSTRIAL,1,Parque Analândia,São João de Meriti,25585840,manhã,tarde,,Rua Milton de Oliveira,"Rua Milton de Oliveira, Parque Analândia, São João de Meriti, Rio de Janeiro, Brasil",-43.3331795,-22.8003304
+AUTOMAÇÃO INDUSTRIAL,1,Califórnia,NOVA IGUACU,26220120,manhã,tarde,,Rua Áurea Fonseca de Jesus,"Rua Áurea Fonseca de Jesus, Califórnia, NOVA IGUACU, Rio de Janeiro, Brasil",-43.438165,-22.7567967
+AUTOMAÇÃO INDUSTRIAL,1,Chaperó - Itaguaí,Itaguaí,23831190,manhã,tarde,(Gleba A),Rua Professor Amauri Lima Benedicto,"Rua Professor Amauri Lima Benedicto, Chaperó - Itaguaí, Itaguaí, (Gleba A), Rio de Janeiro, Brasil",-43.7572644,-22.8115931
+AUTOMAÇÃO INDUSTRIAL,1,MIGUEL COUTO,Nova Iguaçu,26061490,manhã,tarde,,Rua do Cajueiro,"Rua do Cajueiro, MIGUEL COUTO, Nova Iguaçu, Rio de Janeiro, Brasil",-43.4178091,-22.691709
+AUTOMAÇÃO INDUSTRIAL,1,Jacutinga,Mesquita,26564000,manhã,tarde,até 1072/1073,Avenida Dona Delfina Borges,"Avenida Dona Delfina Borges, Jacutinga, Mesquita, até 1072/1073, Rio de Janeiro, Brasil",-43.4189039,-22.771057
+AUTOMAÇÃO INDUSTRIAL,1,Cidade Jardim Parque Estoril,Nova Iguaçu,26063250,manhã,tarde,,Rua Lisboa,"Rua Lisboa, Cidade Jardim Parque Estoril, Nova Iguaçu, Rio de Janeiro, Brasil",-43.4144265,-22.6392717
+AUTOMAÇÃO INDUSTRIAL,1,Cosmorama,Mesquita,26582020,manhã,tarde,,Rua Cosmorama,"Rua Cosmorama, Cosmorama, Mesquita, Rio de Janeiro, Brasil",-43.4177205,-22.7934362
+AUTOMAÇÃO INDUSTRIAL,1,Ceramica,Nova Iguaçu,26031481,manhã,tarde,de 979 ao fim - lado ímpar,Rua Geni Saraiva,"Rua Geni Saraiva, Ceramica, Nova Iguaçu, de 979 ao fim - lado ímpar, Rio de Janeiro, Brasil",-43.4774687,-22.7351256
+AUTOMAÇÃO INDUSTRIAL,1,Jacutinga,Mesquita,26564061,manhã,tarde,de 448 a 1300 - lado par,Rua Barros Peixoto,"Rua Barros Peixoto, Jacutinga, Mesquita, de 448 a 1300 - lado par, Rio de Janeiro, Brasil",-43.4154987,-22.7743045
+AUTOMAÇÃO INDUSTRIAL,1,Vila de Cava,Nova Iguaçu,26012530,manhã,tarde,,Rua Sérgio Azevedo,"Rua Sérgio Azevedo, Vila de Cava, Nova Iguaçu, Rio de Janeiro, Brasil",-43.4389027,-22.7359465
+AUTOMAÇÃO INDUSTRIAL,1,Vila Emil,Mesquita,26580220,manhã,tarde,,Rua Fausto,"Rua Fausto, Vila Emil, Mesquita, Rio de Janeiro, Brasil",-43.420069,-22.7879125
+ENFERMAGEM,3,PARQUE FLORA,Nova Iguaçu,26041120,tarde,noite,,Rua Jorge Salomão,"Rua Jorge Salomão, PARQUE FLORA, Nova Iguaçu, Rio de Janeiro, Brasil",-43.451328,-22.7167573
+ENFERMAGEM,3,CAMPO GRANDE,Rio de Janeiro,23052350,tarde,noite,,Rua Henri Dunant,"Rua Henri Dunant, CAMPO GRANDE, Rio de Janeiro, Rio de Janeiro, Brasil",-43.5486941,-22.9062506
+ENFERMAGEM,3,COSMOS,Rio de Janeiro,23061502,tarde,noite,(Conj Telerj),Rua Um,"Rua Um, COSMOS, Rio de Janeiro, (Conj Telerj), Rio de Janeiro, Brasil",-43.6198819,-22.9063195
+ENFERMAGEM,3,IRAJA,Rio de Janeiro,21361410,tarde,noite,,Rua São Canuto,"Rua São Canuto, IRAJA, Rio de Janeiro, Rio de Janeiro, Brasil",-43.3306381,-22.8520366
+ENFERMAGEM,3,COREIA,Mesquita,26556500,tarde,noite,,Rua Aracaju,"Rua Aracaju, COREIA, Mesquita, Rio de Janeiro, Brasil",-43.4362138,-22.7745152
+ENFERMAGEM,3,METROPOLITANO,Nova Iguaçu,26281240,tarde,noite,,Rua Marecil Rodrigues de Souza,"Rua Marecil Rodrigues de Souza, METROPOLITANO, Nova Iguaçu, Rio de Janeiro, Brasil",-43.4759,-22.74157
+ENFERMAGEM,3,VILA SÃO TEODORO,Nova Iguaçu,26021630,tarde,noite,,Rua Jequitia,"Rua Jequitia, VILA SÃO TEODORO, Nova Iguaçu, Rio de Janeiro, Brasil",-43.4364251,-22.7250479
+ENFERMAGEM,3,POSSE,Nova Iguaçu,26022250,tarde,noite,,Rua Império,"Rua Império, POSSE, Nova Iguaçu, Rio de Janeiro, Brasil",-43.4501146,-22.7288425
+ENFERMAGEM,3,JARDIM CANAÃ,Nova Iguaçu,26262071,tarde,noite,,Rua Cíntia,"Rua Cíntia, JARDIM CANAÃ, Nova Iguaçu, Rio de Janeiro, Brasil",-43.4815249,-22.7498334
+ENFERMAGEM,3,PAVUNA,Rio de Janeiro,21520210,tarde,noite,,Rua Comendador Guerra,"Rua Comendador Guerra, PAVUNA, Rio de Janeiro, Rio de Janeiro, Brasil",-43.3694317,-22.8084487
+ENFERMAGEM,3,DA LUZ,Nova Iguaçu,26010720,tarde,noite,,Rua Palmas,"Rua Palmas, DA LUZ, Nova Iguaçu, Rio de Janeiro, Brasil",-43.4768129,-22.7516254
+ENFERMAGEM,3,EDSON PASSOS,Rio de Janeiro,26585270,tarde,noite,,Travessa Marcílio Rizzo,"Travessa Marcílio Rizzo, EDSON PASSOS, Rio de Janeiro, Rio de Janeiro, Brasil",-43.4329652,-22.7998376
+ENFERMAGEM,3,MIGUEL COUTO,Nova Iguaçu,26021120,tarde,noite,,Rua Clero,"Rua Clero, MIGUEL COUTO, Nova Iguaçu, Rio de Janeiro, Brasil",-43.4438463,-22.7333461
+ENFERMAGEM,3,CRUZEIRO DO SUL,Nova Iguaçu,26011660,tarde,noite,,Rua Vicente Lamata,"Rua Vicente Lamata, CRUZEIRO DO SUL, Nova Iguaçu, Rio de Janeiro, Brasil",-43.4307632,-22.7468934
+ENFERMAGEM,3,REALENGO,Rio de Janeiro,21770280,tarde,noite,,Rua Henrique do Couto Escher,"Rua Henrique do Couto Escher, REALENGO, Rio de Janeiro, Rio de Janeiro, Brasil",-43.4455947,-22.8942569
+ENFERMAGEM,3,PRIMAVERA - ENGENHEIRO PEDREIRA,Japeri,26445325,tarde,noite,,Estrada Ary Schiavo,"Estrada Ary Schiavo, PRIMAVERA - ENGENHEIRO PEDREIRA, Japeri, Rio de Janeiro, Brasil",-43.6197295,-22.6456782
+ENFERMAGEM,3,Irajá,Rio de Janeiro,21220310,tarde,noite,,Estrada Coronel Vieira,"Estrada Coronel Vieira, Irajá, Rio de Janeiro, Rio de Janeiro, Brasil",-43.3199852,-22.847439
+ENFERMAGEM,3,Parque Engenheiro Pedreira,Japeri,26445100,tarde,noite,,Rua Carlos Bruno,"Rua Carlos Bruno, Parque Engenheiro Pedreira, Japeri, Rio de Janeiro, Brasil",-43.6022838,-22.6720816
+ENFERMAGEM,3,Montevidéu,Nova Iguaçu,26062790,tarde,noite,,Rua Dom João,"Rua Dom João, Montevidéu, Nova Iguaçu, Rio de Janeiro, Brasil",-43.3992275,-22.6201196
+ENFERMAGEM,2,Vicente de Carvalho,Rio de Janeiro,21371080,manhã,tarde,,Rua Lopo Diniz,"Rua Lopo Diniz, Vicente de Carvalho, Rio de Janeiro, Rio de Janeiro, Brasil",-43.3201616,-22.8569143
+ENFERMAGEM,3,Pavuna,Rio de Janeiro,21521410,tarde,noite,,Alameda Periquitos,"Alameda Periquitos, Pavuna, Rio de Janeiro, Rio de Janeiro, Brasil",-43.3548316,-22.8155977
+ENFERMAGEM,3,Parque colonial,Belford Roxo,26180040,tarde,noite,,Rua Napoles,"Rua Napoles, Parque colonial, Belford Roxo, Rio de Janeiro, Brasil",-43.3378753,-22.7101984
+ENFERMAGEM,3,moquetá,Nova Iguaçu,26285490,tarde,noite,,Rua Tupinambás,"Rua Tupinambás, moquetá, Nova Iguaçu, Rio de Janeiro, Brasil",-43.4546137,-22.7463513
+ENFERMAGEM,1,itacuruça,Mangaratiba,23860000,tarde,noite,,,"itacuruça, Mangaratiba, Rio de Janeiro, Brasil",-44.03895540000001,-22.9161789
+ENFERMAGEM,3,Palhada,Nova Iguaçu,26290249,tarde,noite,,Estrada Granja,"Estrada Granja, Palhada, Nova Iguaçu, Rio de Janeiro, Brasil",-43.5319536,-22.7575531
+ENFERMAGEM,2,Vilar dos teles,São João de Meriti,25565410,manhã,tarde,,Rua Alto da Boa Vista,"Rua Alto da Boa Vista, Vilar dos teles, São João de Meriti, Rio de Janeiro, Brasil",-43.357035,-22.7841752
+ENFERMAGEM,3,VILAR DOS TELES,São João de Meriti,25570001,tarde,noite,,Rua Capivari,"Rua Capivari, VILAR DOS TELES, São João de Meriti, Rio de Janeiro, Brasil",-43.3579267,-22.7729548
+ENFERMAGEM,3,Vila Nascente,Queimados,26325050,tarde,noite,,Rua Vereador José Virgílio do Prado,"Rua Vereador José Virgílio do Prado, Vila Nascente, Queimados, Rio de Janeiro, Brasil",-43.5553322,-22.7258725
+ENFERMAGEM,3,Andrade de Araújo,Belford Roxo,26135660,tarde,noite,,Rua Barbacena,"Rua Barbacena, Andrade de Araújo, Belford Roxo, Rio de Janeiro, Brasil",-43.4212746,-22.7462013
+ENFERMAGEM,3,rocha miranda,Rio de Janeiro,21510005,tarde,noite,de 840 ao fim - lado par,Rua dos Diamantes,"Rua dos Diamantes, rocha miranda, Rio de Janeiro, de 840 ao fim - lado par, Rio de Janeiro, Brasil",-43.3517878,-22.8436282
+ENFERMAGEM,2,Boa Esperança,Nova Iguaçu,26070102,manhã,tarde,,Rua Itapemirim,"Rua Itapemirim, Boa Esperança, Nova Iguaçu, Rio de Janeiro, Brasil",-43.43125,-22.7154706
+ENFERMAGEM,2,PALHADA,Nova Iguaçu,26271110,manhã,tarde,,Rua Alina Teixeira de Melo,"Rua Alina Teixeira de Melo, PALHADA, Nova Iguaçu, Rio de Janeiro, Brasil",-43.5085349,-22.7594603
+ENFERMAGEM,1,Nova Cidade,NILOPOLIS,26530220,tarde,noite,,Rua Rui Barbosa,"Rua Rui Barbosa, Nova Cidade, NILOPOLIS, Rio de Janeiro, Brasil",-43.4145774,-22.7985243
+ENFERMAGEM,2,Penha Circular,Rio de Janeiro,21011610,manhã,tarde,,Rua Cascais,"Rua Cascais, Penha Circular, Rio de Janeiro, Rio de Janeiro, Brasil",-43.2782169,-22.8273772
+ENFERMAGEM,3,Engenheiro Rocha Freire,Nova Iguaçu,26050340,tarde,noite,até 990/991,Estrada Santa Perciliana,"Estrada Santa Perciliana, Engenheiro Rocha Freire, Nova Iguaçu, até 990/991, Rio de Janeiro, Brasil",-43.4563753,-22.6753404
+ENFERMAGEM,3,Nova Cidade,Nilópolis,26530210,tarde,noite,,Estrada Rúbens dos Reis Sales,"Estrada Rúbens dos Reis Sales, Nova Cidade, Nilópolis, Rio de Janeiro, Brasil",-43.4154115,-22.8008052
+ENFERMAGEM,3,Engenho Pequeno,Nova Iguaçu,26010390,tarde,noite,,Rua Dona Clara de Araújo,"Rua Dona Clara de Araújo, Engenho Pequeno, Nova Iguaçu, Rio de Janeiro, Brasil",-43.4248737,-22.7507861
+ENFERMAGEM,3,Da Luz,Nova Iguaçu,26262070,tarde,noite,,Rua Coronel Bernardino de Melo,"Rua Coronel Bernardino de Melo, Da Luz, Nova Iguaçu, Rio de Janeiro, Brasil",-43.4700562,-22.7524237
+ENFERMAGEM,2,Jardim Parque Estoril,Nova Iguaçu,26064200,manhã,tarde,,Rua Cristóvão Colombo,"Rua Cristóvão Colombo, Jardim Parque Estoril, Nova Iguaçu, Rio de Janeiro, Brasil",-43.4081078,-22.6458554
+ENFERMAGEM,3,Rocha Sobrinho,Mesquita,26572300,tarde,noite,,Rua Ermelinda,"Rua Ermelinda, Rocha Sobrinho, Mesquita, Rio de Janeiro, Brasil",-43.4060755,-22.780871
+ENFERMAGEM,2,TAQUARA,Rio de Janeiro,22723130,manhã,tarde,,Rua Ibiraba,"Rua Ibiraba, TAQUARA, Rio de Janeiro, Rio de Janeiro, Brasil",-43.4049487,-22.9173778
+ENFERMAGEM,3,Coelho Neto,Rio de Janeiro,21530300,tarde,noite,,Rua Fruhbeck,"Rua Fruhbeck, Coelho Neto, Rio de Janeiro, Rio de Janeiro, Brasil",-43.3505938,-22.8261678
+ENFERMAGEM,1,Pavuna,Rio de Janeiro,21650001,tarde,noite,de 2185 ao fim - lado ímpar,Avenida Chrisóstomo Pimentel de Oliveira,"Avenida Chrisóstomo Pimentel de Oliveira, Pavuna, Rio de Janeiro, de 2185 ao fim - lado ímpar, Rio de Janeiro, Brasil",-43.3891857,-22.8167963
+ENFERMAGEM,3,Paraíso,Nova Iguaçu,26297390,tarde,noite,,Rua Ferro,"Rua Ferro, Paraíso, Nova Iguaçu, Rio de Janeiro, Brasil",-43.5958716,-22.8242071
+ENFERMAGEM,3,castelar,Belford Roxo,26115397,tarde,noite,(Vl Vitório),Rua Joaquim Victório,"Rua Joaquim Victório, castelar, Belford Roxo, (Vl Vitório), Rio de Janeiro, Brasil",-43.4008649,-22.747143
+ENFERMAGEM,3,Bairro das Graças,Belford Roxo,26113590,tarde,noite,,Rua Itambira,"Rua Itambira, Bairro das Graças, Belford Roxo, Rio de Janeiro, Brasil",-43.3950958,-22.7582155
+ENFERMAGEM,2,Jardim Montivideu,Nova Iguaçu,26063060,manhã,tarde,,Estrada do Galo,"Estrada do Galo, Jardim Montivideu, Nova Iguaçu, Rio de Janeiro, Brasil",-43.4106202,-22.621735
+ENFERMAGEM,2,Comendador Soares,Nova Iguaçu,26261220,manhã,tarde,,Rua Ministro Lafaiete de Andrade,"Rua Ministro Lafaiete de Andrade, Comendador Soares, Nova Iguaçu, Rio de Janeiro, Brasil",-43.4845206,-22.7483834
+ENFERMAGEM,2,ROSA DOS VENTOS,Nova Iguaçu,26276200,manhã,tarde,,Rua Caruaru,"Rua Caruaru, ROSA DOS VENTOS, Nova Iguaçu, Rio de Janeiro, Brasil",-43.5019587,-22.7485754
+ENFERMAGEM,3,Miguel Couto,Nova Iguaçu,26060840,tarde,noite,,Rua Kivia,"Rua Kivia, Miguel Couto, Nova Iguaçu, Rio de Janeiro, Brasil",-43.4304151,-22.7007994
+ENFERMAGEM,3,Engenho,Itaguaí,23822730,tarde,noite,,Rua Thieres Teixeira Leite,"Rua Thieres Teixeira Leite, Engenho, Itaguaí, Rio de Janeiro, Brasil",-43.7841785,-22.8606152
+ENFERMAGEM,3,Jardim Maracanã,Seropédica,23891820,tarde,noite,,Rua Magno de Sá,"Rua Magno de Sá, Jardim Maracanã, Seropédica, Rio de Janeiro, Brasil",-43.6543707,-22.7266786
+ENFERMAGEM,1,Campo grande,Rio de Janeiro,23078002,tarde,noite,de 37915 a 49387 - lado ímpar,Avenida Brasil,"Avenida Brasil, Campo grande, Rio de Janeiro, de 37915 a 49387 - lado ímpar, Rio de Janeiro, Brasil",-43.6097853,-22.874265
+ENFERMAGEM,3,Jardim Jurema,São João de Meriti,25580163,tarde,noite,,Rua Doutor Brasil Valério,"Rua Doutor Brasil Valério, Jardim Jurema, São João de Meriti, Rio de Janeiro, Brasil",-43.344085,-22.7836825
+ENFERMAGEM,2,Banco de areia,Mesquita,26570100,manhã,tarde,,Rua Mastruço,"Rua Mastruço, Banco de areia, Mesquita, Rio de Janeiro, Brasil",-43.4156972,-22.781701
+ENFERMAGEM,1,Viga,Nova Iguaçu,26013590,tarde,noite,,Rua Alagoas,"Rua Alagoas, Viga, Nova Iguaçu, Rio de Janeiro, Brasil",-43.4422224,-22.7400829
+ENFERMAGEM,2,Engenho Pequeno,Nova Iguaçu,26012451,manhã,tarde,de 652/653 ao fim,Rua Nair Dias,"Rua Nair Dias, Engenho Pequeno, Nova Iguaçu, de 652/653 ao fim, Rio de Janeiro, Brasil",-43.4318784,-22.7437305
+ENFERMAGEM,3,DAS GRAÇAS,Belford Roxo,26113365,tarde,noite,(Cond San Carlo),Rua Projetada,"Rua Projetada, DAS GRAÇAS, Belford Roxo, (Cond San Carlo), Rio de Janeiro, Brasil",-43.3971695,-22.7616036
+ENFERMAGEM,2,JARDIM GUANABARA,Rio de Janeiro,21940280,manhã,tarde,,Rua Engenheiro Rozauro Zambrano,"Rua Engenheiro Rozauro Zambrano, JARDIM GUANABARA, Rio de Janeiro, Rio de Janeiro, Brasil",-43.2007034,-22.8176032
+ENFERMAGEM,2,SANTA RITA,Nova Iguaçu,26051161,manhã,tarde,,Rua Vitorino Cardoso Távora,"Rua Vitorino Cardoso Távora, SANTA RITA, Nova Iguaçu, Rio de Janeiro, Brasil",-43.4601532,-22.6895171
+ENFERMAGEM,1,CABUIS,Nilópolis,26545442,tarde,noite,até 796 - lado par,Rua Júlio Berkowitz,"Rua Júlio Berkowitz, CABUIS, Nilópolis, até 796 - lado par, Rio de Janeiro, Brasil",-43.4021932,-22.8099762
+ENFERMAGEM,2,OURO VERDE,Nova Iguaçu,26263260,manhã,tarde,,Rua Nuno,"Rua Nuno, OURO VERDE, Nova Iguaçu, Rio de Janeiro, Brasil",-43.4783685,-22.7514019
+ENFERMAGEM,2,CORUMBÁ,Nova Iguaçu,26042400,manhã,tarde,,Rua Luís Rodolfo Vilena,"Rua Luís Rodolfo Vilena, CORUMBÁ, Nova Iguaçu, Rio de Janeiro, Brasil",-43.4712754,-22.6987205
+ENFERMAGEM,2,PAVUNA,Rio de Janeiro,21520020,manhã,tarde,,Rua Doutor José Thomas,"Rua Doutor José Thomas, PAVUNA, Rio de Janeiro, Rio de Janeiro, Brasil",-43.3641859,-22.8148507
+ENFERMAGEM,2,JUSCELINO,Mesquita,26550800,manhã,tarde,,Rua Marcial,"Rua Marcial, JUSCELINO, Mesquita, Rio de Janeiro, Brasil",-43.4313357,-22.7707393
+ENFERMAGEM,2,São Miguel,Seropédica,23893780,manhã,tarde,,Rua José Manuel da Silva,"Rua José Manuel da Silva, São Miguel, Seropédica, Rio de Janeiro, Brasil",-43.7209941,-22.7094247
+ENFERMAGEM,1,CERAMICA,Nova Iguaçu,26032250,tarde,noite,,Rua Durval Cavalcanti,"Rua Durval Cavalcanti, CERAMICA, Nova Iguaçu, Rio de Janeiro, Brasil",-43.4776163,-22.7303337
+ENFERMAGEM,2,PENHA CIRCULAR,Rio de Janeiro,21210420,manhã,tarde,,Rua Crato,"Rua Crato, PENHA CIRCULAR, Rio de Janeiro, Rio de Janeiro, Brasil",-43.2912903,-22.8396663
+ENFERMAGEM,2,FIGUEIRAS,Nova Iguaçu,26060530,manhã,tarde,,Estrada do Cassiano,"Estrada do Cassiano, FIGUEIRAS, Nova Iguaçu, Rio de Janeiro, Brasil",-43.4230132,-22.6845777
+ENFERMAGEM,1,MIGUEL COUTO,Nova Iguaçu,26070536,tarde,noite,,Rua Saint Clair,"Rua Saint Clair, MIGUEL COUTO, Nova Iguaçu, Rio de Janeiro, Brasil",-43.4368595,-22.7130993
+ENFERMAGEM,2,Vila de Cava,Nova Iguaçu,26051680,manhã,tarde,,Estrada Carro Quebrado,"Estrada Carro Quebrado, Vila de Cava, Nova Iguaçu, Rio de Janeiro, Brasil",-43.4472404,-22.6930487
+ENFERMAGEM,2,JARDIM AMERICA,Rio de Janeiro,21240100,manhã,tarde,,Rua Frederic Chopin,"Rua Frederic Chopin, JARDIM AMERICA, Rio de Janeiro, Rio de Janeiro, Brasil",-43.3231195,-22.8120826
+ENFERMAGEM,2,VILA NORMA,São João de Meriti,25535450,manhã,tarde,,Rua Carlos Marques de Castro,"Rua Carlos Marques de Castro, VILA NORMA, São João de Meriti, Rio de Janeiro, Brasil",-43.4041203,-22.78665
+ENFERMAGEM,2,VILA EMIL,Mesquita,26580060,manhã,tarde,de 130 ao fim - lado par,Rua Vereador Carlos Carvalho,"Rua Vereador Carlos Carvalho, VILA EMIL, Mesquita, de 130 ao fim - lado par, Rio de Janeiro, Brasil",-43.4218792,-22.7847369
+ENFERMAGEM,2,VILAR DOS TELES,São João de Meriti,25555760,manhã,tarde,,Rua Barra Mansa,"Rua Barra Mansa, VILAR DOS TELES, São João de Meriti, Rio de Janeiro, Brasil",-43.3632979,-22.7755552
+ENFERMAGEM,2,TRÊS CORAÇÕES,Nova Iguaçu,26033320,manhã,tarde,,Rua Aparecida,"Rua Aparecida, TRÊS CORAÇÕES, Nova Iguaçu, Rio de Janeiro, Brasil",-43.4635486,-22.7208071
+ENFERMAGEM,2,VILA DE CAVA,Nova Iguaçu,26052210,manhã,tarde,,Rua Helena,"Rua Helena, VILA DE CAVA, Nova Iguaçu, Rio de Janeiro, Brasil",-43.4464041,-22.6800895
+ENFERMAGEM,2,JARDIM GUANDU,Nova Iguaçu,26298367,manhã,tarde,(Cj Res Pq Guandu),Rua Salvador Lombone,"Rua Salvador Lombone, JARDIM GUANDU, Nova Iguaçu, (Cj Res Pq Guandu), Rio de Janeiro, Brasil",-43.6107847,-22.8342931
+ENFERMAGEM,2,COELHO DA ROCHA,São João de Meriti,25550360,manhã,tarde,,Rua Dolomita,"Rua Dolomita, COELHO DA ROCHA, São João de Meriti, Rio de Janeiro, Brasil",-43.3861833,-22.7693236
+ENFERMAGEM,2,VILA IGUAÇUANA,Nova Iguaçu,26050210,manhã,tarde,,Rua Juriti,"Rua Juriti, VILA IGUAÇUANA, Nova Iguaçu, Rio de Janeiro, Brasil",-43.4659456,-22.6878419
+ENFERMAGEM,1,ACARI,Rio de Janeiro,21531180,tarde,noite,,Travessa Agnaldo,"Travessa Agnaldo, ACARI, Rio de Janeiro, Rio de Janeiro, Brasil",-43.3445447,-22.8255154
+ENFERMAGEM,2,Cerâmica,Nova Iguaçu,26032250,manhã,tarde,,Rua Durval Cavalcanti,"Rua Durval Cavalcanti, Cerâmica, Nova Iguaçu, Rio de Janeiro, Brasil",-43.4776163,-22.7303337
+ENFERMAGEM,2,FANCHEM,Queimados,26383390,manhã,tarde,,Rua Fernando Vasconcelos,"Rua Fernando Vasconcelos, FANCHEM, Queimados, Rio de Janeiro, Brasil",-43.5618624,-22.7044914
+ENFERMAGEM,2,COMENDADOR SOARES,Nova Iguaçu,26281520,manhã,tarde,,Rua Lima,"Rua Lima, COMENDADOR SOARES, Nova Iguaçu, Rio de Janeiro, Brasil",-43.4722707,-22.7436887
+ENFERMAGEM,1,VILA SAO TEODORO,Belford Roxo,26143430,tarde,noite,,Rua Japi,"Rua Japi, VILA SAO TEODORO, Belford Roxo, Rio de Janeiro, Brasil",-43.4236893,-22.7305736
+ENFERMAGEM,1,BANCO DE AREIA,Mesquita,26572090,tarde,noite,,Rua Amazonas,"Rua Amazonas, BANCO DE AREIA, Mesquita, Rio de Janeiro, Brasil",-43.4057661,-22.7857649
+ENFERMAGEM,2,GUADALUPE,Rio de Janeiro,21660000,manhã,tarde,de 22328 a 23328 - lado par,Avenida Brasil,"Avenida Brasil, GUADALUPE, Rio de Janeiro, de 22328 a 23328 - lado par, Rio de Janeiro, Brasil",-43.3792773,-22.846237
+ENFERMAGEM,1,caonze,Nova Iguaçu,26250070,tarde,noite,,Rua Comendador Francisco Baroni,"Rua Comendador Francisco Baroni, caonze, Nova Iguaçu, Rio de Janeiro, Brasil",-43.442602,-22.7656132
+ENFERMAGEM,1,Eden,São João de Meriti,25535190,tarde,noite,,Rua Abaeté,"Rua Abaeté, Eden, São João de Meriti, Rio de Janeiro, Brasil",-43.4014147,-22.7929117
+ENFERMAGEM,1,Parque Santa Eugênia,Queimados,26313120,tarde,noite,,Rua Alegrete,"Rua Alegrete, Parque Santa Eugênia, Queimados, Rio de Janeiro, Brasil",-43.5685269,-22.7209365
+ENFERMAGEM,1,Vilar dos Teles,São João de Meriti,25576120,tarde,noite,,Rua Vinhático,"Rua Vinhático, Vilar dos Teles, São João de Meriti, Rio de Janeiro, Brasil",-43.3516857,-22.7754335
+ENFERMAGEM,1,Dom Rodrigo,Nova Iguaçu,26260100,tarde,noite,,Rua Antônio Pereira Magalhães,"Rua Antônio Pereira Magalhães, Dom Rodrigo, Nova Iguaçu, Rio de Janeiro, Brasil",-43.4772893,-22.7596528
+ENFERMAGEM,1,Ponto Chic,NOVA IGUACU,26032830,tarde,noite,,Estrada Velha de Santa Rita,"Estrada Velha de Santa Rita, Ponto Chic, NOVA IGUACU, Rio de Janeiro, Brasil",-43.4692889,-22.719485
+ENFERMAGEM,1,Vicente de Carvalho,Rio de Janeiro,21371020,tarde,noite,,Rua César Múzio,"Rua César Múzio, Vicente de Carvalho, Rio de Janeiro, Rio de Janeiro, Brasil",-43.3169286,-22.8541258
+ENFERMAGEM,1,Cordovil,Rio de Janeiro,21012180,tarde,noite,,Rua Ipane,"Rua Ipane, Cordovil, Rio de Janeiro, Rio de Janeiro, Brasil",-43.2942953,-22.8239177
+ENFERMAGEM,1,Pavuna,Rio de Janeiro,21532290,tarde,noite,,Avenida Sargento de Milícias,"Avenida Sargento de Milícias, Pavuna, Rio de Janeiro, Rio de Janeiro, Brasil",-43.3596471,-22.8045119
+ENFERMAGEM,1,IRAJA,Rio de Janeiro,21371280,tarde,noite,,Travessa Muritiapina,"Travessa Muritiapina, IRAJA, Rio de Janeiro, Rio de Janeiro, Brasil",-43.3215345,-22.8511993
+ENFERMAGEM,1,Parque Macaiba,Japeri,26425000,tarde,noite,,Rua Cubatão,"Rua Cubatão, Parque Macaiba, Japeri, Rio de Janeiro, Brasil",-43.6190736,-22.6804885
+ENFERMAGEM,1,Miguel Couto,Nova Iguaçu,26070215,tarde,noite,,Rua Elvira Guida,"Rua Elvira Guida, Miguel Couto, Nova Iguaçu, Rio de Janeiro, Brasil",-43.4271172,-22.7120897
+ENFERMAGEM,1,Ponto Chic,Nova Iguaçu,26032477,tarde,noite,,Rua José Dias Valente,"Rua José Dias Valente, Ponto Chic, Nova Iguaçu, Rio de Janeiro, Brasil",-43.4782603,-22.7260771
+ENFERMAGEM,1,Vila Rosali,São João de Meriti,25525112,tarde,noite,,Rua Raimundo Macedo Sobrinho,"Rua Raimundo Macedo Sobrinho, Vila Rosali, São João de Meriti, Rio de Janeiro, Brasil",-43.3787504,-22.7960594
+ENFERMAGEM,1,da luz,Nova Iguaçu,26256050,tarde,noite,até 491/492,Rua Expedicionários,"Rua Expedicionários, da luz, Nova Iguaçu, até 491/492, Rio de Janeiro, Brasil",-43.4681076,-22.7553188
+ENFERMAGEM,1,SITIO RETIRO FELIZ,Belford Roxo,26107710,tarde,noite,,,"SITIO RETIRO FELIZ, Belford Roxo, Rio de Janeiro, Brasil",-43.3753142,-22.7337232
+ENFERMAGEM,1,Jardim Esplanada,Nova Iguaçu,26013470,tarde,noite,,Estrada da Fazenda,"Estrada da Fazenda, Jardim Esplanada, Nova Iguaçu, Rio de Janeiro, Brasil",-43.4465238,-22.7422704
+ENFERMAGEM,1,Vila São Luis,Nova Iguaçu,26012485,tarde,noite,,Rua Tamandaré,"Rua Tamandaré, Vila São Luis, Nova Iguaçu, Rio de Janeiro, Brasil",-43.4366916,-22.7388501
+ENFERMAGEM,1,Kennedy,Nova Iguaçu,26020470,tarde,noite,,Rua Monte Líbano,"Rua Monte Líbano, Kennedy, Nova Iguaçu, Rio de Janeiro, Brasil",-43.4504331,-22.7398072
+ENFERMAGEM,1,CAMPO GRANDE,Rio de Janeiro,23082180,tarde,noite,,Rua Beniamino Gigli,"Rua Beniamino Gigli, CAMPO GRANDE, Rio de Janeiro, Rio de Janeiro, Brasil",-43.5714965,-22.8896519
+ENFERMAGEM,1,Campo grande,Rio de Janeiro,23040780,tarde,noite,de 702/703 ao fim,Rua Rodrigues Campelo,"Rua Rodrigues Campelo, Campo grande, Rio de Janeiro, de 702/703 ao fim, Rio de Janeiro, Brasil",-43.5395193,-22.9187003
+ENFERMAGEM,1,Cacuia,Nova Iguaçu,26082225,tarde,noite,,Rua Corretor Geraldo Francisco Vieira,"Rua Corretor Geraldo Francisco Vieira, Cacuia, Nova Iguaçu, Rio de Janeiro, Brasil",-43.5101213,-22.7314258
+ENFERMAGEM,1,Guaratiba,Rio de Janeiro,23025080,tarde,noite,,Avenida Litorânea,"Avenida Litorânea, Guaratiba, Rio de Janeiro, Rio de Janeiro, Brasil",-43.6278198,-22.9982693
+ENFERMAGEM,1,Centro,Nova Iguaçu,26215531,tarde,noite,de 313 ao fim - lado ímpar,Avenida Doutor Luiz Guimarães,"Avenida Doutor Luiz Guimarães, Centro, Nova Iguaçu, de 313 ao fim - lado ímpar, Rio de Janeiro, Brasil",-43.4434726,-22.7552503
+ENFERMAGEM,1,Vila de Cava,Nova Iguaçu,26050803,tarde,noite,(Lot Pq B Vista),Rua Joel Pinto Guedes,"Rua Joel Pinto Guedes, Vila de Cava, Nova Iguaçu, (Lot Pq B Vista), Rio de Janeiro, Brasil",-43.4547162,-22.678534
+INFORMÁTICA,3,CAIOABA,Nova Iguaçu,26011770,manhã,tarde,,Rua Laura Dias,"Rua Laura Dias, CAIOABA, Nova Iguaçu, Rio de Janeiro, Brasil",-43.432249,-22.7362893
+INFORMÁTICA,3,CABUIS,Nilópolis,26540290,manhã,tarde,,Rua Fernando Gonçalves de Almeida,"Rua Fernando Gonçalves de Almeida, CABUIS, Nilópolis, Rio de Janeiro, Brasil",-43.4031846,-22.806695
+INFORMÁTICA,3,IPIRANGA,Nova Iguaçu,26293307,manhã,tarde,,Rua Nordeste,"Rua Nordeste, IPIRANGA, Nova Iguaçu, Rio de Janeiro, Brasil",-43.5608314,-22.7974044
+INFORMÁTICA,3,Cidade Senhor do Bonfim,Japeri,26423200,manhã,tarde,,Rua São Jorge,"Rua São Jorge, Cidade Senhor do Bonfim, Japeri, Rio de Janeiro, Brasil",-43.5783183,-22.652515
+INFORMÁTICA,3,Iguaçu Velho,Nova Iguaçu,26062400,manhã,tarde,até 6799/6800,Estrada Zumbi dos Palmares,"Estrada Zumbi dos Palmares, Iguaçu Velho, Nova Iguaçu, até 6799/6800, Rio de Janeiro, Brasil",-43.4335156,-22.6760213
+INFORMÁTICA,3,K11,Nova Iguaçu,26250085,manhã,tarde,,Rua José Paulo Custódio,"Rua José Paulo Custódio, K11, Nova Iguaçu, Rio de Janeiro, Brasil",-43.4289429,-22.6956958
+INFORMÁTICA,3,Cacuia,Nova Iguaçu,26082050,manhã,tarde,,Rua São Jorge,"Rua São Jorge, Cacuia, Nova Iguaçu, Rio de Janeiro, Brasil",-43.5006372,-22.7325552
+INFORMÁTICA,3,Rodilândia,Nova Iguaçu,26083185,manhã,tarde,,Rua Alcides Crispin Braga,"Rua Alcides Crispin Braga, Rodilândia, Nova Iguaçu, Rio de Janeiro, Brasil",-43.508177,-22.7406225
+INFORMÁTICA,3,vila de cava,Nova Iguaçu,26052090,manhã,tarde,,Rua Hermínia,"Rua Hermínia, vila de cava, Nova Iguaçu, Rio de Janeiro, Brasil",-43.4405397,-22.6855767
+INFORMÁTICA,3,chatuba,Mesquita,26584260,manhã,tarde,,Travessa Rio Sarapuí,"Travessa Rio Sarapuí, chatuba, Mesquita, Rio de Janeiro, Brasil",-43.4344115,-22.8071742
+INFORMÁTICA,2,TINGUA,Nova Iguaçu,26062030,tarde,noite,,Estrada Bernardete,"Estrada Bernardete, TINGUA, Nova Iguaçu, Rio de Janeiro, Brasil",-43.418062,-22.6744951
+INFORMÁTICA,2,RECANTUS,Belford Roxo,26163340,tarde,noite,,Rua Catalão,"Rua Catalão, RECANTUS, Belford Roxo, Rio de Janeiro, Brasil",-43.3921853,-22.7180752
+INFORMÁTICA,3,BOTAFOGO,Nova Iguaçu,26041330,manhã,tarde,,Rua Dezenove de Fevereiro,"Rua Dezenove de Fevereiro, BOTAFOGO, Nova Iguaçu, Rio de Janeiro, Brasil",-43.4626754,-22.7092771
+INFORMÁTICA,1,Jardim José Bonifácio,São João de Meriti,25565250,manhã,tarde,,Rua Sepetiba,"Rua Sepetiba, Jardim José Bonifácio, São João de Meriti, Rio de Janeiro, Brasil",-43.3620723,-22.7894342
+INFORMÁTICA,1,ouro preto,Nova Iguaçu,26275076,manhã,tarde,,Rua Porto Velho,"Rua Porto Velho, ouro preto, Nova Iguaçu, Rio de Janeiro, Brasil",-43.4922004,-22.7507709
+INFORMÁTICA,1,São Jorge,Japeri,26435071,manhã,tarde,,Rua Israel,"Rua Israel, São Jorge, Japeri, Rio de Janeiro, Brasil",-43.3632088,-22.9481946
+INFORMÁTICA,3,SENADOR CAMARÁ,Rio de Janeiro,21833010,manhã,tarde,,Rua Corte Real,"Rua Corte Real, SENADOR CAMARÁ, Rio de Janeiro, Rio de Janeiro, Brasil",-43.4904399,-22.879842
+INFORMÁTICA,3,Vila Iguaçuana,Nova Iguaçu,26050780,manhã,tarde,,Rua Tucano,"Rua Tucano, Vila Iguaçuana, Nova Iguaçu, Rio de Janeiro, Brasil",-43.4617099,-22.685868
+INFORMÁTICA,3,MIGUEL COUTO,Nova Iguaçu,26070560,manhã,tarde,,Rua Heloísa,"Rua Heloísa, MIGUEL COUTO, Nova Iguaçu, Rio de Janeiro, Brasil",-43.4402916,-22.7100309
+INFORMÁTICA,3,Andrade Araújo,Nova Iguaçu,26010450,manhã,tarde,,Rua Dona Orminda,"Rua Dona Orminda, Andrade Araújo, Nova Iguaçu, Rio de Janeiro, Brasil",-43.4211663,-22.7540435
+INFORMÁTICA,2,Jardim Marajoara,Japeri,26410250,tarde,noite,,Rua Professora Celita Rodrigues de Andrade,"Rua Professora Celita Rodrigues de Andrade, Jardim Marajoara, Japeri, Rio de Janeiro, Brasil",-43.6349067,-22.6966365
+INFORMÁTICA,2,Vila da Penha,Rio de Janeiro,21211005,tarde,noite,,Travessa da Generosidade,"Travessa da Generosidade, Vila da Penha, Rio de Janeiro, Rio de Janeiro, Brasil",-43.3074352,-22.8389801
+INFORMÁTICA,3,Xavantes,Belford Roxo,26160190,manhã,tarde,,Rua Bogari,"Rua Bogari, Xavantes, Belford Roxo, Rio de Janeiro, Brasil",-43.3951912,-22.7336302
+INFORMÁTICA,3,Três corações,Nova Iguaçu,26030480,manhã,tarde,,Rua Bolivar,"Rua Bolivar, Três corações, Nova Iguaçu, Rio de Janeiro, Brasil",-43.4095022,-22.6466286
+INFORMÁTICA,1,ENGENHEIRO BELFORD,São João de Meriti,25520331,manhã,tarde,,Rua Manuel Dorindo Simões,"Rua Manuel Dorindo Simões, ENGENHEIRO BELFORD, São João de Meriti, Rio de Janeiro, Brasil",-43.3922905,-22.8006309
+INFORMÁTICA,1,Carmari,Nova Iguaçu,26022100,manhã,tarde,,Rua Aquidauana,"Rua Aquidauana, Carmari, Nova Iguaçu, Rio de Janeiro, Brasil",-43.4440811,-22.7218884
+INFORMÁTICA,2,Anchieta,Rio de Janeiro,20070000,tarde,noite,até 53/054,Rua da Alfândega,"Rua da Alfândega, Anchieta, Rio de Janeiro, até 53/054, Rio de Janeiro, Brasil",-43.1778458,-22.9017615
+INFORMÁTICA,1,Vila de cava,Nova Iguaçu,26052690,manhã,tarde,,Rua Lucinda,"Rua Lucinda, Vila de cava, Nova Iguaçu, Rio de Janeiro, Brasil",-43.4488033,-22.6813267
+INFORMÁTICA,3,Jardim Sumaré,São João de Meriti,25580440,manhã,tarde,de 947/948 ao fim,Avenida Miguel Couto,"Avenida Miguel Couto, Jardim Sumaré, São João de Meriti, de 947/948 ao fim, Rio de Janeiro, Brasil",-43.3338866,-22.7805737
+INFORMÁTICA,2,Jardim Parque Estoril,Nova Iguaçu,26063190,tarde,noite,,Rua Vasco da Gama,"Rua Vasco da Gama, Jardim Parque Estoril, Nova Iguaçu, Rio de Janeiro, Brasil",-43.4144532,-22.6417774
+INFORMÁTICA,3,Rancho novo,Nova Iguaçu,26013030,manhã,tarde,,Rua São João Batista,"Rua São João Batista, Rancho novo, Nova Iguaçu, Rio de Janeiro, Brasil",-43.434148,-22.7481284
+INFORMÁTICA,2,PARQUE ANCHIETA,Rio de Janeiro,21625040,tarde,noite,,Rua Aldomiro Dantas,"Rua Aldomiro Dantas, PARQUE ANCHIETA, Rio de Janeiro, Rio de Janeiro, Brasil",-43.3982667,-22.8347178
+INFORMÁTICA,2,Cabuçu,Nova Iguaçu,26292335,tarde,noite,,Rua Doutor Sérgio Arouca,"Rua Doutor Sérgio Arouca, Cabuçu, Nova Iguaçu, Rio de Janeiro, Brasil",-43.5587495,-22.7639878
+INFORMÁTICA,2,São Bernardo,Belford Roxo,26165000,tarde,noite,,Rua Umbelina Barcelos,"Rua Umbelina Barcelos, São Bernardo, Belford Roxo, Rio de Janeiro, Brasil",-43.388888,-22.73627
+INFORMÁTICA,3,Vilar dos Teles,São João de Meriti,25565080,manhã,tarde,,Rua Grajaú,"Rua Grajaú, Vilar dos Teles, São João de Meriti, Rio de Janeiro, Brasil",-43.3604175,-22.7802198
+INFORMÁTICA,1,AUSTIN,Nova Iguaçu,26086445,manhã,tarde,,Rua Santos Júnior,"Rua Santos Júnior, AUSTIN, Nova Iguaçu, Rio de Janeiro, Brasil",-43.5304238,-22.7209035
+INFORMÁTICA,1,Jardim Guanabara,Queimados,26321024,manhã,tarde,(Lot N Sra Conceição),Rua Baltar,"Rua Baltar, Jardim Guanabara, Queimados, (Lot N Sra Conceição), Rio de Janeiro, Brasil",-43.5779806,-22.7031816
+INFORMÁTICA,1,AUSTIN,Nova Iguaçu,26085265,manhã,tarde,,Rua Ouro Branco,"Rua Ouro Branco, AUSTIN, Nova Iguaçu, Rio de Janeiro, Brasil",-43.5393961,-22.7210615
+INFORMÁTICA,2,ENGENHO PEQUENO,Nova Iguaçu,26011352,tarde,noite,até 333 - lado ímpar,Rua Primeiro de Maio,"Rua Primeiro de Maio, ENGENHO PEQUENO, Nova Iguaçu, até 333 - lado ímpar, Rio de Janeiro, Brasil",-43.4263537,-22.7454859
+INFORMÁTICA,2,JARDIM CACHOEIRA,Nova Iguaçu,26053530,tarde,noite,,Rua Áustria,"Rua Áustria, JARDIM CACHOEIRA, Nova Iguaçu, Rio de Janeiro, Brasil",-43.4660824,-22.6577106
+INFORMÁTICA,2,SITIO NOVO ORIENTE,Nova Iguaçu,26032310,tarde,noite,de 1462/1463 ao fim,Estrada da Gama,"Estrada da Gama, SITIO NOVO ORIENTE, Nova Iguaçu, de 1462/1463 ao fim, Rio de Janeiro, Brasil",-43.4721448,-22.729445
+INFORMÁTICA,2,PARQUE ESPERANCA,Belford Roxo,26173440,tarde,noite,,Rua Alegre,"Rua Alegre, PARQUE ESPERANCA, Belford Roxo, Rio de Janeiro, Brasil",-43.3529961,-22.7311752
+INFORMÁTICA,2,PARQUE ANTARTICA,Nova Iguaçu,26053040,tarde,noite,,Rua Canavial,"Rua Canavial, PARQUE ANTARTICA, Nova Iguaçu, Rio de Janeiro, Brasil",-43.4512191,-22.6729272
+INFORMÁTICA,2,IRAJA,Rio de Janeiro,21231050,tarde,noite,,Rua Criciúma,"Rua Criciúma, IRAJA, Rio de Janeiro, Rio de Janeiro, Brasil",-43.3203693,-22.8295733
+INFORMÁTICA,2,PALMEIRAS,Nova Iguaçu,26255330,tarde,noite,,Rua Afrânio Peixoto,"Rua Afrânio Peixoto, PALMEIRAS, Nova Iguaçu, Rio de Janeiro, Brasil",-43.4573372,-22.7620448
+INFORMÁTICA,2,JARDIM ALVORADA,Nova Iguaçu,26265040,tarde,noite,,Avenida Doutor Fábio Raunhetti,"Avenida Doutor Fábio Raunhetti, JARDIM ALVORADA, Nova Iguaçu, Rio de Janeiro, Brasil",-43.5821442,-22.6665478
+INFORMÁTICA,2,CENTRO,Belford Roxo,26112230,tarde,noite,,Rua Joana Angélica,"Rua Joana Angélica, CENTRO, Belford Roxo, Rio de Janeiro, Brasil",-43.4033811,-22.7549467
+INFORMÁTICA,2,São Bernardo,Belford Roxo,26165330,tarde,noite,,Rua Jaú,"Rua Jaú, São Bernardo, Belford Roxo, Rio de Janeiro, Brasil",-43.3842712,-22.7274384
+INFORMÁTICA,2,Luz,Nova Iguaçu,26255530,tarde,noite,,Rua Antônio Vieira,"Rua Antônio Vieira, Luz, Nova Iguaçu, Rio de Janeiro, Brasil",-43.4674119,-22.759913
+INFORMÁTICA,1,PARQUE ALVORADA,Nova Iguaçu,26053190,manhã,tarde,,Rua Quatro,"Rua Quatro, PARQUE ALVORADA, Nova Iguaçu, Rio de Janeiro, Brasil",-43.4650302,-22.6809412
+INFORMÁTICA,2,CENTRO,Nova Iguaçu,26215120,tarde,noite,,Rua Luís Alves,"Rua Luís Alves, CENTRO, Nova Iguaçu, Rio de Janeiro, Brasil",-43.4496057,-22.7517898
+INFORMÁTICA,2,RICARDO DE ALBUQUERQUE,Rio de Janeiro,21640130,tarde,noite,,Rua Doutor Leonel de Moura Brizola,"Rua Doutor Leonel de Moura Brizola, RICARDO DE ALBUQUERQUE, Rio de Janeiro, Rio de Janeiro, Brasil",-43.3879633,-22.8310758
+INFORMÁTICA,2,TRIANGULO,Nova Iguaçu,26052130,tarde,noite,,Rua Carlos,"Rua Carlos, TRIANGULO, Nova Iguaçu, Rio de Janeiro, Brasil",-43.4523257,-22.6876521
+INFORMÁTICA,2,KENNEDY,Nova Iguaçu,26020127,tarde,noite,,Rua Ana Neri,"Rua Ana Neri, KENNEDY, Nova Iguaçu, Rio de Janeiro, Brasil",-43.4483577,-22.7384958
+INFORMÁTICA,2,CIDADE JARDIM PARQUE ESTORIL,Nova Iguaçu,26064200,tarde,noite,,Rua Cristóvão Colombo,"Rua Cristóvão Colombo, CIDADE JARDIM PARQUE ESTORIL, Nova Iguaçu, Rio de Janeiro, Brasil",-43.4081078,-22.6458554
+INFORMÁTICA,2,SANTA RITA,Nova Iguaçu,26041271,tarde,noite,de 1273/1274 a 1820/1821,Estrada Adrianópolis,"Estrada Adrianópolis, SANTA RITA, Nova Iguaçu, de 1273/1274 a 1820/1821, Rio de Janeiro, Brasil",-43.4689425,-22.6962116
+INFORMÁTICA,2,Vila de Cava,Nova Iguaçu,26062225,tarde,noite,,Estrada de Ferro,"Estrada de Ferro, Vila de Cava, Nova Iguaçu, Rio de Janeiro, Brasil",-43.4380315,-22.6781997
+INFORMÁTICA,2,MOQUETA,Nova Iguaçu,26285350,tarde,noite,,Rua Eliza Lessa de Alvarenga,"Rua Eliza Lessa de Alvarenga, MOQUETA, Nova Iguaçu, Rio de Janeiro, Brasil",-43.4800966,-22.7341552
+INFORMÁTICA,1,JARDIM IGUAÇU,Nova Iguaçu,26298367,manhã,tarde,(Cj Res Pq Guandu),Rua Salvador Lombone,"Rua Salvador Lombone, JARDIM IGUAÇU, Nova Iguaçu, (Cj Res Pq Guandu), Rio de Janeiro, Brasil",-43.6107847,-22.8342931
+INFORMÁTICA,2,SANTA RITA,Nova Iguaçu,26042180,tarde,noite,,Rua Coronel Tinoco,"Rua Coronel Tinoco, SANTA RITA, Nova Iguaçu, Rio de Janeiro, Brasil",-43.4677946,-22.7060508
+INFORMÁTICA,2,NOVA PIAM,Belford Roxo,26115190,tarde,noite,,Rua Amarau,"Rua Amarau, NOVA PIAM, Belford Roxo, Rio de Janeiro, Brasil",-43.3888982,-22.7388941
+INFORMÁTICA,2,MOQUETA,Nova Iguaçu,26285490,tarde,noite,,Rua Tupinambás,"Rua Tupinambás, MOQUETA, Nova Iguaçu, Rio de Janeiro, Brasil",-43.4546137,-22.7463513
+INFORMÁTICA,2,CERAMICA,Nova Iguaçu,26000000,tarde,noite,,,"CERAMICA, Nova Iguaçu, Rio de Janeiro, Brasil",-43.4765172,-22.7316891
+INFORMÁTICA,2,SÃO BERNARDO,Belford Roxo,26165280,tarde,noite,,Rua Juruá,"Rua Juruá, SÃO BERNARDO, Belford Roxo, Rio de Janeiro, Brasil",-43.3841921,-22.7320917
+INFORMÁTICA,2,Parque Anchieta,Rio de Janeiro,21635380,tarde,noite,,Rua Otacílio Pedro Vasco,"Rua Otacílio Pedro Vasco, Parque Anchieta, Rio de Janeiro, Rio de Janeiro, Brasil",-43.4158006,-22.8355342
+INFORMÁTICA,2,ANCHIETA,Rio de Janeiro,21645160,tarde,noite,,Rua Cumata,"Rua Cumata, ANCHIETA, Rio de Janeiro, Rio de Janeiro, Brasil",-43.3993048,-22.8247865
+INFORMÁTICA,2,PARQUE FLORA,Nova Iguaçu,26041080,tarde,noite,,Rua Dona Leopoldina,"Rua Dona Leopoldina, PARQUE FLORA, Nova Iguaçu, Rio de Janeiro, Brasil",-43.4525468,-22.7173756
+INFORMÁTICA,2,IGUACU VELHO,Rio de Janeiro,26062025,tarde,noite,,Rua Barão de Tinguá,"Rua Barão de Tinguá, IGUACU VELHO, Rio de Janeiro, Rio de Janeiro, Brasil",-43.4449141,-22.7635479
+INFORMÁTICA,1,GRAMA,Nova Iguaçu,26061070,manhã,tarde,,Estrada Santa Bárbara,"Estrada Santa Bárbara, GRAMA, Nova Iguaçu, Rio de Janeiro, Brasil",-43.4234851,-22.6992772
+INFORMÁTICA,1,Heliopolis,Belford Roxo,26140000,manhã,tarde,,Avenida Júlio de Amorim Pereira,"Avenida Júlio de Amorim Pereira, Heliopolis, Belford Roxo, Rio de Janeiro, Brasil",-43.4157277,-22.7407433
+INFORMÁTICA,1,Andrade de Araújo,Nova Iguaçu,26011210,manhã,tarde,,Rua Manuel Augusto,"Rua Manuel Augusto, Andrade de Araújo, Nova Iguaçu, Rio de Janeiro, Brasil",-43.4239002,-22.7503505
+INFORMÁTICA,1,Centro,Nova Iguaçu,26255155,manhã,tarde,,Avenida Abílio Augusto Távora,"Avenida Abílio Augusto Távora, Centro, Nova Iguaçu, Rio de Janeiro, Brasil",-43.4593312,-22.7611621
+INFORMÁTICA,1,Cerâmica,Nova Iguaçu,26030670,manhã,tarde,,Rua Dona Cipriana,"Rua Dona Cipriana, Cerâmica, Nova Iguaçu, Rio de Janeiro, Brasil",-43.4693724,-22.7336314
+INFORMÁTICA,1,Jardim Alvorada,Nova Iguaçu,26265270,manhã,tarde,,Rua Alvorada,"Rua Alvorada, Jardim Alvorada, Nova Iguaçu, Rio de Janeiro, Brasil",-43.489684,-22.7640114
+INFORMÁTICA,1,Lagoinha,Nova Iguaçu,26296459,manhã,tarde,,Rua Dona Joana,"Rua Dona Joana, Lagoinha, Nova Iguaçu, Rio de Janeiro, Brasil",-43.6093766,-22.8102889
+INFORMÁTICA,1,BNH,Mesquita,26574520,manhã,tarde,,Rua Dias Leme,"Rua Dias Leme, BNH, Mesquita, Rio de Janeiro, Brasil",-43.400995,-22.7786787
+INFORMÁTICA,1,Santo Elias,Mesquita,26562421,manhã,tarde,lado ímpar,Rua Cesário,"Rua Cesário, Santo Elias, Mesquita, lado ímpar, Rio de Janeiro, Brasil",-43.4210794,-22.7770776
+INFORMÁTICA,1,Viga,Nova Iguaçu,26013410,manhã,tarde,,Rua Iguape,"Rua Iguape, Viga, Nova Iguaçu, Rio de Janeiro, Brasil",-43.4438456,-22.7438778
+INFORMÁTICA,1,Vila Sao Sebastiao,Belford Roxo,26160270,manhã,tarde,,Rua Arotiba,"Rua Arotiba, Vila Sao Sebastiao, Belford Roxo, Rio de Janeiro, Brasil",-43.4004934,-22.7305014
+INFORMÁTICA,1,Santo Antonio da Prata,Belford Roxo,26135140,manhã,tarde,,Rua Sousa,"Rua Sousa, Santo Antonio da Prata, Belford Roxo, Rio de Janeiro, Brasil",-43.411957,-22.7542124
+INFORMÁTICA,1,Heliopolis,Belford Roxo,26120252,manhã,tarde,,Avenida Retiro da Imprensa,"Avenida Retiro da Imprensa, Heliopolis, Belford Roxo, Rio de Janeiro, Brasil",-43.4071737,-22.7429428
+INFORMÁTICA,1,Jardim Queimados,Queimados,26321320,manhã,tarde,,Rua Doutor Fernando,"Rua Doutor Fernando, Jardim Queimados, Queimados, Rio de Janeiro, Brasil",-43.6035097,-22.8817568
+INFORMÁTICA,1,Santa Rita,Rio de Janeiro,26050487,manhã,tarde,,Rua Barbosa,"Rua Barbosa, Santa Rita, Rio de Janeiro, Rio de Janeiro, Brasil",-43.1809637,-22.9002271
+INFORMÁTICA,1,Ricardo de Albuquerque,Rio de Janeiro,21620050,manhã,tarde,,Rua Araçá,"Rua Araçá, Ricardo de Albuquerque, Rio de Janeiro, Rio de Janeiro, Brasil",-43.4054321,-22.8397731
+INFORMÁTICA,1,BELA VISTA,Nova Iguaçu,26040290,manhã,tarde,,Rua Piracanjuba,"Rua Piracanjuba, BELA VISTA, Nova Iguaçu, Rio de Janeiro, Brasil",-43.4416522,-22.7139639
+INFORMÁTICA,1,Caioaba,Nova Iguaçu,26015320,manhã,tarde,,Rua Sete,"Rua Sete, Caioaba, Nova Iguaçu, Rio de Janeiro, Brasil",-43.4304629,-22.73732
+INFORMÁTICA,1,Cabuçu,Nova Iguaçu,26291344,manhã,tarde,,Rua Timbaúba,"Rua Timbaúba, Cabuçu, Nova Iguaçu, Rio de Janeiro, Brasil",-43.5451317,-22.7759656
+INFORMÁTICA,1,TRÊS CORAÇÕES,Nova Iguaçu,26041049,manhã,tarde,,Alameda Rainha,"Alameda Rainha, TRÊS CORAÇÕES, Nova Iguaçu, Rio de Janeiro, Brasil",-43.4578625,-22.7190773
+INFORMÁTICA,1,Banco de Areia,Mesquita,26564190,manhã,tarde,,Rua Florita de Jesus,"Rua Florita de Jesus, Banco de Areia, Mesquita, Rio de Janeiro, Brasil",-43.4138126,-22.7736009
+INFORMÁTICA,1,EDSON PASSOS,Mesquita,26585310,manhã,tarde,,Travessa Quatro de Maio,"Travessa Quatro de Maio, EDSON PASSOS, Mesquita, Rio de Janeiro, Brasil",-43.4337964,-22.7992779
+INFORMÁTICA,1,Parque anchieta,Rio de Janeiro,21635120,manhã,tarde,,Rua Coriolano de Melo,"Rua Coriolano de Melo, Parque anchieta, Rio de Janeiro, Rio de Janeiro, Brasil",-43.4100267,-22.8386581
+INFORMÁTICA,1,Jardim Guandu,Nova Iguaçu,26298367,manhã,tarde,(Cj Res Pq Guandu),Rua Salvador Lombone,"Rua Salvador Lombone, Jardim Guandu, Nova Iguaçu, (Cj Res Pq Guandu), Rio de Janeiro, Brasil",-43.6107847,-22.8342931
+INFORMÁTICA,1,Comendador Soares,Nova Iguaçu,26261280,manhã,tarde,,Rua Paulina Gois,"Rua Paulina Gois, Comendador Soares, Nova Iguaçu, Rio de Janeiro, Brasil",-43.4813485,-22.7619797
+INFORMÁTICA,1,Da Luz,Nova Iguaçu,26255155,manhã,tarde,,Avenida Abílio Augusto Távora,"Avenida Abílio Augusto Távora, Da Luz, Nova Iguaçu, Rio de Janeiro, Brasil",-43.4704323,-22.761211
+INFORMÁTICA,1,Miguel Couto,Nova Iguaçu,26070488,manhã,tarde,,Rua Caieira,"Rua Caieira, Miguel Couto, Nova Iguaçu, Rio de Janeiro, Brasil",-43.430053,-22.7081391
+INFORMÁTICA,1,Corumbá,Nova Iguaçu,26043280,manhã,tarde,,Rua Chevette,"Rua Chevette, Corumbá, Nova Iguaçu, Rio de Janeiro, Brasil",-43.4784238,-22.7035175
+INFORMÁTICA,1,nossa senhora das graças,Nova Iguaçu,26263150,manhã,tarde,,Rua Gérson Chernicharo,"Rua Gérson Chernicharo, nossa senhora das graças, Nova Iguaçu, Rio de Janeiro, Brasil",-43.4746245,-22.7532696
+INFORMÁTICA,1,Boa Esperança,Nova Iguaçu,26070132,manhã,tarde,,Rua Oscar,"Rua Oscar, Boa Esperança, Nova Iguaçu, Rio de Janeiro, Brasil",-43.4327176,-22.7135747
+INFORMÁTICA,1,Rocha sobrinho,Mesquita,26572300,manhã,tarde,,Rua Ermelinda,"Rua Ermelinda, Rocha sobrinho, Mesquita, Rio de Janeiro, Brasil",-43.4060755,-22.780871
+INFORMÁTICA,1,Boa Esperanca,Seropédica,23894658,manhã,tarde,,Avenida Jorge Luiz Gonçalves,"Avenida Jorge Luiz Gonçalves, Boa Esperanca, Seropédica, Rio de Janeiro, Brasil",-43.6940714,-22.7335539
+INFORMÁTICA,1,Carmari,NOVA IGUACU,26022110,manhã,tarde,de 1456/1457 ao fim,Estrada da Guarita,"Estrada da Guarita, Carmari, NOVA IGUACU, de 1456/1457 ao fim, Rio de Janeiro, Brasil",-43.4475802,-22.7199108
+INFORMÁTICA,1,Santa Eugênia,Nova Iguaçu,26285670,manhã,tarde,,Rua Raimundo Marques Belford,"Rua Raimundo Marques Belford, Santa Eugênia, Nova Iguaçu, Rio de Janeiro, Brasil",-43.4619871,-22.7527316
+TELECOMUNICAÇÕES,3,RICARDO DE ALBUQUERQUE,Rio de Janeiro,21640010,tarde,noite,até 1620/1621,Avenida Nazaré,"Avenida Nazaré, RICARDO DE ALBUQUERQUE, Rio de Janeiro, até 1620/1621, Rio de Janeiro, Brasil",-43.3988981,-22.8287942
+TELECOMUNICAÇÕES,3,VILA BOM JARDIM,Japeri,26465030,tarde,noite,até 210/211,Rua dos Generais,"Rua dos Generais, VILA BOM JARDIM, Japeri, até 210/211, Rio de Janeiro, Brasil",-43.596591,-22.676747
+TELECOMUNICAÇÕES,3,REALENGO,Rio de Janeiro,21760020,tarde,noite,,Rua Salvador Sabaté,"Rua Salvador Sabaté, REALENGO, Rio de Janeiro, Rio de Janeiro, Brasil",-43.4173342,-22.8885882
+TELECOMUNICAÇÕES,3,VILA NOVA DO COUTO,Nova Iguaçu,26060510,tarde,noite,,Estrada João da Lenha,"Estrada João da Lenha, VILA NOVA DO COUTO, Nova Iguaçu, Rio de Janeiro, Brasil",-43.4235215,-22.8143799
+TELECOMUNICAÇÕES,3,Santo Antônio da Prata,Belford Roxo,26135100,tarde,noite,,Rua Heráclito Tinoco de Lima,"Rua Heráclito Tinoco de Lima, Santo Antônio da Prata, Belford Roxo, Rio de Janeiro, Brasil",-43.4104032,-22.7553249
+TELECOMUNICAÇÕES,3,Tinguá,Nova Iguaçu,26063340,tarde,noite,,Rua Paraná,"Rua Paraná, Tinguá, Nova Iguaçu, Rio de Janeiro, Brasil",-43.4128879,-22.6077043
+TELECOMUNICAÇÕES,3,Santa Rita,Nova Iguaçu,26050370,tarde,noite,,Rua Ataulfo Alves,"Rua Ataulfo Alves, Santa Rita, Nova Iguaçu, Rio de Janeiro, Brasil",-43.4698527,-22.6839417
+TELECOMUNICAÇÕES,3,da Luz,Nova Iguaçu,26255530,tarde,noite,,Rua Antônio Vieira,"Rua Antônio Vieira, da Luz, Nova Iguaçu, Rio de Janeiro, Brasil",-43.4674119,-22.759913
+TELECOMUNICAÇÕES,3,Prata,Nova Iguaçu,26010270,tarde,noite,,Rua Itaperuna,"Rua Itaperuna, Prata, Nova Iguaçu, Rio de Janeiro, Brasil",-43.4169353,-22.7546962
+TELECOMUNICAÇÕES,3,Edson Passos,Mesquita,26584021,tarde,noite,até 1098 - lado par,Rua Prefeito José Montes Paixão,"Rua Prefeito José Montes Paixão, Edson Passos, Mesquita, até 1098 - lado par, Rio de Janeiro, Brasil",-43.4254981,-22.7961976
+TELECOMUNICAÇÕES,3,Jardim da Posse,Nova Iguaçu,26030010,tarde,noite,de 305/306 a 1268/1269,Rua Oliveiros Rodrigues Alves,"Rua Oliveiros Rodrigues Alves, Jardim da Posse, Nova Iguaçu, de 305/306 a 1268/1269, Rio de Janeiro, Brasil",-43.4639967,-22.7388028
+TELECOMUNICAÇÕES,3,Heliópolis,Belford Roxo,26125430,tarde,noite,,Rua Turiuva,"Rua Turiuva, Heliópolis, Belford Roxo, Rio de Janeiro, Brasil",-43.4088343,-22.7349421
+TELECOMUNICAÇÕES,1,Vila de Cava,Nova Iguaçu,26052520,tarde,noite,,Rua Cândida,"Rua Cândida, Vila de Cava, Nova Iguaçu, Rio de Janeiro, Brasil",-43.5160331,-22.7646427
+TELECOMUNICAÇÕES,3,Cerâmica,Nova Iguaçu,26030036,tarde,noite,(Ac Est da Gama),Rua B,"Rua B, Cerâmica, Nova Iguaçu, (Ac Est da Gama), Rio de Janeiro, Brasil",-43.4659825,-22.7340831
+TELECOMUNICAÇÕES,2,SANTA RITA,Nova Iguaçu,26051340,manhã,tarde,,Rua Zuleica,"Rua Zuleica, SANTA RITA, Nova Iguaçu, Rio de Janeiro, Brasil",-43.4569006,-22.6920248
+TELECOMUNICAÇÕES,3,Vila Treze de Maio,Nova Iguaçu,26030110,tarde,noite,de 1090/1091 ao fim,Rua Minas Gerais,"Rua Minas Gerais, Vila Treze de Maio, Nova Iguaçu, de 1090/1091 ao fim, Rio de Janeiro, Brasil",-43.4690235,-22.7501987
+TELECOMUNICAÇÕES,3,Recreio Itapuã,Nova Iguaçu,26270130,tarde,noite,,Rua Perseverança,"Rua Perseverança, Recreio Itapuã, Nova Iguaçu, Rio de Janeiro, Brasil",-43.506585,-22.7696984
+TELECOMUNICAÇÕES,2,Marapicu,Nova Iguaçu,26293567,manhã,tarde,,Estrada Curral Novo,"Estrada Curral Novo, Marapicu, Nova Iguaçu, Rio de Janeiro, Brasil",-43.5815275,-22.7944437
+TELECOMUNICAÇÕES,3,Parque Anchieta,Rio de Janeiro,21625530,tarde,noite,,Rua Seis de Fevereiro,"Rua Seis de Fevereiro, Parque Anchieta, Rio de Janeiro, Rio de Janeiro, Brasil",-43.3977725,-22.8360793
+TELECOMUNICAÇÕES,3,Parque três corações,Nova Iguaçu,26041050,tarde,noite,,Rua Dona Carlota Rodrigues,"Rua Dona Carlota Rodrigues, Parque três corações, Nova Iguaçu, Rio de Janeiro, Brasil",-43.4568622,-22.7194507
+TELECOMUNICAÇÕES,2,são benedito,Nova Iguaçu,26022401,manhã,tarde,,Rua Santiago,"Rua Santiago, são benedito, Nova Iguaçu, Rio de Janeiro, Brasil",-43.4556203,-22.7281403
+TELECOMUNICAÇÕES,3,Pq. São Vicente,Belford Roxo,26178540,tarde,noite,,Rua Tenente Raimundo Feitosa da Silva,"Rua Tenente Raimundo Feitosa da Silva, Pq. São Vicente, Belford Roxo, Rio de Janeiro, Brasil",-43.3789931,-22.7199378
+TELECOMUNICAÇÕES,3,Costa Barros,Rio de Janeiro,21650230,tarde,noite,,Rua Laís dos Reis,"Rua Laís dos Reis, Costa Barros, Rio de Janeiro, Rio de Janeiro, Brasil",-43.3765971,-22.8211239
+TELECOMUNICAÇÕES,3,Cabuçu,Nova Iguaçu,26291446,tarde,noite,,Rua Paraíso,"Rua Paraíso, Cabuçu, Nova Iguaçu, Rio de Janeiro, Brasil",-43.5543346,-22.7852719
+TELECOMUNICAÇÕES,3,Carmari,Nova Iguaçu,26022181,tarde,noite,de 641/642 ao fim,Rua Aparecida,"Rua Aparecida, Carmari, Nova Iguaçu, de 641/642 ao fim, Rio de Janeiro, Brasil",-43.4507426,-22.7236837
+TELECOMUNICAÇÕES,2,Valverde,Nova Iguaçu,26291087,manhã,tarde,,Rua Desembargador Newton Quintela,"Rua Desembargador Newton Quintela, Valverde, Nova Iguaçu, Rio de Janeiro, Brasil",-43.5352858,-22.7654181
+TELECOMUNICAÇÕES,2,Austin,Nova Iguaçu,26087050,manhã,tarde,,Avenida Felipe Salomão,"Avenida Felipe Salomão, Austin, Nova Iguaçu, Rio de Janeiro, Brasil",-43.5169439,-22.7216588
+TELECOMUNICAÇÕES,3,Centro,Nova Iguaçu,26285110,tarde,noite,,Rua Alberto de Melo,"Rua Alberto de Melo, Centro, Nova Iguaçu, Rio de Janeiro, Brasil",-43.4524106,-22.7529458
+TELECOMUNICAÇÕES,2,MAGALHAES BASTOS,Rio de Janeiro,21750340,manhã,tarde,,Rua Crispim de Macedo,"Rua Crispim de Macedo, MAGALHAES BASTOS, Rio de Janeiro, Rio de Janeiro, Brasil",-43.4151477,-22.8738171
+TELECOMUNICAÇÕES,2,Metropole,Nova Iguaçu,26015081,manhã,tarde,de 1601 ao fim - lado ímpar,Rua Doutor Barros Júnior,"Rua Doutor Barros Júnior, Metropole, Nova Iguaçu, de 1601 ao fim - lado ímpar, Rio de Janeiro, Brasil",-43.4435212,-22.7468187
+TELECOMUNICAÇÕES,3,COMENDADOR SOARES,Nova Iguaçu,26276430,tarde,noite,,Rua José da Purificação,"Rua José da Purificação, COMENDADOR SOARES, Nova Iguaçu, Rio de Janeiro, Brasil",-43.4976854,-22.744391
+TELECOMUNICAÇÕES,2,Posse,Nova Iguaçu,26020001,manhã,tarde,de 972/973 ao fim,Estrada João Venâncio de Figueiredo,"Estrada João Venâncio de Figueiredo, Posse, Nova Iguaçu, de 972/973 ao fim, Rio de Janeiro, Brasil",-43.4542703,-22.7346608
+TELECOMUNICAÇÕES,3,Marapicu,Nova Iguaçu,26294399,tarde,noite,,Rua Farias,"Rua Farias, Marapicu, Nova Iguaçu, Rio de Janeiro, Brasil",-43.5635245,-22.8036051
+TELECOMUNICAÇÕES,2,CARMARI,Nova Iguaçu,26022192,manhã,tarde,até 613 - lado ímpar,Rua Quinze de Novembro,"Rua Quinze de Novembro, CARMARI, Nova Iguaçu, até 613 - lado ímpar, Rio de Janeiro, Brasil",-43.4484455,-22.7275216
+TELECOMUNICAÇÕES,2,CARMARI,Nova Iguaçu,26022110,manhã,tarde,de 1456/1457 ao fim,Estrada da Guarita,"Estrada da Guarita, CARMARI, Nova Iguaçu, de 1456/1457 ao fim, Rio de Janeiro, Brasil",-43.4475802,-22.7199108
+TELECOMUNICAÇÕES,2,VILA FORMOSA,Nova Iguaçu,26051430,manhã,tarde,,Rua dos Lírios,"Rua dos Lírios, VILA FORMOSA, Nova Iguaçu, Rio de Janeiro, Brasil",-43.4589384,-22.6971089
+TELECOMUNICAÇÕES,2,EDEN,São João de Meriti,25545180,manhã,tarde,,Rua Santa Margarida,"Rua Santa Margarida, EDEN, São João de Meriti, Rio de Janeiro, Brasil",-43.3903946,-22.7904857
+TELECOMUNICAÇÕES,2,SITIO NOVO ORIENTE,Nova Iguaçu,26032720,manhã,tarde,,Rua Pedro Cunha,"Rua Pedro Cunha, SITIO NOVO ORIENTE, Nova Iguaçu, Rio de Janeiro, Brasil",-43.4708322,-22.728135
+TELECOMUNICAÇÕES,2,SANTA RITA,Nova Iguaçu,26050400,manhã,tarde,,Rua Noel Rosa,"Rua Noel Rosa, SANTA RITA, Nova Iguaçu, Rio de Janeiro, Brasil",-43.4704196,-22.6850164
+TELECOMUNICAÇÕES,1,BOTAFOGO,Nova Iguaçu,26041390,tarde,noite,,Praça sem Nome,"Praça sem Nome, BOTAFOGO, Nova Iguaçu, Rio de Janeiro, Brasil",-43.4632545,-22.7112668
+TELECOMUNICAÇÕES,1,JARDIM NAZARE,Nova Iguaçu,26062221,tarde,noite,,Estrada Taquaral,"Estrada Taquaral, JARDIM NAZARE, Nova Iguaçu, Rio de Janeiro, Brasil",-43.4870367,-22.8713243
+TELECOMUNICAÇÕES,1,Jardim Leal,Duque de Caxias,25035720,tarde,noite,,Rua Itapiru,"Rua Itapiru, Jardim Leal, Duque de Caxias, Rio de Janeiro, Brasil",-43.3138471,-22.7597091
+TELECOMUNICAÇÕES,2,NOVA AMERICA,Nova Iguaçu,26021190,manhã,tarde,até 1292/1293,Avenida Antônio Cunha,"Avenida Antônio Cunha, NOVA AMERICA, Nova Iguaçu, até 1292/1293, Rio de Janeiro, Brasil",-43.4369857,-22.7279882
+TELECOMUNICAÇÕES,2,PAVUNA,Rio de Janeiro,21535000,manhã,tarde,,Rua Embau,"Rua Embau, PAVUNA, Rio de Janeiro, Rio de Janeiro, Brasil",-43.3444065,-22.816903
+TELECOMUNICAÇÕES,1,CENTRO,Nilópolis,26545210,tarde,noite,até 792/793,Rua Olga Hermont,"Rua Olga Hermont, CENTRO, Nilópolis, até 792/793, Rio de Janeiro, Brasil",-43.4071056,-22.8102922
+TELECOMUNICAÇÕES,2,CENTRO,Belford Roxo,26130570,manhã,tarde,,Avenida José Mariano Passos,"Avenida José Mariano Passos, CENTRO, Belford Roxo, Rio de Janeiro, Brasil",-43.4088684,-22.7572802
+TELECOMUNICAÇÕES,2,DAS GRACAS,Belford Roxo,26113600,manhã,tarde,,Rua Itabore,"Rua Itabore, DAS GRACAS, Belford Roxo, Rio de Janeiro, Brasil",-43.3944265,-22.757726
+TELECOMUNICAÇÕES,2,AUSTIN,Nova Iguaçu,26087030,manhã,tarde,,Rua Doutor Renato,"Rua Doutor Renato, AUSTIN, Nova Iguaçu, Rio de Janeiro, Brasil",-43.5148804,-22.7147736
+TELECOMUNICAÇÕES,2,JARDIM ALVORADA,Nova Iguaçu,26265040,manhã,tarde,,Avenida Doutor Fábio Raunhetti,"Avenida Doutor Fábio Raunhetti, JARDIM ALVORADA, Nova Iguaçu, Rio de Janeiro, Brasil",-43.5821442,-22.6665478
+TELECOMUNICAÇÕES,2,XAVANTES,Belford Roxo,26160140,manhã,tarde,,Rua Biguaçu,"Rua Biguaçu, XAVANTES, Belford Roxo, Rio de Janeiro, Brasil",-43.3974628,-22.7352411
+TELECOMUNICAÇÕES,1,SANTA RITA,Nova Iguaçu,26051150,tarde,noite,,Rua Existente,"Rua Existente, SANTA RITA, Nova Iguaçu, Rio de Janeiro, Brasil",-43.4722013,-22.6910842
+TELECOMUNICAÇÕES,1,CHACRINHA,Nova Iguaçu,26285600,tarde,noite,,Rua Manoel Pereira Oliveira,"Rua Manoel Pereira Oliveira, CHACRINHA, Nova Iguaçu, Rio de Janeiro, Brasil",-43.457316,-22.7517535
+TELECOMUNICAÇÕES,1,JARDIM CACHOEIRA,Nova Iguaçu,26053620,tarde,noite,,Estrada de Ferro,"Estrada de Ferro, JARDIM CACHOEIRA, Nova Iguaçu, Rio de Janeiro, Brasil",-43.5152037,-22.7306169
+TELECOMUNICAÇÕES,1,NOVA AURORA,Belford Roxo,26155370,tarde,noite,,Caminho do Jango,"Caminho do Jango, NOVA AURORA, Belford Roxo, Rio de Janeiro, Brasil",-43.404166,-22.7145038
+TELECOMUNICAÇÕES,2,ENGENHEIRO ROCHA FREIRA,Nova Iguaçu,26041600,manhã,tarde,,Rua Ademar Guimarães,"Rua Ademar Guimarães, ENGENHEIRO ROCHA FREIRA, Nova Iguaçu, Rio de Janeiro, Brasil",-43.463168,-22.6997397
+TELECOMUNICAÇÕES,1,AREIA BRANCA,Belford Roxo,26140200,tarde,noite,,Rua Lambari,"Rua Lambari, AREIA BRANCA, Belford Roxo, Rio de Janeiro, Brasil",-43.4144312,-22.7477151
+TELECOMUNICAÇÕES,1,Carmari,Nova Iguaçu,26022300,tarde,noite,até 1454/1455,Estrada da Guarita,"Estrada da Guarita, Carmari, Nova Iguaçu, até 1454/1455, Rio de Janeiro, Brasil",-43.450805,-22.7215221
+TELECOMUNICAÇÕES,1,RIACHAO,Nova Iguaçu,26279045,tarde,noite,,Rua Unidade,"Rua Unidade, RIACHAO, Nova Iguaçu, Rio de Janeiro, Brasil",-43.5115373,-22.7453229
+TELECOMUNICAÇÕES,1,SANTA RITA,Nova Iguaçu,26051120,tarde,noite,,Rua Adriano Celso,"Rua Adriano Celso, SANTA RITA, Nova Iguaçu, Rio de Janeiro, Brasil",-43.4605935,-22.6905759
+TELECOMUNICAÇÕES,1,São Geraldo,NOVA IGUACU,26275150,tarde,noite,,Rua Santo Antônio,"Rua Santo Antônio, São Geraldo, NOVA IGUACU, Rio de Janeiro, Brasil",-43.4950968,-22.7473757
+TELECOMUNICAÇÕES,1,Posse,Nova Iguaçu,26020810,tarde,noite,até 1126/1127,Estrada Luís Lemos,"Estrada Luís Lemos, Posse, Nova Iguaçu, até 1126/1127, Rio de Janeiro, Brasil",-43.4549457,-22.7295589
+TELECOMUNICAÇÕES,1,Jardim Meriti,São João de Meriti,25555120,tarde,noite,,Rua Otávio Mangabeira,"Rua Otávio Mangabeira, Jardim Meriti, São João de Meriti, Rio de Janeiro, Brasil",-43.3702622,-22.7788283
+TELECOMUNICAÇÕES,1,Miguel Couto,Nova Iguaçu,26061095,tarde,noite,,Rua Martins Ribeiro,"Rua Martins Ribeiro, Miguel Couto, Nova Iguaçu, Rio de Janeiro, Brasil",-43.4141823,-22.6978252
+TELECOMUNICAÇÕES,1,Centro,Nova Iguaçu,26220015,tarde,noite,de 308/309 ao fim,Rua Capitão Chaves,"Rua Capitão Chaves, Centro, Nova Iguaçu, de 308/309 ao fim, Rio de Janeiro, Brasil",-43.4429691,-22.7602745
+TELECOMUNICAÇÕES,1,Ponto Chic,NOVA IGUACU,26032661,tarde,noite,até 977 - lado ímpar,Rua Geni Saraiva,"Rua Geni Saraiva, Ponto Chic, NOVA IGUACU, até 977 - lado ímpar, Rio de Janeiro, Brasil",-43.4690549,-22.7283301
+TELECOMUNICAÇÕES,1,Alto da Posse,Nova Iguaçu,26020700,tarde,noite,,Rua F,"Rua F, Alto da Posse, Nova Iguaçu, Rio de Janeiro, Brasil",-43.4463388,-22.7383935
+TELECOMUNICAÇÕES,1,Floresta,Nova Iguaçu,26031460,tarde,noite,,Rua Amauri Guimarães,"Rua Amauri Guimarães, Floresta, Nova Iguaçu, Rio de Janeiro, Brasil",-43.482687,-22.7363635
+TELECOMUNICAÇÕES,1,Parque Anchieta,Rio de Janeiro,21635230,tarde,noite,,Rua Gilson Rezende,"Rua Gilson Rezende, Parque Anchieta, Rio de Janeiro, Rio de Janeiro, Brasil",-43.410929,-22.8354887
+TELECOMUNICAÇÕES,1,Parque Tres Coracoes,Nova Iguaçu,26030480,tarde,noite,,Rua Bolivar,"Rua Bolivar, Parque Tres Coracoes, Nova Iguaçu, Rio de Janeiro, Brasil",-43.4095022,-22.6466286
+TELECOMUNICAÇÕES,1,Anchieta,Rio de Janeiro,21645520,tarde,noite,,Rua Vinte e Três de Dezembro,"Rua Vinte e Três de Dezembro, Anchieta, Rio de Janeiro, Rio de Janeiro, Brasil",-43.3901802,-22.8153678
+TELECOMUNICAÇÕES,1,Jardim Iguaçu,Nova Iguaçu,26282105,tarde,noite,,Alameda Paul Buschle,"Alameda Paul Buschle, Jardim Iguaçu, Nova Iguaçu, Rio de Janeiro, Brasil",-43.4653561,-22.7420257
+TELECOMUNICAÇÕES,1,Jardim Santa Rita,NOVA IGUACU,26050650,tarde,noite,,Rua Amazonas,"Rua Amazonas, Jardim Santa Rita, NOVA IGUACU, Rio de Janeiro, Brasil",-43.4649321,-22.6924247
+TELECOMUNICAÇÕES,1,Da Viga,Nova Iguaçu,26012315,tarde,noite,,Estrada Deputado Darcílio Ayres Raunheitti,"Estrada Deputado Darcílio Ayres Raunheitti, Da Viga, Nova Iguaçu, Rio de Janeiro, Brasil",-43.4352457,-22.7389906
+TELECOMUNICAÇÕES,1,Sao Miguel,Seropédica,23893720,tarde,noite,,Rua Professora Sidineia Ferreira de Souza Martins,"Rua Professora Sidineia Ferreira de Souza Martins, Sao Miguel, Seropédica, Rio de Janeiro, Brasil",-43.7205402,-22.7145694
+TELECOMUNICAÇÕES,1,Jacuntiga,Mesquita,26564290,tarde,noite,,Travessa Jorge Oliveira Bezerra,"Travessa Jorge Oliveira Bezerra, Jacuntiga, Mesquita, Rio de Janeiro, Brasil",-43.4354021,-22.8053641
+TELECOMUNICAÇÕES,1,Itaipu,Belford Roxo,26143200,tarde,noite,,Rua Penedia,"Rua Penedia, Itaipu, Belford Roxo, Rio de Janeiro, Brasil",-43.4286441,-22.7269185
+TELECOMUNICAÇÕES,1,engenho pequeno,Nova Iguaçu,26015150,tarde,noite,,Rua João Alves,"Rua João Alves, engenho pequeno, Nova Iguaçu, Rio de Janeiro, Brasil",-43.4304595,-22.7430676
+TELECOMUNICAÇÕES,1,Vila Santo Antônio,Nova Iguaçu,26010080,tarde,noite,,Rua Natal,"Rua Natal, Vila Santo Antônio, Nova Iguaçu, Rio de Janeiro, Brasil",-43.4173009,-22.7632355
+TELECOMUNICAÇÕES,1,Metrópole,Nova Iguaçu,26015081,tarde,noite,de 1601 ao fim - lado ímpar,Rua Doutor Barros Júnior,"Rua Doutor Barros Júnior, Metrópole, Nova Iguaçu, de 1601 ao fim - lado ímpar, Rio de Janeiro, Brasil",-43.4435212,-22.7468187
+TELECOMUNICAÇÕES,1,Tinguá,Nova Iguaçu,26063390,tarde,noite,,Rua Paraíba,"Rua Paraíba, Tinguá, Nova Iguaçu, Rio de Janeiro, Brasil",-43.4155202,-22.5974784
+TELECOMUNICAÇÕES,1,Centro,Nilópolis,26515402,tarde,noite,de 790 ao fim - lado par,Estrada Doutor Manuel Reis,"Estrada Doutor Manuel Reis, Centro, Nilópolis, de 790 ao fim - lado par, Rio de Janeiro, Brasil",-43.412735,-22.8132838
+TELECOMUNICAÇÕES,1,Santa Rita,Nova Iguaçu,26050145,tarde,noite,,Rua Pardais,"Rua Pardais, Santa Rita, Nova Iguaçu, Rio de Janeiro, Brasil",-43.4617399,-22.6871914
+TELECOMUNICAÇÕES,1,Edson Passos,Mesquita,26584030,tarde,noite,até 1123 - lado ímpar,Rua Barão de Salusse,"Rua Barão de Salusse, Edson Passos, Mesquita, até 1123 - lado ímpar, Rio de Janeiro, Brasil",-43.4282315,-22.7948053
+TELECOMUNICAÇÕES,1,Santa Cecília,Nova Iguaçu,26053330,tarde,noite,,Rua Ipiabas,"Rua Ipiabas, Santa Cecília, Nova Iguaçu, Rio de Janeiro, Brasil",-43.4555409,-22.6711199
+TELECOMUNICAÇÕES,1,Posse,Nova Iguaçu,26022770,tarde,noite,,Rua da Engenharia,"Rua da Engenharia, Posse, Nova Iguaçu, Rio de Janeiro, Brasil",-43.4571603,-22.734282
+TELECOMUNICAÇÕES,1,Banco de Areia,Mesquita,26570240,tarde,noite,,Rua Jequitinhonha,"Rua Jequitinhonha, Banco de Areia, Mesquita, Rio de Janeiro, Brasil",-43.4131987,-22.77936
+TELECOMUNICAÇÕES,1,Tinguá,Nova Iguaçu,26063420,tarde,noite,,Rua Nossa Senhora da Conceição,"Rua Nossa Senhora da Conceição, Tinguá, Nova Iguaçu, Rio de Janeiro, Brasil",-43.5180232,-22.7486874
+TELECOMUNICAÇÕES,1,Posse,Nova Iguaçu,26022401,tarde,noite,,Rua Santiago,"Rua Santiago, Posse, Nova Iguaçu, Rio de Janeiro, Brasil",-43.4556203,-22.7281403
+TELECOMUNICAÇÕES,1,Lote XV,Belford Roxo,26182000,tarde,noite,,Estrada Manoel de Sá,"Estrada Manoel de Sá, Lote XV, Belford Roxo, Rio de Janeiro, Brasil",-43.3308061,-22.7101284
+TELECOMUNICAÇÕES,1,Centro,Nilópolis,26510608,tarde,noite,até 641 - lado ímpar,Rua Antônio João Mendonça,"Rua Antônio João Mendonça, Centro, Nilópolis, até 641 - lado ímpar, Rio de Janeiro, Brasil",-43.4198799,-22.8142178
+TELECOMUNICAÇÕES,1,Santa Rita,NOVA IGUACU,26050798,tarde,noite,,Rua Dois,"Rua Dois, Santa Rita, NOVA IGUACU, Rio de Janeiro, Brasil",-43.4610503,-22.6841977
+TELECOMUNICAÇÕES,1,Tingua,Nova Iguaçu,26063340,tarde,noite,,Rua Paraná,"Rua Paraná, Tingua, Nova Iguaçu, Rio de Janeiro, Brasil",-43.4128879,-22.6077043
