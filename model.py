@@ -32,8 +32,13 @@ from point_generation import gerar_pontos
 
 depot = 0
 
+
 tempo_preparo = 0
 tempo_entrega = 3.5*3600
+
+instancias = {}
+for instancia in ["tec","grad",""]:
+	instancias[instancia] = gerar_pontos(instancia)
 
 output_file = open('saida_cvrptw.txt','w')
 output_file.writelines(f"Horizonte de Tempo: {tempo_entrega-tempo_preparo} segundos\n\n")

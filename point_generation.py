@@ -55,7 +55,7 @@ def encontrar_cotovelo(k_values, inertias):
     return elbow_index
 
 
-def gerar_pontos(alunos:str = ""):
+def gerar_pontos(alunos:str = "full"):
     """
     Função para gerar pontos de ônibus com base em dados de alunos e suas localizações.
     A função lê um arquivo CSV contendo informações dos alunos, filtra os dados com base
@@ -66,7 +66,7 @@ def gerar_pontos(alunos:str = ""):
     Os resultados são salvos em um arquivo CSV.
     Parâmetros:
         alunos (str): Identificador de aluno ou lista de alunos a serem considerados.
-                      Se vazio, considera todos os alunos.
+                        Se "full", considera todos os alunos disponíveis no arquivo CSV.
     Retorna:
         pontos_de_onibus (DataFrame): DataFrame contendo os pontos de ônibus gerados,
                                        com informações sobre localização, demanda e dia da semana.
@@ -74,9 +74,9 @@ def gerar_pontos(alunos:str = ""):
     # Carrega o dataframe contendo informações dos alunos
     df_alunos = pd.read_csv("Dados/info_alunos.csv")
 
-    filter_condition = df_alunos['id_aluno'].str.contains(alunos)
-    df_alunos = df_alunos[filter_condition]
-
+    if alunos != "full":
+        filter_condition = df_alunos['id_aluno'].str.contains(alunos)
+        df_alunos = df_alunos[filter_condition]
 
     # Obtém a lista única de municípios presentes no dataframe
     municipios = df_alunos.CIDADE.unique()
