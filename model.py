@@ -22,36 +22,15 @@ def haversine(lat1, lon1, lat2, lon2):
     return distance
 
 
-# # Importação dos Dados
-%pip install docplex
+ # Importação dos Dados
 import pandas as pd
-import matplotlib.pyplot as plt
-import numpy as np
 import math
 from docplex.mp.model import Model
 from docplex.mp.linear import LinearExpr
 import time
+from point_generation import gerar_pontos
 
-instance = 'c101'
-c = 50 #Capacidade de ônibus
 depot = 0
-
-
-
-cidades = {'3300456': 'Belford Roxo',
- '3301702': 'Duque de Caxias',
- '3301850': 'Guapimirim',
- '3302007': 'Itaguaí',
- '3302270': 'Japeri',
- '3302502': 'Magé',
- '3302858': 'Mesquita',
- '3303203': 'Nilópolis',
- '3303500': 'Nova Iguaçu',
- '3303609': 'Paracambi',
- '3304144': 'Queimados',
- '3305109': 'São João de Meriti',
- '3305554': 'Seropédica',
- '3304557': 'Rio de Janeiro'}
 
 tempo_preparo = 0
 tempo_entrega = 3.5*3600

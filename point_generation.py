@@ -111,9 +111,7 @@ def gerar_pontos(alunos:str = ""):
         # Imprime o nome do município e o número de alunos considerados para este município
         print('Município:', cd_mun, "N Alunos:", len(alunos_municipio))
 
-        # Define o número máximo de clusters a serem testados (pode ser ajustado)
-        CLUSTERS = 20
-        # Inicializa uma lista vazia para armazenar os valores de WCSS (Within-Cluster Sum of Squares)
+         # Inicializa uma lista vazia para armazenar os valores de WCSS (Within-Cluster Sum of Squares)
         wcss = []
         # Loop para calcular a inércia (WCSS) para diferentes números de clusters (k)
         for i in range(2,len(alunos_municipio)+1):
