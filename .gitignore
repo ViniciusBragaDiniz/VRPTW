@@ -1,2 +1,8 @@
 /.env/*
 /.env
+*.pyc
+*.csv
+*.xlsx
+*.txt
+
+Dados/*.csv
