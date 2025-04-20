@@ -5,7 +5,7 @@ import time
 import math
 
 from point_generation import gerar_pontos
-from aux_functions import haversine
+from aux_functions import haversine, data_prep
 depot = 0
 
 
@@ -63,45 +63,8 @@ for dia in ['seg','ter','qua','qui','sex','sab']:
 			comeco_horizonte = dados_modelo['tempo_preparo'][depot] # Quando o dia Começa
 			fim_horizonte = dados_modelo['tempo_entrega'][depot]    # Quando o dia Termina
 
-			#Divisões dos períodos
-			divisoes_possiveis = (dados_modelo['tempo_entrega'] - dados_modelo['tempo_preparo'])/(1800)
-			divisoes_possiveis = divisoes_possiveis.apply(lambda x: math.floor(x))
-			
-			#Número de veículos necessários para atender uma demanda
-			viagens_necessarias = (dados_modelo.groupby('cd_municipio').sum()['demanda_'+turno]/(capacity)).apply(lambda x: math.ceil(x))
+			dados_modelo = data_prep(turno, dados_modelo, capacity)
 
-			l = []
-			
-			#Só dividimos a demanda se for maior que a capacidade de um único ônibus
-			demanda_minima = dados_modelo.groupby('cd_municipio').sum()['demanda_'+turno] <= capacity
-
-			#Vamos ter uma iteracao a cada período de tempo
-			dados_modelo['iteracao'] = 0
-			dados_modelo.fillna(0,inplace=True)
-
-			for i in range(1, len(dados_modelo)):
-				cd_mun = dados_modelo['cd_municipio'][i] #código do municipio
-				
-				if divisoes_possiveis[i] <= 0 | demanda_minima[cd_mun]:
-					continue #previne erros e divisões desnecessárias
-				
-				divisoes_viaveis = min(divisoes_possiveis[i],viagens_necessarias[cd_mun])
-				#Demanda dividida pelo número de periodos
-				demanda_particionada = math.floor(dados_modelo.loc[i]['demanda_'+turno] / divisoes_viaveis)
-				dados_modelo.loc[i,'demanda_'+turno] = math.ceil(demanda_particionada)
-				
-				for iteracao in range(1,divisoes_viaveis):
-					linha = dados_modelo.loc[i].copy()
-					linha['demanda_'+turno] = max(demanda_particionada,1) #Esse máx é pra evitar erros devido a demanda aleatoria
-					linha['tempo_preparo'] += 1800*iteracao
-					linha['iteracao'] = int(iteracao)
-					l.append(pd.DataFrame(linha).T)
-
-			#Adiciona as iterações pelo 
-			dados_modelo = pd.concat([dados_modelo,pd.concat(l,ignore_index=True)],ignore_index=True).sort_values(['iteracao'])
-			print('#'*16)
-			print(turno)
-			print('#'*16)
 			for iteracao in range(dados_modelo['iteracao'].max()):
 
 				s = f"|Iteração{iteracao}, Horário de Saída: {tempo_preparo+1800*iteracao}|"
