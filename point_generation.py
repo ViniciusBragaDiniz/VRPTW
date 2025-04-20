@@ -50,7 +50,6 @@ def encontrar_cotovelo(k_values, inertias):
 
     # Encontrar o índice do ponto com a maior distância (este é o cotovelo)
     elbow_index = np.argmax(distances)
-    optimal_k = k_values[elbow_index]
 
     return elbow_index
 
@@ -164,6 +163,7 @@ def gerar_pontos(alunos:str = "full"):
     # Imprime o número total de alunos desconsiderados
     print("Alunos Desconsiderados", alunos_desconsiderados)
 
+    pontos_de_onibus.to_csv(f"Dados/pontos_de_onibus_{alunos}.csv",index=False)
 
     # Retorna o dataframe final de pontos de ônibus
     return pontos_de_onibus
