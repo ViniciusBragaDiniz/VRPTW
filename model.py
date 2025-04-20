@@ -11,7 +11,7 @@ depot = 0
 
 tempo_preparo = 0
 tempo_entrega = 3.5*3600
-
+fatia_tempo = 1800 #30 minutos
 instancias = {}
 for instancia in ["tec","grad","full"]:
 	try:
@@ -67,7 +67,7 @@ for dia in ['seg','ter','qua','qui','sex','sab']:
 
 			for iteracao in range(dados_modelo['iteracao'].max()):
 
-				s = f"|Iteração{iteracao}, Horário de Saída: {tempo_preparo+1800*iteracao}|"
+				s = f"|Iteração{iteracao}, Horário de Saída: {tempo_preparo+fatia_tempo*iteracao}|"
 				output_file.writelines("_"*len(s)+"\n")
 				output_file.writelines(s+"\n")
 				output_file.writelines("|"+"_"*(len(s)-2)+"|\n\n")	
@@ -77,10 +77,10 @@ for dia in ['seg','ter','qua','qui','sex','sab']:
 					if cd_municipio == 'CEFET':
 						continue
 					
-					output_file.writelines(cidades[str(cd_municipio)]+"\n")
+					output_file.writelines(cd_municipio+"\n")
 					
 					print("#"*8)
-					print("Iteração "+str(iteracao),"Município "+str(cidades[str(cd_municipio)]))
+					print("Iteração "+str(iteracao),"Município "+str(cd_municipio))
 					dados_municipio = dados_modelo[dados_modelo['iteracao'] == iteracao]
 					
 					dados_municipio = dados_municipio[dados_municipio['cd_municipio'].isin([cd_municipio,'CEFET'])].reset_index(drop=True)
@@ -93,12 +93,12 @@ for dia in ['seg','ter','qua','qui','sex','sab']:
 								distancia[i][j]=round(haversine(dados_municipio['lat'][i],dados_municipio['lon'][i],
 																dados_municipio['lat'][j],dados_municipio['lon'][j]))
 								#Assumindo Velocidade Média de 20 km/h se for Nova Iguaçu
-								if cd_municipio == 3303500:
+								if cd_municipio == "Nova Iguaçu":
 									distancia[i][j] = distancia[i][j]/(20/3.6) #Calculo do tempo em segundos
 								else: #Para fora assume-se 60 km/h
 									distancia[i][j] = distancia[i][j]/(60/3.6) #Calculo do tempo em segundos
 								
-								M = max(M,dados_municipio['tempo_entrega'][i]+distancia[i][j]-(dados_municipio['tempo_preparo'][i]+1800*iteracao))
+								M = max(M,dados_municipio['tempo_entrega'][i]+distancia[i][j]-(dados_municipio['tempo_preparo'][i]+fatia_tempo*iteracao))
 							else: 
 								distancia[i][j]=float('inf')
 					#criação do modelo
@@ -107,85 +107,85 @@ for dia in ['seg','ter','qua','qui','sex','sab']:
 					########################
 					#Parâmetros Calculáveis#
 					########################
-					n = len(dados_municipio) #Número de Pontos de Ônibus
-					v = math.ceil(dados_municipio['demanda_'+turno].sum()/capacity) #Número de veículos = demanda dividada por capacidade
+					num_spots = len(dados_municipio) #Número de Pontos de Ônibus
+					necessary_vehicles = math.ceil(dados_municipio['demanda_'+turno].sum()/capacity) #Número de veículos = demanda dividada por capacidade
 					
-					if n == 0: #Se N == 0 é porque não tem mais demanda
+					if num_spots == 0: #Se N == 0 é porque não tem mais demanda
 						print("Não tem demanda nessa iteração")
 						output_file.writelines("Não tem demanda nessa iteração\n\n")
 						continue
-					print(v,n)
-					output_file.writelines(f"Veículos Disponíveis {v}, Pontos de Ônibus com Demanda {n}\n\n")
+					print(necessary_vehicles,num_spots)
+					output_file.writelines(f"Veículos Disponíveis {necessary_vehicles}, Pontos de Ônibus com Demanda {num_spots}\n\n")
 					#############
 					# Variáveis #
 					#############
-					travels = model.binary_var_cube(v,n,n,'travel')#matriz tridimensional k*v²
+					travels = model.binary_var_cube(necessary_vehicles,num_spots,num_spots,'travel')#matriz tridimensional k*v²
 
 					service = {(k,i): model.continuous_var(
-					lb=dados_municipio['tempo_preparo'][i]+1800*iteracao,
+					lb=dados_municipio['tempo_preparo'][i]+fatia_tempo*iteracao,
 						ub=dados_municipio['tempo_entrega'][i],name=f'service_start_{k}_{i}') 
-						for k in range(v) for i in range(n)}#momento em que o serviço começa no cliente i
+						for k in range(necessary_vehicles) for i in range(num_spots)}#momento em que o serviço começa no cliente i
 
-					capacity = {(k,i): model.integer_var(lb=0,ub=capacity,name=f'clients_at_{i}_with_{k}') for k in range(v) for i in range(n)}
+					capacity = {(k,i): model.integer_var(lb=0,ub=capacity,name=f'clients_at_{i}_with_{k}') for k in range(necessary_vehicles) for i in range(num_spots)}
 
 
 					###################
 					# Função Objetiva #
 					###################
-					model.minimize(model.sum(travels[k,i,j]*distancia[i][j] for i in range(n) for j in range(n) for k in range(v)))
+					model.minimize(model.sum(travels[k,i,j]*distancia[i][j] for i in range(num_spots) for j in range(num_spots) for k in range(necessary_vehicles)))
 
 					#Respeitar Capacidade
-					for k in range(v):
-						consumed_capacity = model.sum(capacity[k,i] for i in range(n))
+					for k in range(necessary_vehicles):
+						consumed_capacity = model.sum(capacity[k,i] for i in range(num_spots))
 						model.add_constraint(consumed_capacity <= capacity, 'Capacity_Vehicle_'+str(k))
 
 					#Atender o cliente i é obrigatório
-					for i in range(1,n):
-						demand_met = model.sum(capacity[k,i] for k in range(v))
+					for i in range(1,num_spots):
+						demand_met = model.sum(capacity[k,i] for k in range(necessary_vehicles))
 						model.add_constraint(demand_met == dados_municipio.loc[i,'demanda_'+turno],'Visit_Client_'+str(i))
 
 
 					#Para pegar clientes é preciso visitar o ponto
-					for k in range(v):
-						for i in range(n):
+					for k in range(necessary_vehicles):
+						for i in range(num_spots):
 							#c aqui funciona como big M
-							visit_i = model.sum(capacity*travels[k,i,j] for j in range(n))
+							visit_i = model.sum(capacity*travels[k,i,j] for j in range(num_spots))
 							model.add_constraint(visit_i - capacity[k,i] >= 0, f"Visit_Client_{i}_Vehicle_{k}")
 
 					#Saída a Partir do Depósito
-					for k in range(v):
+					for k in range(necessary_vehicles):
 						model.add_constraint(
-							model.sum((n*n)*travels[k,depot,j]
-								for j in range(1,n)) - 
+							model.sum((num_spots*num_spots)*travels[k,depot,j]
+								for j in range(1,num_spots)) - 
 									model.sum(travels[k,i,j] 
-										for i in range(1,n) 
-											for j in range(1,n)) >= 0,
+										for i in range(1,num_spots) 
+											for j in range(1,num_spots)) >= 0,
 									'Exit_Depot_Vehicle_'+str(k))
 
 					#Conservação de Fluxo
-					for k in range(v):
-						for i in range(n):
+					for k in range(necessary_vehicles):
+						for i in range(num_spots):
 							model.add_constraint(
 								model.sum(travels[k,i,j]-travels[k,j,i]
-										for j in range(n)) == 0,
+										for j in range(num_spots)) == 0,
 											f'Flux_Conservation_Vehicle_{k}_Node_{i}')
 
 					#Passagem Única de Fluxo
-					for k in range(v):
-						for i in range(n):
+					for k in range(necessary_vehicles):
+						for i in range(num_spots):
 							model.add_constraint(
 								model.sum(travels[k,i,j]
-										for j in range(n)) <= 1,
+										for j in range(num_spots)) <= 1,
 											f'Unique_Passage_Vehicle_{k}_Node_{i}')
 
 					#Tempo de Saida
-					for k in range(v):
-						for i in range(n):
-							for j in range(i+1,n):
+					for k in range(necessary_vehicles):
+						for i in range(num_spots):
+							for j in range(i+1,num_spots):
 								model.add_constraint(service[k,i]+distancia[i][j]-M*(1-travels[k,i,j]) <= service[k,j],
 													f'Exit_Time_{k}_{i}_{j}')
 					#Remoção da Diagonal
-					model.add_constraint(model.sum(travels[k,i,i] for k in range(v) for i in range(n))==0);
+					model.add_constraint(model.sum(travels[k,i,i] for k in range(necessary_vehicles) for i in range(num_spots))==0);
 					#model.export_as_lp('model.txt')
 
 					start = time.time() #Tempo de ínicio
@@ -193,7 +193,7 @@ for dia in ['seg','ter','qua','qui','sex','sab']:
 					#Assumindo que existe subciclos, nós...
 					while subcicle == True:
 						#Rota percorrida por cada veículo
-						routes = {x:{} for x in range(v)}    
+						routes = {x:{} for x in range(necessary_vehicles)}    
 
 						#Solução VRP - Dicionário Desordenado
 						_Solution = model.solve(log_output=False).as_dict()
@@ -208,7 +208,7 @@ for dia in ['seg','ter','qua','qui','sex','sab']:
 						count = 0 #Contador para as eliminações de subciclo
 						summ = 0 #Condição de parada
 
-						for k in range(v):
+						for k in range(necessary_vehicles):
 							if len(routes[k]) > 0:
 								actual_node = routes[k].pop(0)
 								while actual_node !=0:
@@ -235,7 +235,7 @@ for dia in ['seg','ter','qua','qui','sex','sab']:
 							if summ == 0:
 								subcicle = False
 								#Rota percorrida por cada veículo
-								routes = {x:{} for x in range(v)}    
+								routes = {x:{} for x in range(necessary_vehicles)}    
 								#Solução VRP - Dicionário Desordenado
 								_Solution = model.solve(log_output=True).as_dict()
 								
@@ -247,9 +247,9 @@ for dia in ['seg','ter','qua','qui','sex','sab']:
 
 									aux = i.name.split("_")[1:] #<- ["k","i","j"]
 									routes[int(aux[0])][int(aux[1])]=int(aux[2])
-								for k in range(v):
+								for k in range(necessary_vehicles):
 									tempo_final = 0
-									string = f"Veículo {k} Início [{tempo_preparo+1800*iteracao}s] |Rota: 0"
+									string = f"Veículo {k} Início [{tempo_preparo+fatia_tempo*iteracao}s] |Rota: 0"
 									while(len(routes[k])>0):
 										print(routes[k])
 										first_node = 0
@@ -262,7 +262,7 @@ for dia in ['seg','ter','qua','qui','sex','sab']:
 											tempo_final+=distancia[actual_node][next_node]
 											actual_node = next_node
 											string+=" -> "+str(actual_node)
-									string += f"| Fim [{tempo_preparo+tempo_final+1800*iteracao}s]\n"
+									string += f"| Fim [{tempo_preparo+tempo_final+fatia_tempo*iteracao}s]\n"
 									output_file.writelines(string)
 									print(string)
 							
