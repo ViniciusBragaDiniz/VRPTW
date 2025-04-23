@@ -76,6 +76,24 @@ def data_prep(turno: str, dados_modelo: pd.DataFrame, capacity: int) -> pd.DataF
             linha['iteracao'] = int(iteracao)
             l.append(pd.DataFrame(linha).T)
 
+    if len(l) == 0:
+        return dados_modelo
+    
     #Adiciona as iterações pelo 
     dados_modelo = pd.concat([dados_modelo,pd.concat(l,ignore_index=True)],ignore_index=True).sort_values(['iteracao'])
     return dados_modelo
+
+def build_routes(Solution: dict, necessary_vehicles: int) -> dict:
+    #Rota percorrida por cada veículo
+    routes = {x:{} for x in range(necessary_vehicles)}  
+    
+    for i in Solution:
+        # Se não for variável de rota ou se o valor for menor que 0.001
+        # (ou seja, não foi alocada rota) não adiciona ao dicionário
+        if i.name[0] != "t" or Solution[i] < 0.001:
+            continue
+
+        aux = i.name.split("_")[1:] #<- ["k","i","j"]
+        routes[int(aux[0])][int(aux[1])]=int(aux[2])
+        
+    return routes

@@ -114,10 +114,60 @@ def build_constraints(model, travels_matrix, service_matrix, capacity_matrix, mo
     # Remoção da Diagonal
     model.add_constraint(model.sum(travels_matrix[k, i, i] for k in range(necessary_vehicles) for i in range(num_spots)) == 0)
 
+def operate_cycle(model, routes, travels, k, option: str = "cut", tempo_preparo: int = 0, iteracao: int = 0, distancia: list = [[]]):
+    """
+    Função para realizar uma operação em cima dos ciclos enviados.
+    Args:
+        model: Modelo de otimização.
+        routes: Dicionário com as rotas dos veículos.
+        travels: Variáveis de decisão de viagens.
+        k: Índice do veículo.
+        option: Opção para definir o tipo de saída (corte ou string).
+        tempo_preparo: Tempo de preparo do veículo.
+        iteracao: Iteração atual.
+        distancia: Matriz de distâncias entre os pontos.
+    Returns:
+        string: String formatada com a rota do veículo.
+    """
+
+    while(len(routes[k])>0):
+        if option == "cut":
+            cut = LinearExpr(model) #Expressão Linear do Subciclo atual
+
+        first_node = list(routes[k].keys())[0]
+        actual_node = routes[k].pop(first_node)
+        size = 0
+
+        if option == "cut":
+            cut += travels[k,int(first_node),int(actual_node)]
+        elif option == "string":
+            string = f"Veículo {k} Início [{tempo_preparo+1800*iteracao}s] |Rota: 0"
+            tempo_final = 0
+
+        while(actual_node != first_node):
+            next_node = routes[k].pop(actual_node)           
+
+            if option == "cut": 
+                # Percorre o subciclo e o adiciona ao#
+                # conjunto de subciclos proíbidos.#
+                cut += travels[k,int(actual_node),int(next_node)]
+            elif option == "string":
+                string+=" -> "+str(actual_node)					
+                tempo_final += distancia[first_node][actual_node]
+                string+=" -> "+str(actual_node)
+            actual_node = next_node
+            size+=1
+
+        if option == "cut":
+            count+=1
+            model.add_constraint(cut<=size,"SubCycleCut_"+str(count))
+        elif option == "string":
+            string += f"| Fim [{tempo_preparo+tempo_final+1800*iteracao}s]\n"
+            return string
 def build_model(model, model_data: dict):
 
     travels_matrix, service_matrix, capacity_matrix = build_vars(model, model_data)
     build_objective(model, travels_matrix, model_data)
     build_constraints(model, travels_matrix, service_matrix, capacity_matrix, model_data)
 
-    return model
+    return model, travels_matrix

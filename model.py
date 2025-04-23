@@ -5,8 +5,8 @@ import time
 import math
 
 from point_generation import gerar_pontos
-from aux_functions import haversine, data_prep
-from build_model import build_model
+from aux_functions import haversine, data_prep, build_routes
+from build_model import build_model, operate_cycle
 depot = 0
 
 
@@ -25,8 +25,8 @@ capacity = 50 #Capacidade do ônibus
 for dia in ['seg','ter','qua','qui','sex','sab']:
 
 	#Linha que vai representar o CEFET no modelo
-	cefet = {'lon':[-43.46242373123213],
-				'lat':[-22.704575111343242],
+	cefet = {'lat':[-43.46242373123213],
+				'lon':[-22.704575111343242],
 				'demanda_manha':[0],
 				'demanda_tarde':[0],
 				'demanda_noite':[0],
@@ -34,10 +34,9 @@ for dia in ['seg','ter','qua','qui','sex','sab']:
 				'tempo_entrega':tempo_entrega,
 				'cd_municipio':'CEFET',
 				'dia':dia}
-	
-	for turno in ['manha','tarde', 'noite']:
-
-		for instancia in instancias:
+	for instancia in instancias:
+		
+		for turno in ['manha','tarde', 'noite']:
 
 			output_file = open(f'saida_cvrptw_{instancia}.txt','w')
 			output_file.writelines(f"Horizonte de Tempo: {tempo_entrega-tempo_preparo} segundos\n\n")
@@ -66,18 +65,17 @@ for dia in ['seg','ter','qua','qui','sex','sab']:
 
 			dados_modelo = data_prep(turno, dados_modelo, capacity)
 
-			for iteracao in range(dados_modelo['iteracao'].max()):
+			for cd_municipio in dados_modelo['cd_municipio'].unique():
+				if cd_municipio != 'Rio De Janeiro':
+					continue
+				if cd_municipio == 'CEFET':
+					continue
+				for iteracao in range(dados_modelo['iteracao'].max()):
 
-				s = f"|Iteração{iteracao}, Horário de Saída: {tempo_preparo+fatia_tempo*iteracao}|"
-				output_file.writelines("_"*len(s)+"\n")
-				output_file.writelines(s+"\n")
-				output_file.writelines("|"+"_"*(len(s)-2)+"|\n\n")	
-				
-				for cd_municipio in dados_modelo['cd_municipio'].unique():
-					
-					if cd_municipio == 'CEFET':
-						continue
-					
+					s = f"|Iteração{iteracao}, Horário de Saída: {tempo_preparo+fatia_tempo*iteracao}|"
+					output_file.writelines("_"*len(s)+"\n")
+					output_file.writelines(s+"\n")
+					output_file.writelines("|"+"_"*(len(s)-2)+"|\n\n")
 					output_file.writelines(cd_municipio+"\n")
 					
 					print("#"*8)
@@ -118,7 +116,7 @@ for dia in ['seg','ter','qua','qui','sex','sab']:
 
 					#Criação do modelo
 					model = Model("vrptw")
-					print(necessary_vehicles,num_spots)
+					print(dia, turno, instancia, necessary_vehicles,num_spots)
 
 					model_data = {
 						'data': dados_municipio,
@@ -133,85 +131,47 @@ for dia in ['seg','ter','qua','qui','sex','sab']:
 						'depot': depot,
 					}
 
-					model = build_model(model, model_data)
+					model, travels = build_model(model, model_data)
 
 					start = time.time() #Tempo de ínicio
 					subcicle = True     #Condição de parada
 					#Assumindo que existe subciclos, nós...
-					while subcicle == True:
-						#Rota percorrida por cada veículo
-						routes = {x:{} for x in range(necessary_vehicles)}    
+					while subcicle == True: 
 
 						#Solução VRP - Dicionário Desordenado
 						_Solution = model.solve(log_output=False).as_dict()
-
-						for i in _Solution:
-							if i.name[0] != "t" or _Solution[i] < 0.001:
-								continue
-
-							aux = i.name.split("_")[1:] #<- ["k","i","j"]
-							routes[int(aux[0])][int(aux[1])]=int(aux[2])
-							
-						count = 0 #Contador para as eliminações de subciclo
-						summ = 0 #Condição de parada
+						routes = build_routes(_Solution, necessary_vehicles)
+						summ = 0 # Condição de parada
 
 						for k in range(necessary_vehicles):
+
+							# Percorre a rota do veículo k como
+							# uma lista encadeada
 							if len(routes[k]) > 0:
+
 								actual_node = routes[k].pop(0)
 								while actual_node !=0:
 									actual_node = routes[k].pop(actual_node)
-								summ += len(routes[k])
+
+							# Número de nós restantes na rota
+							summ += len(routes[k]) 
+							
+							# Se houver nós restantes na rota, significa que
+							# existem subciclos na rota do veículo k.
+							if len(routes[k]) >0:
+								operate_cycle(model, routes, travels, k, option="cut")
+									
+						if summ == 0:
+							subcicle = False
+							routes = build_routes(_Solution, necessary_vehicles)
+
+							output_file.writelines(f"Solução:\n")
+
+							for k in range(necessary_vehicles):
 								
-								if len(routes[k]) >0:
-									while(len(routes[k])>0):
-										cut = LinearExpr(model) #Expressão Linear do Subciclo atual
-
-								first_node = list(routes[k].keys())[0]
-								actual_node = routes[k].pop(first_node)
-								cut += travels[k,int(first_node),int(actual_node)]
-								size = 0
-
-								while(actual_node != first_node):
-									next_node = routes[k].pop(actual_node)                 #Percorre o subciclo e o adiciona ao#
-									cut += travels[k,int(actual_node),int(next_node)]#conjunto de subciclos proíbidos.#
-									actual_node = next_node
-									size+=1
-								count+=1
-								model.add_constraint(cut<=size,"SubCycleCut_"+str(count))
-										
-							if summ == 0:
-								subcicle = False
-								#Rota percorrida por cada veículo
-								routes = {x:{} for x in range(necessary_vehicles)}    
-								#Solução VRP - Dicionário Desordenado
-								_Solution = model.solve(log_output=True).as_dict()
-								
-								output_file.writelines(f"Solução:\n")
-								print(_Solution)
-								for i in _Solution:
-									if i.name[0] != "t" or _Solution[i] < 0.001:
-										continue
-
-									aux = i.name.split("_")[1:] #<- ["k","i","j"]
-									routes[int(aux[0])][int(aux[1])]=int(aux[2])
-								for k in range(necessary_vehicles):
-									tempo_final = 0
-									string = f"Veículo {k} Início [{tempo_preparo+fatia_tempo*iteracao}s] |Rota: 0"
-									while(len(routes[k])>0):
-										print(routes[k])
-										first_node = 0
-										actual_node = routes[k].pop(first_node)
-										string+=" -> "+str(actual_node)
-										
-										tempo_final += distancia[first_node][actual_node]
-										while(actual_node != first_node):
-											next_node = routes[k].pop(actual_node)
-											tempo_final+=distancia[actual_node][next_node]
-											actual_node = next_node
-											string+=" -> "+str(actual_node)
-									string += f"| Fim [{tempo_preparo+tempo_final+fatia_tempo*iteracao}s]\n"
-									output_file.writelines(string)
-									print(string)
+								string = operate_cycle(model, routes, travels, k, option="string", tempo_preparo=tempo_preparo, iteracao=iteracao, distancia=distancia)
+								output_file.writelines(string)
+								print(string)
 							
 					tempo_exec = time.time()-start
 					output_file.writelines("Custo da Função Objetiva: "+str(model.objective_value)+"\n")
