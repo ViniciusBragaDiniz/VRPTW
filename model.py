@@ -22,20 +22,22 @@ for instancia in ["tec","grad","full"]:
 
 
 capacity = 50 #Capacidade do ônibus
-for dia in ['seg','ter','qua','qui','sex','sab']:
 
-	#Linha que vai representar o CEFET no modelo
-	cefet = {'lat':[-43.46242373123213],
-				'lon':[-22.704575111343242],
-				'demanda_manha':[0],
-				'demanda_tarde':[0],
-				'demanda_noite':[0],
-				'tempo_preparo':tempo_preparo,
-				'tempo_entrega':tempo_entrega,
-				'cd_municipio':'CEFET',
-				'dia':dia}
-	for instancia in instancias:
-		
+for instancia in instancias:
+
+	for dia in ['seg','ter','qua','qui','sex','sab']:	
+
+		#Linha que vai representar o CEFET no modelo
+		cefet = {'lat':[-43.46242373123213],
+					'lon':[-22.704575111343242],
+					'demanda_manha':[0],
+					'demanda_tarde':[0],
+					'demanda_noite':[0],
+					'tempo_preparo':tempo_preparo,
+					'tempo_entrega':tempo_entrega,
+					'cd_municipio':'CEFET',
+					'dia':dia}
+			
 		for turno in ['manha','tarde', 'noite']:
 
 			output_file = open(f'saida_cvrptw_{instancia}.txt','w')
@@ -70,6 +72,7 @@ for dia in ['seg','ter','qua','qui','sex','sab']:
 					continue
 				if cd_municipio == 'CEFET':
 					continue
+
 				for iteracao in range(dados_modelo['iteracao'].max()):
 
 					s = f"|Iteração{iteracao}, Horário de Saída: {tempo_preparo+fatia_tempo*iteracao}|"
