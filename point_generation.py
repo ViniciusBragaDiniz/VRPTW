@@ -4,10 +4,85 @@ from sklearn.cluster import k_means
 import time as temporizador
 import warnings
 warnings.filterwarnings('ignore')
+import matplotlib.pyplot as plt
 
+def _exibir_grafico_cotovelo(k_valores, inertias, cotovelo_k, indice_cotovelo):
+    """
+    Função auxiliar para exibir o gráfico da curva de inércia com a reta de referência
+    e a perpendicular no ponto do cotovelo.
+    """
+    # Extrair as coordenadas do ponto do cotovelo
+    inertias = inertias*10000
+    # Extrair as coordenadas do ponto do cotovelo
+    cotovelo_x = k_valores[indice_cotovelo]
+    cotovelo_y = inertias[indice_cotovelo]
 
+    #Definindo primeiro e último ponto da reta de referência
+    x1, y1 = k_valores[0], inertias[0]
+    x2, y2 = k_valores[-1], inertias[-1]
 
-def encontrar_cotovelo(k_values, inertias):
+    # Definir o primeiro e último ponto para a reta de referência
+    ponto_inicial = (x1, y1)
+    ponto_final = (x2, y2)
+
+    # Calcular a inclinação da reta de referência
+    if x2 - x1 != 0:
+        inclinacao_reta = (y2 - y1) / (x2 - x1)
+    else:
+        inclinacao_reta = np.inf  # Reta vertical
+
+    # Calcular a inclinação da reta perpendicular (negativo do inverso)
+    if inclinacao_reta != 0 and inclinacao_reta != np.inf:
+        inclinacao_perpendicular = -1 / inclinacao_reta
+    elif inclinacao_reta == 0:
+        inclinacao_perpendicular = np.inf  # Perpendicular a uma reta horizontal é vertical
+    else:
+        inclinacao_perpendicular = 0     # Perpendicular a uma reta vertical é horizontal
+
+    # Calcular um ponto para a reta perpendicular (usando o ponto do cotovelo)
+    # A equação da reta é y - y1 = m(x - x1)
+    # Para a perpendicular: y - cotovelo_y = inclinacao_perpendicular * (x - cotovelo_x)
+
+    # Vamos definir um intervalo para a reta perpendicular para visualização
+    intervalo_x = np.linspace(min(k_valores), max(k_valores), 100)
+    if inclinacao_perpendicular != np.inf:
+        reta_perpendicular_y = inclinacao_perpendicular * (intervalo_x - cotovelo_x) + cotovelo_y
+    else:
+        reta_perpendicular_y = np.linspace(min(inertias), max(inertias), 100)
+        intervalo_x = np.full_like(reta_perpendicular_y, cotovelo_x)
+
+    # Criar o gráfico
+    plt.figure(figsize=(10, 6))
+
+    # Plotar os pontos da curva de inércia
+    plt.plot(k_valores, inertias, 'bo-', label='Curva de Inércia')
+
+    # Plotar a reta entre o primeiro e o último ponto
+    plt.plot([ponto_inicial[0], ponto_final[0]], [ponto_inicial[1], ponto_final[1]], 'r-', label='Reta de Referência')
+
+    # Plotar o ponto do cotovelo com um marcador diferente
+    plt.plot(cotovelo_x, cotovelo_y, 'go', markersize=10, label=f'Cotovelo (k={cotovelo_k})')
+
+    # Plotar a reta perpendicular à reta de referência passando pelo cotovelo
+    plt.plot(intervalo_x, reta_perpendicular_y, 'g--', label='Perpendicular no Cotovelo')
+
+    # Adicionar rótulos e título
+    plt.xlabel('Número de Clusters (k)')
+    plt.ylabel('Inércia (WCSS) * 10^4')
+    plt.legend(loc='center left')
+    plt.grid(True)
+    plt.xticks(k_valores)
+    plt.legend(loc='lower center',ncol=4, fancybox=True, shadow=True, bbox_to_anchor=(0.5, -0.2))
+    plt.tight_layout()
+
+    # Ajustar os limites do eixo y para melhor visualização
+    ax = plt.gca()
+    ax.set_aspect('equal', 'box')
+    amplitude_y = max(inertias) - min(inertias)
+    ax.set_ylim(min(inertias) - 0.1 * amplitude_y, max(inertias) + 0.1 * amplitude_y)
+    plt.savefig('imgs/ilustracao_cotovelo.png')
+
+def encontrar_cotovelo(k_values, inertias, exibir_grafico=False):
     """
     Dada uma lista (ou vetor) de valores de k e os respectivos valores de inércia,
     essa função retorna o número ótimo de clusters (o cotovelo), o índice correspondente
@@ -16,6 +91,7 @@ def encontrar_cotovelo(k_values, inertias):
     Parâmetros:
         k_values (array-like): Lista com os valores de k testados (ex.: [1, 2, ...])
         inertias (array-like): Lista com os valores de inércia obtidos para cada k.
+        exibir_grafico (bool): Se True, exibe o gráfico da curva de inércia e o cotovelo.
 
     Retorna:
         optimal_k (int/float): Valor de k correspondente ao "cotovelo".
@@ -51,10 +127,13 @@ def encontrar_cotovelo(k_values, inertias):
     # Encontrar o índice do ponto com a maior distância (este é o cotovelo)
     elbow_index = np.argmax(distances)
 
-    return elbow_index
+    if exibir_grafico:
+        _exibir_grafico_cotovelo(k_values, inertias, k_values[elbow_index], elbow_index)
+        
+    return k_values[elbow_index]
 
 
-def gerar_pontos(alunos:str = "full"):
+def gerar_pontos(alunos:str = "full", turno:str = "SAIDA"):
     """
     Função para gerar pontos de ônibus com base em dados de alunos e suas localizações.
     A função lê um arquivo CSV contendo informações dos alunos, filtra os dados com base
@@ -70,9 +149,12 @@ def gerar_pontos(alunos:str = "full"):
         pontos_de_onibus (DataFrame): DataFrame contendo os pontos de ônibus gerados,
                                        com informações sobre localização, demanda e dia da semana.
     """
+    print(alunos,turno)
     # Carrega o dataframe contendo informações dos alunos
     df_alunos = pd.read_csv("Dados/info_alunos.csv")
-
+    # df_turno_correto = pd.read_csv("dados_tratados/turno_resumo.csv",sep = ';')
+    # df_alunos = df_alunos.drop(columns=['TURNO_ENTRADA','TURNO_SAIDA'])
+    # df_alunos = df_alunos.merge(df_turno_correto,'left',on=['CURSO','PERÍODO_ATUAL','DIA'])
     if alunos != "full":
         filter_condition = df_alunos['id_aluno'].str.contains(alunos)
         df_alunos = df_alunos[filter_condition]
@@ -92,21 +174,23 @@ def gerar_pontos(alunos:str = "full"):
 
     # Loop que itera sobre cada município único na lista de municípios
     for cd_mun in municipios:
+        if cd_mun != "Queimados":
+            continue
         # Marca o tempo de início do processamento para cada município
         start = temporizador.time()
         # Filtra o dataframe para conter apenas os alunos do município atual e remove duplicatas de alunos
         alunos_municipio = df_alunos[(df_alunos['CIDADE'] == cd_mun)].drop_duplicates(subset='id_aluno')
         # Verifica se o número de alunos no município é menor que 10
+
         if len(alunos_municipio) < 10:
             # Incrementa o contador de municípios desconsiderados
             municipios_desconsiderados += 1
             # Incrementa o contador de alunos desconsiderados
             alunos_desconsiderados += len(alunos_municipio)
             # Imprime uma mensagem indicando que o município foi pulado devido ao baixo número de alunos
-            print('Município:', cd_mun, "N Alunos:", len(alunos_municipio), "PULADO")
+            # print('Município:', cd_mun, "N Alunos:", len(alunos_municipio), "PULADO")
             # Pula para a próxima iteração do loop (próximo município)
             continue
-
         # Imprime o nome do município e o número de alunos considerados para este município
         print('Município:', cd_mun, "N Alunos:", len(alunos_municipio))
 
@@ -118,8 +202,11 @@ def gerar_pontos(alunos:str = "full"):
             centroids, classes, inertia = k_means(alunos_municipio[['LATITUDE','LONGITUDE']],i, n_init=10) # Adicionado n_init para melhor convergência
             # Adiciona o valor da inércia à lista wcss
             wcss.append(inertia)
+
         # Chama a função para encontrar o número ótimo de clusters (o "cotovelo") usando os valores de k e as inércias
-        optimal_k = encontrar_cotovelo(range(2,len(alunos_municipio)+1), wcss)
+        if cd_mun == "Queimados":
+            exibir_grafico = True
+        optimal_k = encontrar_cotovelo(range(2,len(alunos_municipio)+1), wcss,exibir_grafico)
 
         # Aplica o algoritmo k-means com o número ótimo de clusters encontrado
         centroids, classes, _ = k_means(alunos_municipio[['LATITUDE','LONGITUDE']],optimal_k, n_init=10) # Adicionado n_init para consistência
@@ -128,6 +215,7 @@ def gerar_pontos(alunos:str = "full"):
         alunos_municipio['class'] = classes
         # Mescla o dataframe principal de alunos com as classes dos alunos do município para adicionar a informação de classe aos registros correspondentes
         comp_df = df_alunos.merge(alunos_municipio[['id_aluno','class']],'left','id_aluno')
+        
         # Loop que itera sobre cada dia da semana único
         for dia in dias_da_semana:
             # Imprime uma linha separadora para melhor visualização no console
@@ -139,14 +227,16 @@ def gerar_pontos(alunos:str = "full"):
             cond_dia = comp_df['DIA'] == dia
 
             # Calcula a demanda por turno (manhã, tarde, noite) para cada cluster no dia atual
-            demanda_manha = comp_df[(comp_df['TURNO']=='manhã') & cond_dia].groupby('class').count()['TURNO']
-            demanda_tarde = comp_df[(comp_df['TURNO']=='tarde') & cond_dia].groupby('class').count()['TURNO']
-            demanda_noite = comp_df[(comp_df['TURNO']=='noite') & cond_dia].groupby('class').count()['TURNO']
+            demanda_manha = comp_df[(comp_df[f'TURNO_{turno}']=='manhã') & cond_dia].groupby('class').count()[f'TURNO_{turno}']
+            demanda_tarde = comp_df[(comp_df[f'TURNO_{turno}']=='tarde') & cond_dia].groupby('class').count()[f'TURNO_{turno}']
+            demanda_noite = comp_df[(comp_df[f'TURNO_{turno}']=='noite') & cond_dia].groupby('class').count()[f'TURNO_{turno}']
+            demanda_fim = comp_df[(comp_df[f'TURNO_{turno}']=='fim') & cond_dia].groupby('class').count()[f'TURNO_{turno}']
 
             # Adiciona as informações de demanda (se houver) ao dataframe de centroids, usando o índice do cluster como chave
             centroids_df.loc[demanda_manha.index,'demanda_manha'] = demanda_manha
             centroids_df.loc[demanda_tarde.index,'demanda_tarde'] = demanda_tarde
             centroids_df.loc[demanda_noite.index,'demanda_noite'] = demanda_noite
+            centroids_df.loc[demanda_fim.index,'demanda_fim'] = demanda_fim
             # Adiciona o dia da semana ao dataframe de centroids
             centroids_df['dia'] = dia
 
@@ -163,7 +253,11 @@ def gerar_pontos(alunos:str = "full"):
     # Imprime o número total de alunos desconsiderados
     print("Alunos Desconsiderados", alunos_desconsiderados)
 
-    pontos_de_onibus.to_csv(f"Dados/pontos_de_onibus_{alunos}.csv",index=False)
+    pontos_de_onibus.to_csv(f"Dados/pontos_de_onibus_{alunos}_{turno}.csv",index=False)
 
     # Retorna o dataframe final de pontos de ônibus
     return pontos_de_onibus
+
+# for alunos in ['grad','tec','full']:
+#     for i in ['ENTRADA','SAIDA']:
+#         gerar_pontos(alunos=alunos, turno=i)
