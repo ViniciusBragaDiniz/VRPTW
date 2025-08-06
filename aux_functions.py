@@ -173,10 +173,14 @@ def calculate_distances(data: pd.DataFrame, cd_municipio: str, iteracao: int, fa
                 #Distância em Metros
                 distancia[i][j]=round(haversine(data['lat'][i],data['lon'][i],
                                                 data['lat'][j],data['lon'][j]))
-                #Assumindo Velocidade Média de 20 km/h se for Nova Iguaçu
-                if cd_municipio == "Nova Iguaçu":
+                if cd_municipio in ["Nova Iguacu","Mesquita","Nilopolis"]:
+                    #20 km/h = 20.000 m/h = 20.000/3600 m/s
                     distancia[i][j] = distancia[i][j]/(20/3.6) #Calculo do tempo em segundos
-                else: #Para fora assume-se 60 km/h
+                elif cd_municipio in ["Duque De Caxias","Belford Roxo","Sao Joao De Meriti","Queimados"]: #Para fora assume-se 50 km/h
+                    #30 km/h = 30.000 m/h = 30.000/3600 m/s
+                    distancia[i][j] = distancia[i][j]/(30/3.6)
+                elif cd_municipio in ["Rio De Janeiro", "Japeri"]:
+                    #60 km/h = 60.000 m/h = 60.000/3600 m/s
                     distancia[i][j] = distancia[i][j]/(60/3.6) #Calculo do tempo em segundos
                 
                 big_m = max(big_m,data['tempo_entrega'][i]
