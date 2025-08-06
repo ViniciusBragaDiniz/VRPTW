@@ -5,7 +5,7 @@ import time as temporizador
 import warnings
 warnings.filterwarnings('ignore')
 import matplotlib.pyplot as plt
-
+import time
 def _exibir_grafico_cotovelo(k_valores, inertias, cotovelo_k, indice_cotovelo):
     """
     Função auxiliar para exibir o gráfico da curva de inércia com a reta de referência
@@ -174,10 +174,6 @@ def gerar_pontos(alunos:str = "full", turno:str = "SAIDA"):
 
     # Loop que itera sobre cada município único na lista de municípios
     for cd_mun in municipios:
-        if cd_mun != "Queimados":
-            continue
-        # Marca o tempo de início do processamento para cada município
-        start = temporizador.time()
         # Filtra o dataframe para conter apenas os alunos do município atual e remove duplicatas de alunos
         alunos_municipio = df_alunos[(df_alunos['CIDADE'] == cd_mun)].drop_duplicates(subset='id_aluno')
         # Verifica se o número de alunos no município é menor que 10
@@ -204,9 +200,7 @@ def gerar_pontos(alunos:str = "full", turno:str = "SAIDA"):
             wcss.append(inertia)
 
         # Chama a função para encontrar o número ótimo de clusters (o "cotovelo") usando os valores de k e as inércias
-        if cd_mun == "Queimados":
-            exibir_grafico = True
-        optimal_k = encontrar_cotovelo(range(2,len(alunos_municipio)+1), wcss,exibir_grafico)
+        optimal_k = encontrar_cotovelo(range(2,len(alunos_municipio)+1), wcss,False)
 
         # Aplica o algoritmo k-means com o número ótimo de clusters encontrado
         centroids, classes, _ = k_means(alunos_municipio[['LATITUDE','LONGITUDE']],optimal_k, n_init=10) # Adicionado n_init para consistência
@@ -253,11 +247,7 @@ def gerar_pontos(alunos:str = "full", turno:str = "SAIDA"):
     # Imprime o número total de alunos desconsiderados
     print("Alunos Desconsiderados", alunos_desconsiderados)
 
-    pontos_de_onibus.to_csv(f"Dados/pontos_de_onibus_{alunos}_{turno}.csv",index=False)
+    #pontos_de_onibus.to_csv(f"Dados/pontos_de_onibus_{alunos}_{turno}.csv",index=False)
 
     # Retorna o dataframe final de pontos de ônibus
     return pontos_de_onibus
-
-# for alunos in ['grad','tec','full']:
-#     for i in ['ENTRADA','SAIDA']:
-#         gerar_pontos(alunos=alunos, turno=i)

@@ -1,12 +1,12 @@
 import pandas as pd
 from docplex.mp.model import Model
-from docplex.mp.linear import LinearExpr
 import time
 import math
-
+import gc
 from point_generation import gerar_pontos
-from aux_functions import data_prep, data_prep_failed_instances, build_routes, calculate_distances
+from aux_functions import build_routes, calculate_distances
 from build_model import build_model, operate_cycle
+import re
 depot = 0
 
 tempo_limite =  3600 #30 minutos
@@ -14,8 +14,10 @@ tempo_preparo = 0
 tempo_entrega = 4*3600
 fatia_tempo = 1800 #30 minutos
 instancias = {}
-for tipo_de_rota in ["SAIDA"]:
-	for instancia in ["full"]:
+
+pular_instancias = pd.read_csv('Dados/pular_instancias.csv',sep=";")
+for tipo_de_rota in ["ENTRADA"]:
+	for instancia in ["tec","grad","full"]:
 		try:
 			instancias[instancia] = pd.read_csv(f'Dados/pontos_de_onibus_{instancia}_{tipo_de_rota}.csv')
 		except FileNotFoundError:
@@ -24,10 +26,11 @@ for tipo_de_rota in ["SAIDA"]:
 
 	capacity = 50 #Capacidade do ônibus5
 
-	solutions = []
+	solucoes_resumo = []
+	solucoes_detalhe = []
 	for instancia in instancias:
 		output_file = open(f'output/text/saida_cvrptw_{instancia}_{tipo_de_rota}.txt','w')
-		for dia in ['qui','sex','sab']:	
+		for dia in ['seg','ter','qua','qui','sex','sab']:	
 			#Linha que vai representar o CEFET no modelo
 			cefet = {'lat':[-43.46242373123213],
 						'lon':[-22.704575111343242],
@@ -42,7 +45,7 @@ for tipo_de_rota in ["SAIDA"]:
 			
 			dados_dia = instancias[instancia].copy()
 			dados_dia = dados_dia[dados_dia['dia'] == dia].reset_index(drop=True)
-			for turno in ['manha','tarde', 'noite','fim']:
+			for turno in ['tarde','noite','fim']:
 				output_file.writelines(f"Horizonte de Tempo: {tempo_entrega-tempo_preparo} segundos\n\n")
 				output_file.writelines("##############################\n")
 				output_file.writelines(f"####  Turno Atual: {turno}  ####\n")
@@ -64,8 +67,8 @@ for tipo_de_rota in ["SAIDA"]:
 				#dados_turno = data_prep(turno, dados_turno, capacity, fatia_tempo)
 				dados_turno['iteracao'] = 0
 				for cd_municipio in dados_turno['cd_municipio'].unique():
-
-					if cd_municipio == "Nova Iguacu":
+					if f"{tipo_de_rota},{instancia},{dia},{turno},{cd_municipio}" in pular_instancias.values:
+						print(f"Pulando a instância {tipo_de_rota},{instancia},{dia},{turno},{cd_municipio}")
 						continue
 					#Filtra os dados do modelo para obter o munícipio atual
 					dados_municipio = dados_turno[dados_turno['cd_municipio'] == cd_municipio].copy()
@@ -75,7 +78,7 @@ for tipo_de_rota in ["SAIDA"]:
 					dados_municipio = dados_municipio.merge(centroids, on=['lat','lon'], how='left')
 					dados_municipio['centroid_id'] += 1 #Desloca o id em 1 pois iremos inserir o cefet como ponto 0
 					dados_municipio.sort_values(by=['iteracao','centroid_id'])
-					
+
 					for iteracao in dados_municipio['iteracao'].unique():
 						s = f"|Iteração{iteracao}, Horário de Saída: {tempo_preparo+fatia_tempo*iteracao}|"
 						output_file.writelines("_"*len(s)+"\n")
@@ -93,7 +96,8 @@ for tipo_de_rota in ["SAIDA"]:
 						dados_iteracao = dados_iteracao[dados_iteracao['iteracao'] == iteracao]
 						dados_iteracao = dados_iteracao.set_index('centroid_id')
 						dados_iteracao = dados_iteracao.sort_index() #Previne que haja um embaralhamento nos índices
-
+						del dados_municipio
+						gc.collect()
 						########################
 						#Parâmetros Calculáveis#
 						########################
@@ -179,7 +183,18 @@ for tipo_de_rota in ["SAIDA"]:
 								output_file.writelines(f"Solução:\n")
 
 								for k in range(necessary_vehicles):
+									detailed_solution_dict = {'instancia': instancia,
+											'dia': dia,
+											'turno': turno,
+											'cd_municipio': cd_municipio,
+											'iteracao': iteracao,
+											'num_pontos': len(routes[k]),
+											'id_veiculo': k
+											}
 									string = operate_cycle(model, routes, travels, k, option="string", tempo_preparo=tempo_preparo, iteracao=iteracao, distancia=distance_matrix)
+									detailed_solution_dict['tempo_viagem'] =float(re.findall(r'\d+\.?\d*', string.split("|")[-1])[0])
+									solucoes_detalhe.append(detailed_solution_dict)
+
 									output_file.writelines(string)
 									print(string)
 
@@ -196,12 +211,19 @@ for tipo_de_rota in ["SAIDA"]:
 											'tempo_exec': tempo_exec,
 											'objective_value': model.objective_value,
 											}
-						solutions.append(solution_dict)
+
+						solucoes_resumo.append(solution_dict)
 						output_file.writelines("Custo da Função Objetiva: "+str(model.objective_value)+"\n")
 						output_file.writelines("Tempo Total de Execução: "+str(tempo_exec)+"\n")
 						output_file.writelines("\n\n")
 						print("Custo da Função Objetiva",model.objective_value)
 						print("Tempo Total de Execução", tempo_exec)
-					solutions_df = pd.DataFrame(solutions)
+					solutions_df = pd.DataFrame(solucoes_resumo)
 					solutions_df.to_csv(f'output/csv/solucao_cvrptw_{instancia}_{tipo_de_rota}.csv', index=False)
+
+					solutions_detailed_df = pd.DataFrame(solucoes_detalhe)
+					solutions_detailed_df.to_csv(f'output/csv/solucao_completa_cvrptw_{instancia}_{tipo_de_rota}.csv', index=False)
+
+					del model
+					gc.collect()  # Coleta de lixo para liberar memória
 		output_file.close()
