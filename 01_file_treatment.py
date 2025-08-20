@@ -1,3 +1,44 @@
+"""
+Este módulo é responsável pela etapa inicial de tratamento dos dados brutos
+dos alunos dos cursos de nível médio e graduação. O processo consiste em
+carregar as informações de diferentes fontes, consolidá-las, limpar os dados,
+enriquecê-los com informações de endereço via API (ViaCEP) e, finalmente,
+obter as coordenadas geográficas (latitude e longitude) de cada aluno
+utilizando a API do Google Maps.
+
+O fluxo de trabalho do script é o seguinte:
+1.  Carrega os dados dos alunos (médio e graduação) de arquivos CSV.
+2.  Unifica os dois conjuntos de dados em um único DataFrame.
+3.  Realiza uma limpeza inicial, filtrando por CEPs válidos do estado do
+    Rio de Janeiro e inicializando colunas que serão usadas posteriormente
+    para evitar erros em reprocessamentos.
+4.  Utiliza a API do ViaCEP para preencher informações de logradouro e
+    complemento que estejam ausentes, com base no CEP do aluno.
+5.  Constrói um endereço completo e padronizado para cada aluno.
+6.  Envia o endereço completo para a API de Geocodificação do Google Maps
+    para obter a latitude e a longitude. O script é otimizado para
+    processar apenas os alunos que ainda não foram georreferenciados.
+7.  Padroniza os nomes de cidades e bairros, removendo acentos e
+    aplicando formatação de título.
+8.  Mescla o DataFrame resultante com informações sobre os turnos de cada curso.
+9.  Salva os dados processados, dividindo-os novamente em arquivos para
+    nível médio e graduação, sobrescrevendo os originais.
+
+Este pré-processamento é fundamental para a subsequente aplicação dos
+algoritmos de roteamento de veículos, que dependem de coordenadas precisas
+para a construção de matrizes de custo e otimização das rotas.
+
+Exemplo de uso:
+    A execução deste script é direta. Certifique-se de que os arquivos de
+    entrada ('data/info_medio.csv', 'data/info_graduacao.csv',
+    'dados_tratados/turno_resumo.csv') e o arquivo de segredos ('secrets')
+    estejam no local correto e execute:
+
+    $ python 01_file_treatment.py
+
+@author: Vinícius Braga Diniz (contato.vbd@gmail.com)
+"""
+
 import pandas as pd
 import requests
 from time import sleep

@@ -1,3 +1,31 @@
+"""Módulo principal para formulação e resolução do Problema de Roteamento de Veículos com Janelas de Tempo (VRPTW).
+
+Este script orquestra todo o processo de resolução do VRPTW para um conjunto de
+instâncias predefinidas. Ele carrega os dados dos clientes (pontos de ônibus),
+itera sobre diferentes cenários (dias da semana, turnos, municípios) e, para
+cada cenário, constrói e resolve um modelo de programação linear inteira mista
+utilizando a biblioteca DOCPLEX.
+
+O processo de resolução implementa uma abordagem de planos de corte (cutting planes)
+para a eliminação de subtour. O modelo é resolvido iterativamente:
+1. Uma solução inicial é encontrada, podendo conter subtours.
+2. As rotas são analisadas para identificar a existência de subtours.
+3. Se um subtour é encontrado, uma nova restrição (corte) é adicionada ao
+   modelo para proibir aquele subtour específico.
+4. O modelo é resolvido novamente com a nova restrição.
+Este ciclo se repete até que uma solução sem subtours seja encontrada ou o
+limite de tempo seja atingido.
+
+Os resultados, incluindo as rotas otimizadas, o custo total (distância) e o
+tempo de execução, são salvos em arquivos de texto e CSV para análise posterior.
+
+Exemplo de Uso:
+    Para executar o script, basta rodá-lo diretamente a partir do terminal:
+    $ python model.py
+
+@author: Vinícius Braga Diniz (contato.vbd@gmail.com)
+"""
+
 import pandas as pd
 from docplex.mp.model import Model
 import time
@@ -7,15 +35,18 @@ from point_generation import gerar_pontos
 from aux_functions import build_routes, calculate_distances
 from build_model import build_model, operate_cycle
 import re
+
 depot = 0
+
+# --- Configuração dos Parâmetros Globais do Modelo ---
 
 tempo_limite =  3600 #30 minutos
 tempo_preparo = 0
 tempo_entrega = 4*3600
 fatia_tempo = 1800 #30 minutos
 instancias = {}
+pular_instancias = pd.read_csv('data/pular_instancias.csv',sep=";") # instâncias a ignorar
 
-pular_instancias = pd.read_csv('data/pular_instancias.csv',sep=";")
 for tipo_de_rota in ["ENTRADA"]:
 	for instancia in ["tec","grad","full"]:
 		try:
@@ -24,14 +55,15 @@ for tipo_de_rota in ["ENTRADA"]:
 			instancias[instancia] = gerar_pontos(instancia)
 
 
-	capacity = 50 #Capacidade do ônibus5
+	capacity = 50 # Capacidade dos veículos
 
 	solucoes_resumo = []
 	solucoes_detalhe = []
 	for instancia in instancias:
 		output_file = open(f'output/text/saida_cvrptw_{instancia}_{tipo_de_rota}.txt','w')
-		for dia in ['seg','ter','qua','qui','sex','sab']:	
-			#Linha que vai representar o CEFET no modelo
+		for dia in ['seg','ter','qua','qui','sex','sab']:
+
+			#Linha que vai representar o CEFET (depósito) no modelo
 			cefet = {'lat':[-43.46242373123213],
 						'lon':[-22.704575111343242],
 						'demanda_manha':[0],
@@ -45,6 +77,7 @@ for tipo_de_rota in ["ENTRADA"]:
 			
 			dados_dia = instancias[instancia].copy()
 			dados_dia = dados_dia[dados_dia['dia'] == dia].reset_index(drop=True)
+			
 			for turno in ['tarde','noite','fim']:
 				output_file.writelines(f"Horizonte de Tempo: {tempo_entrega-tempo_preparo} segundos\n\n")
 				output_file.writelines("##############################\n")

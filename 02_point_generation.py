@@ -1,15 +1,70 @@
+"""Este módulo é responsável pela geração de pontos de parada de ônibus.
+
+Utilizando dados geográficos de alunos, este script aplica algoritmos de 
+agrupamento para identificar locais ótimos que servirão como pontos de parada 
+em um problema de roteamento de veículos. O processo consiste em duas etapas
+principais:
+
+1.  **Determinação do Número Ótimo de Clusters (k):** Para cada município com um 
+    número suficiente de alunos, o script primeiro executa o algoritmo K-means 
+    para uma gama de valores de `k`. A inércia (WCSS - Within-Cluster Sum of 
+    Squares) de cada execução é registrada. Em seguida, a função `encontrar_cotovelo` 
+    é usada para identificar o "ponto de cotovelo" na curva de inércia. Este ponto 
+    representa um bom equilíbrio entre o número de clusters e a compactação 
+    desses clusters, sendo escolhido como o número ideal de pontos de parada 
+    para aquele município.
+
+2.  **Geração dos Centroides e Cálculo de Demanda:** Com o número ótimo de 
+    clusters (`k`) definido, o K-means é executado novamente para encontrar a 
+    localização exata dos centroides (pontos de parada). Subsequentemente, 
+    a demanda de alunos para cada ponto é calculada para cada dia da semana e 
+    turno, com base nos dados de entrada.
+
+O resultado final é um DataFrame do Pandas contendo as coordenadas geográficas 
+de cada ponto de parada, o município ao qual pertence, o dia da semana e a 
+demanda de alunos para os diferentes turnos, pronto para ser consumido pelo 
+módulo de otimização de rotas.
+
+Exemplo de Uso:
+    Para gerar os pontos de parada para todos os alunos para o turno de saída:
+
+    >>> from point_generation import gerar_pontos
+    >>> df_pontos_onibus = gerar_pontos(alunos="full", turno="SAIDA")
+    >>> print(df_pontos_onibus.head())
+
+@author: Seu Nome (ou Nome da Equipe)
+@date: 20/08/2025
+"""
+
 import pandas as pd
 import numpy as np
 from sklearn.cluster import k_means
-import time as temporizador
 import warnings
 warnings.filterwarnings('ignore')
 import matplotlib.pyplot as plt
-import time
-def _exibir_grafico_cotovelo(k_valores, inertias, cotovelo_k, indice_cotovelo):
-    """
-    Função auxiliar para exibir o gráfico da curva de inércia com a reta de referência
-    e a perpendicular no ponto do cotovelo.
+
+def _exibir_grafico_cotovelo(
+    k_valores: np.ndarray,
+    inertias: np.ndarray,
+    cotovelo_k: int,
+    indice_cotovelo: int
+) -> None:
+    """Função auxiliar para exibir o gráfico do método do cotovelo.
+
+    Esta função plota a curva de inércia (WCSS) em função do número de 
+    clusters (k). Adicionalmente, desenha uma reta de referência conectando
+    o primeiro e o último ponto da curva e uma linha perpendicular a esta 
+    reta, passando pelo ponto identificado como o cotovelo, para ilustrar
+    visualmente a seleção do `k` ótimo. O gráfico é salvo como uma imagem.
+
+    Args:
+        k_valores (np.ndarray): Um array contendo os valores de `k` (número
+            de clusters) testados.
+        inertias (np.ndarray): Um array contendo os valores de inércia (WCSS)
+            correspondentes a cada valor em `k_valores`.
+        cotovelo_k (int): O valor de `k` identificado como o cotovelo.
+        indice_cotovelo (int): O índice do ponto de cotovelo nos arrays
+            `k_valores` e `inertias`.
     """
     # Extrair as coordenadas do ponto do cotovelo
     inertias = inertias*10000
@@ -83,20 +138,25 @@ def _exibir_grafico_cotovelo(k_valores, inertias, cotovelo_k, indice_cotovelo):
     plt.savefig('imgs/ilustracao_cotovelo.png')
 
 def encontrar_cotovelo(k_values, inertias, exibir_grafico=False):
-    """
-    Dada uma lista (ou vetor) de valores de k e os respectivos valores de inércia,
-    essa função retorna o número ótimo de clusters (o cotovelo), o índice correspondente
-    e um vetor com as distâncias de cada ponto à reta que conecta o primeiro e o último ponto.
+    """Encontra o número ótimo de clusters (k) usando o método do cotovelo.
 
-    Parâmetros:
-        k_values (array-like): Lista com os valores de k testados (ex.: [1, 2, ...])
-        inertias (array-like): Lista com os valores de inércia obtidos para cada k.
-        exibir_grafico (bool): Se True, exibe o gráfico da curva de inércia e o cotovelo.
+    Esta implementação do método do cotovelo (Kneedle) localiza o `k` ótimo
+    identificando o ponto na curva de inércia que possui a maior distância
+    perpendicular a uma reta traçada entre o primeiro e o último ponto da
+    curva. Este ponto representa uma troca eficiente entre a redução da
+    variância intra-cluster e o aumento da complexidade do modelo.
 
-    Retorna:
-        optimal_k (int/float): Valor de k correspondente ao "cotovelo".
-        elbow_index (int): Índice do ponto de cotovelo na lista.
-        distances (np.array): Array com as distâncias de cada ponto à reta.
+    Args:
+        k_values (list | np.ndarray): Uma lista ou array com os valores de
+            `k` (número de clusters) que foram testados.
+        inertias (list | np.ndarray): Uma lista ou array com os valores de
+            inércia (WCSS) correspondentes a cada valor de `k`.
+        exibir_grafico (bool): Se `True`, gera e salva um gráfico que
+            visualiza a curva de inércia e o ponto de cotovelo encontrado.
+            O padrão é `False`.
+
+    Returns:
+        int: O valor de `k` considerado ótimo (o cotovelo).
     """
     # Converter entradas para arrays NumPy
     k_values = np.array(k_values)
@@ -132,22 +192,32 @@ def encontrar_cotovelo(k_values, inertias, exibir_grafico=False):
         
     return k_values[elbow_index]
 
-
 def gerar_pontos(alunos:str = "full", turno:str = "SAIDA"):
-    """
-    Função para gerar pontos de ônibus com base em dados de alunos e suas localizações.
-    A função lê um arquivo CSV contendo informações dos alunos, filtra os dados com base
-    em um identificador de aluno (ou uma lista de alunos), e aplica o algoritmo k-means
-    para identificar clusters de alunos em diferentes municípios e dias da semana.
-    Os pontos de ônibus são gerados com base na localização dos alunos e na demanda
-    por transporte em diferentes turnos (manhã, tarde, noite).
-    Os resultados são salvos em um arquivo CSV.
-    Parâmetros:
-        alunos (str): Identificador de aluno ou lista de alunos a serem considerados.
-                        Se "full", considera todos os alunos disponíveis no arquivo CSV.
-    Retorna:
-        pontos_de_onibus (DataFrame): DataFrame contendo os pontos de ônibus gerados,
-                                       com informações sobre localização, demanda e dia da semana.
+    """Gera pontos de parada de ônibus (centroides) a partir de dados dos alunos.
+
+    A função orquestra o processo de criação de pontos de parada. Ela lê um
+    arquivo CSV com informações dos alunos, incluindo suas coordenadas, e
+    aplica o algoritmo K-means de forma iterativa por município. Para cada
+    município, o número ideal de clusters é determinado pelo método do cotovelo.
+    Em seguida, os centroides (pontos de parada) são gerados e a demanda de
+    alunos para cada ponto é calculada para cada dia da semana e turno.
+    Municípios com menos de 10 alunos são desconsiderados.
+
+    Args:
+        alunos (str): Identificador para filtrar os alunos. Se for "full",
+            todos os alunos do arquivo de entrada são considerados. Caso
+            contrário, pode ser uma substring para filtrar pelo `id_aluno`.
+            O padrão é "full".
+        turno (str): Especifica o turno a ser considerado para o cálculo da
+            demanda, tipicamente "ENTRADA" ou "SAIDA". O valor é usado para
+            selecionar as colunas de demanda correspondentes (ex: `TURNO_SAIDA`).
+            O padrão é "SAIDA".
+
+    Returns:
+        pd.DataFrame: Um DataFrame contendo os pontos de ônibus gerados, com
+            as seguintes colunas: 'lon', 'lat' (coordenadas), 'cd_municipio',
+            'demanda_manha', 'demanda_tarde', 'demanda_noite', 'demanda_fim'
+            e 'dia'.
     """
     print(alunos,turno)
     # Carrega o dataframe contendo informações dos alunos
