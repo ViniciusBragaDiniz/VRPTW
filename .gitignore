@@ -4,5 +4,14 @@
 *.csv
 *.xlsx
 *.txt
+
+
 secrets
-Dados/*.csv
+*.png
+*.zip
+*.cpg
+*.dbf
+*.prj
+*.shp
+*.shx
+temp/

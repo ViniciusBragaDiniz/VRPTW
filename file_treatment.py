@@ -44,10 +44,10 @@ gmaps = googlemaps.Client(key=os.getenv("GOOGLEMAPS_APIKEY"))
 # Leitura dos dados de turno para cada curso
 df_turno = pd.read_csv('dados_tratados/turno_resumo.csv', sep = ";")
 
-df_medio = pd.read_csv('Dados/info_medio.csv')
+df_medio = pd.read_csv('data/info_medio.csv')
 df_medio['id_aluno'] = 'tec_'+df_medio.index.astype(str)
 
-df_graduacao = pd.read_csv('Dados/info_graduacao.csv')
+df_graduacao = pd.read_csv('data/info_graduacao.csv')
 df_graduacao['id_aluno'] = 'grad_'+df_graduacao.index.astype(str)
 
 df_alunos = pd.concat([df_medio,df_graduacao],ignore_index=True)
@@ -134,14 +134,14 @@ df_alunos['BAIRRO'] = df_alunos['BAIRRO'].apply(lambda x: remover_acentos(x).tit
 
 # Merge com a base de turnos
 df_alunos = df_turno.merge(df_alunos,'left',on=['CURSO','PERÍODO_ATUAL'])
-df_alunos.to_csv("Dados/info_alunos.csv",index=False)
+df_alunos.to_csv("data/info_alunos.csv",index=False)
 
 # Sobrescreve o arquivo com os dados de alunos
 df_medio = df_alunos.loc[df_alunos['id_aluno'].str.contains('tec')]
 df_medio = df_medio.drop_duplicates(subset='id_aluno')
-df_medio.to_csv('Dados/info_medio.csv',index=False)
+df_medio.to_csv('data/info_medio.csv',index=False)
 
 df_graduacao = df_alunos.loc[df_alunos['id_aluno'].str.contains('grad')]
 df_graduacao = df_graduacao.drop_duplicates(subset='id_aluno')
-df_graduacao.to_csv('Dados/info_graduacao.csv',index=False)
+df_graduacao.to_csv('data/info_graduacao.csv',index=False)
 

@@ -15,11 +15,11 @@ tempo_entrega = 4*3600
 fatia_tempo = 1800 #30 minutos
 instancias = {}
 
-pular_instancias = pd.read_csv('Dados/pular_instancias.csv',sep=";")
+pular_instancias = pd.read_csv('data/pular_instancias.csv',sep=";")
 for tipo_de_rota in ["ENTRADA"]:
 	for instancia in ["tec","grad","full"]:
 		try:
-			instancias[instancia] = pd.read_csv(f'Dados/pontos_de_onibus_{instancia}_{tipo_de_rota}.csv')
+			instancias[instancia] = pd.read_csv(f'data/pontos_de_onibus_{instancia}_{tipo_de_rota}.csv')
 		except FileNotFoundError:
 			instancias[instancia] = gerar_pontos(instancia)
 

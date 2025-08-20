@@ -151,7 +151,7 @@ def gerar_pontos(alunos:str = "full", turno:str = "SAIDA"):
     """
     print(alunos,turno)
     # Carrega o dataframe contendo informações dos alunos
-    df_alunos = pd.read_csv("Dados/info_alunos.csv")
+    df_alunos = pd.read_csv("data/info_alunos.csv")
     # df_turno_correto = pd.read_csv("dados_tratados/turno_resumo.csv",sep = ';')
     # df_alunos = df_alunos.drop(columns=['TURNO_ENTRADA','TURNO_SAIDA'])
     # df_alunos = df_alunos.merge(df_turno_correto,'left',on=['CURSO','PERÍODO_ATUAL','DIA'])
@@ -247,7 +247,7 @@ def gerar_pontos(alunos:str = "full", turno:str = "SAIDA"):
     # Imprime o número total de alunos desconsiderados
     print("Alunos Desconsiderados", alunos_desconsiderados)
 
-    #pontos_de_onibus.to_csv(f"Dados/pontos_de_onibus_{alunos}_{turno}.csv",index=False)
+    #pontos_de_onibus.to_csv(f"data/pontos_de_onibus_{alunos}_{turno}.csv",index=False)
 
     # Retorna o dataframe final de pontos de ônibus
     return pontos_de_onibus
