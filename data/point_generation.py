@@ -10,9 +10,14 @@ Pipeline:
     2. Identifica o "cotovelo" na curva de inércia.
     3. Gera os centroides finais e calcula a demanda por turno/dia.
 
+.. note::
+    Este módulo **não realiza leitura nem escrita em disco**. A função
+    ``generate_bus_stops`` recebe e retorna DataFrames, garantindo
+    idempotência do pipeline.
+
 Exemplo de uso:
     >>> from data.point_generation import generate_bus_stops
-    >>> df_stops = generate_bus_stops(student_filter="full", shift="SAIDA")
+    >>> df_stops = generate_bus_stops(df_students, student_filter="full", shift="SAIDA")
 """
 
 import logging
@@ -23,7 +28,6 @@ import pandas as pd
 from sklearn.cluster import k_means
 
 from vrptw.config import (
-    DATA_PROCESSED_DIR,
     IMGS_DIR,
     KMEANS_N_INIT,
     MIN_STUDENTS_PER_MUNICIPALITY,
@@ -154,6 +158,7 @@ def find_elbow(
 # ---------------------------------------------------------------------------
 
 def generate_bus_stops(
+    df_students: pd.DataFrame,
     student_filter: str = "full",
     shift: str = "SAIDA",
 ) -> pd.DataFrame:
@@ -163,7 +168,12 @@ def generate_bus_stops(
     do cotovelo para definir o número ideal de clusters. Calcula a demanda
     por turno e dia da semana para cada centroide gerado.
 
+    **Não realiza leitura nem escrita em disco** — recebe e retorna
+    DataFrames, garantindo idempotência.
+
     Args:
+        df_students: DataFrame com os dados dos alunos (saída do
+            pré-processamento).
         student_filter: Filtro de tipo de aluno (``"full"`` para todos,
             ``"tec"`` para técnico, ``"grad"`` para graduação).
         shift: Turno a considerar (``"ENTRADA"`` ou ``"SAIDA"``).
@@ -175,7 +185,8 @@ def generate_bus_stops(
     """
     logger.info("Gerando pontos de parada: filtro=%s, turno=%s", student_filter, shift)
 
-    df_students = pd.read_csv(DATA_PROCESSED_DIR / "info_alunos.csv")
+    # Copiar para não modificar o DataFrame original do chamador
+    df_students = df_students.copy()
 
     if student_filter != "full":
         df_students = df_students[

@@ -45,7 +45,6 @@ from .config import (
     WEEKDAYS,
 )
 from vrptw.model_builder import add_subtour_cuts, build_model, format_route_string
-from data.point_generation import generate_bus_stops
 from vrptw.utils import build_routes, calculate_distances
 
 logger = logging.getLogger(__name__)
@@ -338,17 +337,16 @@ def solve_all_instances() -> None:
         skip_set = set(skip_df.iloc[:, 0].astype(str))
 
     for route_type in ROUTE_TYPES:
-        # Carregar ou gerar pontos de parada
+        # Carregar pontos de parada (gerados pela etapa 2)
         instances: dict[str, pd.DataFrame] = {}
         for instance_name in INSTANCE_TYPES:
             csv_path = DATA_PROCESSED_DIR / f"pontos_de_onibus_{instance_name}_{route_type}.csv"
-            try:
-                instances[instance_name] = pd.read_csv(csv_path)
-            except FileNotFoundError:
-                logger.info(
-                    "Arquivo não encontrado: %s. Gerando pontos...", csv_path,
+            if not csv_path.exists():
+                raise FileNotFoundError(
+                    f"Arquivo de pontos de parada não encontrado: {csv_path}. "
+                    f"Execute a etapa 2 (geração de pontos) antes da resolução."
                 )
-                instances[instance_name] = generate_bus_stops(instance_name)
+            instances[instance_name] = pd.read_csv(csv_path)
 
         for instance_name, instance_data in instances.items():
             summaries: list[dict] = []

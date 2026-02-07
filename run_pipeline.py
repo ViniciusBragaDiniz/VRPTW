@@ -30,6 +30,8 @@ import logging
 import sys
 import time
 
+import pandas as pd
+
 from vrptw.config import DATA_PROCESSED_DIR, INSTANCE_TYPES, ROUTE_TYPES
 
 logger = logging.getLogger(__name__)
@@ -44,25 +46,48 @@ def _step_banner(step_number: int, title: str) -> None:
 
 
 def step_1_preprocess() -> None:
-    """Etapa 1: pré-processamento e geocodificação dos dados de alunos."""
+    """Etapa 1: pré-processamento e geocodificação dos dados de alunos.
+
+    Chama a função pura de pré-processamento e persiste os resultados
+    em ``data/processed/``.
+    """
     _step_banner(1, "Pré-processamento de dados")
     from data.preprocessing import preprocess_student_data
-    preprocess_student_data()
+
+    results = preprocess_student_data()
+
+    DATA_PROCESSED_DIR.mkdir(parents=True, exist_ok=True)
+    for name, df in results.items():
+        output_path = DATA_PROCESSED_DIR / f"{name}.csv"
+        df.to_csv(output_path, index=False)
+        logger.info("  -> %d registros salvos em %s", len(df), output_path)
 
 
 def step_2_generate_points() -> None:
     """Etapa 2: geração de pontos de parada via K-means.
 
-    Gera pontos para cada combinação de instância e tipo de rota
-    configurada em ``config.py``.
+    Lê os dados de alunos processados pela etapa 1 e gera pontos para
+    cada combinação de instância e tipo de rota configurada em
+    ``config.py``.  Persiste os resultados em ``data/processed/``.
     """
     _step_banner(2, "Geração de pontos de parada")
     from data.point_generation import generate_bus_stops
 
+    students_path = DATA_PROCESSED_DIR / "info_alunos.csv"
+    if not students_path.exists():
+        raise FileNotFoundError(
+            f"Arquivo de alunos não encontrado: {students_path}. "
+            "Execute a etapa 1 (pré-processamento) antes."
+        )
+    df_students = pd.read_csv(students_path)
+
+    DATA_PROCESSED_DIR.mkdir(parents=True, exist_ok=True)
     for route_type in ROUTE_TYPES:
         for instance in INSTANCE_TYPES:
             logger.info("Gerando pontos: instância=%s, rota=%s", instance, route_type)
-            df = generate_bus_stops(student_filter=instance, shift=route_type)
+            df = generate_bus_stops(
+                df_students, student_filter=instance, shift=route_type,
+            )
             output_path = DATA_PROCESSED_DIR / f"pontos_de_onibus_{instance}_{route_type}.csv"
             df.to_csv(output_path, index=False)
             logger.info("  -> %d pontos salvos em %s", len(df), output_path)

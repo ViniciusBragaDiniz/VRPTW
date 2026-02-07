@@ -9,15 +9,21 @@ dos alunos. O pipeline inclui:
 4. Georreferenciamento via API Google Maps Geocoding.
 5. Padronização de nomes de cidades/bairros.
 6. Merge com dados de turnos por curso.
-7. Salvamento dos arquivos processados.
+
+.. note::
+    Este módulo **não escreve em disco**. A função principal retorna os
+    DataFrames processados e a persistência é responsabilidade do chamador
+    (``run_pipeline.py`` ou ``src/01_preprocess_data.py``), garantindo
+    idempotência do pipeline.
 
 Pré-requisitos:
     - Arquivo ``secrets`` na raiz do projeto com ``GOOGLEMAPS_APIKEY=<chave>``.
-    - Arquivos de entrada em ``data/raw/`` e ``data/processed/``.
+    - Arquivos de entrada em ``data/raw/``.
 
 Exemplo de uso:
     >>> from data.preprocessing import preprocess_student_data
-    >>> preprocess_student_data()  # processa e salva os dados
+    >>> results = preprocess_student_data()
+    >>> results["info_alunos"].head()
 """
 
 import logging
@@ -29,7 +35,7 @@ import googlemaps
 import pandas as pd
 import requests
 
-from vrptw.config import DATA_PROCESSED_DIR, DATA_RAW_DIR, PROJECT_ROOT
+from vrptw.config import DATA_RAW_DIR, PROJECT_ROOT
 
 logger = logging.getLogger(__name__)
 
@@ -171,19 +177,23 @@ def _geocode_students(df: pd.DataFrame, gmaps_client: googlemaps.Client) -> None
 # Pipeline principal
 # ---------------------------------------------------------------------------
 
-def preprocess_student_data() -> pd.DataFrame:
+def preprocess_student_data() -> dict[str, pd.DataFrame]:
     """Executa o pipeline completo de pré-processamento dos dados de alunos.
 
     Carrega os dados brutos, enriquece endereços, georreferencia, padroniza
-    nomes e salva os resultados.
+    nomes e retorna os resultados. **Não escreve em disco** — a persistência
+    é responsabilidade do chamador, garantindo idempotência do pipeline.
 
     Returns:
-        DataFrame consolidado com todos os alunos processados.
+        Dicionário com três DataFrames:
+            - ``"info_alunos"``: todos os alunos processados;
+            - ``"info_medio"``: apenas alunos de nível técnico;
+            - ``"info_graduacao"``: apenas alunos de graduação.
     """
     logger.info("Iniciando pré-processamento de dados de alunos")
 
     # --- Carregar dados de turno ---
-    df_shifts = pd.read_csv(DATA_PROCESSED_DIR / "turno_resumo.csv", sep=";")
+    df_shifts = pd.read_csv(DATA_RAW_DIR / "turno_resumo.csv", sep=";")
 
     # --- Carregar e unificar dados de alunos ---
     df_medio = pd.read_csv(DATA_RAW_DIR / "info_medio.csv")
@@ -223,17 +233,16 @@ def preprocess_student_data() -> pd.DataFrame:
     df["CIDADE"] = df["CIDADE"].apply(lambda x: _remove_accents(x).title())
     df["BAIRRO"] = df["BAIRRO"].apply(lambda x: _remove_accents(x).title())
 
-    # --- Merge com turnos e salvamento ---
+    # --- Merge com turnos ---
     df = df_shifts.merge(df, how="left", on=["CURSO", "PERÍODO_ATUAL"])
-    DATA_PROCESSED_DIR.mkdir(parents=True, exist_ok=True)
-    df.to_csv(DATA_PROCESSED_DIR / "info_alunos.csv", index=False)
 
-    # Salvar separadamente por nível
+    # Separar por nível
     df_tec = df[df["id_aluno"].str.contains("tec")].drop_duplicates(subset="id_aluno")
-    df_tec.to_csv(DATA_PROCESSED_DIR / "info_medio.csv", index=False)
-
     df_grad_out = df[df["id_aluno"].str.contains("grad")].drop_duplicates(subset="id_aluno")
-    df_grad_out.to_csv(DATA_PROCESSED_DIR / "info_graduacao.csv", index=False)
 
     logger.info("Pré-processamento concluído. %d alunos processados.", len(df))
-    return df
+    return {
+        "info_alunos": df,
+        "info_medio": df_tec,
+        "info_graduacao": df_grad_out,
+    }

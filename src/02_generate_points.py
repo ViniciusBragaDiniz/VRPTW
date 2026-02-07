@@ -1,8 +1,9 @@
 #!/usr/bin/env python3
 """Etapa 2 — Geração de pontos de parada via K-means.
 
-Aplica clusterização nos dados geográficos dos alunos para determinar
-os pontos de parada ótimos e calcula a demanda por turno/dia.
+Lê os dados de alunos processados (``data/processed/info_alunos.csv``),
+aplica clusterização nos dados geográficos para determinar os pontos de
+parada ótimos e salva o resultado em ``data/processed/``.
 
 Uso:
     $ python 02_generate_points.py [--filter FILTER] [--shift SHIFT]
@@ -16,6 +17,8 @@ import argparse
 import logging
 import sys
 
+import pandas as pd
+
 logging.basicConfig(
     level=logging.INFO,
     format="%(asctime)s [%(levelname)s] %(name)s: %(message)s",
@@ -24,6 +27,8 @@ logging.basicConfig(
 
 from vrptw.config import DATA_PROCESSED_DIR
 from data.point_generation import generate_bus_stops
+
+logger = logging.getLogger(__name__)
 
 
 def main() -> None:
@@ -40,11 +45,22 @@ def main() -> None:
     )
     args = parser.parse_args()
 
-    df = generate_bus_stops(student_filter=args.filter, shift=args.shift)
+    students_path = DATA_PROCESSED_DIR / "info_alunos.csv"
+    if not students_path.exists():
+        logger.error(
+            "Arquivo de alunos não encontrado: %s. "
+            "Execute a etapa 1 (pré-processamento) antes.",
+            students_path,
+        )
+        sys.exit(1)
+    df_students = pd.read_csv(students_path)
 
+    df = generate_bus_stops(df_students, student_filter=args.filter, shift=args.shift)
+
+    DATA_PROCESSED_DIR.mkdir(parents=True, exist_ok=True)
     output_path = DATA_PROCESSED_DIR / f"pontos_de_onibus_{args.filter}_{args.shift}.csv"
     df.to_csv(output_path, index=False)
-    logging.getLogger(__name__).info("Salvo em: %s (%d pontos)", output_path, len(df))
+    logger.info("Salvo em: %s (%d pontos)", output_path, len(df))
 
 
 if __name__ == "__main__":
