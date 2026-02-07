@@ -6,7 +6,7 @@ cenários por outros pesquisadores. Alterar qualquer parâmetro aqui
 reflete automaticamente em todos os módulos que o utilizam.
 
 Exemplo de uso:
-    >>> from config import VEHICLE_CAPACITY, TIME_LIMIT
+    >>> from vrptw.config import VEHICLE_CAPACITY, TIME_LIMIT
     >>> print(f"Capacidade: {VEHICLE_CAPACITY} passageiros")
     Capacidade: 50 passageiros
 """
@@ -16,13 +16,21 @@ from pathlib import Path
 # ---------------------------------------------------------------------------
 # Diretórios do projeto
 # ---------------------------------------------------------------------------
-PROJECT_ROOT = Path(__file__).resolve().parent
+PROJECT_ROOT = Path(__file__).resolve().parent.parent
+
+#: Diretório-base de dados (também é o pacote Python ``data``).
 DATA_DIR = PROJECT_ROOT / "data"
+
+#: Dados brutos de entrada (CSVs de alunos, instâncias, etc.).
+DATA_RAW_DIR = DATA_DIR / "raw"
+
+#: Dados tratados / intermediários (turno_resumo.csv, etc.).
+DATA_PROCESSED_DIR = DATA_DIR / "processed"
+
 OUTPUT_DIR = PROJECT_ROOT / "output"
 OUTPUT_CSV_DIR = OUTPUT_DIR / "csv"
 OUTPUT_TEXT_DIR = OUTPUT_DIR / "text"
 IMGS_DIR = PROJECT_ROOT / "imgs"
-TREATED_DATA_DIR = PROJECT_ROOT / "dados_tratados"
 
 # ---------------------------------------------------------------------------
 # Parâmetros do modelo de otimização

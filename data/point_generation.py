@@ -11,7 +11,7 @@ Pipeline:
     3. Gera os centroides finais e calcula a demanda por turno/dia.
 
 Exemplo de uso:
-    >>> from vrptw.point_generation import generate_bus_stops
+    >>> from data.point_generation import generate_bus_stops
     >>> df_stops = generate_bus_stops(student_filter="full", shift="SAIDA")
 """
 
@@ -22,8 +22,8 @@ import numpy as np
 import pandas as pd
 from sklearn.cluster import k_means
 
-from config import (
-    DATA_DIR,
+from vrptw.config import (
+    DATA_PROCESSED_DIR,
     IMGS_DIR,
     KMEANS_N_INIT,
     MIN_STUDENTS_PER_MUNICIPALITY,
@@ -175,7 +175,7 @@ def generate_bus_stops(
     """
     logger.info("Gerando pontos de parada: filtro=%s, turno=%s", student_filter, shift)
 
-    df_students = pd.read_csv(DATA_DIR / "info_alunos.csv")
+    df_students = pd.read_csv(DATA_PROCESSED_DIR / "info_alunos.csv")
 
     if student_filter != "full":
         df_students = df_students[

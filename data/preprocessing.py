@@ -13,10 +13,10 @@ dos alunos. O pipeline inclui:
 
 Pré-requisitos:
     - Arquivo ``secrets`` na raiz do projeto com ``GOOGLEMAPS_APIKEY=<chave>``.
-    - Arquivos de entrada em ``data/`` e ``dados_tratados/``.
+    - Arquivos de entrada em ``data/raw/`` e ``data/processed/``.
 
 Exemplo de uso:
-    >>> from vrptw.preprocessing import preprocess_student_data
+    >>> from data.preprocessing import preprocess_student_data
     >>> preprocess_student_data()  # processa e salva os dados
 """
 
@@ -29,7 +29,7 @@ import googlemaps
 import pandas as pd
 import requests
 
-from config import DATA_DIR, PROJECT_ROOT, TREATED_DATA_DIR
+from vrptw.config import DATA_PROCESSED_DIR, DATA_RAW_DIR, PROJECT_ROOT
 
 logger = logging.getLogger(__name__)
 
@@ -183,13 +183,13 @@ def preprocess_student_data() -> pd.DataFrame:
     logger.info("Iniciando pré-processamento de dados de alunos")
 
     # --- Carregar dados de turno ---
-    df_shifts = pd.read_csv(TREATED_DATA_DIR / "turno_resumo.csv", sep=";")
+    df_shifts = pd.read_csv(DATA_PROCESSED_DIR / "turno_resumo.csv", sep=";")
 
     # --- Carregar e unificar dados de alunos ---
-    df_medio = pd.read_csv(DATA_DIR / "info_medio.csv")
+    df_medio = pd.read_csv(DATA_RAW_DIR / "info_medio.csv")
     df_medio["id_aluno"] = "tec_" + df_medio.index.astype(str)
 
-    df_grad = pd.read_csv(DATA_DIR / "info_graduacao.csv")
+    df_grad = pd.read_csv(DATA_RAW_DIR / "info_graduacao.csv")
     df_grad["id_aluno"] = "grad_" + df_grad.index.astype(str)
 
     df = pd.concat([df_medio, df_grad], ignore_index=True)
@@ -225,14 +225,15 @@ def preprocess_student_data() -> pd.DataFrame:
 
     # --- Merge com turnos e salvamento ---
     df = df_shifts.merge(df, how="left", on=["CURSO", "PERÍODO_ATUAL"])
-    df.to_csv(DATA_DIR / "info_alunos.csv", index=False)
+    DATA_PROCESSED_DIR.mkdir(parents=True, exist_ok=True)
+    df.to_csv(DATA_PROCESSED_DIR / "info_alunos.csv", index=False)
 
     # Salvar separadamente por nível
     df_tec = df[df["id_aluno"].str.contains("tec")].drop_duplicates(subset="id_aluno")
-    df_tec.to_csv(DATA_DIR / "info_medio.csv", index=False)
+    df_tec.to_csv(DATA_PROCESSED_DIR / "info_medio.csv", index=False)
 
     df_grad_out = df[df["id_aluno"].str.contains("grad")].drop_duplicates(subset="id_aluno")
-    df_grad_out.to_csv(DATA_DIR / "info_graduacao.csv", index=False)
+    df_grad_out.to_csv(DATA_PROCESSED_DIR / "info_graduacao.csv", index=False)
 
     logger.info("Pré-processamento concluído. %d alunos processados.", len(df))
     return df

@@ -22,8 +22,8 @@ logging.basicConfig(
     handlers=[logging.StreamHandler(sys.stdout)],
 )
 
-from config import DATA_DIR
-from vrptw.point_generation import generate_bus_stops
+from vrptw.config import DATA_PROCESSED_DIR
+from data.point_generation import generate_bus_stops
 
 
 def main() -> None:
@@ -42,7 +42,7 @@ def main() -> None:
 
     df = generate_bus_stops(student_filter=args.filter, shift=args.shift)
 
-    output_path = DATA_DIR / f"pontos_de_onibus_{args.filter}_{args.shift}.csv"
+    output_path = DATA_PROCESSED_DIR / f"pontos_de_onibus_{args.filter}_{args.shift}.csv"
     df.to_csv(output_path, index=False)
     logging.getLogger(__name__).info("Salvo em: %s (%d pontos)", output_path, len(df))
 

@@ -16,7 +16,7 @@ import logging
 
 import pandas as pd
 
-from config import MAX_VEHICLE_WORK_TIME, OUTPUT_CSV_DIR
+from .config import MAX_VEHICLE_WORK_TIME, OUTPUT_CSV_DIR
 
 logger = logging.getLogger(__name__)
 

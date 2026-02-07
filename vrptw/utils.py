@@ -17,7 +17,7 @@ from typing import Any
 
 import pandas as pd
 
-from config import MUNICIPALITY_SPEED_KMH, DEFAULT_SPEED_KMH
+from .config import MUNICIPALITY_SPEED_KMH, DEFAULT_SPEED_KMH
 
 logger = logging.getLogger(__name__)
 

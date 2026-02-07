@@ -26,8 +26,9 @@ from io import TextIOWrapper
 import pandas as pd
 from docplex.mp.model import Model
 
-from config import (
-    DATA_DIR,
+from .config import (
+    DATA_PROCESSED_DIR,
+    DATA_RAW_DIR,
     DEPOT_INDEX,
     DEPOT_LAT,
     DEPOT_LON,
@@ -44,7 +45,7 @@ from config import (
     WEEKDAYS,
 )
 from vrptw.model_builder import add_subtour_cuts, build_model, format_route_string
-from vrptw.point_generation import generate_bus_stops
+from data.point_generation import generate_bus_stops
 from vrptw.utils import build_routes, calculate_distances
 
 logger = logging.getLogger(__name__)
@@ -330,7 +331,7 @@ def solve_all_instances() -> None:
     OUTPUT_TEXT_DIR.mkdir(parents=True, exist_ok=True)
 
     # Carregar instâncias a pular
-    skip_path = DATA_DIR / "pular_instancias.csv"
+    skip_path = DATA_RAW_DIR / "pular_instancias.csv"
     skip_set: set[str] = set()
     if skip_path.exists():
         skip_df = pd.read_csv(skip_path, sep=";")
@@ -340,7 +341,7 @@ def solve_all_instances() -> None:
         # Carregar ou gerar pontos de parada
         instances: dict[str, pd.DataFrame] = {}
         for instance_name in INSTANCE_TYPES:
-            csv_path = DATA_DIR / f"pontos_de_onibus_{instance_name}_{route_type}.csv"
+            csv_path = DATA_PROCESSED_DIR / f"pontos_de_onibus_{instance_name}_{route_type}.csv"
             try:
                 instances[instance_name] = pd.read_csv(csv_path)
             except FileNotFoundError:

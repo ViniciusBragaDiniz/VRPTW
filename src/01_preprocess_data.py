@@ -17,7 +17,7 @@ logging.basicConfig(
     handlers=[logging.StreamHandler(sys.stdout)],
 )
 
-from vrptw.preprocessing import preprocess_student_data
+from data.preprocessing import preprocess_student_data
 
 
 def main() -> None:

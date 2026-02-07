@@ -8,21 +8,25 @@ transporte escolar de alunos do CEFET/RJ.
 
 ```
 VRPTW/
-├── config.py                    # Parâmetros centralizados (altere aqui!)
-├── 01_preprocess_data.py        # Etapa 1: pré-processamento de dados
-├── 02_generate_points.py        # Etapa 2: geração de pontos de parada
-├── 03_solve_vrptw.py            # Etapa 3: resolução do modelo
-├── 04_resequence_trips.py       # Etapa 4: minimização de veículos
-├── vrptw/                       # Pacote com a lógica principal
+├── run_pipeline.py              # Orquestrador — ponto de entrada principal
+├── data/                        # Tratamento de dados (pacote Python + arquivos)
 │   ├── __init__.py
-│   ├── preprocessing.py         #   Tratamento e geocodificação de dados
+│   ├── preprocessing.py         #   Geocodificação e tratamento de alunos
 │   ├── point_generation.py      #   K-means + método do cotovelo
+│   ├── raw/                     #   Dados brutos de entrada (CSVs de alunos)
+│   └── processed/               #   Dados tratados (turno_resumo.csv, etc.)
+├── vrptw/                       # Modelo de otimização
+│   ├── __init__.py
+│   ├── config.py                #   Parâmetros centralizados (altere aqui!)
 │   ├── model_builder.py         #   Formulação PLIM (variáveis, restrições)
 │   ├── solver.py                #   Loop de resolução + corte de subciclos
 │   ├── postprocessing.py        #   Re-sequenciamento de viagens
 │   └── utils.py                 #   Haversine, distâncias, rotas
-├── data/                        # Dados de entrada (CSVs de alunos)
-├── dados_tratados/              # Dados intermediários (turno_resumo.csv)
+├── src/                         # Scripts auxiliares (etapas individuais)
+│   ├── 01_preprocess_data.py
+│   ├── 02_generate_points.py
+│   ├── 03_solve_vrptw.py
+│   └── 04_resequence_trips.py
 ├── output/
 │   ├── csv/                     # Resultados em formato CSV
 │   └── text/                    # Logs de rotas em texto
@@ -67,7 +71,7 @@ GOOGLEMAPS_APIKEY=sua_chave_aqui
 
 ### Parâmetros do modelo
 
-Todos os parâmetros configuráveis estão centralizados em `config.py`:
+Todos os parâmetros configuráveis estão centralizados em `vrptw/config.py`:
 
 | Parâmetro | Descrição | Padrão |
 |-----------|-----------|--------|
@@ -81,21 +85,29 @@ Todos os parâmetros configuráveis estão centralizados em `config.py`:
 
 ## Execução
 
-O pipeline é composto por 4 etapas sequenciais:
+Use o orquestrador `run_pipeline.py` na raiz do projeto:
 
 ```bash
-# Etapa 1 — Pré-processamento (geocodificação)
-python 01_preprocess_data.py
+# Pipeline completo (etapas 1 → 2 → 3 → 4)
+python run_pipeline.py
 
-# Etapa 2 — Geração de pontos de parada
-python 02_generate_points.py
-python 02_generate_points.py --filter tec --shift ENTRADA  # opções
+# Pular a geocodificação (dados já processados)
+python run_pipeline.py --skip-preprocess
 
-# Etapa 3 — Resolução do modelo VRPTW
-python 03_solve_vrptw.py
+# Pular etapas 1 e 2 (pontos já gerados)
+python run_pipeline.py --skip-preprocess --skip-points
 
-# Etapa 4 — Minimização de veículos (pós-processamento)
-python 04_resequence_trips.py
+# Executar apenas o pós-processamento
+python run_pipeline.py --only-postprocess
+```
+
+Alternativamente, cada etapa pode ser executada individualmente via `src/`:
+
+```bash
+python src/01_preprocess_data.py
+python src/02_generate_points.py --filter tec --shift ENTRADA
+python src/03_solve_vrptw.py
+python src/04_resequence_trips.py
 ```
 
 ## Formulação Matemática
