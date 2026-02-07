@@ -193,14 +193,19 @@ def preprocess_student_data() -> dict[str, pd.DataFrame]:
     logger.info("Iniciando pré-processamento de dados de alunos")
 
     # --- Carregar dados de turno ---
-    df_shifts = pd.read_csv(DATA_RAW_DIR / "turno_resumo.csv", sep=";")
+    # Carregar e consolidar arquivos de turno (turno_emec, turno_enca, turno_epro, turno_medio)
+    df_turno_emec = pd.read_csv(DATA_RAW_DIR / "turno_emec.csv")
+    df_turno_enca = pd.read_csv(DATA_RAW_DIR / "turno_enca.csv")
+    df_turno_epro = pd.read_csv(DATA_RAW_DIR / "turno_epro.csv")
+    df_turno_medio = pd.read_csv(DATA_RAW_DIR / "turno_medio.csv")
+    df_shifts = pd.concat([df_turno_emec, df_turno_enca, df_turno_epro, df_turno_medio], ignore_index=True)
 
     # --- Carregar e unificar dados de alunos ---
     df_medio = pd.read_csv(DATA_RAW_DIR / "info_medio.csv")
-    df_medio["id_aluno"] = "tec_" + df_medio.index.astype(str)
+    df_medio["ID_ALUNO"] = "tec_" + df_medio.index.astype(str)
 
     df_grad = pd.read_csv(DATA_RAW_DIR / "info_graduacao.csv")
-    df_grad["id_aluno"] = "grad_" + df_grad.index.astype(str)
+    df_grad["ID_ALUNO"] = "grad_" + df_grad.index.astype(str)
 
     df = pd.concat([df_medio, df_grad], ignore_index=True)
 
@@ -237,8 +242,8 @@ def preprocess_student_data() -> dict[str, pd.DataFrame]:
     df = df_shifts.merge(df, how="left", on=["CURSO", "PERÍODO_ATUAL"])
 
     # Separar por nível
-    df_tec = df[df["id_aluno"].str.contains("tec")].drop_duplicates(subset="id_aluno")
-    df_grad_out = df[df["id_aluno"].str.contains("grad")].drop_duplicates(subset="id_aluno")
+    df_tec = df[df["ID_ALUNO"].str.contains("tec")].drop_duplicates(subset="ID_ALUNO")
+    df_grad_out = df[df["ID_ALUNO"].str.contains("grad")].drop_duplicates(subset="ID_ALUNO")
 
     logger.info("Pré-processamento concluído. %d alunos processados.", len(df))
     return {

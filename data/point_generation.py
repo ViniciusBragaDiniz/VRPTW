@@ -187,10 +187,11 @@ def generate_bus_stops(
 
     # Copiar para não modificar o DataFrame original do chamador
     df_students = df_students.copy()
+    df_students.columns = df_students.columns.str.upper()
 
     if student_filter != "full":
         df_students = df_students[
-            df_students["id_aluno"].str.contains(student_filter)
+            df_students["ID_ALUNO"].str.contains(student_filter)
         ]
 
     municipalities = df_students["CIDADE"].unique()
@@ -203,7 +204,7 @@ def generate_bus_stops(
     for municipality in municipalities:
         mun_students = df_students[
             df_students["CIDADE"] == municipality
-        ].drop_duplicates(subset="id_aluno")
+        ].drop_duplicates(subset="ID_ALUNO")
 
         if len(mun_students) < MIN_STUDENTS_PER_MUNICIPALITY:
             skipped_municipalities += 1
@@ -231,7 +232,7 @@ def generate_bus_stops(
         mun_students["class"] = classes
 
         merged = df_students.merge(
-            mun_students[["id_aluno", "class"]], how="left", on="id_aluno",
+            mun_students[["ID_ALUNO", "class"]], how="left", on="ID_ALUNO",
         )
 
         for day in weekdays:
