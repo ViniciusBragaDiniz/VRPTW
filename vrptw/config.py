@@ -27,7 +27,7 @@ DATA_RAW_DIR = DATA_DIR / "raw"
 #: Dados tratados / intermediários (turno_resumo.csv, etc.).
 DATA_PROCESSED_DIR = DATA_DIR / "processed"
 
-OUTPUT_DIR = PROJECT_ROOT / "output"
+OUTPUT_DIR = DATA_DIR / "output"
 OUTPUT_CSV_DIR = OUTPUT_DIR / "csv"
 OUTPUT_TEXT_DIR = OUTPUT_DIR / "text"
 IMGS_DIR = PROJECT_ROOT / "imgs"
