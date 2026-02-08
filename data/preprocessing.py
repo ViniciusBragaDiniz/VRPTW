@@ -1,29 +1,29 @@
-"""Pré-processamento dos dados de alunos para o VRPTW.
+"""Student data preprocessing for the VRPTW.
 
-Responsável por carregar, limpar, enriquecer e georreferenciar os dados
-dos alunos. O pipeline inclui:
+Responsible for loading, cleaning, enriching, and geocoding student data.
+The pipeline includes:
 
-1. Carregamento dos CSVs de alunos (nível médio e graduação).
-2. Filtragem de CEPs válidos (estado do Rio de Janeiro).
-3. Enriquecimento de endereços via API ViaCEP.
-4. Georreferenciamento via API Google Maps Geocoding.
-5. Padronização de nomes de cidades/bairros.
-6. Merge com dados de turnos por curso.
+1. Loading student CSVs (technical and undergraduate levels).
+2. Filtering valid zip codes (state of Rio de Janeiro).
+3. Address enrichment via ViaCEP API.
+4. Geocoding via Google Maps Geocoding API.
+5. City/neighborhood name standardization.
+6. Merge with shift data by course.
 
 .. note::
-    Este módulo **não escreve em disco**. A função principal retorna os
-    DataFrames processados e a persistência é responsabilidade do chamador
-    (``run_pipeline.py`` ou ``src/01_preprocess_data.py``), garantindo
-    idempotência do pipeline.
+    This module **does not write to disk**. The main function returns the
+    processed DataFrames and persistence is the caller's responsibility
+    (``run_pipeline.py`` or ``src/01_preprocess_data.py``), ensuring
+    pipeline idempotency.
 
-Pré-requisitos:
-    - Arquivo ``secrets`` na raiz do projeto com ``GOOGLEMAPS_APIKEY=<chave>``.
-    - Arquivos de entrada em ``data/raw/``.
+Prerequisites:
+    - A ``secrets`` file at the project root with ``GOOGLEMAPS_APIKEY=<key>``.
+    - Input files in ``data/raw/``.
 
-Exemplo de uso:
+Usage example:
     >>> from data.preprocessing import preprocess_student_data
     >>> results = preprocess_student_data()
-    >>> results["info_alunos"].head()
+    >>> results["info_students"].head()
 """
 
 import logging
@@ -41,19 +41,19 @@ logger = logging.getLogger(__name__)
 
 
 # ---------------------------------------------------------------------------
-# Funções auxiliares
+# Helper functions
 # ---------------------------------------------------------------------------
 
 def _build_full_address(row: pd.Series) -> str:
-    """Constrói endereço completo a partir de campos individuais.
+    """Build a full address from individual fields.
 
-    Concatena os campos não vazios e acrescenta "Rio de Janeiro, Brasil".
+    Concatenates non-empty fields and appends "Rio de Janeiro, Brasil".
 
     Args:
-        row: Série com campos de endereço (LOGRADOURO, BAIRRO, CIDADE, etc.).
+        row: Series with address fields (STREET_NAME, NEIGHBORHOOD, CITY, etc.).
 
     Returns:
-        Endereço completo formatado como string.
+        Formatted full address as a string.
     """
     parts = [str(v) for v in row if isinstance(v, str) and v.strip()]
     parts.extend(["Rio de Janeiro", "Brasil"])
@@ -61,35 +61,35 @@ def _build_full_address(row: pd.Series) -> str:
 
 
 def _remove_accents(text: str) -> str:
-    """Remove acentos de um texto usando decomposição Unicode NFD.
+    """Remove accents from text using Unicode NFD decomposition.
 
     Args:
-        text: Texto com possíveis acentos.
+        text: Text with possible accents.
 
     Returns:
-        Texto sem acentos.
+        Text without accents.
     """
     normalized = unicodedata.normalize("NFD", text)
     return "".join(c for c in normalized if unicodedata.category(c) != "Mn")
 
 
 def _load_api_key() -> str:
-    """Carrega a chave da API do Google Maps a partir do arquivo ``secrets``.
+    """Load the Google Maps API key from the ``secrets`` file.
 
-    O arquivo deve ter o formato ``CHAVE=VALOR`` (uma por linha).
+    The file must have the format ``KEY=VALUE`` (one per line).
 
     Returns:
-        Chave da API do Google Maps.
+        Google Maps API key.
 
     Raises:
-        FileNotFoundError: Se o arquivo ``secrets`` não existir.
-        KeyError: Se ``GOOGLEMAPS_APIKEY`` não estiver definida.
+        FileNotFoundError: If the ``secrets`` file does not exist.
+        KeyError: If ``GOOGLEMAPS_APIKEY`` is not defined.
     """
     secrets_path = PROJECT_ROOT / "secrets"
     if not secrets_path.exists():
         raise FileNotFoundError(
-            f"Arquivo de segredos não encontrado: {secrets_path}. "
-            "Crie um arquivo 'secrets' com a linha GOOGLEMAPS_APIKEY=<sua_chave>."
+            f"Secrets file not found: {secrets_path}. "
+            "Create a 'secrets' file with the line GOOGLEMAPS_APIKEY=<your_key>."
         )
 
     with open(secrets_path, "r") as f:
@@ -100,40 +100,40 @@ def _load_api_key() -> str:
 
     api_key = os.getenv("GOOGLEMAPS_APIKEY")
     if not api_key:
-        raise KeyError("GOOGLEMAPS_APIKEY não encontrada no arquivo 'secrets'.")
+        raise KeyError("GOOGLEMAPS_APIKEY not found in the 'secrets' file.")
     return api_key
 
 
 # ---------------------------------------------------------------------------
-# Enriquecimento de endereço via ViaCEP
+# Address enrichment via ViaCEP
 # ---------------------------------------------------------------------------
 
 def _enrich_addresses_viacep(df: pd.DataFrame) -> int:
-    """Preenche LOGRADOURO e COMPLEMENTO ausentes usando a API ViaCEP.
+    """Fill missing STREET_NAME and ADDRESS_COMPLEMENT using the ViaCEP API.
 
     Args:
-        df: DataFrame de alunos (modificado in-place).
+        df: Student DataFrame (modified in-place).
 
     Returns:
-        Número de CEPs não encontrados.
+        Number of zip codes not found.
     """
-    missing_idx = df.loc[df["LOGRADOURO"] == ""].index
+    missing_idx = df.loc[df["STREET_NAME"] == ""].index
     not_found = 0
 
     for idx in missing_idx:
-        cep = df.loc[idx, "CEP"]
-        url = f"https://viacep.com.br/ws/{cep}/json/"
+        POSTAL_CODE = df.loc[idx, "POSTAL_CODE"]
+        url = f"https://viacep.com.br/ws/{POSTAL_CODE}/json/"
         try:
             response = requests.get(url, timeout=10)
             if response.status_code == 200:
                 data = response.json()
-                df.loc[idx, "LOGRADOURO"] = data.get("logradouro", "")
-                df.loc[idx, "COMPLEMENTO"] = data.get("complemento", "")
+                df.loc[idx, "STREET_NAME"] = data.get("STREET_NAME", "")
+                df.loc[idx, "ADDRESS_COMPLEMENT"] = data.get("ADDRESS_COMPLEMENT", "")
             else:
-                logger.warning("CEP %s: HTTP %d", cep, response.status_code)
+                logger.warning("Zip code %s: HTTP %d", POSTAL_CODE, response.status_code)
                 not_found += 1
         except Exception as e:
-            logger.error("Erro ao consultar CEP %s: %s", cep, e)
+            logger.error("Error querying zip code %s: %s", POSTAL_CODE, e)
             not_found += 1
         sleep(0.5)
 
@@ -141,20 +141,20 @@ def _enrich_addresses_viacep(df: pd.DataFrame) -> int:
 
 
 # ---------------------------------------------------------------------------
-# Georreferenciamento via Google Maps
+# Geocoding via Google Maps
 # ---------------------------------------------------------------------------
 
 def _geocode_students(df: pd.DataFrame, gmaps_client: googlemaps.Client) -> None:
-    """Obtém latitude/longitude para alunos sem geolocalização.
+    """Obtain latitude/longitude for students without geolocation.
 
     Args:
-        df: DataFrame de alunos (modificado in-place). Deve conter a coluna
-            ``ENDERECO_COMPLETO`` e as colunas ``LATITUDE`` / ``LONGITUDE``.
-        gmaps_client: Cliente autenticado da API Google Maps.
+        df: Student DataFrame (modified in-place). Must contain the column
+            ``FULL_ADDRESS`` and the columns ``LATITUDE`` / ``LONGITUDE``.
+        gmaps_client: Authenticated Google Maps API client.
     """
     missing_idx = df[df["LATITUDE"] == 0].index
 
-    for i, address in enumerate(df["ENDERECO_COMPLETO"]):
+    for i, address in enumerate(df["FULL_ADDRESS"]):
         if i not in missing_idx:
             continue
 
@@ -165,89 +165,89 @@ def _geocode_students(df: pd.DataFrame, gmaps_client: googlemaps.Client) -> None
                 df.loc[i, "LATITUDE"] = location["lat"]
                 df.loc[i, "LONGITUDE"] = location["lng"]
             else:
-                logger.warning("Geocoding sem resultado para: %s", address)
+                logger.warning("Geocoding returned no result for: %s", address)
         except Exception as e:
-            logger.error("Erro no geocoding do índice %d: %s", i, e)
+            logger.error("Geocoding error at index %d: %s", i, e)
 
         if (i + 1) % 50 == 0:
-            logger.info("Geocoding: %d/%d processados", i + 1, len(df))
+            logger.info("Geocoding: %d/%d processed", i + 1, len(df))
 
 
 # ---------------------------------------------------------------------------
-# Pipeline principal
+# Main pipeline
 # ---------------------------------------------------------------------------
 
 def preprocess_student_data() -> dict[str, pd.DataFrame]:
-    """Executa o pipeline completo de pré-processamento dos dados de alunos.
+    """Execute the full student data preprocessing pipeline.
 
-    Carrega os dados brutos, enriquece endereços, georreferencia, padroniza
-    nomes e retorna os resultados. **Não escreve em disco** — a persistência
-    é responsabilidade do chamador, garantindo idempotência do pipeline.
+    Loads raw data, enriches addresses, geocodes, standardizes names
+    and returns the results. **Does not write to disk** — persistence
+    is the caller's responsibility, ensuring pipeline idempotency.
 
     Returns:
-        Dicionário com três DataFrames:
-            - ``"info_alunos"``: todos os alunos processados;
-            - ``"info_medio"``: apenas alunos de nível técnico;
-            - ``"info_graduacao"``: apenas alunos de graduação.
+        Dictionary with three DataFrames:
+            - ``"info_students"``: all processed students;
+            - ``"info_tec"``: technical-level students only;
+            - ``"info_undergrad"``: undergraduate students only.
     """
-    logger.info("Iniciando pré-processamento de dados de alunos")
+    logger.info("Starting student data preprocessing")
 
-    # --- Carregar dados de turno ---
-    # Carregar e consolidar arquivos de turno (turno_emec, turno_enca, turno_epro, turno_medio)
+    # --- Load shift data ---
+    # Load and consolidate shift files (turno_emec, turno_enca, turno_epro, turno_medio)
     df_turno_emec = pd.read_csv(DATA_RAW_DIR / "turno_emec.csv")
     df_turno_enca = pd.read_csv(DATA_RAW_DIR / "turno_enca.csv")
     df_turno_epro = pd.read_csv(DATA_RAW_DIR / "turno_epro.csv")
     df_turno_medio = pd.read_csv(DATA_RAW_DIR / "turno_medio.csv")
     df_shifts = pd.concat([df_turno_emec, df_turno_enca, df_turno_epro, df_turno_medio], ignore_index=True)
 
-    # --- Carregar e unificar dados de alunos ---
-    df_medio = pd.read_csv(DATA_RAW_DIR / "info_medio.csv")
-    df_medio["ID_ALUNO"] = "tec_" + df_medio.index.astype(str)
+    # --- Load and unify student data ---
+    df_medio = pd.read_csv(DATA_RAW_DIR / "info_tec.csv")
+    df_medio["STUDENT_ID"] = "tec_" + df_medio.index.astype(str)
 
-    df_grad = pd.read_csv(DATA_RAW_DIR / "info_graduacao.csv")
-    df_grad["ID_ALUNO"] = "grad_" + df_grad.index.astype(str)
+    df_grad = pd.read_csv(DATA_RAW_DIR / "info_undergrad.csv")
+    df_grad["STUDENT_ID"] = "grad_" + df_grad.index.astype(str)
 
     df = pd.concat([df_medio, df_grad], ignore_index=True)
 
-    # --- Filtrar CEPs do Rio de Janeiro (iniciam com '2') ---
-    valid_ceps = df["CEP"].apply(lambda x: str(x)[0] == "2")
-    logger.info("CEPs inválidos (fora do RJ): %d", len(df) - valid_ceps.sum())
+    # --- Filter Rio de Janeiro zip codes (start with '2') ---
+    valid_ceps = df["POSTAL_CODE"].apply(lambda x: str(x)[0] == "2")
+    logger.info("Invalid zip codes (outside RJ): %d", len(df) - valid_ceps.sum())
     df = df.loc[valid_ceps].reset_index(drop=True)
 
-    # --- Inicializar colunas para evitar erros em reprocessamento ---
-    for col, default in [("COMPLEMENTO", ""), ("LOGRADOURO", ""),
+    # --- Initialize columns to avoid errors on reprocessing ---
+    for col, default in [("ADDRESS_COMPLEMENT", ""), ("STREET_NAME", ""),
                          ("LONGITUDE", 0), ("LATITUDE", 0)]:
         if col not in df.columns:
             df[col] = default
         else:
             df[col] = df[col].fillna(default)
 
-    # --- Enriquecer endereços via ViaCEP ---
+    # --- Enrich addresses via ViaCEP ---
     not_found = _enrich_addresses_viacep(df)
-    logger.info("CEPs não encontrados no ViaCEP: %d", not_found)
+    logger.info("Zip codes not found in ViaCEP: %d", not_found)
 
-    # --- Georreferenciamento ---
+    # --- Geocoding ---
     api_key = _load_api_key()
     gmaps_client = googlemaps.Client(key=api_key)
 
-    address_cols = ["LOGRADOURO", "BAIRRO", "CIDADE", "CEP", "COMPLEMENTO"]
-    df["ENDERECO_COMPLETO"] = df[address_cols].apply(_build_full_address, axis=1)
+    address_cols = ["STREET_NAME", "NEIGHBORHOOD", "CITY", "POSTAL_CODE", "ADDRESS_COMPLEMENT"]
+    df["FULL_ADDRESS"] = df[address_cols].apply(_build_full_address, axis=1)
     _geocode_students(df, gmaps_client)
 
-    # --- Padronização de nomes ---
-    df["CIDADE"] = df["CIDADE"].apply(lambda x: _remove_accents(x).title())
-    df["BAIRRO"] = df["BAIRRO"].apply(lambda x: _remove_accents(x).title())
+    # --- Name standardization ---
+    df["CITY"] = df["CITY"].apply(lambda x: _remove_accents(x).title())
+    df["NEIGHBORHOOD"] = df["NEIGHBORHOOD"].apply(lambda x: _remove_accents(x).title())
 
-    # --- Merge com turnos ---
-    df = df_shifts.merge(df, how="left", on=["CURSO", "PERÍODO_ATUAL"])
+    # --- Merge with shifts ---
+    df = df_shifts.merge(df, how="left", on=["COURSE", "CURRENT_PERIOD"])
 
-    # Separar por nível
-    df_tec = df[df["ID_ALUNO"].str.contains("tec")].drop_duplicates(subset="ID_ALUNO")
-    df_grad_out = df[df["ID_ALUNO"].str.contains("grad")].drop_duplicates(subset="ID_ALUNO")
+    # Split by level
+    df_tec = df[df["STUDENT_ID"].str.contains("tec")].drop_duplicates(subset="STUDENT_ID")
+    df_undergrad = df[df["STUDENT_ID"].str.contains("grad")].drop_duplicates(subset="STUDENT_ID")
 
-    logger.info("Pré-processamento concluído. %d alunos processados.", len(df))
+    logger.info("Preprocessing complete. %d students processed.", len(df))
     return {
-        "info_alunos": df,
-        "info_medio": df_tec,
-        "info_graduacao": df_grad_out,
+        "info_students": df,
+        "info_tec": df_tec,
+        "info_undergrad": df_undergrad,
     }

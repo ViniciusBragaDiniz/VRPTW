@@ -1,11 +1,11 @@
 """
-Pacote de tratamento de dados para o VRPTW.
+Data processing package for the VRPTW.
 
-Responsável por todo o pipeline de dados: pré-processamento dos registros
-de alunos (geocodificação, enriquecimento de endereços) e geração de pontos
-de parada via clusterização K-means.
+Responsible for the entire data pipeline: student record preprocessing
+(geocoding, address enrichment) and bus stop point generation via
+K-means clustering.
 
-Subdiretórios de dados:
-    - ``raw/``        — dados brutos de entrada (CSVs de alunos).
-    - ``processed/``  — dados tratados e prontos para o modelo.
+Data subdirectories:
+    - ``raw/``        — raw input data (student CSVs).
+    - ``processed/``  — processed data ready for the model.
 """

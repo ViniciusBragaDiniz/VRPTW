@@ -1,17 +1,17 @@
-"""Resolução do modelo VRPTW com eliminação de subciclos via planos de corte.
+"""VRPTW model solving with subtour elimination via cutting planes.
 
-Este módulo orquestra o processo de resolução do VRPTW:
+This module orchestrates the VRPTW solving process:
 
-1. Carrega (ou gera) os pontos de parada para cada instância.
-2. Para cada cenário (dia × turno × município), constrói e resolve o modelo
-   CPLEX de programação linear inteira mista.
-3. Implementa a eliminação de subciclos iterativa:
-   - Resolve o modelo.
-   - Se a solução contém subciclos, adiciona cortes e resolve novamente.
-   - Repete até obter uma solução sem subciclos ou atingir o limite de tempo.
-4. Salva os resultados em arquivos CSV e TXT.
+1. Loads (or generates) the bus stop points for each instance.
+2. For each scenario (day x shift x municipality), builds and solves the
+   CPLEX mixed-integer linear programming model.
+3. Implements iterative subtour elimination:
+   - Solves the model.
+   - If the solution contains subtours, adds cuts and re-solves.
+   - Repeats until a subtour-free solution is found or the time limit is reached.
+4. Saves results to CSV and TXT files.
 
-Exemplo de uso:
+Usage example:
     >>> from vrptw.solver import solve_all_instances
     >>> solve_all_instances()
 """
@@ -51,18 +51,18 @@ logger = logging.getLogger(__name__)
 
 
 # ---------------------------------------------------------------------------
-# Funções auxiliares de preparação de dados por cenário
+# Scenario data preparation helpers
 # ---------------------------------------------------------------------------
 
 def _build_depot_row(day: str, iteration: int = 0) -> dict:
-    """Cria o registro do depósito (CEFET) para inserção no DataFrame.
+    """Create the depot (CEFET) record for DataFrame insertion.
 
     Args:
-        day: Dia da semana abreviado.
-        iteration: Iteração temporal corrente.
+        day: Abbreviated weekday name.
+        iteration: Current time iteration.
 
     Returns:
-        Dicionário com os campos do depósito.
+        Dictionary with the depot fields.
     """
     return {
         "lat": [DEPOT_LAT],
@@ -73,7 +73,7 @@ def _build_depot_row(day: str, iteration: int = 0) -> dict:
         "tempo_preparo": EARLIEST_DEPARTURE + TIME_SLOT_DURATION * iteration,
         "tempo_entrega": LATEST_ARRIVAL,
         "cd_municipio": "CEFET",
-        "dia": day,
+        "DAYOFTHEWEEK": day,
         "centroid_id": 0,
         "iteracao": iteration,
     }
@@ -86,21 +86,21 @@ def _prepare_iteration_data(
     municipality: str,
     iteration: int,
 ) -> pd.DataFrame | None:
-    """Prepara o DataFrame para uma iteração específica de resolução.
+    """Prepare the DataFrame for a specific solving iteration.
 
-    Filtra os dados por município e turno, adiciona o nó-depósito e
-    configura os índices.
+    Filters data by municipality and shift, adds the depot node and
+    configures indices.
 
     Args:
-        day_data: DataFrame com os dados do dia corrente.
-        shift: Turno (``'manha'``, ``'tarde'``, ``'noite'``, ``'fim'``).
-        day: Dia da semana abreviado.
-        municipality: Nome do município.
-        iteration: Iteração temporal.
+        day_data: DataFrame with current day data.
+        shift: Shift (``'manha'``, ``'tarde'``, ``'noite'``, ``'fim'``).
+        day: Abbreviated weekday name.
+        municipality: Municipality name.
+        iteration: Time iteration.
 
     Returns:
-        DataFrame indexado por ``centroid_id`` pronto para o solver, ou
-        ``None`` se não houver demanda.
+        DataFrame indexed by ``centroid_id`` ready for the solver, or
+        ``None`` if there is no demand.
     """
     demand_col = f"demanda_{shift}"
 
@@ -110,13 +110,13 @@ def _prepare_iteration_data(
     if mun_data.empty:
         return None
 
-    # Atribuir centroid_id (deslocado em 1 para reservar 0 ao depósito)
+    # Assign centroid_id (offset by 1 to reserve 0 for the depot)
     centroids = mun_data.drop_duplicates(subset=["lat", "lon"])[["lat", "lon"]]
     centroids = centroids.reset_index(names="centroid_id")
     mun_data = mun_data.merge(centroids, on=["lat", "lon"], how="left")
     mun_data["centroid_id"] += 1
 
-    # Inserir depósito como nó 0
+    # Insert depot as node 0
     depot_row = _build_depot_row(day, iteration)
     iter_data = pd.concat(
         [pd.DataFrame.from_dict(depot_row), mun_data], ignore_index=True,
@@ -131,7 +131,7 @@ def _prepare_iteration_data(
 
 
 # ---------------------------------------------------------------------------
-# Loop de resolução com eliminação de subciclos
+# Solving loop with subtour elimination
 # ---------------------------------------------------------------------------
 
 def _solve_with_subtour_elimination(
@@ -140,19 +140,19 @@ def _solve_with_subtour_elimination(
     num_vehicles: int,
     time_limit: float,
 ) -> tuple[dict | None, float, bool]:
-    """Executa o loop de resolução com eliminação iterativa de subciclos.
+    """Execute the solving loop with iterative subtour elimination.
 
     Args:
-        model: Modelo CPLEX construído.
-        travels: Dicionário de variáveis de viagem.
-        num_vehicles: Número de veículos no modelo.
-        time_limit: Limite de tempo total em segundos.
+        model: Built CPLEX model.
+        travels: Travel variable dictionary.
+        num_vehicles: Number of vehicles in the model.
+        time_limit: Total time limit in seconds.
 
     Returns:
-        Tupla ``(routes, elapsed_time, success)`` onde ``routes`` contém as
-        rotas finais (ou ``None`` se o tempo expirou), ``elapsed_time`` é o
-        tempo total de resolução e ``success`` indica se uma solução sem
-        subciclos foi encontrada.
+        Tuple ``(routes, elapsed_time, success)`` where ``routes`` contains
+        the final routes (or ``None`` if time expired), ``elapsed_time`` is
+        the total solving time, and ``success`` indicates whether a
+        subtour-free solution was found.
     """
     start = time.time()
     warm_start = None
@@ -164,7 +164,7 @@ def _solve_with_subtour_elimination(
         solution_obj = model.solve(log_output=False)
         if solution_obj is None:
             elapsed = time.time() - start
-            logger.warning("Solver retornou None após %.1fs", elapsed)
+            logger.warning("Solver returned None after %.1fs", elapsed)
             return None, elapsed, False
 
         solution = solution_obj.as_dict()
@@ -173,7 +173,7 @@ def _solve_with_subtour_elimination(
         routes = build_routes(solution, num_vehicles)
         model.time_limit = max(time_limit - elapsed, 1)
 
-        # Construir warm start e verificar subciclos
+        # Build warm start and check for subtours
         warm_start = model.new_solution()
         subtour_found = False
 
@@ -181,7 +181,7 @@ def _solve_with_subtour_elimination(
             if not routes[k]:
                 continue
 
-            # Percorrer a rota como lista encadeada para warm start
+            # Traverse route as linked list for warm start
             current = routes[k].pop(0)
             warm_start.add_var_value(travels[k, 0, current], 1)
             while current != 0:
@@ -189,23 +189,23 @@ def _solve_with_subtour_elimination(
                 current = routes[k].pop(current)
                 warm_start.add_var_value(travels[k, prev, current], 1)
 
-            # Nós restantes indicam subciclos
+            # Remaining nodes indicate subtours
             if routes[k]:
                 subtour_found = True
                 add_subtour_cuts(model, routes, travels, k)
 
         if not subtour_found:
-            # Reconstruir rotas limpas para saída
+            # Rebuild clean routes for output
             final_routes = build_routes(solution, num_vehicles)
             return final_routes, elapsed, True
 
         if elapsed > time_limit:
-            logger.warning("Limite de tempo atingido (%.1fs)", elapsed)
+            logger.warning("Time limit reached (%.1fs)", elapsed)
             return None, elapsed, False
 
 
 # ---------------------------------------------------------------------------
-# Processamento de um cenário (município × iteração)
+# Scenario processing (municipality x iteration)
 # ---------------------------------------------------------------------------
 
 def _process_scenario(
@@ -215,39 +215,39 @@ def _process_scenario(
     iteration: int,
     output_file: TextIOWrapper,
 ) -> tuple[dict | None, list[dict]]:
-    """Resolve o VRPTW para um cenário específico e escreve os resultados.
+    """Solve the VRPTW for a specific scenario and write results.
 
     Args:
-        iter_data: DataFrame com dados da iteração (indexado por centroid_id).
-        shift: Turno corrente.
-        municipality: Nome do município.
-        iteration: Iteração temporal.
-        output_file: Arquivo de texto para escrita dos resultados.
+        iter_data: DataFrame with iteration data (indexed by centroid_id).
+        shift: Current shift.
+        municipality: Municipality name.
+        iteration: Time iteration.
+        output_file: Text file for writing results.
 
     Returns:
-        Tupla ``(summary_dict, detail_list)`` com o resumo e os detalhes
-        da solução, ou ``(None, [])`` em caso de falha.
+        Tuple ``(summary_dict, detail_list)`` with the summary and details
+        of the solution, or ``(None, [])`` on failure.
     """
     num_spots = len(iter_data)
     demand_col = f"demanda_{shift}"
     num_vehicles = math.ceil(iter_data[demand_col].sum() / VEHICLE_CAPACITY)
 
     if num_spots == 0:
-        logger.info("Sem demanda nesta iteração")
-        output_file.write("Sem demanda nesta iteração\n\n")
+        logger.info("No demand in this iteration")
+        output_file.write("No demand in this iteration\n\n")
         return None, []
 
     output_file.write(
-        f"Veículos Disponíveis {num_vehicles}, "
-        f"Pontos de Ônibus com Demanda {num_spots}\n\n"
+        f"Available Vehicles {num_vehicles}, "
+        f"Bus Stops with Demand {num_spots}\n\n"
     )
 
-    # Calcular matriz de distâncias
+    # Calculate distance matrix
     distance_matrix, big_m = calculate_distances(
         iter_data, municipality, iteration, TIME_SLOT_DURATION,
     )
 
-    # Construir modelo
+    # Build model
     model = Model("vrptw")
     model.time_limit = TIME_LIMIT
 
@@ -266,7 +266,7 @@ def _process_scenario(
 
     model, travels = build_model(model, model_data)
 
-    # Resolver com eliminação de subciclos
+    # Solve with subtour elimination
     routes, elapsed, success = _solve_with_subtour_elimination(
         model, travels, num_vehicles, TIME_LIMIT,
     )
@@ -274,7 +274,7 @@ def _process_scenario(
     detail_list: list[dict] = []
 
     if success and routes is not None:
-        output_file.write("Solução:\n")
+        output_file.write("Solution:\n")
 
         for k in range(num_vehicles):
             route_str = format_route_string(
@@ -295,7 +295,7 @@ def _process_scenario(
                 output_file.write(route_str)
                 logger.info(route_str.strip())
     else:
-        output_file.write("Solução não encontrada no limite de tempo definido\n")
+        output_file.write("No solution found within the defined time limit\n")
 
     summary = {
         "num_pontos": num_spots,
@@ -304,9 +304,9 @@ def _process_scenario(
         "objective_value": model.objective_value if success else None,
     }
 
-    output_file.write(f"Custo da Função Objetiva: {model.objective_value}\n")
-    output_file.write(f"Tempo Total de Execução: {elapsed:.2f}s\n\n\n")
-    logger.info("Objetivo: %s | Tempo: %.2fs", model.objective_value, elapsed)
+    output_file.write(f"Objective Function Cost: {model.objective_value}\n")
+    output_file.write(f"Total Execution Time: {elapsed:.2f}s\n\n\n")
+    logger.info("Objective: %s | Time: %.2fs", model.objective_value, elapsed)
 
     del model
     gc.collect()
@@ -315,21 +315,21 @@ def _process_scenario(
 
 
 # ---------------------------------------------------------------------------
-# Pipeline principal
+# Main pipeline
 # ---------------------------------------------------------------------------
 
 def solve_all_instances() -> None:
-    """Executa a resolução do VRPTW para todas as instâncias configuradas.
+    """Solve the VRPTW for all configured instances.
 
-    Itera sobre tipos de rota, instâncias, dias, turnos e municípios
-    conforme definido em ``config.py``. Os resultados são salvos em
-    arquivos CSV (resumo e detalhamento) e TXT (log textual das rotas).
+    Iterates over route types, instances, days, shifts, and municipalities
+    as defined in ``config.py``. Results are saved to CSV files (summary
+    and details) and TXT files (textual route log).
     """
-    # Garantir que os diretórios de saída existam
+    # Ensure output directories exist
     OUTPUT_CSV_DIR.mkdir(parents=True, exist_ok=True)
     OUTPUT_TEXT_DIR.mkdir(parents=True, exist_ok=True)
 
-    # Carregar instâncias a pular
+    # Load instances to skip
     skip_path = DATA_RAW_DIR / "pular_instancias.csv"
     skip_set: set[str] = set()
     if skip_path.exists():
@@ -337,14 +337,14 @@ def solve_all_instances() -> None:
         skip_set = set(skip_df.iloc[:, 0].astype(str))
 
     for route_type in ROUTE_TYPES:
-        # Carregar pontos de parada (gerados pela etapa 2)
+        # Load bus stop points (generated by step 2)
         instances: dict[str, pd.DataFrame] = {}
         for instance_name in INSTANCE_TYPES:
             csv_path = DATA_PROCESSED_DIR / f"pontos_de_onibus_{instance_name}_{route_type}.csv"
             if not csv_path.exists():
                 raise FileNotFoundError(
-                    f"Arquivo de pontos de parada não encontrado: {csv_path}. "
-                    f"Execute a etapa 2 (geração de pontos) antes da resolução."
+                    f"Bus stop file not found: {csv_path}. "
+                    f"Run step 2 (point generation) before solving."
                 )
             instances[instance_name] = pd.read_csv(csv_path)
 
@@ -352,11 +352,11 @@ def solve_all_instances() -> None:
             summaries: list[dict] = []
             details: list[dict] = []
 
-            output_path = OUTPUT_TEXT_DIR / f"saida_cvrptw_{instance_name}_{route_type}.txt"
+            output_path = OUTPUT_TEXT_DIR / f"solution_cvrptw_{instance_name}_{route_type}.txt"
 
             with open(output_path, "w", encoding="utf-8") as output_file:
                 for day in WEEKDAYS:
-                    day_data = instance_data[instance_data["dia"] == day].copy()
+                    day_data = instance_data[instance_data["DAYOFTHEWEEK"] == day].copy()
                     day_data = day_data.reset_index(drop=True)
                     day_data["tempo_preparo"] = EARLIEST_DEPARTURE
                     day_data["tempo_entrega"] = LATEST_ARRIVAL
@@ -375,7 +375,7 @@ def solve_all_instances() -> None:
                         for municipality in shift_data["cd_municipio"].unique():
                             skip_key = f"{route_type},{instance_name},{day},{shift},{municipality}"
                             if skip_key in skip_set:
-                                logger.info("Pulando instância: %s", skip_key)
+                                logger.info("Skipping instance: %s", skip_key)
                                 continue
 
                             for iteration in shift_data["iteracao"].unique():
@@ -383,7 +383,7 @@ def solve_all_instances() -> None:
                                     output_file, iteration, municipality,
                                 )
                                 logger.info(
-                                    "Resolvendo: %s | %s | %s | %s | iter=%d",
+                                    "Solving: %s | %s | %s | %s | iter=%d",
                                     day, shift, instance_name, municipality, iteration,
                                 )
 
@@ -392,7 +392,7 @@ def solve_all_instances() -> None:
                                 )
 
                                 if iter_data is None or iter_data.empty:
-                                    output_file.write("Sem demanda nesta iteração\n\n")
+                                    output_file.write("No demand in this iteration\n\n")
                                     continue
 
                                 summary, detail_items = _process_scenario(
@@ -402,7 +402,7 @@ def solve_all_instances() -> None:
                                 if summary is not None:
                                     base_info = {
                                         "instancia": instance_name,
-                                        "dia": day,
+                                        "DAYOFTHEWEEK": day,
                                         "turno": shift,
                                         "cd_municipio": municipality,
                                         "iteracao": iteration,
@@ -412,36 +412,36 @@ def solve_all_instances() -> None:
                                     for detail in detail_items:
                                         details.append({**base_info, **detail})
 
-                            # Salvar CSVs incrementalmente por município
+                            # Save CSVs incrementally per municipality
                             _save_results(
                                 summaries, details, instance_name, route_type,
                             )
 
             logger.info(
-                "Instância %s (%s) concluída. Resultados em: %s",
+                "Instance %s (%s) complete. Results at: %s",
                 instance_name, route_type, output_path,
             )
 
 
 # ---------------------------------------------------------------------------
-# Funções de escrita e salvamento
+# Writing and saving functions
 # ---------------------------------------------------------------------------
 
 def _write_shift_header(output_file: TextIOWrapper, shift: str) -> None:
-    """Escreve o cabeçalho de turno no arquivo de saída."""
+    """Write the shift header to the output file."""
     horizon = LATEST_ARRIVAL - EARLIEST_DEPARTURE
-    output_file.write(f"Horizonte de Tempo: {horizon} segundos\n\n")
+    output_file.write(f"Time Horizon: {horizon} seconds\n\n")
     output_file.write("##############################\n")
-    output_file.write(f"####  Turno Atual: {shift}  ####\n")
+    output_file.write(f"####  Current Shift: {shift}  ####\n")
     output_file.write("##############################\n\n")
 
 
 def _write_iteration_header(
     output_file: TextIOWrapper, iteration: int, municipality: str,
 ) -> None:
-    """Escreve o cabeçalho de iteração no arquivo de saída."""
+    """Write the iteration header to the output file."""
     departure_time = EARLIEST_DEPARTURE + TIME_SLOT_DURATION * iteration
-    header = f"|Iteração{iteration}, Horário de Saída: {departure_time}|"
+    header = f"|Iteration{iteration}, Departure Time: {departure_time}|"
     output_file.write("_" * len(header) + "\n")
     output_file.write(header + "\n")
     output_file.write("|" + "_" * (len(header) - 2) + "|\n\n")
@@ -454,14 +454,14 @@ def _save_results(
     instance_name: str,
     route_type: str,
 ) -> None:
-    """Salva os resultados parciais em CSVs."""
+    """Save partial results to CSV files."""
     if summaries:
         pd.DataFrame(summaries).to_csv(
-            OUTPUT_CSV_DIR / f"solucao_cvrptw_{instance_name}_{route_type}.csv",
+            OUTPUT_CSV_DIR / f"solution_cvrptw_{instance_name}_{route_type}.csv",
             index=False,
         )
     if details:
         pd.DataFrame(details).to_csv(
-            OUTPUT_CSV_DIR / f"solucao_completa_cvrptw_{instance_name}_{route_type}.csv",
+            OUTPUT_CSV_DIR / f"solution_completa_cvrptw_{instance_name}_{route_type}.csv",
             index=False,
         )

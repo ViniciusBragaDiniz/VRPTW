@@ -1,20 +1,20 @@
-"""Construção do modelo de Programação Linear Inteira Mista (PLIM) para o VRPTW.
+"""Mixed-Integer Linear Programming (MILP) model construction for the VRPTW.
 
-Este módulo encapsula a formulação matemática do problema: criação das
-variáveis de decisão, função objetivo e restrições. A formulação segue o
-modelo clássico de roteamento com janelas de tempo, com eliminação de
-subciclos via planos de corte (lazy constraints).
+This module encapsulates the mathematical formulation of the problem: creation
+of decision variables, objective function, and constraints. The formulation
+follows the classical vehicle routing model with time windows, with subtour
+elimination via cutting planes (lazy constraints).
 
-Formulação:
-    - **Variáveis**:
-        - ``x[k,i,j]``: binária, 1 se o veículo k viaja de i para j.
-        - ``s[k,i]``: contínua, instante de início do serviço no nó i pelo veículo k.
-        - ``q[k,i]``: inteira, carga atendida no nó i pelo veículo k.
-    - **Objetivo**: minimizar a distância total percorrida.
-    - **Restrições**: capacidade, atendimento obrigatório, fluxo conservado,
-      janelas de tempo (Big-M), passagem única e eliminação de subciclos.
+Formulation:
+    - **Variables**:
+        - ``x[k,i,j]``: binary, 1 if vehicle k travels from i to j.
+        - ``s[k,i]``: continuous, service start time at node i by vehicle k.
+        - ``q[k,i]``: integer, load served at node i by vehicle k.
+    - **Objective**: minimize total travel distance.
+    - **Constraints**: capacity, mandatory service, flow conservation,
+      time windows (Big-M), single visit, and subtour elimination.
 
-Exemplo de uso:
+Usage example:
     >>> from docplex.mp.model import Model
     >>> model = Model("vrptw")
     >>> model, travels = build_model(model, model_data)
@@ -25,29 +25,29 @@ from docplex.mp.model import Model
 
 
 # ---------------------------------------------------------------------------
-# Variáveis de decisão
+# Decision variables
 # ---------------------------------------------------------------------------
 
 def _build_variables(
     model: Model,
     model_data: dict,
 ) -> tuple[dict, dict, dict]:
-    """Cria as variáveis de decisão do modelo VRPTW.
+    """Create the VRPTW model decision variables.
 
     Args:
-        model: Instância do modelo DOCPLEX.
-        model_data: Dicionário com os dados da instância. Espera as chaves
+        model: DOCPLEX model instance.
+        model_data: Dictionary with instance data. Expects keys
             ``necessary_vehicles``, ``capacity``, ``data`` (DataFrame).
 
     Returns:
-        Tupla ``(travels, service, vehicle_load)`` contendo os dicionários
-        de variáveis indexados por ``(k, i, j)`` ou ``(k, i)``.
+        Tuple ``(travels, service, vehicle_load)`` containing variable
+        dictionaries indexed by ``(k, i, j)`` or ``(k, i)``.
     """
     num_vehicles = model_data["necessary_vehicles"]
     capacity = model_data["capacity"]
     city_data = model_data["data"]
 
-    # x[k,i,j] - veículo k viaja do nó i ao nó j
+    # x[k,i,j] - vehicle k travels from node i to node j
     travels = {
         (k, i, j): model.binary_var(name=f"travels_{k}_{i}_{j}")
         for k in range(num_vehicles)
@@ -55,7 +55,7 @@ def _build_variables(
         for j in city_data.index
     }
 
-    # s[k,i] - instante de início do serviço no nó i pelo veículo k
+    # s[k,i] - service start time at node i by vehicle k
     service = {
         (k, i): model.continuous_var(
             lb=city_data["tempo_preparo"][i],
@@ -66,7 +66,7 @@ def _build_variables(
         for i in city_data.index
     }
 
-    # q[k,i] - carga atendida no nó i pelo veículo k
+    # q[k,i] - load served at node i by vehicle k
     vehicle_load = {
         (k, i): model.integer_var(
             lb=0, ub=capacity, name=f"load_{k}_{i}"
@@ -79,16 +79,16 @@ def _build_variables(
 
 
 # ---------------------------------------------------------------------------
-# Função objetivo
+# Objective function
 # ---------------------------------------------------------------------------
 
 def _build_objective(model: Model, travels: dict, model_data: dict) -> None:
-    """Define a função objetivo: minimizar a distância total percorrida.
+    """Define the objective function: minimize total travel distance.
 
     Args:
-        model: Instância do modelo DOCPLEX.
-        travels: Dicionário de variáveis de viagem ``(k, i, j)``.
-        model_data: Dicionário com ``distancia`` (matriz de tempos) e ``data``.
+        model: DOCPLEX model instance.
+        travels: Travel variable dictionary ``(k, i, j)``.
+        model_data: Dictionary with ``distancia`` (time matrix) and ``data``.
     """
     distances = model_data["distancia"]
     city_data = model_data["data"]
@@ -105,7 +105,7 @@ def _build_objective(model: Model, travels: dict, model_data: dict) -> None:
 
 
 # ---------------------------------------------------------------------------
-# Restrições
+# Constraints
 # ---------------------------------------------------------------------------
 
 def _build_constraints(
@@ -115,24 +115,24 @@ def _build_constraints(
     load: dict,
     model_data: dict,
 ) -> None:
-    """Adiciona todas as restrições ao modelo VRPTW.
+    """Add all constraints to the VRPTW model.
 
-    Restrições implementadas:
-        1. Capacidade total por veículo.
-        2. Atendimento obrigatório de cada cliente (demanda).
-        3. Visitação obrigatória: para atender carga, é preciso visitar o ponto.
-        4. Saída a partir do depósito.
-        5. Conservação de fluxo em cada nó.
-        6. Passagem única: cada veículo passa no máximo uma vez por nó.
-        7. Janelas de tempo (formulação Big-M).
-        8. Remoção da diagonal (proibir auto-loops).
+    Implemented constraints:
+        1. Total capacity per vehicle.
+        2. Mandatory service for each client (demand).
+        3. Mandatory visit: to serve load, the point must be visited.
+        4. Departure from the depot.
+        5. Flow conservation at each node.
+        6. Single pass: each vehicle visits each node at most once.
+        7. Time windows (Big-M formulation).
+        8. Diagonal removal (forbid self-loops).
 
     Args:
-        model: Instância do modelo DOCPLEX.
-        travels: Variáveis de viagem ``(k, i, j)``.
-        service: Variáveis de tempo de serviço ``(k, i)``.
-        load: Variáveis de carga ``(k, i)``.
-        model_data: Dicionário com os dados da instância.
+        model: DOCPLEX model instance.
+        travels: Travel variables ``(k, i, j)``.
+        service: Service time variables ``(k, i)``.
+        load: Load variables ``(k, i)``.
+        model_data: Dictionary with instance data.
     """
     capacity = model_data["capacity"]
     depot = model_data["depot"]
@@ -143,14 +143,14 @@ def _build_constraints(
     distances = model_data["distancia"]
     big_m = model_data["big_m"]
 
-    # 1. Capacidade total de cada veículo
+    # 1. Total capacity per vehicle
     for k in range(num_vehicles):
         model.add_constraint(
             model.sum(load[k, i] for i in city_data.index) <= capacity,
             f"Capacity_Vehicle_{k}",
         )
 
-    # 2. Atendimento obrigatório de cada cliente
+    # 2. Mandatory service for each client
     for i in city_data.index[1:]:
         model.add_constraint(
             model.sum(load[k, i] for k in range(num_vehicles))
@@ -158,7 +158,7 @@ def _build_constraints(
             f"Demand_Client_{i}",
         )
 
-    # 3. Visitação obrigatória (para atender carga, precisa visitar o ponto)
+    # 3. Mandatory visit (to serve load, the point must be visited)
     for k in range(num_vehicles):
         for i in city_data.index:
             model.add_constraint(
@@ -167,7 +167,7 @@ def _build_constraints(
                 f"Visit_Required_{i}_Vehicle_{k}",
             )
 
-    # 4. Saída a partir do depósito
+    # 4. Departure from the depot
     for k in range(num_vehicles):
         model.add_constraint(
             model.sum(
@@ -182,7 +182,7 @@ def _build_constraints(
             f"Depot_Exit_Vehicle_{k}",
         )
 
-    # 5. Conservação de fluxo
+    # 5. Flow conservation
     for k in range(num_vehicles):
         for i in city_data.index:
             model.add_constraint(
@@ -193,7 +193,7 @@ def _build_constraints(
                 f"Flow_Conservation_Vehicle_{k}_Node_{i}",
             )
 
-    # 6. Passagem única por nó
+    # 6. Single pass per node
     for k in range(num_vehicles):
         for i in city_data.index:
             model.add_constraint(
@@ -201,7 +201,7 @@ def _build_constraints(
                 f"Single_Pass_Vehicle_{k}_Node_{i}",
             )
 
-    # 7. Janelas de tempo (Big-M)
+    # 7. Time windows (Big-M)
     for k in range(num_vehicles):
         for idx_i in range(len(city_data)):
             origin = city_data.index[idx_i]
@@ -215,7 +215,7 @@ def _build_constraints(
                     f"Time_Window_{k}_{origin}_{destination}",
                 )
 
-    # 8. Remoção da diagonal (proibir i→i)
+    # 8. Diagonal removal (forbid i->i)
     model.add_constraint(
         model.sum(
             travels[k, i, i]
@@ -227,7 +227,7 @@ def _build_constraints(
 
 
 # ---------------------------------------------------------------------------
-# Eliminação de subciclos
+# Subtour elimination
 # ---------------------------------------------------------------------------
 
 def add_subtour_cuts(
@@ -236,16 +236,16 @@ def add_subtour_cuts(
     travels: dict,
     vehicle: int,
 ) -> None:
-    """Adiciona restrições de eliminação de subciclos para um veículo.
+    """Add subtour elimination constraints for a vehicle.
 
-    Percorre todos os ciclos desconectados do depósito encontrados nas rotas
-    do veículo e insere uma desigualdade que proíbe aquele subciclo específico.
+    Traverses all cycles disconnected from the depot found in the vehicle's
+    routes and inserts an inequality that forbids that specific subtour.
 
     Args:
-        model: Instância do modelo DOCPLEX.
-        routes: Dicionário de rotas do veículo (lista encadeada ``{i: j}``).
-        travels: Variáveis de viagem ``(k, i, j)``.
-        vehicle: Índice do veículo.
+        model: DOCPLEX model instance.
+        routes: Vehicle route dictionary (linked list ``{i: j}``).
+        travels: Travel variables ``(k, i, j)``.
+        vehicle: Vehicle index.
     """
     cut_count = 0
 
@@ -275,21 +275,21 @@ def format_route_string(
     iteration: int,
     distance_matrix: dict,
 ) -> str:
-    """Formata a rota de um veículo como string legível.
+    """Format a vehicle's route as a readable string.
 
-    Percorre a lista encadeada da rota do veículo e produz uma string
-    descritiva com o caminho e os tempos de início/fim.
+    Traverses the vehicle's route linked list and produces a descriptive
+    string with the path and start/end times.
 
     Args:
-        routes: Dicionário de rotas do veículo.
-        travels: Variáveis de viagem (não utilizado diretamente, mantido por compatibilidade).
-        vehicle: Índice do veículo.
-        earliest_departure: Instante mais cedo de partida (segundos).
-        iteration: Iteração temporal corrente.
-        distance_matrix: Matriz de tempos de viagem.
+        routes: Vehicle route dictionary.
+        travels: Travel variables (not used directly, kept for compatibility).
+        vehicle: Vehicle index.
+        earliest_departure: Earliest departure time (seconds).
+        iteration: Current time iteration.
+        distance_matrix: Travel time matrix.
 
     Returns:
-        String formatada descrevendo a rota, ou string vazia se a rota estiver vazia.
+        Formatted string describing the route, or empty string if the route is empty.
     """
     if not routes[vehicle]:
         return ""
@@ -297,7 +297,7 @@ def format_route_string(
     first_node = next(iter(routes[vehicle]))
     current = routes[vehicle].pop(first_node)
 
-    route_str = f"Veículo {vehicle} Início [{earliest_departure + 1800 * iteration}s] |Rota: 0"
+    route_str = f"Vehicle {vehicle} Start [{earliest_departure + 1800 * iteration}s] |Route: 0"
     total_time = distance_matrix[first_node][current]
 
     while current != first_node:
@@ -307,27 +307,27 @@ def format_route_string(
         current = next_node
 
     route_str += " -> 0"
-    route_str += f"| Fim [{earliest_departure + total_time + 1800 * iteration}s]\n"
+    route_str += f"| End [{earliest_departure + total_time + 1800 * iteration}s]\n"
     return route_str
 
 
 # ---------------------------------------------------------------------------
-# Função principal de construção
+# Main build function
 # ---------------------------------------------------------------------------
 
 def build_model(
     model: Model,
     model_data: dict,
 ) -> tuple[Model, dict]:
-    """Constrói o modelo VRPTW completo (variáveis + objetivo + restrições).
+    """Build the complete VRPTW model (variables + objective + constraints).
 
     Args:
-        model: Instância do modelo DOCPLEX (vazia ou pré-configurada).
-        model_data: Dicionário com todos os dados da instância.
+        model: DOCPLEX model instance (empty or pre-configured).
+        model_data: Dictionary with all instance data.
 
     Returns:
-        Tupla ``(model, travels)`` com o modelo configurado e o dicionário
-        de variáveis de viagem (necessário para o loop de resolução).
+        Tuple ``(model, travels)`` with the configured model and the
+        travel variable dictionary (needed for the solution loop).
     """
     travels, service, load = _build_variables(model, model_data)
     _build_objective(model, travels, model_data)

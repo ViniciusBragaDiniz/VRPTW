@@ -1,10 +1,10 @@
 #!/usr/bin/env python3
-"""Etapa 3 — Resolução do modelo VRPTW.
+"""Step 3 — VRPTW model solving.
 
-Constrói e resolve o modelo de programação linear inteira mista para cada
-cenário (dia × turno × município), com eliminação iterativa de subciclos.
+Builds and solves the mixed-integer linear programming model for each
+scenario (day x shift x municipality), with iterative subtour elimination.
 
-Uso:
+Usage:
     $ python 03_solve_vrptw.py
 """
 

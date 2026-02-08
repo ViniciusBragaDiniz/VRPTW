@@ -1,27 +1,27 @@
 #!/usr/bin/env python3
-"""Orquestrador do pipeline completo do VRPTW.
+"""VRPTW full pipeline orchestrator.
 
-Executa as 4 etapas do pipeline na sequência correta:
+Executes the 4 pipeline steps in the correct sequence:
 
-    1. Pré-processamento — geocodificação dos dados de alunos
-    2. Geração de pontos — clusterização K-means por município
-    3. Resolução — modelo PLIM com eliminação de subciclos
-    4. Pós-processamento — minimização do número de veículos
+    1. Preprocessing — student data geocoding
+    2. Point generation — K-means clustering per municipality
+    3. Solving — MILP model with subtour elimination
+    4. Post-processing — vehicle count minimization
 
-Cada etapa pode ser habilitada ou desabilitada via argumentos de linha de
-comando, permitindo reexecutar apenas as etapas necessárias.
+Each step can be enabled or disabled via command-line arguments, allowing
+re-execution of only the necessary steps.
 
-Uso:
-    # Executar o pipeline completo
+Usage:
+    # Run the full pipeline
     $ python run_pipeline.py
 
-    # Pular o pré-processamento (dados já geocodificados)
+    # Skip preprocessing (data already geocoded)
     $ python run_pipeline.py --skip-preprocess
 
-    # Executar apenas a resolução e o pós-processamento
+    # Run only solving and post-processing
     $ python run_pipeline.py --skip-preprocess --skip-points
 
-    # Executar apenas o pós-processamento
+    # Run only post-processing
     $ python run_pipeline.py --only-postprocess
 """
 
@@ -38,20 +38,20 @@ logger = logging.getLogger(__name__)
 
 
 def _step_banner(step_number: int, title: str) -> None:
-    """Imprime um banner visual delimitando o início de uma etapa."""
+    """Print a visual banner delimiting the start of a step."""
     separator = "=" * 60
     logger.info(separator)
-    logger.info("  ETAPA %d — %s", step_number, title)
+    logger.info("  STEP %d — %s", step_number, title)
     logger.info(separator)
 
 
 def step_1_preprocess() -> None:
-    """Etapa 1: pré-processamento e geocodificação dos dados de alunos.
+    """Step 1: student data preprocessing and geocoding.
 
-    Chama a função pura de pré-processamento e persiste os resultados
-    em ``data/processed/``.
+    Calls the pure preprocessing function and persists the results
+    to ``data/processed/``.
     """
-    _step_banner(1, "Pré-processamento de dados")
+    _step_banner(1, "Data preprocessing")
     from data.preprocessing import preprocess_student_data
 
     results = preprocess_student_data()
@@ -60,83 +60,83 @@ def step_1_preprocess() -> None:
     for name, df in results.items():
         output_path = DATA_PROCESSED_DIR / f"{name}.csv"
         df.to_csv(output_path, index=False)
-        logger.info("  -> %d registros salvos em %s", len(df), output_path)
+        logger.info("  -> %d records saved to %s", len(df), output_path)
 
 
 def step_2_generate_points() -> None:
-    """Etapa 2: geração de pontos de parada via K-means.
+    """Step 2: bus stop point generation via K-means.
 
-    Lê os dados de alunos processados pela etapa 1 e gera pontos para
-    cada combinação de instância e tipo de rota configurada em
-    ``config.py``.  Persiste os resultados em ``data/processed/``.
+    Reads the student data processed in step 1 and generates points for
+    each combination of instance and route type configured in
+    ``config.py``. Persists results to ``data/processed/``.
     """
-    _step_banner(2, "Geração de pontos de parada")
+    _step_banner(2, "Bus stop point generation")
     from data.point_generation import generate_bus_stops
 
-    students_path = DATA_PROCESSED_DIR / "info_alunos.csv"
+    students_path = DATA_PROCESSED_DIR / "info_students.csv"
     if not students_path.exists():
         raise FileNotFoundError(
-            f"Arquivo de alunos não encontrado: {students_path}. "
-            "Execute a etapa 1 (pré-processamento) antes."
+            f"Student file not found: {students_path}. "
+            "Run step 1 (preprocessing) first."
         )
     df_students = pd.read_csv(students_path)
 
     DATA_PROCESSED_DIR.mkdir(parents=True, exist_ok=True)
     for route_type in ROUTE_TYPES:
         for instance in INSTANCE_TYPES:
-            logger.info("Gerando pontos: instância=%s, rota=%s", instance, route_type)
+            logger.info("Generating points: instance=%s, route=%s", instance, route_type)
             df = generate_bus_stops(
                 df_students, student_filter=instance, shift=route_type,
             )
             output_path = DATA_PROCESSED_DIR / f"pontos_de_onibus_{instance}_{route_type}.csv"
             df.to_csv(output_path, index=False)
-            logger.info("  -> %d pontos salvos em %s", len(df), output_path)
+            logger.info("  -> %d points saved to %s", len(df), output_path)
 
 
 def step_3_solve() -> None:
-    """Etapa 3: resolução do modelo VRPTW."""
-    _step_banner(3, "Resolução do modelo VRPTW")
+    """Step 3: VRPTW model solving."""
+    _step_banner(3, "VRPTW model solving")
     from vrptw.solver import solve_all_instances
     solve_all_instances()
 
 
 def step_4_postprocess() -> None:
-    """Etapa 4: minimização do número de veículos."""
-    _step_banner(4, "Pós-processamento (minimização de veículos)")
+    """Step 4: vehicle count minimization."""
+    _step_banner(4, "Post-processing (vehicle minimization)")
     from vrptw.postprocessing import minimize_vehicles
     minimize_vehicles()
 
 
 def main() -> None:
     parser = argparse.ArgumentParser(
-        description="Orquestrador do pipeline VRPTW.",
+        description="VRPTW pipeline orchestrator.",
         formatter_class=argparse.RawDescriptionHelpFormatter,
         epilog=(
-            "Exemplos:\n"
-            "  python run_pipeline.py                    # pipeline completo\n"
-            "  python run_pipeline.py --skip-preprocess   # sem geocodificação\n"
-            "  python run_pipeline.py --only-postprocess  # só etapa 4\n"
+            "Examples:\n"
+            "  python run_pipeline.py                    # full pipeline\n"
+            "  python run_pipeline.py --skip-preprocess   # skip geocoding\n"
+            "  python run_pipeline.py --only-postprocess  # step 4 only\n"
         ),
     )
     parser.add_argument(
         "--skip-preprocess", action="store_true",
-        help="Pular a etapa 1 (pré-processamento/geocodificação)",
+        help="Skip step 1 (preprocessing/geocoding)",
     )
     parser.add_argument(
         "--skip-points", action="store_true",
-        help="Pular a etapa 2 (geração de pontos de parada)",
+        help="Skip step 2 (bus stop point generation)",
     )
     parser.add_argument(
         "--skip-solve", action="store_true",
-        help="Pular a etapa 3 (resolução do modelo)",
+        help="Skip step 3 (model solving)",
     )
     parser.add_argument(
         "--skip-postprocess", action="store_true",
-        help="Pular a etapa 4 (minimização de veículos)",
+        help="Skip step 4 (vehicle minimization)",
     )
     parser.add_argument(
         "--only-postprocess", action="store_true",
-        help="Executar apenas a etapa 4 (atalho para --skip-preprocess --skip-points --skip-solve)",
+        help="Run only step 4 (shortcut for --skip-preprocess --skip-points --skip-solve)",
     )
     args = parser.parse_args()
 
@@ -145,22 +145,22 @@ def main() -> None:
         args.skip_points = True
         args.skip_solve = True
 
-    # Definir as etapas a executar
+    # Define steps to execute
     steps = []
     if not args.skip_preprocess:
-        steps.append(("1. Pré-processamento", step_1_preprocess))
+        steps.append(("1. Preprocessing", step_1_preprocess))
     if not args.skip_points:
-        steps.append(("2. Geração de pontos", step_2_generate_points))
+        steps.append(("2. Point generation", step_2_generate_points))
     if not args.skip_solve:
-        steps.append(("3. Resolução VRPTW", step_3_solve))
+        steps.append(("3. VRPTW solving", step_3_solve))
     if not args.skip_postprocess:
-        steps.append(("4. Pós-processamento", step_4_postprocess))
+        steps.append(("4. Post-processing", step_4_postprocess))
 
     if not steps:
-        logger.warning("Todas as etapas foram puladas. Nada a executar.")
+        logger.warning("All steps were skipped. Nothing to execute.")
         return
 
-    logger.info("Pipeline VRPTW iniciado — %d etapa(s) a executar", len(steps))
+    logger.info("VRPTW pipeline started — %d step(s) to execute", len(steps))
     pipeline_start = time.time()
 
     for name, func in steps:
@@ -168,14 +168,14 @@ def main() -> None:
         try:
             func()
             elapsed = time.time() - step_start
-            logger.info("%s concluída em %.1fs", name, elapsed)
+            logger.info("%s completed in %.1fs", name, elapsed)
         except Exception:
             elapsed = time.time() - step_start
-            logger.exception("%s falhou após %.1fs", name, elapsed)
+            logger.exception("%s failed after %.1fs", name, elapsed)
             sys.exit(1)
 
     total = time.time() - pipeline_start
-    logger.info("Pipeline completo em %.1fs", total)
+    logger.info("Pipeline complete in %.1fs", total)
 
 
 if __name__ == "__main__":

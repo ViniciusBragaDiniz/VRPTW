@@ -1,10 +1,10 @@
 #!/usr/bin/env python3
-"""Etapa 1 — Pré-processamento dos dados de alunos.
+"""Step 1 — Student data preprocessing.
 
-Carrega os dados brutos, enriquece endereços via ViaCEP, georreferencia
-via Google Maps e salva os resultados processados em ``data/processed/``.
+Loads raw data, enriches addresses via ViaCEP, geocodes via Google Maps,
+and saves the processed results to ``data/processed/``.
 
-Uso:
+Usage:
     $ python 01_preprocess_data.py
 """
 
@@ -30,7 +30,7 @@ def main() -> None:
     for name, df in results.items():
         output_path = DATA_PROCESSED_DIR / f"{name}.csv"
         df.to_csv(output_path, index=False)
-        logger.info("Salvo em: %s (%d registros)", output_path, len(df))
+        logger.info("Saved to: %s (%d records)", output_path, len(df))
 
 
 if __name__ == "__main__":

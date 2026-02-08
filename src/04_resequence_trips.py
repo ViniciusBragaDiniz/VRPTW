@@ -1,10 +1,11 @@
 #!/usr/bin/env python3
-"""Etapa 4 — Pós-processamento: minimização do número de veículos.
+"""Step 4 — Post-processing: vehicle count minimization.
 
-Consolida rotas de múltiplos veículos quando possível, reduzindo o
-número total de veículos necessários respeitando a jornada máxima.
+Consolidates routes from multiple vehicles when possible, reducing
+the total number of vehicles needed while respecting the maximum
+work time.
 
-Uso:
+Usage:
     $ python 04_resequence_trips.py
 """
 

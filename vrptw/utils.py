@@ -1,14 +1,14 @@
-"""Funções utilitárias para o modelo VRPTW.
+"""Utility functions for the VRPTW model.
 
-Contém funções de uso geral compartilhadas pelos demais módulos do pacote:
-cálculo de distância geodésica (Haversine), construção da matriz de tempos
-de viagem, extração de rotas a partir da solução do CPLEX e preparação
-de dados para particionamento temporal da demanda.
+Contains general-purpose functions shared across the package modules:
+geodesic distance calculation (Haversine), travel time matrix construction,
+route extraction from the CPLEX solution, and data preparation for temporal
+demand partitioning.
 
-Exemplo de uso:
+Usage example:
     >>> from vrptw.utils import haversine
     >>> dist = haversine(-22.70, -43.46, -22.90, -43.20)
-    >>> print(f"Distância: {dist:.0f} m")
+    >>> print(f"Distance: {dist:.0f} m")
 """
 
 import logging
@@ -23,20 +23,20 @@ logger = logging.getLogger(__name__)
 
 
 # ---------------------------------------------------------------------------
-# Cálculo de distância geodésica
+# Geodesic distance calculation
 # ---------------------------------------------------------------------------
 
 def haversine(lat1: float, lon1: float, lat2: float, lon2: float) -> float:
-    """Calcula a distância entre dois pontos na superfície da Terra (Haversine).
+    """Calculate the distance between two points on Earth's surface (Haversine).
 
     Args:
-        lat1: Latitude do ponto 1 (graus decimais).
-        lon1: Longitude do ponto 1 (graus decimais).
-        lat2: Latitude do ponto 2 (graus decimais).
-        lon2: Longitude do ponto 2 (graus decimais).
+        lat1: Latitude of point 1 (decimal degrees).
+        lon1: Longitude of point 1 (decimal degrees).
+        lat2: Latitude of point 2 (decimal degrees).
+        lon2: Longitude of point 2 (decimal degrees).
 
     Returns:
-        Distância entre os dois pontos em metros.
+        Distance between the two points in meters.
     """
     EARTH_RADIUS_M = 6_371_000
 
@@ -52,20 +52,20 @@ def haversine(lat1: float, lon1: float, lat2: float, lon2: float) -> float:
 
 
 # ---------------------------------------------------------------------------
-# Matriz de tempos de viagem
+# Travel time matrix
 # ---------------------------------------------------------------------------
 
 def _speed_for_municipality(municipality: str) -> float:
-    """Retorna a velocidade média (m/s) configurada para um município.
+    """Return the configured average speed (m/s) for a municipality.
 
     Args:
-        municipality: Nome padronizado do município.
+        municipality: Standardized municipality name.
 
     Returns:
-        Velocidade em metros por segundo.
+        Speed in meters per second.
     """
     speed_kmh = MUNICIPALITY_SPEED_KMH.get(municipality, DEFAULT_SPEED_KMH)
-    return speed_kmh / 3.6  # km/h → m/s
+    return speed_kmh / 3.6  # km/h -> m/s
 
 
 def calculate_distances(
@@ -74,26 +74,26 @@ def calculate_distances(
     iteration: int,
     time_slot: int,
 ) -> tuple[dict[int, dict[int, float]], float]:
-    """Constrói a matriz de tempos de viagem entre todos os pares de pontos.
+    """Build the travel time matrix between all pairs of points.
 
-    Para cada par (i, j) com i ≠ j, calcula a distância Haversine em metros
-    e a converte para tempo de viagem (segundos) usando a velocidade média
-    configurada para o município. A diagonal (i == i) recebe ``inf``.
+    For each pair (i, j) with i != j, calculates the Haversine distance in
+    meters and converts it to travel time (seconds) using the average speed
+    configured for the municipality. The diagonal (i == i) receives ``inf``.
 
-    Também calcula o valor Big-M necessário para as restrições de janela de
-    tempo do modelo (o maior valor de ``tempo_entrega[i] + tempo_viagem[i][j]
+    Also calculates the Big-M value needed for the time window constraints
+    of the model (the largest value of ``tempo_entrega[i] + travel_time[i][j]
     - (tempo_preparo[i] + time_slot * iteration)``).
 
     Args:
-        data: DataFrame indexado por ``centroid_id`` com colunas ``lat``,
-            ``lon``, ``tempo_preparo`` e ``tempo_entrega``.
-        municipality: Nome padronizado do município (para seleção de velocidade).
-        iteration: Iteração temporal corrente (usada no cálculo de Big-M).
-        time_slot: Duração de cada fatia de tempo em segundos.
+        data: DataFrame indexed by ``centroid_id`` with columns ``lat``,
+            ``lon``, ``tempo_preparo``, and ``tempo_entrega``.
+        municipality: Standardized municipality name (for speed selection).
+        iteration: Current time iteration (used in Big-M calculation).
+        time_slot: Duration of each time slot in seconds.
 
     Returns:
-        Tupla ``(distance_matrix, big_m)`` onde ``distance_matrix`` é um
-        dict-de-dicts e ``big_m`` é o escalar necessário para as restrições.
+        Tuple ``(distance_matrix, big_m)`` where ``distance_matrix`` is a
+        dict-of-dicts and ``big_m`` is the scalar needed for the constraints.
     """
     speed_ms = _speed_for_municipality(municipality)
     indices = data.index
@@ -128,22 +128,22 @@ def calculate_distances(
 
 
 # ---------------------------------------------------------------------------
-# Extração de rotas a partir da solução CPLEX
+# Route extraction from CPLEX solution
 # ---------------------------------------------------------------------------
 
 def build_routes(solution: dict, num_vehicles: int) -> dict[int, dict[int, int]]:
-    """Extrai as rotas de cada veículo a partir do dicionário de solução.
+    """Extract each vehicle's routes from the solution dictionary.
 
-    Percorre as variáveis de decisão ``travels_k_i_j`` presentes na solução
-    e reconstrói um dicionário de listas encadeadas representando as rotas.
+    Traverses the ``travels_k_i_j`` decision variables present in the
+    solution and rebuilds a dictionary of linked lists representing the routes.
 
     Args:
-        solution: Dicionário retornado por ``model.solve().as_dict()``.
-        num_vehicles: Número de veículos do modelo.
+        solution: Dictionary returned by ``model.solve().as_dict()``.
+        num_vehicles: Number of vehicles in the model.
 
     Returns:
-        Dicionário ``{k: {i: j, ...}}`` onde cada chave ``k`` é um veículo
-        e o sub-dicionário mapeia nó de origem → nó de destino.
+        Dictionary ``{k: {i: j, ...}}`` where each key ``k`` is a vehicle
+        and the sub-dictionary maps origin node -> destination node.
     """
     routes: dict[int, dict[int, int]] = {k: {} for k in range(num_vehicles)}
 
@@ -159,7 +159,7 @@ def build_routes(solution: dict, num_vehicles: int) -> dict[int, dict[int, int]]
 
 
 # ---------------------------------------------------------------------------
-# Preparação de dados (particionamento temporal de demanda)
+# Data preparation (temporal demand partitioning)
 # ---------------------------------------------------------------------------
 
 def partition_demand(
@@ -168,35 +168,35 @@ def partition_demand(
     capacity: int,
     time_slot: int,
 ) -> pd.DataFrame:
-    """Particiona a demanda em fatias temporais quando excede a capacidade.
+    """Partition demand into time slots when it exceeds capacity.
 
-    Para pontos cuja demanda total excede a capacidade de um único veículo,
-    distribui a demanda em múltiplas iterações (fatias de tempo), permitindo
-    que veículos realizem viagens escalonadas.
+    For points whose total demand exceeds a single vehicle's capacity,
+    distributes the demand across multiple iterations (time slots), allowing
+    vehicles to make staggered trips.
 
     Args:
-        shift: Turno do dia (``'manha'``, ``'tarde'``, ``'noite'``).
-        model_data: DataFrame com os dados de demanda e janelas de tempo.
-        capacity: Capacidade máxima de cada veículo.
-        time_slot: Duração de cada fatia de tempo (segundos).
+        shift: Time of day shift (``'manha'``, ``'tarde'``, ``'noite'``).
+        model_data: DataFrame with demand and time window data.
+        capacity: Maximum capacity of each vehicle.
+        time_slot: Duration of each time slot (seconds).
 
     Returns:
-        DataFrame expandido com linhas adicionais para cada iteração temporal.
+        Expanded DataFrame with additional rows for each time iteration.
     """
     demand_col = f"demanda_{shift}"
     data = model_data.copy()
 
-    # Número de fatias possíveis no horizonte de tempo
+    # Number of possible splits within the time horizon
     possible_splits = (
         (data["tempo_entrega"] - data["tempo_preparo"]) / time_slot
     ).apply(math.floor)
 
-    # Viagens necessárias por município (demanda / capacidade)
+    # Trips needed per municipality (demand / capacity)
     trips_needed = (
         data.groupby("cd_municipio")[demand_col].sum() / capacity
     ).apply(math.ceil)
 
-    # Municípios cuja demanda total cabe em um único veículo
+    # Municipalities whose total demand fits in a single vehicle
     single_vehicle = data.groupby("cd_municipio")[demand_col].sum() <= capacity
 
     data["iteracao"] = 0
@@ -241,20 +241,20 @@ def partition_demand_failed_instances(
     capacity: int,
     time_slot: int,
 ) -> pd.DataFrame:
-    """Repartição de demanda para instâncias que falharam na primeira tentativa.
+    """Re-partition demand for instances that failed on the first attempt.
 
-    Variante de :func:`partition_demand` que distribui a demanda de forma
-    mais granular, ponto-a-ponto, respeitando estritamente a capacidade
-    do veículo em cada iteração.
+    Variant of :func:`partition_demand` that distributes demand more
+    granularly, point-by-point, strictly respecting the vehicle capacity
+    at each iteration.
 
     Args:
-        shift: Turno do dia.
-        model_data: DataFrame com os dados de demanda.
-        capacity: Capacidade máxima de cada veículo.
-        time_slot: Duração de cada fatia de tempo (segundos).
+        shift: Time of day shift.
+        model_data: DataFrame with demand data.
+        capacity: Maximum capacity of each vehicle.
+        time_slot: Duration of each time slot (seconds).
 
     Returns:
-        DataFrame expandido com demanda repartida por iteração.
+        Expanded DataFrame with re-partitioned demand per iteration.
     """
     demand_col = f"demanda_{shift}"
     data = model_data.copy()

@@ -1,30 +1,30 @@
-"""Configuração centralizada de parâmetros do modelo VRPTW.
+"""Centralized configuration of VRPTW model parameters.
 
-Este módulo concentra todos os parâmetros configuráveis do projeto em um
-único local, facilitando a reprodução de experimentos e a alteração de
-cenários por outros pesquisadores. Alterar qualquer parâmetro aqui
-reflete automaticamente em todos os módulos que o utilizam.
+This module concentrates all configurable project parameters in a single
+location, facilitating experiment reproducibility and scenario changes
+by other researchers. Changing any parameter here is automatically
+reflected in all modules that use it.
 
-Exemplo de uso:
+Usage example:
     >>> from vrptw.config import VEHICLE_CAPACITY, TIME_LIMIT
-    >>> print(f"Capacidade: {VEHICLE_CAPACITY} passageiros")
-    Capacidade: 50 passageiros
+    >>> print(f"Capacity: {VEHICLE_CAPACITY} passengers")
+    Capacity: 50 passengers
 """
 
 from pathlib import Path
 
 # ---------------------------------------------------------------------------
-# Diretórios do projeto
+# Project directories
 # ---------------------------------------------------------------------------
 PROJECT_ROOT = Path(__file__).resolve().parent.parent
 
-#: Diretório-base de dados (também é o pacote Python ``data``).
+#: Base data directory (also the ``data`` Python package).
 DATA_DIR = PROJECT_ROOT / "data"
 
-#: Dados brutos de entrada (CSVs de alunos, instâncias, etc.).
+#: Raw input data (student CSVs, instances, etc.).
 DATA_RAW_DIR = DATA_DIR / "raw"
 
-#: Dados tratados / intermediários (turno_resumo.csv, etc.).
+#: Processed / intermediate data (turno_resumo.csv, etc.).
 DATA_PROCESSED_DIR = DATA_DIR / "processed"
 
 OUTPUT_DIR = DATA_DIR / "output"
@@ -33,52 +33,52 @@ OUTPUT_TEXT_DIR = OUTPUT_DIR / "text"
 IMGS_DIR = PROJECT_ROOT / "imgs"
 
 # ---------------------------------------------------------------------------
-# Parâmetros do modelo de otimização
+# Optimization model parameters
 # ---------------------------------------------------------------------------
 
-#: Capacidade máxima de cada veículo (número de passageiros).
+#: Maximum vehicle capacity (number of passengers).
 VEHICLE_CAPACITY: int = 50
 
-#: Limite de tempo para o solver CPLEX (segundos).
+#: CPLEX solver time limit (seconds).
 TIME_LIMIT: int = 3600
 
-#: Início da janela de tempo (segundos a partir da meia-noite).
-#: Exemplo: 0 = meia-noite.
+#: Time window start (seconds from midnight).
+#: Example: 0 = midnight.
 EARLIEST_DEPARTURE: int = 0
 
-#: Fim da janela de tempo (segundos a partir da meia-noite).
-#: Exemplo: 4 * 3600 = 04:00 da manhã (horizonte de 4 horas).
+#: Time window end (seconds from midnight).
+#: Example: 4 * 3600 = 04:00 AM (4-hour horizon).
 LATEST_ARRIVAL: int = 4 * 3600
 
-#: Duração de cada fatia de tempo para particionamento (segundos).
-#: Exemplo: 1800 = 30 minutos.
+#: Duration of each time slot for partitioning (seconds).
+#: Example: 1800 = 30 minutes.
 TIME_SLOT_DURATION: int = 1800
 
-#: Índice do nó-depósito (CEFET) no grafo de rotas.
+#: Depot node index (CEFET) in the route graph.
 DEPOT_INDEX: int = 0
 
 # ---------------------------------------------------------------------------
-# Coordenadas do depósito (CEFET)
+# Depot coordinates (CEFET)
 # ---------------------------------------------------------------------------
 DEPOT_LAT: float = -43.46242373123213
 DEPOT_LON: float = -22.704575111343242
 
 # ---------------------------------------------------------------------------
-# Parâmetros de clusterização (geração de pontos de parada)
+# Clustering parameters (bus stop generation)
 # ---------------------------------------------------------------------------
 
-#: Número mínimo de alunos por município para gerar pontos de parada.
-#: Municípios com menos alunos que esse limiar são desconsiderados.
+#: Minimum number of students per municipality to generate bus stops.
+#: Municipalities with fewer students than this threshold are discarded.
 MIN_STUDENTS_PER_MUNICIPALITY: int = 10
 
-#: Número de inicializações do K-means para garantir convergência.
+#: Number of K-means initializations to ensure convergence.
 KMEANS_N_INIT: int = 10
 
 # ---------------------------------------------------------------------------
-# Velocidades médias por município (km/h)
+# Average speeds per municipality (km/h)
 # ---------------------------------------------------------------------------
-#: Mapeamento de municípios para velocidades médias estimadas (km/h).
-#: Utilizado no cálculo da matriz de tempos de viagem.
+#: Mapping of municipalities to estimated average speeds (km/h).
+#: Used in travel time matrix calculation.
 MUNICIPALITY_SPEED_KMH: dict[str, float] = {
     "Nova Iguacu": 20.0,
     "Mesquita": 20.0,
@@ -91,28 +91,28 @@ MUNICIPALITY_SPEED_KMH: dict[str, float] = {
     "Japeri": 60.0,
 }
 
-#: Velocidade padrão para municípios não listados acima (km/h).
+#: Default speed for municipalities not listed above (km/h).
 DEFAULT_SPEED_KMH: float = 40.0
 
 # ---------------------------------------------------------------------------
-# Instâncias e cenários
+# Instances and scenarios
 # ---------------------------------------------------------------------------
 
-#: Tipos de instância a processar.
+#: Instance types to process.
 INSTANCE_TYPES: list[str] = ["tec", "grad", "full"]
 
-#: Dias da semana a processar.
+#: Weekdays to process.
 WEEKDAYS: list[str] = ["seg", "ter", "qua", "qui", "sex", "sab"]
 
-#: Turnos a processar para cada dia.
+#: Shifts to process for each day.
 SHIFTS: list[str] = ["tarde", "noite", "fim"]
 
-#: Tipos de rota (direção da viagem).
-ROUTE_TYPES: list[str] = ["ENTRADA"]
+#: Route types (trip direction).
+ROUTE_TYPES: list[str] = ["ENTRY"]
 
 # ---------------------------------------------------------------------------
-# Limite de horas de trabalho por veículo (pós-processamento)
+# Maximum work hours per vehicle (post-processing)
 # ---------------------------------------------------------------------------
 
-#: Jornada máxima por veículo em segundos (4 horas).
+#: Maximum work time per vehicle in seconds (4 hours).
 MAX_VEHICLE_WORK_TIME: int = 4 * 3600

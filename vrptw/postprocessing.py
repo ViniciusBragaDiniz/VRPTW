@@ -1,12 +1,12 @@
-"""Pós-processamento: minimização do número de veículos por viagem.
+"""Post-processing: vehicle count minimization per trip.
 
-Após a resolução do VRPTW, este módulo tenta reduzir o número de veículos
-utilizados em cada viagem (combinação de tipo de rota, instância, dia, turno
-e município). O algoritmo gera todas as partições possíveis dos tempos de
-viagem das rotas e busca a partição válida com o menor número de subconjuntos,
-respeitando a jornada máxima por veículo.
+After solving the VRPTW, this module attempts to reduce the number of vehicles
+used in each trip (combination of route type, instance, day, shift, and
+municipality). The algorithm generates all possible partitions of route travel
+times and searches for the valid partition with the fewest subsets, subject to
+the maximum work time per vehicle.
 
-Exemplo de uso:
+Usage example:
     >>> from vrptw.postprocessing import minimize_vehicles
     >>> df_adjusted = minimize_vehicles()
     >>> print(df_adjusted.head())
@@ -22,18 +22,18 @@ logger = logging.getLogger(__name__)
 
 
 def generate_partitions(elements: list) -> list[list[list]]:
-    """Gera recursivamente todas as partições de uma lista.
+    """Recursively generate all partitions of a list.
 
-    Uma partição agrupa os elementos em subconjuntos não vazios e disjuntos
-    cuja união é o conjunto original.
+    A partition groups elements into non-empty, disjoint subsets whose
+    union is the original set.
 
     Args:
-        elements: Lista de elementos a particionar.
+        elements: List of elements to partition.
 
     Returns:
-        Lista de partições. Cada partição é uma lista de subconjuntos (listas).
+        List of partitions. Each partition is a list of subsets (lists).
 
-    Exemplo:
+    Example:
         >>> generate_partitions([1, 2])
         [[[2, 1]], [[1], [2]]]
     """
@@ -44,50 +44,50 @@ def generate_partitions(elements: list) -> list[list[list]]:
     result = []
 
     for partition in generate_partitions(elements[1:]):
-        # Adicionar o primeiro elemento a cada subconjunto existente
+        # Add the first element to each existing subset
         for i in range(len(partition)):
             new_partition = [subset[:] for subset in partition]
             new_partition[i].append(first)
             result.append(new_partition)
 
-        # Criar novo subconjunto contendo apenas o primeiro elemento
+        # Create a new subset containing only the first element
         result.append([[first]] + partition)
 
     return result
 
 
 def minimize_vehicles() -> pd.DataFrame:
-    """Re-sequencia viagens para minimizar o número de veículos utilizados.
+    """Re-sequence trips to minimize the number of vehicles used.
 
-    Carrega as soluções detalhadas de rotas (entrada e saída), identifica
-    viagens com múltiplos veículos e tenta consolidá-las em menos veículos
-    respeitando a restrição de jornada máxima.
+    Loads the detailed route solutions (inbound and outbound), identifies
+    trips with multiple vehicles, and attempts to consolidate them into
+    fewer vehicles subject to the maximum work time constraint.
 
     Returns:
-        DataFrame com o número de veículos ajustado por viagem.
+        DataFrame with the adjusted vehicle count per trip.
 
     Raises:
-        FileNotFoundError: Se os arquivos de solução não forem encontrados.
+        FileNotFoundError: If the solution files are not found.
     """
-    logger.info("Iniciando minimização de veículos")
+    logger.info("Starting vehicle minimization")
 
-    # Carregar soluções
-    sol_entrada = pd.read_csv(OUTPUT_CSV_DIR / "solucao_completa_cvrptw_full_ENTRADA.csv")
-    sol_entrada["tipo_de_rota"] = "ENTRADA"
+    # Load solutions
+    sol_ENTRY = pd.read_csv(OUTPUT_CSV_DIR / "solution_completa_cvrptw_full_ENTRY.csv")
+    sol_ENTRY["tipo_de_rota"] = "ENTRY"
 
-    sol_saida = pd.read_csv(OUTPUT_CSV_DIR / "solucao_completa_cvrptw_full_SAIDA.csv")
-    sol_saida["tipo_de_rota"] = "SAIDA"
+    solution_exit = pd.read_csv(OUTPUT_CSV_DIR / "solution_completa_cvrptw_full_EXIT.csv")
+    solution_exit["tipo_de_rota"] = "EXIT"
 
-    full_solution = pd.concat([sol_entrada, sol_saida], ignore_index=True)
+    full_solution = pd.concat([sol_ENTRY, solution_exit], ignore_index=True)
 
-    # Resumo agregado por viagem
-    group_cols = ["tipo_de_rota", "instancia", "dia", "turno", "cd_municipio"]
+    # Aggregated summary per trip
+    group_cols = ["tipo_de_rota", "instancia", "DAYOFTHEWEEK", "turno", "cd_municipio"]
     adjusted = full_solution.groupby(group_cols).agg(
         id_veiculo=("id_veiculo", "nunique"),
         tempo_viagem=("tempo_viagem", "sum"),
     )
 
-    # Identificar viagens únicas
+    # Identify unique trips
     trips = full_solution[group_cols].drop_duplicates()
     indexed_solution = full_solution.set_index(group_cols)
 
@@ -97,14 +97,14 @@ def minimize_vehicles() -> pd.DataFrame:
         trip_key = tuple(row)
         trip_data = indexed_solution.loc[trip_key]
 
-        # Pular viagens com veículo único (não há como reduzir)
+        # Skip single-vehicle trips (no reduction possible)
         if trip_data["id_veiculo"].nunique() == 1:
             continue
 
         travel_times = trip_data["tempo_viagem"].tolist()
         partitions = generate_partitions(travel_times)
 
-        # Buscar a primeira partição válida (já ordenadas do menor para o maior)
+        # Search for the first valid partition (already sorted smallest to largest)
         for partition in partitions:
             valid = all(
                 sum(subset) <= MAX_VEHICLE_WORK_TIME
@@ -116,11 +116,11 @@ def minimize_vehicles() -> pd.DataFrame:
                 break
 
     adjusted = adjusted.reset_index()
-    output_path = OUTPUT_CSV_DIR / "solucao_ajustada.csv"
+    output_path = OUTPUT_CSV_DIR / "solution_adjusted.csv"
     adjusted.to_csv(output_path, index=False)
 
     logger.info(
-        "Minimização concluída. %d viagens ajustadas. Salvo em: %s",
+        "Minimization complete. %d trips adjusted. Saved to: %s",
         adjusted_count,
         output_path,
     )

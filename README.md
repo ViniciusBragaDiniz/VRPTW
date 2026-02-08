@@ -1,136 +1,136 @@
-# VRPTW — Roteamento de Veículos com Janelas de Tempo
+# VRPTW — Vehicle Routing Problem with Time Windows
 
-Implementação de um modelo de Programação Linear Inteira Mista (PLIM) para o
-Problema de Roteamento de Veículos com Janelas de Tempo (VRPTW), aplicado ao
-transporte escolar de alunos do CEFET/RJ.
+Implementation of a Mixed-Integer Linear Programming (MILP) model for the
+Vehicle Routing Problem with Time Windows (VRPTW), applied to school bus
+transportation for CEFET/RJ students.
 
-## Estrutura do Projeto
+## Project Structure
 
 ```
 VRPTW/
-├── run_pipeline.py              # Orquestrador — ponto de entrada principal
-├── data/                        # Tratamento de dados (pacote Python + arquivos)
+├── run_pipeline.py              # Orchestrator — main entry point
+├── data/                        # Data processing (Python package + files)
 │   ├── __init__.py
-│   ├── preprocessing.py         #   Geocodificação e tratamento de alunos
-│   ├── point_generation.py      #   K-means + método do cotovelo
-│   ├── raw/                     #   Dados brutos de entrada (CSVs de alunos)
-│   └── processed/               #   Dados tratados (turno_resumo.csv, etc.)
-├── vrptw/                       # Modelo de otimização
+│   ├── preprocessing.py         #   Geocoding and student data processing
+│   ├── point_generation.py      #   K-means + elbow method
+│   ├── raw/                     #   Raw input data (student CSVs)
+│   └── processed/               #   Processed data (turno_resumo.csv, etc.)
+├── vrptw/                       # Optimization model
 │   ├── __init__.py
-│   ├── config.py                #   Parâmetros centralizados (altere aqui!)
-│   ├── model_builder.py         #   Formulação PLIM (variáveis, restrições)
-│   ├── solver.py                #   Loop de resolução + corte de subciclos
-│   ├── postprocessing.py        #   Re-sequenciamento de viagens
-│   └── utils.py                 #   Haversine, distâncias, rotas
-├── src/                         # Scripts auxiliares (etapas individuais)
+│   ├── config.py                #   Centralized parameters (change here!)
+│   ├── model_builder.py         #   MILP formulation (variables, constraints)
+│   ├── solver.py                #   Solving loop + subtour cuts
+│   ├── postprocessing.py        #   Trip re-sequencing
+│   └── utils.py                 #   Haversine, distances, routes
+├── src/                         # Auxiliary scripts (individual steps)
 │   ├── 01_preprocess_data.py
 │   ├── 02_generate_points.py
 │   ├── 03_solve_vrptw.py
 │   └── 04_resequence_trips.py
 ├── output/
-│   ├── csv/                     # Resultados em formato CSV
-│   └── text/                    # Logs de rotas em texto
-├── imgs/                        # Gráficos gerados (método do cotovelo)
-├── requirements.txt             # Dependências Python
-└── secrets                      # Chave da API Google Maps (NÃO versionar!)
+│   ├── csv/                     # Results in CSV format
+│   └── text/                    # Route logs in text format
+├── imgs/                        # Generated charts (elbow method)
+├── requirements.txt             # Python dependencies
+└── secrets                      # Google Maps API key (DO NOT version!)
 ```
 
-## Pré-requisitos
+## Prerequisites
 
 - **Python 3.10+**
-- **IBM ILOG CPLEX** (solver de otimização) — necessário para o `docplex`
-- Chave da **API Google Maps** (para georreferenciamento na Etapa 1)
+- **IBM ILOG CPLEX** (optimization solver) — required by `docplex`
+- **Google Maps API** key (for geocoding in Step 1)
 
-## Instalação
+## Installation
 
 ```bash
-# Clonar o repositório
-git clone <url-do-repositorio>
+# Clone the repository
+git clone <repository-url>
 cd VRPTW
 
-# Criar ambiente virtual (recomendado)
+# Create a virtual environment (recommended)
 python -m venv .venv
 source .venv/bin/activate   # Linux/macOS
 # .venv\Scripts\activate    # Windows
 
-# Instalar dependências
+# Install dependencies
 pip install -r requirements.txt
 ```
 
-## Configuração
+## Configuration
 
-### Arquivo `secrets`
+### `secrets` file
 
-Crie um arquivo `secrets` na raiz do projeto (apenas para a Etapa 1):
+Create a `secrets` file at the project root (only needed for Step 1):
 
 ```
-GOOGLEMAPS_APIKEY=sua_chave_aqui
+GOOGLEMAPS_APIKEY=your_key_here
 ```
 
-> **Atenção:** este arquivo está no `.gitignore` e **não deve** ser versionado.
+> **Warning:** this file is in `.gitignore` and **must not** be versioned.
 
-### Parâmetros do modelo
+### Model parameters
 
-Todos os parâmetros configuráveis estão centralizados em `vrptw/config.py`:
+All configurable parameters are centralized in `vrptw/config.py`:
 
-| Parâmetro | Descrição | Padrão |
-|-----------|-----------|--------|
-| `VEHICLE_CAPACITY` | Capacidade do veículo (passageiros) | 50 |
-| `TIME_LIMIT` | Limite de tempo do solver (segundos) | 3600 |
-| `EARLIEST_DEPARTURE` | Início da janela de tempo (s) | 0 |
-| `LATEST_ARRIVAL` | Fim da janela de tempo (s) | 14400 |
-| `TIME_SLOT_DURATION` | Fatia de tempo (s) | 1800 |
-| `MIN_STUDENTS_PER_MUNICIPALITY` | Mín. alunos por município | 10 |
-| `MUNICIPALITY_SPEED_KMH` | Velocidades por município (km/h) | ver config.py |
+| Parameter | Description | Default |
+|-----------|-------------|---------|
+| `VEHICLE_CAPACITY` | Vehicle capacity (passengers) | 50 |
+| `TIME_LIMIT` | Solver time limit (seconds) | 3600 |
+| `EARLIEST_DEPARTURE` | Time window start (s) | 0 |
+| `LATEST_ARRIVAL` | Time window end (s) | 14400 |
+| `TIME_SLOT_DURATION` | Time slot duration (s) | 1800 |
+| `MIN_STUDENTS_PER_MUNICIPALITY` | Min. students per municipality | 10 |
+| `MUNICIPALITY_SPEED_KMH` | Speeds per municipality (km/h) | see config.py |
 
-## Execução
+## Usage
 
-Use o orquestrador `run_pipeline.py` na raiz do projeto:
+Use the orchestrator `run_pipeline.py` at the project root:
 
 ```bash
-# Pipeline completo (etapas 1 → 2 → 3 → 4)
+# Full pipeline (steps 1 → 2 → 3 → 4)
 python run_pipeline.py
 
-# Pular a geocodificação (dados já processados)
+# Skip geocoding (data already processed)
 python run_pipeline.py --skip-preprocess
 
-# Pular etapas 1 e 2 (pontos já gerados)
+# Skip steps 1 and 2 (points already generated)
 python run_pipeline.py --skip-preprocess --skip-points
 
-# Executar apenas o pós-processamento
+# Run only post-processing
 python run_pipeline.py --only-postprocess
 ```
 
-Alternativamente, cada etapa pode ser executada individualmente via `src/`:
+Alternatively, each step can be run individually via `src/`:
 
 ```bash
 python src/01_preprocess_data.py
-python src/02_generate_points.py --filter tec --shift ENTRADA
+python src/02_generate_points.py --filter tec --shift ENTRY
 python src/03_solve_vrptw.py
 python src/04_resequence_trips.py
 ```
 
-## Formulação Matemática
+## Mathematical Formulation
 
-O modelo PLIM segue a formulação clássica do VRPTW:
+The MILP model follows the classical VRPTW formulation:
 
-- **Variáveis de decisão:**
-  - `x[k,i,j]` ∈ {0,1} — veículo *k* viaja do nó *i* ao nó *j*
-  - `s[k,i]` ∈ ℝ — instante de início do serviço no nó *i*
-  - `q[k,i]` ∈ ℤ — carga atendida no nó *i* pelo veículo *k*
+- **Decision variables:**
+  - `x[k,i,j]` ∈ {0,1} — vehicle *k* travels from node *i* to node *j*
+  - `s[k,i]` ∈ ℝ — service start time at node *i*
+  - `q[k,i]` ∈ ℤ — load served at node *i* by vehicle *k*
 
-- **Função objetivo:** minimizar a distância total percorrida
+- **Objective function:** minimize total travel distance
 
-- **Restrições:** capacidade, atendimento obrigatório, conservação de fluxo,
-  janelas de tempo (Big-M), passagem única, eliminação de subciclos (planos de corte)
+- **Constraints:** capacity, mandatory service, flow conservation,
+  time windows (Big-M), single visit, subtour elimination (cutting planes)
 
-## Saída
+## Output
 
-- `output/csv/solucao_cvrptw_<instancia>_<tipo>.csv` — resumo por cenário
-- `output/csv/solucao_completa_cvrptw_<instancia>_<tipo>.csv` — detalhes por rota
-- `output/csv/solucao_ajustada.csv` — solução com veículos minimizados
-- `output/text/saida_cvrptw_<instancia>_<tipo>.txt` — log textual das rotas
+- `output/csv/solution_cvrptw_<instance>_<type>.csv` — summary per scenario
+- `output/csv/solution_completa_cvrptw_<instance>_<type>.csv` — details per route
+- `output/csv/solution_adjusted.csv` — solution with minimized vehicles
+- `output/text/solution_cvrptw_<instance>_<type>.txt` — textual route log
 
-## Autor
+## Author
 
 Vinícius Braga Diniz — contato.vbd@gmail.com
