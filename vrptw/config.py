@@ -102,10 +102,10 @@ DEFAULT_SPEED_KMH: float = 40.0
 INSTANCE_TYPES: list[str] = ["tec", "grad", "full"]
 
 #: Weekdays to process.
-WEEKDAYS: list[str] = ["seg", "ter", "qua", "qui", "sex", "sab"]
+WEEKDAYS: list[str] = ["MON", "TUE", "WED", "THU", "FRI", "SAT"]
 
 #: Shifts to process for each day.
-SHIFTS: list[str] = ["tarde", "noite", "fim"]
+SHIFTS: list[str] = ["AFTERNOON", "NIGHT", "LATE"]
 
 #: Route types (trip direction).
 ROUTE_TYPES: list[str] = ["ENTRY"]

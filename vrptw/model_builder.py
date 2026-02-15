@@ -154,7 +154,7 @@ def _build_constraints(
     for i in city_data.index[1:]:
         model.add_constraint(
             model.sum(load[k, i] for k in range(num_vehicles))
-            == city_data.loc[i, f"demanda_{shift}"],
+            == city_data.loc[i, f"{shift}_DEMAND"],
             f"Demand_Client_{i}",
         )
 

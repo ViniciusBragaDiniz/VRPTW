@@ -175,7 +175,7 @@ def partition_demand(
     vehicles to make staggered trips.
 
     Args:
-        shift: Time of day shift (``'manha'``, ``'tarde'``, ``'noite'``).
+        shift: Time of day shift (``'manha'``, ``'AFTERNOON'``, ``'NIGHT'``).
         model_data: DataFrame with demand and time window data.
         capacity: Maximum capacity of each vehicle.
         time_slot: Duration of each time slot (seconds).
@@ -183,7 +183,7 @@ def partition_demand(
     Returns:
         Expanded DataFrame with additional rows for each time iteration.
     """
-    demand_col = f"demanda_{shift}"
+    demand_col = f"{shift}_DEMAND"
     data = model_data.copy()
 
     # Number of possible splits within the time horizon
@@ -193,11 +193,11 @@ def partition_demand(
 
     # Trips needed per municipality (demand / capacity)
     trips_needed = (
-        data.groupby("cd_municipio")[demand_col].sum() / capacity
+        data.groupby("MUNICIPALITY_ID")[demand_col].sum() / capacity
     ).apply(math.ceil)
 
     # Municipalities whose total demand fits in a single vehicle
-    single_vehicle = data.groupby("cd_municipio")[demand_col].sum() <= capacity
+    single_vehicle = data.groupby("MUNICIPALITY_ID")[demand_col].sum() <= capacity
 
     data["iteracao"] = 0
     data.fillna(0, inplace=True)
@@ -205,7 +205,7 @@ def partition_demand(
     extra_rows: list[pd.DataFrame] = []
 
     for i in range(1, len(data)):
-        municipality = data["cd_municipio"][i]
+        municipality = data["MUNICIPALITY_ID"][i]
 
         if possible_splits[i] <= 0 or single_vehicle[municipality]:
             continue
@@ -256,7 +256,7 @@ def partition_demand_failed_instances(
     Returns:
         Expanded DataFrame with re-partitioned demand per iteration.
     """
-    demand_col = f"demanda_{shift}"
+    demand_col = f"{shift}_DEMAND"
     data = model_data.copy()
 
     possible_splits = math.floor(
@@ -264,20 +264,20 @@ def partition_demand_failed_instances(
     )
 
     trips_needed = (
-        data.groupby("cd_municipio")[demand_col].sum() / capacity
+        data.groupby("MUNICIPALITY_ID")[demand_col].sum() / capacity
     ).apply(math.ceil)
 
     data["iteracao"] = 0
     data.fillna(0, inplace=True)
 
-    for municipality in data["cd_municipio"].unique():
+    for municipality in data["MUNICIPALITY_ID"].unique():
         needed = min(possible_splits, trips_needed[municipality])
 
         for iteration in range(needed - 1):
             served = 0
             aux = data.copy()
             idx = aux[
-                (aux["cd_municipio"] == municipality) & (aux["iteracao"] == iteration)
+                (aux["MUNICIPALITY_ID"] == municipality) & (aux["iteracao"] == iteration)
             ].index
 
             for i in idx:
@@ -292,7 +292,7 @@ def partition_demand_failed_instances(
             aux.loc[complementary_idx, demand_col] = 0
             data[demand_col] = data[demand_col] - aux[demand_col]
 
-            aux = aux[aux["cd_municipio"] == municipality].copy()
+            aux = aux[aux["MUNICIPALITY_ID"] == municipality].copy()
             aux["tempo_preparo"] = time_slot * (iteration + 1)
             aux["iteracao"] = iteration + 1
             data = pd.concat([data, aux], ignore_index=True)

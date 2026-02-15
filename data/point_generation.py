@@ -175,13 +175,13 @@ def generate_bus_stops(
         df_students: DataFrame with student data (output from
             preprocessing).
         student_filter: Student type filter (``"full"`` for all,
-            ``"tec"`` for technical, ``"grad"`` for undergraduate).
+            ``"tec"`` for technical, ``"undergrad"`` for undergraduate).
         shift: Shift to consider (``"ENTRY"`` or ``"EXIT"``).
 
     Returns:
-        DataFrame with columns ``lon``, ``lat``, ``cd_municipio``,
-        ``demanda_manha``, ``demanda_tarde``, ``demanda_noite``,
-        ``demanda_fim`` and ``DAYOFTHEWEEK``.
+        DataFrame with columns ``lon``, ``lat``, ``MUNICIPALITY_ID``,
+        ``MORNING_DEMAND``, ``AFTERNOON_DEMAND``, ``NIGHT_DEMAND``,
+        ``LATE_DEMAND`` and ``DAYOFTHEWEEK``.
     """
     logger.info("Generating bus stops: filter=%s, shift=%s", student_filter, shift)
 
@@ -229,28 +229,28 @@ def generate_bus_stops(
             mun_students[["LATITUDE", "LONGITUDE"]], optimal_k, n_init=KMEANS_N_INIT,
         )
         mun_students = mun_students.copy()
-        mun_students["class"] = classes
+        mun_students["CLUSTER"] = classes
 
         merged = df_students.merge(
-            mun_students[["STUDENT_ID", "class"]], how="left", on="STUDENT_ID",
+            mun_students[["STUDENT_ID", "CLUSTER"]], how="left", on="STUDENT_ID",
         )
 
         for day in weekdays:
             centroids_df = pd.DataFrame(centroids, columns=["lon", "lat"])
-            centroids_df["cd_municipio"] = municipality
+            centroids_df["MUNICIPALITY_ID"] = municipality
 
             day_filter = merged["DAYOFTHEWEEK"] == day
             shift_col = f"{shift}_SHIFT"
 
             for demand_name, shift_value in [
-                ("demanda_manha", "manhã"),
-                ("demanda_tarde", "tarde"),
-                ("demanda_noite", "noite"),
-                ("demanda_fim", "fim"),
+                ("MORNING_DEMAND", "MORNING"),
+                ("AFTERNOON_DEMAND", "AFTERNOON"),
+                ("NIGHT_DEMAND", "NIGHT"),
+                ("LATE_DEMAND", "LATE"),
             ]:
                 demand = (
                     merged[(merged[shift_col] == shift_value) & day_filter]
-                    .groupby("class")[shift_col]
+                    .groupby("CLUSTER")[shift_col]
                     .count()
                 )
                 centroids_df.loc[demand.index, demand_name] = demand

@@ -81,7 +81,7 @@ def minimize_vehicles() -> pd.DataFrame:
     full_solution = pd.concat([sol_ENTRY, solution_exit], ignore_index=True)
 
     # Aggregated summary per trip
-    group_cols = ["tipo_de_rota", "instancia", "DAYOFTHEWEEK", "turno", "cd_municipio"]
+    group_cols = ["tipo_de_rota", "INSTANCE", "DAYOFTHEWEEK", "turno", "MUNICIPALITY_ID"]
     adjusted = full_solution.groupby(group_cols).agg(
         id_veiculo=("id_veiculo", "nunique"),
         tempo_viagem=("tempo_viagem", "sum"),
