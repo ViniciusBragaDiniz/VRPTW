@@ -58,7 +58,7 @@ def step_1_preprocess() -> None:
 
     DATA_PROCESSED_DIR.mkdir(parents=True, exist_ok=True)
     for name, df in results.items():
-        output_path = DATA_PROCESSED_DIR / f"{name}.csv"
+        output_path = DATA_PROCESSED_DIR / "info" / f"{name}.csv"
         df.to_csv(output_path, index=False)
         logger.info("  -> %d records saved to %s", len(df), output_path)
 
@@ -73,7 +73,7 @@ def step_2_generate_points() -> None:
     _step_banner(2, "Bus stop point generation")
     from data.point_generation import generate_bus_stops
 
-    students_path = DATA_PROCESSED_DIR / "info_students.csv"
+    students_path = DATA_PROCESSED_DIR / "info" / "info_students.csv"
     if not students_path.exists():
         raise FileNotFoundError(
             f"Student file not found: {students_path}. "
@@ -88,7 +88,7 @@ def step_2_generate_points() -> None:
             df = generate_bus_stops(
                 df_students, student_filter=instance, shift=route_type,
             )
-            output_path = DATA_PROCESSED_DIR / f"pontos_de_onibus_{instance}_{route_type}.csv"
+            output_path = DATA_PROCESSED_DIR / "bus_stops" / f"{instance}_{route_type}.csv"
             df.to_csv(output_path, index=False)
             logger.info("  -> %d points saved to %s", len(df), output_path)
 

@@ -34,6 +34,7 @@ from time import sleep
 import googlemaps
 import pandas as pd
 import requests
+import glob
 
 from vrptw.config import DATA_RAW_DIR, PROJECT_ROOT
 
@@ -192,22 +193,18 @@ def preprocess_student_data() -> dict[str, pd.DataFrame]:
     """
     logger.info("Starting student data preprocessing")
 
-    # --- Load shift data ---
-    # Load and consolidate shift files (turno_emec, turno_enca, turno_epro, turno_medio)
-    df_turno_emec = pd.read_csv(DATA_RAW_DIR / "turno_emec.csv")
-    df_turno_enca = pd.read_csv(DATA_RAW_DIR / "turno_enca.csv")
-    df_turno_epro = pd.read_csv(DATA_RAW_DIR / "turno_epro.csv")
-    df_turno_medio = pd.read_csv(DATA_RAW_DIR / "turno_medio.csv")
-    df_shifts = pd.concat([df_turno_emec, df_turno_enca, df_turno_epro, df_turno_medio], ignore_index=True)
+    shift_files = glob.glob(str(DATA_RAW_DIR / "shifts" / "*.csv"))
+    df_shifts_list = [pd.read_csv(f) for f in shift_files]
+    df_shifts = pd.concat(df_shifts_list, ignore_index=True)
 
     # --- Load and unify student data ---
-    df_medio = pd.read_csv(DATA_RAW_DIR / "info_tec.csv")
-    df_medio["STUDENT_ID"] = "tec_" + df_medio.index.astype(str)
+    df_tec = pd.read_csv(DATA_RAW_DIR / "info" / "info_tec.csv")
+    df_tec["STUDENT_ID"] = "tec_" + df_tec.index.astype(str)
 
-    df_grad = pd.read_csv(DATA_RAW_DIR / "info_undergrad.csv")
-    df_grad["STUDENT_ID"] = "grad_" + df_grad.index.astype(str)
+    df_undergrad = pd.read_csv(DATA_RAW_DIR / "info" / "info_undergrad.csv")
+    df_undergrad["STUDENT_ID"] = "undergrad_" + df_undergrad.index.astype(str)
 
-    df = pd.concat([df_medio, df_grad], ignore_index=True)
+    df = pd.concat([df_tec, df_undergrad], ignore_index=True)
 
     # --- Filter Rio de Janeiro zip codes (start with '2') ---
     valid_ceps = df["POSTAL_CODE"].apply(lambda x: str(x)[0] == "2")
@@ -243,7 +240,7 @@ def preprocess_student_data() -> dict[str, pd.DataFrame]:
 
     # Split by level
     df_tec = df[df["STUDENT_ID"].str.contains("tec")].drop_duplicates(subset="STUDENT_ID")
-    df_undergrad = df[df["STUDENT_ID"].str.contains("grad")].drop_duplicates(subset="STUDENT_ID")
+    df_undergrad = df[df["STUDENT_ID"].str.contains("undergrad")].drop_duplicates(subset="STUDENT_ID")
 
     logger.info("Preprocessing complete. %d students processed.", len(df))
     return {
