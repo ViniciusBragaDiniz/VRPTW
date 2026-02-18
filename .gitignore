@@ -1,0 +1,39 @@
+# Dados e arquivos de saída
+*.csv
+*.xlsx
+*.txt
+
+# Chaves e segredos
+secrets
+.env
+/.env/*
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.egg-info/
+dist/
+build/
+.venv/
+venv/
+
+# Imagens e gráficos gerados
+*.png
+
+# Arquivos GIS
+*.zip
+*.cpg
+*.dbf
+*.prj
+*.shp
+*.shx
+
+# Temporários
+temp/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
