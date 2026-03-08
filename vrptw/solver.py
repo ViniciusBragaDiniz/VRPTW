@@ -205,6 +205,22 @@ def _solve_with_subtour_elimination(
 
 
 # ---------------------------------------------------------------------------
+# Helpers
+# ---------------------------------------------------------------------------
+
+def _get_mip_gap(model: Model) -> float | None:
+    """Return the MIP relative gap from the last solve, or ``None`` if unavailable."""
+    try:
+        details = model.solve_details
+        gap = details.mip_relative_gap
+        if gap is not None and math.isfinite(gap):
+            return gap
+    except Exception:  # noqa: BLE001
+        pass
+    return None
+
+
+# ---------------------------------------------------------------------------
 # Scenario processing (municipality x iteration)
 # ---------------------------------------------------------------------------
 
@@ -297,15 +313,18 @@ def _process_scenario(
     else:
         output_file.write("No solution found within the defined time limit\n")
 
+    gap = _get_mip_gap(model)
     summary = {
         "num_pontos": num_spots,
         "num_veiculos": num_vehicles,
         "tempo_exec": elapsed,
         "objective_value": model.objective_value if success else None,
+        "gap": gap if gap is not None else 0.0,
     }
 
     output_file.write(f"Objective Function Cost: {model.objective_value}\n")
     output_file.write(f"Total Execution Time: {elapsed:.2f}s\n\n\n")
+
     logger.info("Objective: %s | Time: %.2fs", model.objective_value, elapsed)
 
     del model
