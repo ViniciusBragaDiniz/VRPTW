@@ -318,14 +318,14 @@ def _process_scenario(
         "num_points": num_spots,
         "num_vehicles": num_vehicles,
         "exec_time": elapsed,
-        "objective_value": model.objective_value if success else None,
+        "travel_time": model.travel_time if success else None,
         "gap": gap if gap is not None else 0.0,
     }
 
-    output_file.write(f"Objective Function Cost: {model.objective_value}\n")
+    output_file.write(f"Objective Function Cost: {model.travel_time}\n")
     output_file.write(f"Total Execution Time: {elapsed:.2f}s\n\n\n")
 
-    logger.info("Objective: %s | Time: %.2fs", model.objective_value, elapsed)
+    logger.info("Objective: %s | Time: %.2fs", model.travel_time, elapsed)
 
     del model
     gc.collect()
@@ -494,6 +494,6 @@ def _save_results(
         )
     if details:
         pd.DataFrame(details).to_csv(
-            OUTPUT_CSV_DIR / f"full_solution_cvrptw_{instance_name}_{route_type}.csv",
+            OUTPUT_CSV_DIR / f"detailed_solution_cvrptw_{instance_name}_{route_type}.csv",
             index=False,
         )

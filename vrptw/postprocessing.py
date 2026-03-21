@@ -72,10 +72,10 @@ def minimize_vehicles() -> pd.DataFrame:
     logger.info("Starting vehicle minimization")
 
     # Load solutions
-    sol_ENTRY = pd.read_csv(OUTPUT_CSV_DIR / "full_solution_cvrptw_full_ENTRY.csv")
+    sol_ENTRY = pd.read_csv(OUTPUT_CSV_DIR / "detailed_solution_cvrptw_full_ENTRY.csv")
     sol_ENTRY["route_type"] = "ENTRY"
 
-    solution_exit = pd.read_csv(OUTPUT_CSV_DIR / "full_solution_cvrptw_full_EXIT.csv")
+    solution_exit = pd.read_csv(OUTPUT_CSV_DIR / "detailed_solution_cvrptw_full_EXIT.csv")
     solution_exit["route_type"] = "EXIT"
 
     full_solution = pd.concat([sol_ENTRY, solution_exit], ignore_index=True)
