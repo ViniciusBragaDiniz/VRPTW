@@ -196,7 +196,6 @@ def preprocess_student_data() -> dict[str, pd.DataFrame]:
     df_shifts_list = [pd.read_csv(f) for f in shift_files]
     df_shifts = pd.concat(df_shifts_list, ignore_index=True)
 
-    # INSERT_YOUR_CODE
     shift_map_path = DATA_RAW_DIR / "aux" / "shift_map.csv"
     df_shift_map = pd.read_csv(shift_map_path)
     df_shifts = df_shifts.merge(df_shift_map, how="left", on=["COURSE","CURRENT_PERIOD","DAYOFTHEWEEK","ENTRY_SHIFT"])
@@ -210,8 +209,6 @@ def preprocess_student_data() -> dict[str, pd.DataFrame]:
 
     df = pd.concat([df_tec, df_undergrad], ignore_index=True)
 
-    # cONTINUAR DAQUI AMANHÃ, VOCÊ PPRECISA CALCULAR OS CEPS E AS COORDENADS
-    # APENAS DOS ESTUDANTES QUE NÃO TEM REGISTRO DISSO NO PROCESSED
     # --- Filter Rio de Janeiro zip codes (start with '2') ---
     valid_ceps = df["POSTAL_CODE"].apply(lambda x: str(x)[0] == "2")
     logger.info("Invalid zip codes (outside RJ): %d", len(df) - valid_ceps.sum())

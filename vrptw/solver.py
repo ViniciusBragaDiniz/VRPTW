@@ -35,10 +35,13 @@ from .config import (
     EARLIEST_DEPARTURE,
     INSTANCE_TYPES,
     LATEST_ARRIVAL,
+    MIP_GAP,
     OUTPUT_CSV_DIR,
     OUTPUT_TEXT_DIR,
     ROUTE_TYPES,
     SHIFTS,
+    SOLVER_LOG_OUTPUT,
+    SOLVER_THREADS,
     TIME_LIMIT,
     TIME_SLOT_DURATION,
     VEHICLE_CAPACITY,
@@ -161,7 +164,7 @@ def _solve_with_subtour_elimination(
         if warm_start is not None:
             model.add_mip_start(warm_start)
 
-        solution_obj = model.solve(log_output=False)
+        solution_obj = model.solve(log_output=SOLVER_LOG_OUTPUT)
         if solution_obj is None:
             elapsed = time.time() - start
             logger.warning("Solver returned None after %.1fs", elapsed)
@@ -266,6 +269,8 @@ def _process_scenario(
     # Build model
     model = Model("vrptw")
     model.time_limit = TIME_LIMIT
+    model.parameters.mip.tolerances.mipgap = MIP_GAP
+    model.parameters.threads = SOLVER_THREADS
 
     model_data = {
         "data": iter_data,
@@ -318,14 +323,14 @@ def _process_scenario(
         "num_points": num_spots,
         "num_vehicles": num_vehicles,
         "exec_time": elapsed,
-        "travel_time": model.travel_time if success else None,
+        "travel_time": model.objective_value if success else None,
         "gap": gap if gap is not None else 0.0,
     }
 
-    output_file.write(f"Objective Function Cost: {model.travel_time}\n")
+    output_file.write(f"Objective Function Cost: {model.objective_value}\n")
     output_file.write(f"Total Execution Time: {elapsed:.2f}s\n\n\n")
 
-    logger.info("Objective: %s | Time: %.2fs", model.travel_time, elapsed)
+    logger.info("Objective: %s | Time: %.2fs", model.objective_value, elapsed)
 
     del model
     gc.collect()

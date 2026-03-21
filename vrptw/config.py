@@ -42,6 +42,17 @@ VEHICLE_CAPACITY: int = 50
 #: CPLEX solver time limit (seconds).
 TIME_LIMIT: int = 3600
 
+#: Acceptable MIP relative gap (0.02 = 2%).
+#: The solver stops early when the gap between the best integer solution and
+#: the best relaxation bound is within this tolerance.
+MIP_GAP: float = 0.00
+
+#: Number of threads CPLEX may use for parallel branch-and-bound.
+SOLVER_THREADS: int = 4
+
+#: Whether the CPLEX engine log is written to stdout during the solve.
+SOLVER_LOG_OUTPUT: bool = True
+
 #: Time window start (seconds from midnight).
 #: Example: 0 = midnight.
 EARLIEST_DEPARTURE: int = 0

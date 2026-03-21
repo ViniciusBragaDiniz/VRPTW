@@ -76,13 +76,24 @@ def calculate_distances(
 ) -> tuple[dict[int, dict[int, float]], float]:
     """Build the travel time matrix between all pairs of points.
 
-    For each pair (i, j) with i != j, calculates the Haversine distance in
-    meters and converts it to travel time (seconds) using the average speed
-    configured for the municipality. The diagonal (i == i) receives ``inf``.
+    For each pair ``(i, j)`` with ``i != j``, calculates the Haversine
+    distance in meters and converts it to travel time (seconds) using
+    the average speed configured for the municipality. The diagonal
+    ``(i == i)`` receives ``inf``.
 
-    Also calculates the Big-M value needed for the time window constraints
-    of the model (the largest value of ``latest_arrival[i] + travel_time[i][j]
-    - (earliest_departure[i] + time_slot * iteration)``).
+    **Big-M derivation** – The Big-M constant is used in the time-window
+    constraints to linearise the implication
+    ``x[k,i,j] = 1  ⟹  s[k,i] + t[i,j] ≤ s[k,j]``.
+    A valid (tight) Big-M must be at least as large as the maximum
+    difference between the service-start bounds when a arc is *inactive*.
+    We compute it as::
+
+        M = max_{i,j}  latest_arrival[i] + travel_time[i][j]
+                        − (earliest_departure[i] + time_slot × iteration)
+
+    This is the tightest data-driven upper bound that keeps the
+    constraint inactive whenever ``x[k,i,j] = 0``, avoiding the
+    numerical issues of an arbitrarily large constant (see OR_GUIDE §4.4).
 
     Args:
         data: DataFrame indexed by ``centroid_id`` with columns ``lat``,
@@ -123,6 +134,11 @@ def calculate_distances(
                 - (data["earliest_departure"][i] + time_slot * iteration)
             )
             big_m = max(big_m, candidate)
+
+    logger.info(
+        "Distance matrix built for %s (iter=%d): %d nodes, Big-M=%.1f",
+        municipality, iteration, len(indices), big_m,
+    )
 
     return distance_matrix, big_m
 
