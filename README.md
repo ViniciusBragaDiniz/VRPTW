@@ -14,7 +14,7 @@ VRPTW/
 │   ├── preprocessing.py         #   Geocoding and student data processing
 │   ├── point_generation.py      #   K-means + elbow method
 │   ├── raw/                     #   Raw input data (student CSVs)
-│   └── processed/               #   Processed data (turno_resumo.csv, etc.)
+│   └── processed/               #   Processed data (SHIFT_PROCESSED.csv, etc.)
 ├── vrptw/                       # Optimization model
 │   ├── __init__.py
 │   ├── config.py                #   Centralized parameters (change here!)
@@ -127,7 +127,7 @@ The MILP model follows the classical VRPTW formulation:
 ## Output
 
 - `output/csv/solution_cvrptw_<instance>_<type>.csv` — summary per scenario
-- `output/csv/solution_completa_cvrptw_<instance>_<type>.csv` — details per route
+- `output/csv/full_solution_cvrptw_<instance>_<type>.csv` — details per route
 - `output/csv/solution_adjusted.csv` — solution with minimized vehicles
 - `output/text/solution_cvrptw_<instance>_<type>.txt` — textual route log
 

@@ -58,8 +58,8 @@ def _build_variables(
     # s[k,i] - service start time at node i by vehicle k
     service = {
         (k, i): model.continuous_var(
-            lb=city_data["tempo_preparo"][i],
-            ub=city_data["tempo_entrega"][i],
+            lb=city_data["earliest_departure"][i],
+            ub=city_data["latest_arrival"][i],
             name=f"service_start_{k}_{i}",
         )
         for k in range(num_vehicles)
@@ -88,9 +88,9 @@ def _build_objective(model: Model, travels: dict, model_data: dict) -> None:
     Args:
         model: DOCPLEX model instance.
         travels: Travel variable dictionary ``(k, i, j)``.
-        model_data: Dictionary with ``distancia`` (time matrix) and ``data``.
+        model_data: Dictionary with ``distance`` (time matrix) and ``data``.
     """
-    distances = model_data["distancia"]
+    distances = model_data["distance"]
     city_data = model_data["data"]
     num_vehicles = model_data["necessary_vehicles"]
 
@@ -137,10 +137,10 @@ def _build_constraints(
     capacity = model_data["capacity"]
     depot = model_data["depot"]
     city_data = model_data["data"]
-    shift = model_data["turno"]
+    shift = model_data["SHIFT"]
     num_spots = model_data["num_spots"]
     num_vehicles = model_data["necessary_vehicles"]
-    distances = model_data["distancia"]
+    distances = model_data["distance"]
     big_m = model_data["big_m"]
 
     # 1. Total capacity per vehicle

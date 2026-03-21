@@ -70,12 +70,12 @@ def _build_depot_row(day: str, iteration: int = 0) -> dict:
         "MORNING_DEMAND": [0],
         "AFTERNOON_DEMAND": [0],
         "NIGHT_DEMAND": [0],
-        "tempo_preparo": EARLIEST_DEPARTURE + TIME_SLOT_DURATION * iteration,
-        "tempo_entrega": LATEST_ARRIVAL,
+        "earliest_departure": EARLIEST_DEPARTURE + TIME_SLOT_DURATION * iteration,
+        "latest_arrival": LATEST_ARRIVAL,
         "MUNICIPALITY_ID": "CEFET",
         "DAYOFTHEWEEK": day,
         "centroid_id": 0,
-        "iteracao": iteration,
+        "iteration": iteration,
     }
 
 
@@ -93,7 +93,7 @@ def _prepare_iteration_data(
 
     Args:
         day_data: DataFrame with current day data.
-        shift: Shift (``'manha'``, ``'AFTERNOON'``, ``'NIGHT'``, ``'LATE'``).
+        shift: Shift (``'MORNING'``, ``'AFTERNOON'``, ``'NIGHT'``, ``'LATE'``).
         day: Abbreviated weekday name.
         municipality: Municipality name.
         iteration: Time iteration.
@@ -121,7 +121,7 @@ def _prepare_iteration_data(
     iter_data = pd.concat(
         [pd.DataFrame.from_dict(depot_row), mun_data], ignore_index=True,
     )
-    iter_data = iter_data[iter_data["iteracao"] == iteration]
+    iter_data = iter_data[iter_data["iteration"] == iteration]
     iter_data = iter_data.set_index("centroid_id").sort_index()
 
     if iter_data.empty:
@@ -272,10 +272,10 @@ def _process_scenario(
         "num_spots": num_spots,
         "necessary_vehicles": num_vehicles,
         "capacity": VEHICLE_CAPACITY,
-        "iteracao": iteration,
-        "fatia_tempo": TIME_SLOT_DURATION,
-        "turno": shift,
-        "distancia": distance_matrix,
+        "iteration": iteration,
+        "time_slot": TIME_SLOT_DURATION,
+        "SHIFT": shift,
+        "distance": distance_matrix,
         "big_m": big_m,
         "depot": DEPOT_INDEX,
     }
@@ -304,9 +304,9 @@ def _process_scenario(
                     re.findall(r"\d+\.?\d*", route_str.split("|")[-1])[0]
                 )
                 detail_list.append({
-                    "id_veiculo": k,
-                    "num_pontos": len(routes.get(k, {})),
-                    "tempo_viagem": travel_time,
+                    "vehicle_id": k,
+                    "num_points": len(routes.get(k, {})),
+                    "travel_time": travel_time,
                 })
                 output_file.write(route_str)
                 logger.info(route_str.strip())
@@ -315,9 +315,9 @@ def _process_scenario(
 
     gap = _get_mip_gap(model)
     summary = {
-        "num_pontos": num_spots,
-        "num_veiculos": num_vehicles,
-        "tempo_exec": elapsed,
+        "num_points": num_spots,
+        "num_vehicles": num_vehicles,
+        "exec_time": elapsed,
         "objective_value": model.objective_value if success else None,
         "gap": gap if gap is not None else 0.0,
     }
@@ -378,9 +378,9 @@ def solve_all_instances() -> None:
                 for day in WEEKDAYS:
                     day_data = instance_data[instance_data["DAYOFTHEWEEK"] == day].copy()
                     day_data = day_data.reset_index(drop=True)
-                    day_data["tempo_preparo"] = EARLIEST_DEPARTURE
-                    day_data["tempo_entrega"] = LATEST_ARRIVAL
-                    day_data["iteracao"] = 0
+                    day_data["earliest_departure"] = EARLIEST_DEPARTURE
+                    day_data["latest_arrival"] = LATEST_ARRIVAL
+                    day_data["iteration"] = 0
 
                     for shift in SHIFTS:
                         _write_shift_header(output_file, shift)
@@ -398,7 +398,7 @@ def solve_all_instances() -> None:
                                 logger.info("Skipping instance: %s", skip_key)
                                 continue
 
-                            for iteration in shift_data["iteracao"].unique():
+                            for iteration in shift_data["iteration"].unique():
                                 _write_iteration_header(
                                     output_file, iteration, municipality,
                                 )
@@ -423,9 +423,9 @@ def solve_all_instances() -> None:
                                     base_info = {
                                         "INSTANCE": instance_name,
                                         "DAYOFTHEWEEK": day,
-                                        "turno": shift,
+                                        "SHIFT": shift,
                                         "MUNICIPALITY_ID": municipality,
-                                        "iteracao": iteration,
+                                        "iteration": iteration,
                                     }
                                     summaries.append({**base_info, **summary})
 
@@ -494,6 +494,6 @@ def _save_results(
         )
     if details:
         pd.DataFrame(details).to_csv(
-            OUTPUT_CSV_DIR / f"solution_completa_cvrptw_{instance_name}_{route_type}.csv",
+            OUTPUT_CSV_DIR / f"full_solution_cvrptw_{instance_name}_{route_type}.csv",
             index=False,
         )

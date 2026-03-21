@@ -81,12 +81,12 @@ def calculate_distances(
     configured for the municipality. The diagonal (i == i) receives ``inf``.
 
     Also calculates the Big-M value needed for the time window constraints
-    of the model (the largest value of ``tempo_entrega[i] + travel_time[i][j]
-    - (tempo_preparo[i] + time_slot * iteration)``).
+    of the model (the largest value of ``latest_arrival[i] + travel_time[i][j]
+    - (earliest_departure[i] + time_slot * iteration)``).
 
     Args:
         data: DataFrame indexed by ``centroid_id`` with columns ``lat``,
-            ``lon``, ``tempo_preparo``, and ``tempo_entrega``.
+            ``lon``, ``earliest_departure``, and ``latest_arrival``.
         municipality: Standardized municipality name (for speed selection).
         iteration: Current time iteration (used in Big-M calculation).
         time_slot: Duration of each time slot in seconds.
@@ -118,9 +118,9 @@ def calculate_distances(
             distance_matrix[i][j] = travel_time
 
             candidate = (
-                data["tempo_entrega"][i]
+                data["latest_arrival"][i]
                 + travel_time
-                - (data["tempo_preparo"][i] + time_slot * iteration)
+                - (data["earliest_departure"][i] + time_slot * iteration)
             )
             big_m = max(big_m, candidate)
 
@@ -175,7 +175,7 @@ def partition_demand(
     vehicles to make staggered trips.
 
     Args:
-        shift: Time of day shift (``'manha'``, ``'AFTERNOON'``, ``'NIGHT'``).
+        shift: Time of day shift (``'MORNING'``, ``'AFTERNOON'``, ``'NIGHT'``).
         model_data: DataFrame with demand and time window data.
         capacity: Maximum capacity of each vehicle.
         time_slot: Duration of each time slot (seconds).
@@ -188,7 +188,7 @@ def partition_demand(
 
     # Number of possible splits within the time horizon
     possible_splits = (
-        (data["tempo_entrega"] - data["tempo_preparo"]) / time_slot
+        (data["latest_arrival"] - data["earliest_departure"]) / time_slot
     ).apply(math.floor)
 
     # Trips needed per municipality (demand / capacity)
@@ -199,7 +199,7 @@ def partition_demand(
     # Municipalities whose total demand fits in a single vehicle
     single_vehicle = data.groupby("MUNICIPALITY_ID")[demand_col].sum() <= capacity
 
-    data["iteracao"] = 0
+    data["iteration"] = 0
     data.fillna(0, inplace=True)
 
     extra_rows: list[pd.DataFrame] = []
@@ -221,8 +221,8 @@ def partition_demand(
             alloc = min(math.ceil(split_demand), remaining)
             row[demand_col] = alloc
             remaining -= alloc
-            row["tempo_preparo"] += time_slot * iteration
-            row["iteracao"] = int(iteration)
+            row["earliest_departure"] += time_slot * iteration
+            row["iteration"] = int(iteration)
             extra_rows.append(pd.DataFrame(row).T)
 
     if not extra_rows:
@@ -230,7 +230,7 @@ def partition_demand(
 
     data = pd.concat(
         [data] + extra_rows, ignore_index=True
-    ).sort_values("iteracao")
+    ).sort_values("iteration")
     data = data[data[demand_col] > 0].reset_index(drop=True)
     return data
 
@@ -260,14 +260,14 @@ def partition_demand_failed_instances(
     data = model_data.copy()
 
     possible_splits = math.floor(
-        (data["tempo_entrega"].iloc[0] - data["tempo_preparo"].iloc[0]) / time_slot
+        (data["latest_arrival"].iloc[0] - data["earliest_departure"].iloc[0]) / time_slot
     )
 
     trips_needed = (
         data.groupby("MUNICIPALITY_ID")[demand_col].sum() / capacity
     ).apply(math.ceil)
 
-    data["iteracao"] = 0
+    data["iteration"] = 0
     data.fillna(0, inplace=True)
 
     for municipality in data["MUNICIPALITY_ID"].unique():
@@ -277,7 +277,7 @@ def partition_demand_failed_instances(
             served = 0
             aux = data.copy()
             idx = aux[
-                (aux["MUNICIPALITY_ID"] == municipality) & (aux["iteracao"] == iteration)
+                (aux["MUNICIPALITY_ID"] == municipality) & (aux["iteration"] == iteration)
             ].index
 
             for i in idx:
@@ -293,8 +293,8 @@ def partition_demand_failed_instances(
             data[demand_col] = data[demand_col] - aux[demand_col]
 
             aux = aux[aux["MUNICIPALITY_ID"] == municipality].copy()
-            aux["tempo_preparo"] = time_slot * (iteration + 1)
-            aux["iteracao"] = iteration + 1
+            aux["earliest_departure"] = time_slot * (iteration + 1)
+            aux["iteration"] = iteration + 1
             data = pd.concat([data, aux], ignore_index=True)
 
     return data

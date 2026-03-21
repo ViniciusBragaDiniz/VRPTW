@@ -72,19 +72,19 @@ def minimize_vehicles() -> pd.DataFrame:
     logger.info("Starting vehicle minimization")
 
     # Load solutions
-    sol_ENTRY = pd.read_csv(OUTPUT_CSV_DIR / "solution_completa_cvrptw_full_ENTRY.csv")
-    sol_ENTRY["tipo_de_rota"] = "ENTRY"
+    sol_ENTRY = pd.read_csv(OUTPUT_CSV_DIR / "full_solution_cvrptw_full_ENTRY.csv")
+    sol_ENTRY["route_type"] = "ENTRY"
 
-    solution_exit = pd.read_csv(OUTPUT_CSV_DIR / "solution_completa_cvrptw_full_EXIT.csv")
-    solution_exit["tipo_de_rota"] = "EXIT"
+    solution_exit = pd.read_csv(OUTPUT_CSV_DIR / "full_solution_cvrptw_full_EXIT.csv")
+    solution_exit["route_type"] = "EXIT"
 
     full_solution = pd.concat([sol_ENTRY, solution_exit], ignore_index=True)
 
     # Aggregated summary per trip
-    group_cols = ["tipo_de_rota", "INSTANCE", "DAYOFTHEWEEK", "turno", "MUNICIPALITY_ID"]
+    group_cols = ["route_type", "INSTANCE", "DAYOFTHEWEEK", "SHIFT", "MUNICIPALITY_ID"]
     adjusted = full_solution.groupby(group_cols).agg(
-        id_veiculo=("id_veiculo", "nunique"),
-        tempo_viagem=("tempo_viagem", "sum"),
+        vehicle_id=("vehicle_id", "nunique"),
+        travel_time=("travel_time", "sum"),
     )
 
     # Identify unique trips
@@ -98,10 +98,10 @@ def minimize_vehicles() -> pd.DataFrame:
         trip_data = indexed_solution.loc[trip_key]
 
         # Skip single-vehicle trips (no reduction possible)
-        if trip_data["id_veiculo"].nunique() == 1:
+        if trip_data["vehicle_id"].nunique() == 1:
             continue
 
-        travel_times = trip_data["tempo_viagem"].tolist()
+        travel_times = trip_data["travel_time"].tolist()
         partitions = generate_partitions(travel_times)
 
         # Search for the first valid partition (already sorted smallest to largest)
@@ -111,7 +111,7 @@ def minimize_vehicles() -> pd.DataFrame:
                 for subset in partition
             )
             if valid:
-                adjusted.loc[trip_key, "id_veiculo"] = len(partition)
+                adjusted.loc[trip_key, "vehicle_id"] = len(partition)
                 adjusted_count += 1
                 break
 

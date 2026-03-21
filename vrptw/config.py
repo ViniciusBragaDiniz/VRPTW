@@ -24,7 +24,7 @@ DATA_DIR = PROJECT_ROOT / "data"
 #: Raw input data (student CSVs, instances, etc.).
 DATA_RAW_DIR = DATA_DIR / "raw"
 
-#: Processed / intermediate data (turno_resumo.csv, etc.).
+#: Processed / intermediate data (SHIFT_PROCESSED.csv, etc.).
 DATA_PROCESSED_DIR = DATA_DIR / "processed"
 
 OUTPUT_DIR = DATA_DIR / "output"
