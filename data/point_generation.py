@@ -186,24 +186,24 @@ def generate_bus_stops(
     logger.info("Generating bus stops: filter=%s, shift=%s", student_filter, shift)
 
     # Copy to avoid modifying the caller's DataFrame
-    df_students = df_students.copy()
-    df_students.columns = df_students.columns.str.upper()
+    df_coordinates = df_students.copy()
+    df_coordinates.columns = df_coordinates.columns.str.upper()
 
     if student_filter != "full":
-        df_students = df_students[
-            df_students["STUDENT_ID"].str.contains(student_filter)
+        df_coordinates = df_coordinates[
+            df_coordinates["STUDENT_ID"].str.contains(student_filter)
         ]
 
-    municipalities = df_students["CITY"].unique()
-    weekdays = df_students["DAYOFTHEWEEK"].unique()
+    municipalities = df_coordinates["CITY"].unique()
+    weekdays = df_coordinates["DAYOFTHEWEEK"].unique()
 
     bus_stops: list[pd.DataFrame] = []
     skipped_municipalities = 0
     skipped_students = 0
 
     for municipality in municipalities:
-        mun_students = df_students[
-            df_students["CITY"] == municipality
+        mun_students = df_coordinates[
+            df_coordinates["CITY"] == municipality
         ].drop_duplicates(subset="STUDENT_ID")
 
         if len(mun_students) < MIN_STUDENTS_PER_MUNICIPALITY:
@@ -213,6 +213,8 @@ def generate_bus_stops(
 
         logger.info("Municipality: %s | Students: %d", municipality, len(mun_students))
 
+        # You can have two students with the same coordinates (eg: lives in the same house, brothers, etc.)
+        mun_students = mun_students.drop_duplicates(subset=["LATITUDE", "LONGITUDE"])
         # Determine optimal k via elbow method
         k_range = range(2, len(mun_students) + 1)
         wcss = []
@@ -231,7 +233,7 @@ def generate_bus_stops(
         mun_students = mun_students.copy()
         mun_students["CLUSTER"] = classes
 
-        merged = df_students.merge(
+        merged = df_coordinates.merge(
             mun_students[["STUDENT_ID", "CLUSTER"]], how="left", on="STUDENT_ID",
         )
 

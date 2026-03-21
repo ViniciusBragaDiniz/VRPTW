@@ -128,15 +128,15 @@ def _enrich_addresses_viacep(df: pd.DataFrame) -> int:
             response = requests.get(url, timeout=10)
             if response.status_code == 200:
                 data = response.json()
-                df.loc[idx, "STREET_NAME"] = data.get("STREET_NAME", "")
-                df.loc[idx, "ADDRESS_COMPLEMENT"] = data.get("ADDRESS_COMPLEMENT", "")
+                df.loc[idx, "STREET_NAME"] = data.get("logradouro", "").upper()
+                df.loc[idx, "ADDRESS_COMPLEMENT"] = data.get("complemento", "").upper()
             else:
                 logger.warning("Zip code %s: HTTP %d", POSTAL_CODE, response.status_code)
                 not_found += 1
         except Exception as e:
             logger.error("Error querying zip code %s: %s", POSTAL_CODE, e)
             not_found += 1
-        sleep(0.5)
+        sleep(2)
 
     return not_found
 
@@ -155,9 +155,8 @@ def _geocode_students(df: pd.DataFrame, gmaps_client: googlemaps.Client) -> None
     """
     missing_idx = df[df["LATITUDE"] == 0].index
 
-    for i, address in enumerate(df["FULL_ADDRESS"]):
-        if i not in missing_idx:
-            continue
+    for i in missing_idx:
+        address = df.loc[i, "FULL_ADDRESS"]
 
         try:
             result = gmaps_client.geocode(address)
@@ -197,6 +196,11 @@ def preprocess_student_data() -> dict[str, pd.DataFrame]:
     df_shifts_list = [pd.read_csv(f) for f in shift_files]
     df_shifts = pd.concat(df_shifts_list, ignore_index=True)
 
+    # INSERT_YOUR_CODE
+    shift_map_path = DATA_RAW_DIR / "aux" / "shift_map.csv"
+    df_shift_map = pd.read_csv(shift_map_path)
+    df_shifts = df_shifts.merge(df_shift_map, how="left", on=["COURSE","CURRENT_PERIOD","DAYOFTHEWEEK","ENTRY_SHIFT"])
+
     # --- Load and unify student data ---
     df_tec = pd.read_csv(DATA_RAW_DIR / "info" / "info_tec.csv")
     df_tec["STUDENT_ID"] = "tec_" + df_tec.index.astype(str)
@@ -206,6 +210,8 @@ def preprocess_student_data() -> dict[str, pd.DataFrame]:
 
     df = pd.concat([df_tec, df_undergrad], ignore_index=True)
 
+    # cONTINUAR DAQUI AMANHÃ, VOCÊ PPRECISA CALCULAR OS CEPS E AS COORDENADS
+    # APENAS DOS ESTUDANTES QUE NÃO TEM REGISTRO DISSO NO PROCESSED
     # --- Filter Rio de Janeiro zip codes (start with '2') ---
     valid_ceps = df["POSTAL_CODE"].apply(lambda x: str(x)[0] == "2")
     logger.info("Invalid zip codes (outside RJ): %d", len(df) - valid_ceps.sum())

@@ -108,7 +108,7 @@ WEEKDAYS: list[str] = ["MON", "TUE", "WED", "THU", "FRI", "SAT"]
 SHIFTS: list[str] = ["AFTERNOON", "NIGHT", "LATE"]
 
 #: Route types (trip direction).
-ROUTE_TYPES: list[str] = ["ENTRY"]
+ROUTE_TYPES: list[str] = ["ENTRY", "EXIT"]
 
 # ---------------------------------------------------------------------------
 # Maximum work hours per vehicle (post-processing)
