@@ -16,7 +16,7 @@ import logging
 
 import pandas as pd
 
-from .config import MAX_VEHICLE_WORK_TIME, OUTPUT_CSV_DIR
+from .config import INSTANCE_TYPES, MAX_VEHICLE_WORK_TIME, OUTPUT_CSV_DIR, ROUTE_TYPES
 
 logger = logging.getLogger(__name__)
 
@@ -56,29 +56,58 @@ def generate_partitions(elements: list) -> list[list[list]]:
     return result
 
 
-def minimize_vehicles() -> pd.DataFrame:
+def minimize_vehicles(
+    instance_types: list[str] | None = None,
+    route_types: list[str] | None = None,
+) -> pd.DataFrame:
     """Re-sequence trips to minimize the number of vehicles used.
 
-    Loads the detailed route solutions (inbound and outbound), identifies
-    trips with multiple vehicles, and attempts to consolidate them into
-    fewer vehicles subject to the maximum work time constraint.
+    Loads the detailed route solutions for the given instance and route
+    types, identifies trips with multiple vehicles, and attempts to
+    consolidate them into fewer vehicles subject to the maximum work
+    time constraint.
+
+    Args:
+        instance_types: Instance names to process (default: ``INSTANCE_TYPES``
+            from config).
+        route_types: Route directions to process (default: ``ROUTE_TYPES``
+            from config).
 
     Returns:
         DataFrame with the adjusted vehicle count per trip.
 
     Raises:
-        FileNotFoundError: If the solution files are not found.
+        FileNotFoundError: If no solution files are found.
     """
-    logger.info("Starting vehicle minimization")
+    instance_types = instance_types or INSTANCE_TYPES
+    route_types = route_types or ROUTE_TYPES
 
-    # Load solutions
-    sol_ENTRY = pd.read_csv(OUTPUT_CSV_DIR / "detailed_solution_cvrptw_full_ENTRY.csv")
-    sol_ENTRY["route_type"] = "ENTRY"
+    logger.info(
+        "Starting vehicle minimization (instances=%s, routes=%s)",
+        instance_types, route_types,
+    )
 
-    solution_exit = pd.read_csv(OUTPUT_CSV_DIR / "detailed_solution_cvrptw_full_EXIT.csv")
-    solution_exit["route_type"] = "EXIT"
+    frames: list[pd.DataFrame] = []
+    for instance_name in instance_types:
+        for route_type in route_types:
+            path = (
+                OUTPUT_CSV_DIR
+                / f"detailed_solution_cvrptw_{instance_name}_{route_type}.csv"
+            )
+            if not path.exists():
+                logger.warning("Solution file not found, skipping: %s", path)
+                continue
+            df = pd.read_csv(path)
+            df["route_type"] = route_type
+            frames.append(df)
 
-    full_solution = pd.concat([sol_ENTRY, solution_exit], ignore_index=True)
+    if not frames:
+        raise FileNotFoundError(
+            f"No solution files found for instance_types={instance_types}, "
+            f"route_types={route_types} in {OUTPUT_CSV_DIR}"
+        )
+
+    full_solution = pd.concat(frames, ignore_index=True)
 
     # Aggregated summary per trip
     group_cols = ["route_type", "INSTANCE", "DAYOFTHEWEEK", "SHIFT", "MUNICIPALITY_ID"]
