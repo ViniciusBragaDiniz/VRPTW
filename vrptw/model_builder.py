@@ -11,8 +11,8 @@ Formulation:
         - ``s[k,i]``: continuous, service start time at node i by vehicle k.
         - ``q[k,i]``: integer, load served at node i by vehicle k.
     - **Objective**: minimize total travel distance.
-    - **Constraints**: capacity, mandatory service, flow conservation,
-      time windows (Big-M), single visit, and subtour elimination.
+    - **Constraints**: pluggable, defined in ``vrptw.constraints`` and
+      registered in ``EXECUTION_ORDER``.
 
 Usage example:
     >>> from docplex.mp.model import Model
@@ -22,6 +22,8 @@ Usage example:
 
 from docplex.mp.linear import LinearExpr
 from docplex.mp.model import Model
+
+from .constraints import EXECUTION_ORDER
 
 
 # ---------------------------------------------------------------------------
@@ -106,163 +108,6 @@ def _build_objective(model: Model, travels: dict, model_data: dict) -> None:
 # Constraints
 # ---------------------------------------------------------------------------
 
-def _add_capacity_constraints(
-    model: Model, load: dict, model_data: dict,
-) -> None:
-    """Limit the total load served by each vehicle to its capacity."""
-    capacity = model_data["capacity"]
-    city_data = model_data["data"]
-    num_vehicles = model_data["necessary_vehicles"]
-
-    for k in range(num_vehicles):
-        model.add_constraint(
-            model.sum(load[k, i] for i in city_data.index) <= capacity,
-            f"Capacity_Vehicle_{k}",
-        )
-
-
-def _add_demand_constraints(
-    model: Model, load: dict, model_data: dict,
-) -> None:
-    """Ensure every client's demand is fully served across all vehicles."""
-    city_data = model_data["data"]
-    shift = model_data["SHIFT"]
-    num_vehicles = model_data["necessary_vehicles"]
-
-    for i in city_data.index[1:]:
-        model.add_constraint(
-            model.sum(load[k, i] for k in range(num_vehicles))
-            == city_data.loc[i, f"{shift}_DEMAND"],
-            f"Demand_Client_{i}",
-        )
-
-
-def _add_visit_required_constraints(
-    model: Model, travels: dict, load: dict, model_data: dict,
-) -> None:
-    """Link load variables to travel variables: a node must be visited to be served."""
-    capacity = model_data["capacity"]
-    city_data = model_data["data"]
-    num_vehicles = model_data["necessary_vehicles"]
-
-    for k in range(num_vehicles):
-        for i in city_data.index:
-            outgoing = [j for j in city_data.index if (k, i, j) in travels]
-            model.add_constraint(
-                model.sum(capacity * travels[k, i, j] for j in outgoing)
-                - load[k, i] >= 0,
-                f"Visit_Required_{i}_Vehicle_{k}",
-            )
-
-
-def _add_depot_constraints(
-    model: Model, travels: dict, model_data: dict,
-) -> None:
-    """Force vehicles to depart from the depot before visiting clients."""
-    depot = model_data["depot"]
-    city_data = model_data["data"]
-    num_spots = model_data["num_spots"]
-    num_vehicles = model_data["necessary_vehicles"]
-
-    for k in range(num_vehicles):
-        model.add_constraint(
-            model.sum(
-                num_spots ** 2 * travels[k, depot, j]
-                for j in city_data.index[1:]
-                if (k, depot, j) in travels
-            )
-            - model.sum(
-                travels[k, i, j]
-                for i in city_data.index[1:]
-                for j in city_data.index[1:]
-                if (k, i, j) in travels
-            ) >= 0,
-            f"Depot_Exit_Vehicle_{k}",
-        )
-
-
-def _add_flow_conservation(
-    model: Model, travels: dict, model_data: dict,
-) -> None:
-    """Ensure each vehicle that enters a node also leaves it."""
-    city_data = model_data["data"]
-    num_vehicles = model_data["necessary_vehicles"]
-
-    for k in range(num_vehicles):
-        for i in city_data.index:
-            outgoing = [j for j in city_data.index if (k, i, j) in travels]
-            incoming = [j for j in city_data.index if (k, j, i) in travels]
-            model.add_constraint(
-                model.sum(travels[k, i, j] for j in outgoing)
-                - model.sum(travels[k, j, i] for j in incoming)
-                == 0,
-                f"Flow_Conservation_Vehicle_{k}_Node_{i}",
-            )
-
-
-def _add_single_pass_constraints(
-    model: Model, travels: dict, model_data: dict,
-) -> None:
-    """Each vehicle visits each node at most once."""
-    city_data = model_data["data"]
-    num_vehicles = model_data["necessary_vehicles"]
-
-    for k in range(num_vehicles):
-        for i in city_data.index:
-            outgoing = [j for j in city_data.index if (k, i, j) in travels]
-            model.add_constraint(
-                model.sum(travels[k, i, j] for j in outgoing) <= 1,
-                f"Single_Pass_Vehicle_{k}_Node_{i}",
-            )
-
-
-def _add_time_window_constraints(
-    model: Model, travels: dict, service: dict, model_data: dict,
-) -> None:
-    """Big-M time-window constraints ensuring feasible arrival times."""
-    city_data = model_data["data"]
-    num_vehicles = model_data["necessary_vehicles"]
-    distances = model_data["distance"]
-    big_m = model_data["big_m"]
-
-    for k in range(num_vehicles):
-        for idx_i in range(len(city_data)):
-            origin = city_data.index[idx_i]
-            for idx_j in range(idx_i + 1, len(city_data)):
-                destination = city_data.index[idx_j]
-                if (k, origin, destination) not in travels:
-                    continue
-                model.add_constraint(
-                    service[k, origin]
-                    + distances[origin][destination]
-                    - big_m * (1 - travels[k, origin, destination])
-                    <= service[k, destination],
-                    f"Time_Window_{k}_{origin}_{destination}",
-                )
-
-
-def _add_no_self_loops(
-    model: Model, travels: dict, model_data: dict,
-) -> None:
-    """Forbid any vehicle from traveling from a node to itself.
-
-    With sparse variable creation (i != j), this constraint is
-    automatically satisfied and becomes a no-op, but is kept for
-    safety in case the variable set is changed.
-    """
-    city_data = model_data["data"]
-    num_vehicles = model_data["necessary_vehicles"]
-
-    self_loops = [
-        travels[k, i, i]
-        for k in range(num_vehicles)
-        for i in city_data.index
-        if (k, i, i) in travels
-    ]
-    if self_loops:
-        model.add_constraint(model.sum(self_loops) == 0, "No_Self_Loops")
-
-
 def _build_constraints(
     model: Model,
     travels: dict,
@@ -272,18 +117,9 @@ def _build_constraints(
 ) -> None:
     """Add all constraints to the VRPTW model.
 
-    Orchestrates the addition of each constraint group by delegating
-    to specialised helper functions.
-
-    Constraint groups:
-        1. Vehicle capacity
-        2. Client demand satisfaction
-        3. Visit-required linking (load ↔ travel)
-        4. Depot departure
-        5. Flow conservation
-        6. Single pass per node
-        7. Time windows (Big-M)
-        8. No self-loops
+    Iterates through ``EXECUTION_ORDER`` (defined in ``vrptw.constraints``),
+    passing a shared keyword-argument dictionary so each constraint function
+    can pick exactly the decision-variable groups it needs.
 
     Args:
         model: DOCPLEX model instance.
@@ -292,14 +128,14 @@ def _build_constraints(
         load: Load variables ``(k, i)``.
         model_data: Dictionary with instance data.
     """
-    _add_capacity_constraints(model, load, model_data)
-    _add_demand_constraints(model, load, model_data)
-    _add_visit_required_constraints(model, travels, load, model_data)
-    _add_depot_constraints(model, travels, model_data)
-    _add_flow_conservation(model, travels, model_data)
-    _add_single_pass_constraints(model, travels, model_data)
-    _add_time_window_constraints(model, travels, service, model_data)
-    _add_no_self_loops(model, travels, model_data)
+    kwargs = {
+        "travels": travels,
+        "service": service,
+        "load": load,
+        "model_data": model_data,
+    }
+    for add_constraint in EXECUTION_ORDER:
+        add_constraint(model, **kwargs)
 
 
 # ---------------------------------------------------------------------------
