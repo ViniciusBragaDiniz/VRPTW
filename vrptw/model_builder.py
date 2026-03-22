@@ -6,13 +6,11 @@ follows the classical vehicle routing model with time windows, with subtour
 elimination via cutting planes (lazy constraints).
 
 Formulation:
-    - **Variables**:
-        - ``x[k,i,j]``: binary, 1 if vehicle k travels from i to j.
-        - ``s[k,i]``: continuous, service start time at node i by vehicle k.
-        - ``q[k,i]``: integer, load served at node i by vehicle k.
+    - **Variables**: pluggable, defined in ``vrptw.variables`` and
+      registered in its ``EXECUTION_ORDER``.
     - **Objective**: minimize total travel distance.
     - **Constraints**: pluggable, defined in ``vrptw.constraints`` and
-      registered in ``EXECUTION_ORDER``.
+      registered in its ``EXECUTION_ORDER``.
 
 Usage example:
     >>> from docplex.mp.model import Model
@@ -23,7 +21,8 @@ Usage example:
 from docplex.mp.linear import LinearExpr
 from docplex.mp.model import Model
 
-from .constraints import EXECUTION_ORDER
+from .constraints import EXECUTION_ORDER as CONSTRAINT_ORDER
+from .variables import EXECUTION_ORDER as VARIABLE_ORDER
 
 
 # ---------------------------------------------------------------------------
@@ -33,53 +32,27 @@ from .constraints import EXECUTION_ORDER
 def _build_variables(
     model: Model,
     model_data: dict,
-) -> tuple[dict, dict, dict]:
+) -> dict[str, dict]:
     """Create the VRPTW model decision variables.
+
+    Iterates through ``VARIABLE_ORDER`` (defined in ``vrptw.variables``).
+    Each function receives ``model_data`` and any variables already created
+    by earlier functions (via ``**kwargs``), and returns a ``dict[str, dict]``
+    that is merged into the shared variable namespace.
 
     Args:
         model: DOCPLEX model instance.
-        model_data: Dictionary with instance data. Expects keys
-            ``necessary_vehicles``, ``capacity``, ``data`` (DataFrame).
+        model_data: Dictionary with instance data.
 
     Returns:
-        Tuple ``(travels, service, vehicle_load)`` containing variable
-        dictionaries indexed by ``(k, i, j)`` or ``(k, i)``.
+        Dictionary mapping variable-group names (``"travels"``,
+        ``"service"``, ``"load"``, …) to their variable dictionaries.
     """
-    num_vehicles = model_data["necessary_vehicles"]
-    capacity = model_data["capacity"]
-    city_data = model_data["data"]
-
-    # x[k,i,j] - vehicle k travels from node i to node j
-    # Self-loops (i == j) are excluded to reduce model size (sparse representation).
-    travels = {
-        (k, i, j): model.binary_var(name=f"travels_{k}_{i}_{j}")
-        for k in range(num_vehicles)
-        for i in city_data.index
-        for j in city_data.index
-        if i != j
-    }
-
-    # s[k,i] - service start time at node i by vehicle k
-    service = {
-        (k, i): model.continuous_var(
-            lb=city_data["earliest_departure"][i],
-            ub=city_data["latest_arrival"][i],
-            name=f"service_start_{k}_{i}",
-        )
-        for k in range(num_vehicles)
-        for i in city_data.index
-    }
-
-    # q[k,i] - load served at node i by vehicle k
-    vehicle_load = {
-        (k, i): model.integer_var(
-            lb=0, ub=capacity, name=f"load_{k}_{i}"
-        )
-        for k in range(num_vehicles)
-        for i in city_data.index
-    }
-
-    return travels, service, vehicle_load
+    variables: dict[str, dict] = {}
+    for create_vars in VARIABLE_ORDER:
+        new_vars = create_vars(model, model_data=model_data, **variables)
+        variables.update(new_vars)
+    return variables
 
 
 # ---------------------------------------------------------------------------
@@ -110,31 +83,23 @@ def _build_objective(model: Model, travels: dict, model_data: dict) -> None:
 
 def _build_constraints(
     model: Model,
-    travels: dict,
-    service: dict,
-    load: dict,
     model_data: dict,
+    **variables: dict,
 ) -> None:
     """Add all constraints to the VRPTW model.
 
-    Iterates through ``EXECUTION_ORDER`` (defined in ``vrptw.constraints``),
-    passing a shared keyword-argument dictionary so each constraint function
-    can pick exactly the decision-variable groups it needs.
+    Iterates through ``CONSTRAINT_ORDER`` (defined in ``vrptw.constraints``),
+    forwarding the full variable namespace so each constraint function can
+    pick exactly the decision-variable groups it needs.
 
     Args:
         model: DOCPLEX model instance.
-        travels: Travel variables ``(k, i, j)``.
-        service: Service time variables ``(k, i)``.
-        load: Load variables ``(k, i)``.
         model_data: Dictionary with instance data.
+        **variables: Variable dictionaries produced by ``_build_variables``
+            (e.g. ``travels``, ``service``, ``load``).
     """
-    kwargs = {
-        "travels": travels,
-        "service": service,
-        "load": load,
-        "model_data": model_data,
-    }
-    for add_constraint in EXECUTION_ORDER:
+    kwargs = {"model_data": model_data, **variables}
+    for add_constraint in CONSTRAINT_ORDER:
         add_constraint(model, **kwargs)
 
 
@@ -241,8 +206,8 @@ def build_model(
         Tuple ``(model, travels)`` with the configured model and the
         travel variable dictionary (needed for the solution loop).
     """
-    travels, service, load = _build_variables(model, model_data)
-    _build_objective(model, travels, model_data)
-    _build_constraints(model, travels, service, load, model_data)
+    variables = _build_variables(model, model_data)
+    _build_objective(model, variables["travels"], model_data)
+    _build_constraints(model, model_data, **variables)
 
-    return model, travels
+    return model, variables["travels"]

@@ -110,6 +110,61 @@ class TestVariableCreation:
             assert i != j, f"Self-loop variable found: ({k}, {i}, {j})"
 
 
+class TestVariablePackage:
+    """Verify the pluggable variable registry."""
+
+    def test_execution_order_is_non_empty(self):
+        from vrptw.variables import EXECUTION_ORDER
+
+        assert len(EXECUTION_ORDER) > 0
+
+    def test_all_entries_are_callable(self):
+        from vrptw.variables import EXECUTION_ORDER
+
+        for fn in EXECUTION_ORDER:
+            assert callable(fn), f"{fn} is not callable"
+
+    def test_execution_order_matches_expected_count(self):
+        from vrptw.variables import EXECUTION_ORDER
+
+        assert len(EXECUTION_ORDER) == 3
+
+    def test_build_variables_returns_expected_keys(self, trivial_model_data):
+        from vrptw.model_builder import _build_variables
+
+        model = Model("test_var_keys")
+        variables = _build_variables(model, trivial_model_data)
+
+        assert "travels" in variables
+        assert "service" in variables
+        assert "load" in variables
+
+    def test_individual_variable_fn_returns_dict(self, trivial_model_data):
+        from vrptw.variables import EXECUTION_ORDER
+
+        model = Model("test_var_individual")
+        accumulated: dict[str, dict] = {}
+
+        for create_vars in EXECUTION_ORDER:
+            result = create_vars(
+                model, model_data=trivial_model_data, **accumulated,
+            )
+            assert isinstance(result, dict)
+            for key, val in result.items():
+                assert isinstance(key, str)
+                assert isinstance(val, dict)
+            accumulated.update(result)
+
+    def test_travels_excludes_self_loops(self, trivial_model_data):
+        from vrptw.variables.travels import create_travels
+
+        model = Model("test_no_loops")
+        result = create_travels(model, model_data=trivial_model_data)
+
+        for k, i, j in result["travels"]:
+            assert i != j
+
+
 class TestConstraintPackage:
     """Verify the pluggable constraint registry."""
 
@@ -135,13 +190,8 @@ class TestConstraintPackage:
         from vrptw.model_builder import _build_variables
 
         model = Model("test_individual")
-        travels, service, load = _build_variables(model, trivial_model_data)
-        kwargs = {
-            "travels": travels,
-            "service": service,
-            "load": load,
-            "model_data": trivial_model_data,
-        }
+        variables = _build_variables(model, trivial_model_data)
+        kwargs = {"model_data": trivial_model_data, **variables}
 
         from vrptw.constraints import EXECUTION_ORDER
 
