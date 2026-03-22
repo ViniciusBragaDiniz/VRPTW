@@ -104,6 +104,26 @@ def _build_constraints(
 
 
 # ---------------------------------------------------------------------------
+# LP relaxation
+# ---------------------------------------------------------------------------
+
+def relax_model(model: Model) -> None:
+    """Relax all integer and binary variables to continuous (LP relaxation).
+
+    Binary variables become continuous on [0, 1]; integer variables become
+    continuous with their existing bounds.  The resulting LP provides a
+    lower bound on the optimal MIP objective.
+
+    Args:
+        model: DOCPLEX model instance (modified in-place).
+    """
+    continuous = model.continuous_vartype
+    for var in model.iter_variables():
+        if var.vartype != continuous:
+            var.set_vartype(continuous)
+
+
+# ---------------------------------------------------------------------------
 # Subtour elimination
 # ---------------------------------------------------------------------------
 

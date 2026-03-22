@@ -212,3 +212,65 @@ class TestConstraintPackage:
 
         names = [ct.name for ct in model.iter_constraints() if ct.name]
         assert len(names) == len(set(names)), "Duplicate constraint names found"
+
+
+class TestRelaxModel:
+    """Verify LP relaxation converts all variables to continuous."""
+
+    def test_all_variables_become_continuous(self, trivial_model_data):
+        from vrptw.model_builder import build_model, relax_model
+
+        model = Model("test_relax")
+        model, _ = build_model(model, trivial_model_data)
+
+        relax_model(model)
+
+        ct = model.continuous_vartype
+        for var in model.iter_variables():
+            assert var.vartype == ct, (
+                f"Variable {var.name} is {var.vartype}, expected continuous"
+            )
+
+    def test_binary_bounds_preserved(self, trivial_model_data):
+        from vrptw.model_builder import build_model, relax_model
+
+        model = Model("test_relax_bounds")
+        model, travels = build_model(model, trivial_model_data)
+
+        relax_model(model)
+
+        for var in travels.values():
+            assert var.lb == 0
+            assert var.ub == 1
+
+    def test_relaxed_model_has_same_constraint_count(self, trivial_model_data):
+        from vrptw.model_builder import build_model, relax_model
+
+        model = Model("test_relax_ct")
+        model, _ = build_model(model, trivial_model_data)
+
+        count_before = model.number_of_constraints
+        relax_model(model)
+        count_after = model.number_of_constraints
+
+        assert count_before == count_after
+
+    @requires_cplex
+    def test_relaxed_objective_is_lower_bound(self, trivial_model_data):
+        """LP objective <= MIP objective (lower bound property)."""
+        from vrptw.model_builder import build_model, relax_model
+
+        model_mip = Model("test_mip")
+        model_mip, _ = build_model(model_mip, trivial_model_data)
+        sol_mip = model_mip.solve()
+        assert sol_mip is not None
+        mip_obj = model_mip.objective_value
+
+        model_lp = Model("test_lp")
+        model_lp, _ = build_model(model_lp, trivial_model_data)
+        relax_model(model_lp)
+        sol_lp = model_lp.solve()
+        assert sol_lp is not None
+        lp_obj = model_lp.objective_value
+
+        assert lp_obj <= mip_obj + 1e-6

@@ -93,11 +93,12 @@ def step_2_generate_points() -> None:
             logger.info("  -> %d points saved to %s", len(df), output_path)
 
 
-def step_3_solve() -> None:
-    """Step 3: VRPTW model solving."""
-    _step_banner(3, "VRPTW model solving")
+def step_3_solve(*, relax: bool = False) -> None:
+    """Step 3: VRPTW model solving (MIP or LP relaxation)."""
+    mode = "LP relaxation (lower bounds)" if relax else "VRPTW model solving"
+    _step_banner(3, mode)
     from vrptw.solver import solve_all_instances
-    solve_all_instances()
+    solve_all_instances(relax=relax)
 
 
 def step_4_postprocess() -> None:
@@ -138,12 +139,20 @@ def main() -> None:
         "--only-postprocess", action="store_true",
         help="Run only step 4 (shortcut for --skip-preprocess --skip-points --skip-solve)",
     )
+    parser.add_argument(
+        "--relax", action="store_true",
+        help="Solve LP relaxation only (lower bounds, no integer routes). "
+             "Implies --skip-postprocess.",
+    )
     args = parser.parse_args()
 
     if args.only_postprocess:
         args.skip_preprocess = True
         args.skip_points = True
         args.skip_solve = True
+
+    if args.relax:
+        args.skip_postprocess = True
 
     # Define steps to execute
     steps = []
@@ -152,7 +161,9 @@ def main() -> None:
     if not args.skip_points:
         steps.append(("2. Point generation", step_2_generate_points))
     if not args.skip_solve:
-        steps.append(("3. VRPTW solving", step_3_solve))
+        solve_fn = lambda: step_3_solve(relax=args.relax)
+        label = "3. LP relaxation" if args.relax else "3. VRPTW solving"
+        steps.append((label, solve_fn))
     if not args.skip_postprocess:
         steps.append(("4. Post-processing", step_4_postprocess))
 

@@ -6,8 +6,10 @@ scenario (day x shift x municipality), with iterative subtour elimination.
 
 Usage:
     $ python 03_solve_vrptw.py
+    $ python 03_solve_vrptw.py --relax   # LP relaxation (lower bounds only)
 """
 
+import argparse
 import logging
 import sys
 
@@ -21,7 +23,13 @@ from vrptw.solver import solve_all_instances
 
 
 def main() -> None:
-    solve_all_instances()
+    parser = argparse.ArgumentParser(description="Step 3 — VRPTW model solving")
+    parser.add_argument(
+        "--relax", action="store_true",
+        help="Solve LP relaxation only (lower bounds, no integer routes)",
+    )
+    args = parser.parse_args()
+    solve_all_instances(relax=args.relax)
 
 
 if __name__ == "__main__":

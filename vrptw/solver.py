@@ -47,7 +47,12 @@ from .config import (
     VEHICLE_CAPACITY,
     WEEKDAYS,
 )
-from vrptw.model_builder import add_subtour_cuts, build_model, format_route_string
+from vrptw.model_builder import (
+    add_subtour_cuts,
+    build_model,
+    format_route_string,
+    relax_model,
+)
 from vrptw.utils import build_routes, calculate_distances
 
 logger = logging.getLogger(__name__)
@@ -233,6 +238,8 @@ def _process_scenario(
     municipality: str,
     iteration: int,
     output_file: TextIOWrapper,
+    *,
+    relax: bool = False,
 ) -> tuple[dict | None, list[dict]]:
     """Solve the VRPTW for a specific scenario and write results.
 
@@ -242,6 +249,8 @@ def _process_scenario(
         municipality: Municipality name.
         iteration: Time iteration.
         output_file: Text file for writing results.
+        relax: If ``True``, solve the LP relaxation only and report the
+            objective as a lower bound (no subtour elimination, no routes).
 
     Returns:
         Tuple ``(summary_dict, detail_list)`` with the summary and details
@@ -287,7 +296,59 @@ def _process_scenario(
 
     model, travels = build_model(model, model_data)
 
-    # Solve with subtour elimination
+    if relax:
+        return _solve_relaxed(model, num_spots, num_vehicles, output_file)
+
+    return _solve_mip(
+        model, travels, num_vehicles, num_spots,
+        distance_matrix, iteration, output_file,
+    )
+
+
+def _solve_relaxed(
+    model: Model,
+    num_spots: int,
+    num_vehicles: int,
+    output_file: TextIOWrapper,
+) -> tuple[dict | None, list[dict]]:
+    """Solve the LP relaxation and return the lower bound."""
+    relax_model(model)
+
+    start = time.time()
+    solution_obj = model.solve(log_output=SOLVER_LOG_OUTPUT)
+    elapsed = time.time() - start
+
+    lower_bound = model.objective_value if solution_obj else None
+
+    output_file.write(f"LP Lower Bound: {lower_bound}\n")
+    output_file.write(f"Execution Time: {elapsed:.2f}s\n\n\n")
+
+    logger.info("LP Lower Bound: %s | Time: %.2fs", lower_bound, elapsed)
+
+    summary = {
+        "num_points": num_spots,
+        "num_vehicles": num_vehicles,
+        "exec_time": elapsed,
+        "travel_time": lower_bound,
+        "gap": None,
+    }
+
+    del model
+    gc.collect()
+
+    return summary, []
+
+
+def _solve_mip(
+    model: Model,
+    travels: dict,
+    num_vehicles: int,
+    num_spots: int,
+    distance_matrix: dict,
+    iteration: int,
+    output_file: TextIOWrapper,
+) -> tuple[dict | None, list[dict]]:
+    """Solve the MIP with subtour elimination and extract routes."""
     routes, elapsed, success = _solve_with_subtour_elimination(
         model, travels, num_vehicles, TIME_LIMIT,
     )
@@ -342,13 +403,19 @@ def _process_scenario(
 # Main pipeline
 # ---------------------------------------------------------------------------
 
-def solve_all_instances() -> None:
+def solve_all_instances(*, relax: bool = False) -> None:
     """Solve the VRPTW for all configured instances.
 
     Iterates over route types, instances, days, shifts, and municipalities
     as defined in ``config.py``. Results are saved to CSV files (summary
     and details) and TXT files (textual route log).
+
+    Args:
+        relax: If ``True``, solve the LP relaxation of every scenario
+            instead of the full MIP.  Results are written with a
+            ``relaxed_`` prefix so they never overwrite integer solutions.
     """
+    file_prefix = "relaxed_" if relax else ""
     # Ensure output directories exist
     OUTPUT_CSV_DIR.mkdir(parents=True, exist_ok=True)
     OUTPUT_TEXT_DIR.mkdir(parents=True, exist_ok=True)
@@ -377,7 +444,7 @@ def solve_all_instances() -> None:
             summaries: list[dict] = []
             details: list[dict] = []
 
-            output_path = OUTPUT_TEXT_DIR / f"solution_cvrptw_{instance_name}_{route_type}.txt"
+            output_path = OUTPUT_TEXT_DIR / f"{file_prefix}solution_cvrptw_{instance_name}_{route_type}.txt"
 
             with open(output_path, "w", encoding="utf-8") as output_file:
                 for day in WEEKDAYS:
@@ -399,7 +466,7 @@ def solve_all_instances() -> None:
 
                         for municipality in shift_data["MUNICIPALITY_ID"].unique():
                             skip_key = f"{route_type},{instance_name},{day},{shift},{municipality}"
-                            if skip_key in skip_set:
+                            if not relax and skip_key in skip_set:
                                 logger.info("Skipping instance: %s", skip_key)
                                 continue
 
@@ -422,6 +489,7 @@ def solve_all_instances() -> None:
 
                                 summary, detail_items = _process_scenario(
                                     iter_data, shift, municipality, iteration, output_file,
+                                    relax=relax,
                                 )
 
                                 if summary is not None:
@@ -437,21 +505,23 @@ def solve_all_instances() -> None:
                                     for detail in detail_items:
                                         details.append({**base_info, **detail})
 
-                            # Register solved instance in skip DataFrame
-                            if skip_key not in skip_set:
-                                skip_df = pd.concat([skip_df, pd.DataFrame([{
-                                    "route_type": route_type,
-                                    "instance": instance_name,
-                                    "day": day,
-                                    "shift": shift,
-                                    "municipality": municipality,
-                                }])], ignore_index=True)
-                                skip_set.add(skip_key)
-                                skip_df.to_csv(skip_path, index=False)
+                            if not relax:
+                                # Register solved instance in skip DataFrame
+                                if skip_key not in skip_set:
+                                    skip_df = pd.concat([skip_df, pd.DataFrame([{
+                                        "route_type": route_type,
+                                        "instance": instance_name,
+                                        "day": day,
+                                        "shift": shift,
+                                        "municipality": municipality,
+                                    }])], ignore_index=True)
+                                    skip_set.add(skip_key)
+                                    skip_df.to_csv(skip_path, index=False)
 
                             # Save CSVs incrementally per municipality
                             _save_results(
                                 summaries, details, instance_name, route_type,
+                                prefix=file_prefix,
                             )
 
             logger.info(
@@ -490,15 +560,17 @@ def _save_results(
     details: list[dict],
     instance_name: str,
     route_type: str,
+    *,
+    prefix: str = "",
 ) -> None:
     """Save partial results to CSV files."""
     if summaries:
         pd.DataFrame(summaries).to_csv(
-            OUTPUT_CSV_DIR / f"solution_cvrptw_{instance_name}_{route_type}.csv",
+            OUTPUT_CSV_DIR / f"{prefix}solution_cvrptw_{instance_name}_{route_type}.csv",
             index=False,
         )
     if details:
         pd.DataFrame(details).to_csv(
-            OUTPUT_CSV_DIR / f"detailed_solution_cvrptw_{instance_name}_{route_type}.csv",
+            OUTPUT_CSV_DIR / f"{prefix}detailed_solution_cvrptw_{instance_name}_{route_type}.csv",
             index=False,
         )
