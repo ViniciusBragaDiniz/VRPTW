@@ -56,7 +56,7 @@ def _build_full_address(row: pd.Series) -> str:
     Returns:
         Formatted full address as a string.
     """
-    parts = [str(v) for v in row if isinstance(v, str) and v.strip()]
+    parts = [str(v).strip() for v in row if pd.notna(v) and str(v).strip()]
     parts.extend(["Rio de Janeiro", "Brasil"])
     return ", ".join(parts)
 

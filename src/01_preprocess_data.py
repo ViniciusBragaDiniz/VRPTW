@@ -26,9 +26,10 @@ logger = logging.getLogger(__name__)
 def main() -> None:
     results = preprocess_student_data()
 
-    DATA_PROCESSED_DIR.mkdir(parents=True, exist_ok=True)
+    info_dir = DATA_PROCESSED_DIR / "info"
+    info_dir.mkdir(parents=True, exist_ok=True)
     for name, df in results.items():
-        output_path = DATA_PROCESSED_DIR / f"{name}.csv"
+        output_path = info_dir / f"{name}.csv"
         df.to_csv(output_path, index=False)
         logger.info("Saved to: %s (%d records)", output_path, len(df))
 
