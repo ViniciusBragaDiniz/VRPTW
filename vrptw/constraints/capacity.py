@@ -9,10 +9,12 @@ def add_capacity_constraints(
     """Limit the total load served by each vehicle to its capacity."""
     capacity = model_data["capacity"]
     city_data = model_data["data"]
+    depot = model_data["depot"]
     num_vehicles = model_data["necessary_vehicles"]
 
     for k in range(num_vehicles):
+        model.add_constraint(load[k, depot] == 0, f"Depot_Load_Zero_{k}")
         model.add_constraint(
-            model.sum(load[k, i] for i in city_data.index) <= capacity,
+            model.sum(load[k, i] for i in city_data.index if i != depot) <= capacity,
             f"Capacity_Vehicle_{k}",
         )
