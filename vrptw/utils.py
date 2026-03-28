@@ -89,7 +89,7 @@ def calculate_distances(
     We compute it as::
 
         M = max_{i,j}  latest_arrival[i] + travel_time[i][j]
-                        − (earliest_departure[i] + time_slot × iteration)
+                        − (earliest_departure[j] + time_slot × iteration)
 
     This is the tightest data-driven upper bound that keeps the
     constraint inactive whenever ``x[k,i,j] = 0``, avoiding the
@@ -131,7 +131,7 @@ def calculate_distances(
             candidate = (
                 data["latest_arrival"][i]
                 + travel_time
-                - (data["earliest_departure"][i] + time_slot * iteration)
+                - (data["earliest_departure"][j] + time_slot * iteration)
             )
             big_m = max(big_m, candidate)
 
@@ -164,7 +164,7 @@ def build_routes(solution: dict, num_vehicles: int) -> dict[int, dict[int, int]]
     routes: dict[int, dict[int, int]] = {k: {} for k in range(num_vehicles)}
 
     for var, value in solution.items():
-        if not var.name.startswith("t") or value < 0.001:
+        if not var.name.startswith("travels_") or value < 0.001:
             continue
 
         parts = var.name.split("_")[1:]  # ["k", "i", "j"]

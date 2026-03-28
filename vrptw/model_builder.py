@@ -21,6 +21,7 @@ Usage example:
 from docplex.mp.linear import LinearExpr
 from docplex.mp.model import Model
 
+from .config import TIME_SLOT_DURATION
 from .constraints import EXECUTION_ORDER as CONSTRAINT_ORDER
 from .variables import EXECUTION_ORDER as VARIABLE_ORDER
 
@@ -171,7 +172,8 @@ def format_route_string(
     earliest_departure: int,
     iteration: int,
     distance_matrix: dict,
-) -> str:
+    time_slot: int = TIME_SLOT_DURATION,
+) -> tuple[str, float]:
     """Format a vehicle's route as a readable string.
 
     Traverses the vehicle's route linked list and produces a descriptive
@@ -184,17 +186,20 @@ def format_route_string(
         earliest_departure: Earliest departure time (seconds).
         iteration: Current time iteration.
         distance_matrix: Travel time matrix.
+        time_slot: Duration of each time slot (seconds).
 
     Returns:
-        Formatted string describing the route, or empty string if the route is empty.
+        Tuple ``(route_str, total_time)`` where ``route_str`` is a formatted
+        description of the route (empty string if empty) and ``total_time``
+        is the route's travel time in seconds (0.0 if empty).
     """
     if not routes[vehicle]:
-        return ""
+        return "", 0.0
 
     first_node = next(iter(routes[vehicle]))
     current = routes[vehicle].pop(first_node)
 
-    route_str = f"Vehicle {vehicle} Start [{earliest_departure + 1800 * iteration}s] |Route: 0"
+    route_str = f"Vehicle {vehicle} Start [{earliest_departure + time_slot * iteration}s] |Route: 0"
     total_time = distance_matrix[first_node][current]
 
     while current != first_node:
@@ -204,8 +209,8 @@ def format_route_string(
         current = next_node
 
     route_str += " -> 0"
-    route_str += f"| End [{earliest_departure + total_time + 1800 * iteration}s]\n"
-    return route_str
+    route_str += f"| End [{earliest_departure + total_time + time_slot * iteration}s]\n"
+    return route_str, total_time
 
 
 # ---------------------------------------------------------------------------

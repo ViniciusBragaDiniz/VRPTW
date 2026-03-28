@@ -21,6 +21,9 @@ from .config import INSTANCE_TYPES, MAX_VEHICLE_WORK_TIME, OUTPUT_CSV_DIR, ROUTE
 logger = logging.getLogger(__name__)
 
 
+MAX_PARTITION_ELEMENTS = 12
+
+
 def generate_partitions(elements: list) -> list[list[list]]:
     """Recursively generate all partitions of a list.
 
@@ -33,10 +36,20 @@ def generate_partitions(elements: list) -> list[list[list]]:
     Returns:
         List of partitions. Each partition is a list of subsets (lists).
 
+    Raises:
+        ValueError: If the input exceeds ``MAX_PARTITION_ELEMENTS`` (Bell
+            numbers grow super-exponentially).
+
     Example:
         >>> generate_partitions([1, 2])
         [[[2, 1]], [[1], [2]]]
     """
+    if len(elements) > MAX_PARTITION_ELEMENTS:
+        raise ValueError(
+            f"Cannot partition {len(elements)} elements "
+            f"(limit {MAX_PARTITION_ELEMENTS}): Bell numbers grow super-exponentially."
+        )
+
     if len(elements) == 1:
         return [[elements]]
 
@@ -44,13 +57,11 @@ def generate_partitions(elements: list) -> list[list[list]]:
     result = []
 
     for partition in generate_partitions(elements[1:]):
-        # Add the first element to each existing subset
         for i in range(len(partition)):
             new_partition = [subset[:] for subset in partition]
             new_partition[i].append(first)
             result.append(new_partition)
 
-        # Create a new subset containing only the first element
         result.append([[first]] + partition)
 
     return result
@@ -131,9 +142,16 @@ def minimize_vehicles(
             continue
 
         travel_times = trip_data["travel_time"].tolist()
+
+        if len(travel_times) > MAX_PARTITION_ELEMENTS:
+            logger.warning(
+                "Trip %s has %d vehicles, exceeding partition limit (%d). Skipping.",
+                trip_key, len(travel_times), MAX_PARTITION_ELEMENTS,
+            )
+            continue
+
         partitions = generate_partitions(travel_times)
 
-        # Search for the first valid partition (already sorted smallest to largest)
         for partition in partitions:
             valid = all(
                 sum(subset) <= MAX_VEHICLE_WORK_TIME

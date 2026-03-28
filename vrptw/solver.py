@@ -19,7 +19,6 @@ Usage example:
 import gc
 import logging
 import math
-import re
 import time
 from io import TextIOWrapper
 
@@ -78,6 +77,7 @@ def _build_depot_row(day: str, iteration: int = 0) -> dict:
         "MORNING_DEMAND": [0],
         "AFTERNOON_DEMAND": [0],
         "NIGHT_DEMAND": [0],
+        "LATE_DEMAND": [0],
         "earliest_departure": EARLIEST_DEPARTURE + TIME_SLOT_DURATION * iteration,
         "latest_arrival": LATEST_ARRIVAL,
         "MUNICIPALITY_ID": "CEFET",
@@ -111,6 +111,7 @@ def _prepare_iteration_data(
         ``None`` if there is no demand.
     """
     demand_col = f"{shift}_DEMAND"
+    demand_cols = ["MORNING_DEMAND", "AFTERNOON_DEMAND", "NIGHT_DEMAND", "LATE_DEMAND"]
 
     mun_data = day_data[day_data["MUNICIPALITY_ID"] == municipality].copy()
     mun_data = mun_data[mun_data[demand_col] > 0].reset_index(drop=True)
@@ -118,11 +119,18 @@ def _prepare_iteration_data(
     if mun_data.empty:
         return None
 
+    # Aggregate rows that share the same coordinates (sum demands)
+    group_cols = ["lat", "lon", "MUNICIPALITY_ID", "DAYOFTHEWEEK",
+                  "earliest_departure", "latest_arrival", "iteration"]
+    existing_demand_cols = [c for c in demand_cols if c in mun_data.columns]
+    agg_map = {c: "sum" for c in existing_demand_cols}
+    mun_data = mun_data.groupby(
+        [c for c in group_cols if c in mun_data.columns], as_index=False,
+    ).agg(agg_map)
+
     # Assign centroid_id (offset by 1 to reserve 0 for the depot)
-    centroids = mun_data.drop_duplicates(subset=["lat", "lon"])[["lat", "lon"]]
-    centroids = centroids.reset_index(names="centroid_id")
-    mun_data = mun_data.merge(centroids, on=["lat", "lon"], how="left")
-    mun_data["centroid_id"] += 1
+    mun_data = mun_data.reset_index(drop=True)
+    mun_data["centroid_id"] = mun_data.index + 1
 
     # Insert depot as node 0
     depot_row = _build_depot_row(day, iteration)
@@ -359,19 +367,17 @@ def _solve_mip(
         output_file.write("Solution:\n")
 
         for k in range(num_vehicles):
-            route_str = format_route_string(
+            num_points = len(routes.get(k, {}))
+            route_str, travel_time = format_route_string(
                 routes, travels, k,
                 earliest_departure=EARLIEST_DEPARTURE,
                 iteration=iteration,
                 distance_matrix=distance_matrix,
             )
             if route_str:
-                travel_time = float(
-                    re.findall(r"\d+\.?\d*", route_str.split("|")[-1])[0]
-                )
                 detail_list.append({
                     "vehicle_id": k,
-                    "num_points": len(routes.get(k, {})),
+                    "num_points": num_points,
                     "travel_time": travel_time,
                 })
                 output_file.write(route_str)
@@ -380,18 +386,19 @@ def _solve_mip(
         output_file.write("No solution found within the defined time limit\n")
 
     gap = _get_mip_gap(model)
+    objective = model.objective_value if success else None
     summary = {
         "num_points": num_spots,
         "num_vehicles": num_vehicles,
         "exec_time": elapsed,
-        "travel_time": model.objective_value if success else None,
+        "travel_time": objective,
         "gap": gap if gap is not None else 0.0,
     }
 
-    output_file.write(f"Objective Function Cost: {model.objective_value}\n")
+    output_file.write(f"Objective Function Cost: {objective}\n")
     output_file.write(f"Total Execution Time: {elapsed:.2f}s\n\n\n")
 
-    logger.info("Objective: %s | Time: %.2fs", model.objective_value, elapsed)
+    logger.info("Objective: %s | Time: %.2fs", objective, elapsed)
 
     del model
     gc.collect()

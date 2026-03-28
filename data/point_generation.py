@@ -238,7 +238,7 @@ def generate_bus_stops(
         )
 
         for day in weekdays:
-            centroids_df = pd.DataFrame(centroids, columns=["lon", "lat"])
+            centroids_df = pd.DataFrame(centroids, columns=["lat", "lon"])
             centroids_df["MUNICIPALITY_ID"] = municipality
 
             day_filter = merged["DAYOFTHEWEEK"] == day
