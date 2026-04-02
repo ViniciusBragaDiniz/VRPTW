@@ -37,15 +37,21 @@ from .config import (
     MIP_GAP,
     OUTPUT_CSV_DIR,
     OUTPUT_TEXT_DIR,
+    PROCESS_MEMORY_LIMIT_MB,
     ROUTE_TYPES,
     SHIFTS,
     SOLVER_LOG_OUTPUT,
+    SOLVER_MEMORY_EMPHASIS,
+    SOLVER_NODE_FILE_STRATEGY,
     SOLVER_THREADS,
+    SOLVER_TREE_MEM_LIMIT,
+    SOLVER_WORK_MEM,
     TIME_LIMIT,
     TIME_SLOT_DURATION,
     VEHICLE_CAPACITY,
     WEEKDAYS,
 )
+from vrptw.memory import check_memory_budget, log_memory_usage
 from vrptw.model_builder import (
     add_subtour_cuts,
     build_model,
@@ -288,6 +294,10 @@ def _process_scenario(
     model.time_limit = TIME_LIMIT
     model.parameters.mip.tolerances.mipgap = MIP_GAP
     model.parameters.threads = SOLVER_THREADS
+    model.parameters.workmem = SOLVER_WORK_MEM
+    model.parameters.mip.limits.treememory = SOLVER_TREE_MEM_LIMIT
+    model.parameters.mip.strategy.file = SOLVER_NODE_FILE_STRATEGY
+    model.parameters.emphasis.memory = int(SOLVER_MEMORY_EMPHASIS)
 
     model_data = {
         "data": iter_data,
@@ -494,10 +504,32 @@ def solve_all_instances(*, relax: bool = False) -> None:
                                     output_file.write("No demand in this iteration\n\n")
                                     continue
 
-                                summary, detail_items = _process_scenario(
-                                    iter_data, shift, municipality, iteration, output_file,
-                                    relax=relax,
-                                )
+
+                                if not check_memory_budget(PROCESS_MEMORY_LIMIT_MB):
+                                    logger.warning(
+                                        "Skipping scenario due to high memory: %s",
+                                        skip_key,
+                                    )
+                                    output_file.write(
+                                        "Skipped: process memory limit exceeded\n\n",
+                                    )
+                                    continue
+
+                                try:
+                                    summary, detail_items = _process_scenario(
+                                        iter_data, shift, municipality, iteration,
+                                        output_file, relax=relax,
+                                    )
+                                except Exception:
+                                    logger.exception(
+                                        "Scenario failed, continuing: %s", skip_key,
+                                    )
+                                    output_file.write(
+                                        "Skipped: solver error (see logs)\n\n",
+                                    )
+                                    gc.collect()
+                                    log_memory_usage("after failed scenario cleanup")
+                                    continue
 
                                 if summary is not None:
                                     base_info = {
@@ -514,7 +546,7 @@ def solve_all_instances(*, relax: bool = False) -> None:
 
                             if not relax:
                                 # Register solved instance in skip DataFrame
-                                if skip_key not in skip_set:
+                                if (skip_key not in skip_set) and summary['travel_time'] is not None:
                                     skip_df = pd.concat([skip_df, pd.DataFrame([{
                                         "route_type": route_type,
                                         "instance": instance_name,

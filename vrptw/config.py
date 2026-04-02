@@ -48,7 +48,9 @@ TIME_LIMIT: int = 3600
 MIP_GAP: float = 0.00
 
 #: Number of threads CPLEX may use for parallel branch-and-bound.
-SOLVER_THREADS: int = 4
+#: Matches the physical core count of the host (i5-10600K, 6C/12T).
+#: Using physical cores avoids the extra memory pressure of hyperthreads.
+SOLVER_THREADS: int = 6
 
 #: Whether the CPLEX engine log is written to stdout during the solve.
 SOLVER_LOG_OUTPUT: bool = True
@@ -120,6 +122,32 @@ SHIFTS: list[str] = ["AFTERNOON", "NIGHT", "LATE"]
 
 #: Route types (trip direction).
 ROUTE_TYPES: list[str] = ["ENTRY", "EXIT"]
+
+# ---------------------------------------------------------------------------
+# Memory safeguards
+# ---------------------------------------------------------------------------
+
+#: CPLEX working memory limit (MB).  When branch-and-bound node storage
+#: exceeds this threshold CPLEX spills data to disk according to the
+#: ``SOLVER_NODE_FILE_STRATEGY`` setting.
+SOLVER_WORK_MEM: int = 2 * 1024
+
+#: Maximum tree memory (MB).  Once the total search-tree size (RAM + disk)
+#: reaches this limit, CPLEX stops and returns the best solution found so far.
+SOLVER_TREE_MEM_LIMIT: int = 3 * 1024
+
+#: Node file strategy (``model.parameters.mip.strategy.file``).
+#: 0 = automatic, 1 = in-memory only, 2 = compressed on disk, 3 = on disk.
+SOLVER_NODE_FILE_STRATEGY: int = 2
+
+#: When ``True`` CPLEX trades some solving speed for a smaller memory
+#: footprint (``model.parameters.emphasis.memory = 1``).
+SOLVER_MEMORY_EMPHASIS: bool = True
+
+#: Process RSS limit (MB).  Before building a new model the solver checks
+#: the current resident set size and skips the scenario if it exceeds this
+#: threshold to prevent the OS from killing the process.
+PROCESS_MEMORY_LIMIT_MB: int = 8 * 1024
 
 # ---------------------------------------------------------------------------
 # Maximum work hours per vehicle (post-processing)
