@@ -11,11 +11,12 @@ def add_time_window_constraints(
     num_vehicles = model_data["necessary_vehicles"]
     distances = model_data["distance"]
     big_m = model_data["big_m"]
+    depot = model_data.get("depot", 0)
 
     for k in range(num_vehicles):
         for origin in city_data.index:
             for destination in city_data.index:
-                if origin == destination or (k, origin, destination) not in travels:
+                if (origin == destination) or (destination == depot) or (k, origin, destination) not in travels:
                     continue
                 model.add_constraint(
                     service[k, origin]
