@@ -130,11 +130,11 @@ ROUTE_TYPES: list[str] = ["ENTRY", "EXIT"]
 #: CPLEX working memory limit (MB).  When branch-and-bound node storage
 #: exceeds this threshold CPLEX spills data to disk according to the
 #: ``SOLVER_NODE_FILE_STRATEGY`` setting.
-SOLVER_WORK_MEM: int = 2 * 1024
+SOLVER_WORK_MEM: int = 8 * 1024
 
 #: Maximum tree memory (MB).  Once the total search-tree size (RAM + disk)
 #: reaches this limit, CPLEX stops and returns the best solution found so far.
-SOLVER_TREE_MEM_LIMIT: int = 3 * 1024
+SOLVER_TREE_MEM_LIMIT: int = 16 * 1024
 
 #: Node file strategy (``model.parameters.mip.strategy.file``).
 #: 0 = automatic, 1 = in-memory only, 2 = compressed on disk, 3 = on disk.
@@ -147,7 +147,7 @@ SOLVER_MEMORY_EMPHASIS: bool = True
 #: Process RSS limit (MB).  Before building a new model the solver checks
 #: the current resident set size and skips the scenario if it exceeds this
 #: threshold to prevent the OS from killing the process.
-PROCESS_MEMORY_LIMIT_MB: int = 8 * 1024
+PROCESS_MEMORY_LIMIT_MB: int = 11 * 1024
 
 # ---------------------------------------------------------------------------
 # Maximum work hours per vehicle (post-processing)

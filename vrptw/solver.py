@@ -548,7 +548,7 @@ def solve_all_instances(*, relax: bool = False) -> None:
                                 # Register solved instance in skip DataFrame
                                 # Only skip instances that were solved to optimality (gap == 0)
                                 gap = summary.get('gap') or 0.0
-                                if (skip_key not in skip_set) and summary['travel_time'] is not None and gap <= 0:
+                                if (skip_key not in skip_set) and (summary['travel_time'] is not None) and (gap == 0):
                                     skip_df = pd.concat([skip_df, pd.DataFrame([{
                                         "route_type": route_type,
                                         "instance": instance_name,
