@@ -416,6 +416,40 @@ def _solve_mip(
     return summary, detail_list
 
 
+_SCENARIO_KEY = ("INSTANCE", "DAYOFTHEWEEK", "SHIFT", "MUNICIPALITY_ID", "iteration")
+
+
+def _drop_scenario_rows(rows: list[dict], key: dict) -> None:
+    """Remove rows whose scenario columns match *key* (mutates in place)."""
+    def _match(row: dict) -> bool:
+        for col in _SCENARIO_KEY:
+            rv, kv = row.get(col), key[col]
+            if col == "iteration":
+                try:
+                    rv, kv = int(rv), int(kv)
+                except (TypeError, ValueError):
+                    pass
+            if rv != kv:
+                return False
+        return True
+    rows[:] = [r for r in rows if not _match(r)]
+
+
+def _load_solution_csvs(
+    instance_name: str, route_type: str, *, prefix: str = "",
+) -> tuple[list[dict], list[dict]]:
+    """Load prior summary and detailed CSV rows for incremental merge."""
+    stem = f"solution_cvrptw_{instance_name}_{route_type}.csv"
+
+    summary_path = OUTPUT_CSV_DIR / f"{prefix}{stem}"
+    detail_path = OUTPUT_CSV_DIR / f"{prefix}detailed_{stem}"
+
+    summaries = pd.read_csv(summary_path).to_dict("records") if summary_path.exists() else []
+    details = pd.read_csv(detail_path).to_dict("records") if detail_path.exists() else []
+    
+    return summaries, details
+
+
 # ---------------------------------------------------------------------------
 # Main pipeline
 # ---------------------------------------------------------------------------
@@ -458,8 +492,9 @@ def solve_all_instances(*, relax: bool = False) -> None:
             instances[instance_name] = pd.read_csv(csv_path)
 
         for instance_name, instance_data in instances.items():
-            summaries: list[dict] = []
-            details: list[dict] = []
+            summaries, details = _load_solution_csvs(
+                instance_name, route_type, prefix=file_prefix,
+            )
 
             output_path = OUTPUT_TEXT_DIR / f"{file_prefix}solution_cvrptw_{instance_name}_{route_type}.txt"
 
@@ -487,6 +522,7 @@ def solve_all_instances(*, relax: bool = False) -> None:
                                 logger.info("Skipping instance: %s", skip_key)
                                 continue
 
+                            last_summary: dict | None = None
                             for iteration in shift_data["iteration"].unique():
                                 _write_iteration_header(
                                     output_file, iteration, municipality,
@@ -539,16 +575,19 @@ def solve_all_instances(*, relax: bool = False) -> None:
                                         "MUNICIPALITY_ID": municipality,
                                         "iteration": iteration,
                                     }
+                                    for target in (summaries, details):
+                                        _drop_scenario_rows(target, base_info)
                                     summaries.append({**base_info, **summary})
+                                    details.extend({**base_info, **d} for d in detail_items)
+                                    last_summary = summary
 
-                                    for detail in detail_items:
-                                        details.append({**base_info, **detail})
-
-                            if not relax:
-                                # Register solved instance in skip DataFrame
-                                # Only skip instances that were solved to optimality (gap == 0)
-                                gap = summary.get('gap') or 0.0
-                                if (skip_key not in skip_set) and (summary['travel_time'] is not None) and (gap == 0):
+                            if not relax and last_summary is not None:
+                                gap = last_summary.get("gap") or 0.0
+                                if (
+                                    skip_key not in skip_set
+                                    and last_summary["travel_time"] is not None
+                                    and gap == 0
+                                ):
                                     skip_df = pd.concat([skip_df, pd.DataFrame([{
                                         "route_type": route_type,
                                         "instance": instance_name,
