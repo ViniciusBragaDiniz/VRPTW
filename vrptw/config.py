@@ -121,7 +121,7 @@ INSTANCE_TYPES: list[str] = ["tec", "grad", "full"]
 WEEKDAYS: list[str] = ["MON", "TUE", "WED", "THU", "FRI", "SAT"]
 
 #: Shifts to process for each day.
-SHIFTS: list[str] = ["AFTERNOON", "NIGHT", "LATE"]
+SHIFTS: list[str] = ["MORNING", "AFTERNOON", "NIGHT", "LATE"]
 
 #: Route types (trip direction).
 ROUTE_TYPES: list[str] = ["ENTRY", "EXIT"]
