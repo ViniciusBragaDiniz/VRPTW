@@ -30,6 +30,7 @@ from sklearn.cluster import k_means
 from vrptw.config import (
     IMGS_DIR,
     KMEANS_N_INIT,
+    KMEANS_RANDOM_STATE,
     MIN_STUDENTS_PER_MUNICIPALITY,
 )
 
@@ -220,7 +221,8 @@ def generate_bus_stops(
         wcss = []
         for k in k_range:
             _, _, inertia = k_means(
-                mun_students[["LATITUDE", "LONGITUDE"]], k, n_init=KMEANS_N_INIT,
+                mun_students[["LATITUDE", "LONGITUDE"]], k,
+                n_init=KMEANS_N_INIT, random_state=KMEANS_RANDOM_STATE,
             )
             wcss.append(inertia)
 
@@ -228,7 +230,8 @@ def generate_bus_stops(
 
         # Generate centroids with optimal k
         centroids, classes, _ = k_means(
-            mun_students[["LATITUDE", "LONGITUDE"]], optimal_k, n_init=KMEANS_N_INIT,
+            mun_students[["LATITUDE", "LONGITUDE"]], optimal_k,
+            n_init=KMEANS_N_INIT, random_state=KMEANS_RANDOM_STATE,
         )
         mun_students = mun_students.copy()
         mun_students["CLUSTER"] = classes

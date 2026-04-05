@@ -87,6 +87,9 @@ MIN_STUDENTS_PER_MUNICIPALITY: int = 10
 #: Number of K-means initializations to ensure convergence.
 KMEANS_N_INIT: int = 10
 
+#: Random seed for K-means reproducibility.
+KMEANS_RANDOM_STATE: int = 42
+
 # ---------------------------------------------------------------------------
 # Average speeds per municipality (km/h)
 # ---------------------------------------------------------------------------

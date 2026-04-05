@@ -216,7 +216,7 @@ def preprocess_student_data() -> dict[str, pd.DataFrame]:
 
     # --- Initialize columns to avoid errors on reprocessing ---
     for col, default in [("ADDRESS_COMPLEMENT", ""), ("STREET_NAME", ""),
-                         ("LONGITUDE", 0), ("LATITUDE", 0)]:
+                         ("LONGITUDE", 0.0), ("LATITUDE", 0.0)]:
         if col not in df.columns:
             df[col] = default
         else:
