@@ -51,7 +51,7 @@ from .config import (
     VEHICLE_CAPACITY,
     WEEKDAYS,
 )
-from vrptw.memory import check_memory_budget, log_memory_usage
+from vrptw.memory import MemoryAbortListener, check_memory_budget, log_memory_usage
 from vrptw.model_builder import (
     add_subtour_cuts,
     build_model,
@@ -180,6 +180,11 @@ def _solve_with_subtour_elimination(
     warm_start = None
 
     while True:
+        if not check_memory_budget(PROCESS_MEMORY_LIMIT_MB):
+            elapsed = time.time() - start
+            logger.warning("Memory limit hit during subtour elimination loop")
+            return None, elapsed, False
+
         if warm_start is not None:
             model.add_mip_start(warm_start)
 
@@ -311,6 +316,9 @@ def _process_scenario(
         "big_m": big_m,
         "depot": DEPOT_INDEX,
     }
+
+    mem_listener = MemoryAbortListener(PROCESS_MEMORY_LIMIT_MB)
+    model.add_progress_listener(mem_listener)
 
     model, travels = build_model(model, model_data)
 
