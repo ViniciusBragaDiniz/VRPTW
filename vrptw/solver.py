@@ -181,9 +181,13 @@ def _solve_with_subtour_elimination(
 
     while True:
         if not check_memory_budget(PROCESS_MEMORY_LIMIT_MB):
-            elapsed = time.time() - start
-            logger.warning("Memory limit hit during subtour elimination loop")
-            return None, elapsed, False
+            gc.collect()
+            time.sleep(2)
+            log_memory_usage("after forced GC in subtour loop")
+            if not check_memory_budget(PROCESS_MEMORY_LIMIT_MB):
+                elapsed = time.time() - start
+                logger.warning("Memory limit hit during subtour elimination loop")
+                return None, elapsed, False
 
         if warm_start is not None:
             model.add_mip_start(warm_start)
@@ -550,14 +554,23 @@ def solve_all_instances(*, relax: bool = False) -> None:
 
 
                                 if not check_memory_budget(PROCESS_MEMORY_LIMIT_MB):
-                                    logger.warning(
-                                        "Skipping scenario due to high memory: %s",
+                                    logger.info(
+                                        "High memory before scenario, forcing GC: %s",
                                         skip_key,
                                     )
-                                    output_file.write(
-                                        "Skipped: process memory limit exceeded\n\n",
-                                    )
-                                    continue
+                                    gc.collect()
+                                    time.sleep(2)
+                                    log_memory_usage("after forced GC")
+
+                                    if not check_memory_budget(PROCESS_MEMORY_LIMIT_MB):
+                                        logger.warning(
+                                            "Skipping scenario due to high memory: %s",
+                                            skip_key,
+                                        )
+                                        output_file.write(
+                                            "Skipped: process memory limit exceeded\n\n",
+                                        )
+                                        continue
 
                                 try:
                                     summary, detail_items = _process_scenario(

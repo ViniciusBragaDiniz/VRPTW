@@ -137,7 +137,7 @@ SOLVER_WORK_MEM: int = 8 * 1024
 
 #: Maximum tree memory (MB).  Once the total search-tree size (RAM + disk)
 #: reaches this limit, CPLEX stops and returns the best solution found so far.
-SOLVER_TREE_MEM_LIMIT: int = 16 * 1024
+SOLVER_TREE_MEM_LIMIT: int = 12 * 1024
 
 #: Node file strategy (``model.parameters.mip.strategy.file``).
 #: 0 = automatic, 1 = in-memory only, 2 = compressed on disk, 3 = on disk.
