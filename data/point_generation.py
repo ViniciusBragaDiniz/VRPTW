@@ -207,37 +207,43 @@ def generate_bus_stops(
             df_coordinates["CITY"] == municipality
         ].drop_duplicates(subset="STUDENT_ID")
 
-        if len(mun_students) < MIN_STUDENTS_PER_MUNICIPALITY:
+        if mun_students['STUDENT_ID'].nunique() < MIN_STUDENTS_PER_MUNICIPALITY:
             skipped_municipalities += 1
-            skipped_students += len(mun_students)
+            skipped_students += mun_students['STUDENT_ID'].nunique()
             continue
 
-        logger.info("Municipality: %s | Students: %d", municipality, len(mun_students))
+        logger.info("Municipality: %s | Students: %d", municipality, mun_students['STUDENT_ID'].nunique())
 
-        # You can have two students with the same coordinates (eg: lives in the same house, brothers, etc.)
-        mun_students = mun_students.drop_duplicates(subset=["LATITUDE", "LONGITUDE"])
-        # Determine optimal k via elbow method
-        k_range = range(2, len(mun_students) + 1)
+        # Deduplicate coordinates for K-Means (students at the same
+        # address would be duplicate points), but keep the full set so
+        # every student is reassigned to a cluster afterwards.
+        unique_coords = mun_students.drop_duplicates(subset=["LATITUDE", "LONGITUDE"])
+
+        k_range = range(2, unique_coords['STUDENT_ID'].nunique() + 1)
         wcss = []
         for k in k_range:
             _, _, inertia = k_means(
-                mun_students[["LATITUDE", "LONGITUDE"]], k,
+                unique_coords[["LATITUDE", "LONGITUDE"]], k,
                 n_init=KMEANS_N_INIT, random_state=KMEANS_RANDOM_STATE,
             )
             wcss.append(inertia)
 
         optimal_k = find_elbow(k_range, wcss, plot=False)
 
-        # Generate centroids with optimal k
         centroids, classes, _ = k_means(
-            mun_students[["LATITUDE", "LONGITUDE"]], optimal_k,
+            unique_coords[["LATITUDE", "LONGITUDE"]], optimal_k,
             n_init=KMEANS_N_INIT, random_state=KMEANS_RANDOM_STATE,
         )
-        mun_students = mun_students.copy()
-        mun_students["CLUSTER"] = classes
+        unique_coords = unique_coords.copy()
+        unique_coords["CLUSTER"] = classes
+
+        # Propagate cluster to ALL students via coordinates so that
+        # students sharing an address get the same cluster assignment.
+        coord_to_cluster = unique_coords[["LATITUDE", "LONGITUDE", "CLUSTER"]]
+        mun_all = mun_students.merge(coord_to_cluster, on=["LATITUDE", "LONGITUDE"], how="left")
 
         merged = df_coordinates.merge(
-            mun_students[["STUDENT_ID", "CLUSTER"]], how="left", on="STUDENT_ID",
+            mun_all[["STUDENT_ID", "CLUSTER"]], how="left", on="STUDENT_ID",
         )
 
         for day in weekdays:
