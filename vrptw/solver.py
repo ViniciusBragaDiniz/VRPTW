@@ -250,7 +250,7 @@ def _get_mip_gap(model: Model) -> float | None:
         # is considered solved.
         if solve_status == 'integer optimal solution':
             return 0.0 
-            
+
         gap = details.mip_relative_gap
         if gap is not None and math.isfinite(gap):
             return gap
@@ -310,6 +310,7 @@ def _process_scenario(
     model = Model("vrptw")
     model.time_limit = TIME_LIMIT
     model.parameters.mip.tolerances.mipgap = MIP_GAP
+    model.parameters.mip.tolerances.absmipgap = MIP_GAP
     model.parameters.threads = SOLVER_THREADS
     model.parameters.workmem = SOLVER_WORK_MEM
     model.parameters.mip.limits.treememory = SOLVER_TREE_MEM_LIMIT
