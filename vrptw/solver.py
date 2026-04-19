@@ -243,6 +243,14 @@ def _get_mip_gap(model: Model) -> float | None:
     """Return the MIP relative gap from the last solve, or ``None`` if unavailable."""
     try:
         details = model.solve_details
+        solve_status = details._solve_status
+
+        # The CPLEX solver can register gap > 0 even if the solution is optimal
+        # Here we force the gap to 0 if the solution is optimal, so the scenario
+        # is considered solved.
+        if solve_status == 'integer optimal solution':
+            return 0.0 
+            
         gap = details.mip_relative_gap
         if gap is not None and math.isfinite(gap):
             return gap
