@@ -18,7 +18,7 @@ logging.basicConfig(
     handlers=[logging.StreamHandler(sys.stdout)],
 )
 
-from vrptw.postprocessing import minimize_vehicles
+from src.pipeline.postprocessing import minimize_vehicles
 
 
 def main() -> None:

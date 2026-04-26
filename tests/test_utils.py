@@ -5,7 +5,7 @@ import math
 import pandas as pd
 import pytest
 
-from vrptw.utils import build_routes, calculate_distances, haversine
+from src.pipeline.utils import build_routes, calculate_distances, haversine
 
 
 # ── Haversine ──────────────────────────────────────────────────────────────

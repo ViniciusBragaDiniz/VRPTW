@@ -32,7 +32,7 @@ import time
 
 import pandas as pd
 
-from vrptw.config import DATA_PROCESSED_DIR, INSTANCE_TYPES, ROUTE_TYPES
+from src.globals.config import DATA_PROCESSED_DIR, INSTANCE_TYPES, ROUTE_TYPES
 
 logger = logging.getLogger(__name__)
 
@@ -52,7 +52,7 @@ def step_1_preprocess() -> None:
     to ``data/processed/``.
     """
     _step_banner(1, "Data preprocessing")
-    from data.preprocessing import preprocess_student_data
+    from src.pipeline.preprocessing import preprocess_student_data
 
     results = preprocess_student_data()
 
@@ -71,7 +71,7 @@ def step_2_generate_points() -> None:
     ``config.py``. Persists results to ``data/processed/``.
     """
     _step_banner(2, "Bus stop point generation")
-    from data.point_generation import generate_bus_stops
+    from src.pipeline.point_generation import generate_bus_stops
 
     students_path = DATA_PROCESSED_DIR / "info" / "info_students.csv"
     if not students_path.exists():
@@ -97,14 +97,14 @@ def step_3_solve(*, relax: bool = False) -> None:
     """Step 3: VRPTW model solving (MIP or LP relaxation)."""
     mode = "LP relaxation (lower bounds)" if relax else "VRPTW model solving"
     _step_banner(3, mode)
-    from vrptw.solver import solve_all_instances
+    from src.models.solver.solution import solve_all_instances
     solve_all_instances(relax=relax)
 
 
 def step_4_postprocess() -> None:
     """Step 4: vehicle count minimization."""
     _step_banner(4, "Post-processing (vehicle minimization)")
-    from vrptw.postprocessing import minimize_vehicles
+    from src.pipeline.postprocessing import minimize_vehicles
     minimize_vehicles()
 
 

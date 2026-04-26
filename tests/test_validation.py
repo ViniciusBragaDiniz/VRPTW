@@ -1,6 +1,6 @@
 """Tests for vrptw.validation — input data and solution checks."""
 
-from vrptw.validation import validate_input_data, validate_solution
+from src.pipeline.validation import validate_input_data, validate_solution
 
 
 # ── validate_input_data ────────────────────────────────────────────────────

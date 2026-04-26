@@ -19,7 +19,7 @@ logging.basicConfig(
     handlers=[logging.StreamHandler(sys.stdout)],
 )
 
-from vrptw.solver import solve_all_instances
+from src.models.solver.solution import solve_all_instances
 
 
 def main() -> None:

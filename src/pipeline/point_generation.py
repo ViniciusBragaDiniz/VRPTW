@@ -27,7 +27,7 @@ import numpy as np
 import pandas as pd
 from sklearn.cluster import k_means
 
-from vrptw.config import (
+from src.globals.config import (
     IMGS_DIR,
     KMEANS_N_INIT,
     KMEANS_RANDOM_STATE,

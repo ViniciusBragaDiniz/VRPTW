@@ -5,7 +5,7 @@ and post-solve solution validation (checking that routes respect all
 constraints using the original data, independent of the solver).
 
 Usage example:
-    >>> from vrptw.validation import validate_input_data, validate_solution
+    >>> from src.pipeline.validation import validate_input_data, validate_solution
     >>> errors = validate_input_data(model_data)
     >>> if errors:
     ...     raise ValueError(errors)

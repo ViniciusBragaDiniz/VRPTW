@@ -7,7 +7,7 @@ times and searches for the valid partition with the fewest subsets, subject to
 the maximum work time per vehicle.
 
 Usage example:
-    >>> from vrptw.postprocessing import minimize_vehicles
+    >>> from src.models.postprocessing import minimize_vehicles
     >>> df_adjusted = minimize_vehicles()
     >>> print(df_adjusted.head())
 """
@@ -16,7 +16,7 @@ import logging
 
 import pandas as pd
 
-from .config import INSTANCE_TYPES, MAX_VEHICLE_WORK_TIME, OUTPUT_CSV_DIR, ROUTE_TYPES
+from src.globals.config import INSTANCE_TYPES, MAX_VEHICLE_WORK_TIME, OUTPUT_CSV_DIR, ROUTE_TYPES
 
 logger = logging.getLogger(__name__)
 

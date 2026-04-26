@@ -17,8 +17,8 @@ logging.basicConfig(
     handlers=[logging.StreamHandler(sys.stdout)],
 )
 
-from data.preprocessing import preprocess_student_data
-from vrptw.config import DATA_PROCESSED_DIR
+from src.pipeline.preprocessing import preprocess_student_data
+from src.globals.config import DATA_PROCESSED_DIR
 
 logger = logging.getLogger(__name__)
 

@@ -19,8 +19,6 @@ To add a new variable group:
 
 from typing import Callable
 
-from docplex.mp.model import Model
-
 from .load import create_load
 from .service import create_service
 from .travels import create_travels

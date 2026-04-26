@@ -1,5 +1,5 @@
 """
-VRPTW - Vehicle Routing Problem with Time Windows.
+Model for VRPTW - Vehicle Routing Problem with Time Windows.
 
 Package for solving the Vehicle Routing Problem with Time Windows,
 applied to school transportation. Includes modules for data preprocessing,

@@ -12,7 +12,7 @@ This module orchestrates the VRPTW solving process:
 4. Saves results to CSV and TXT files.
 
 Usage example:
-    >>> from vrptw.solver import solve_all_instances
+    >>> from src.models.solver import solve_all_instances
     >>> solve_all_instances()
 """
 
@@ -25,7 +25,7 @@ from io import TextIOWrapper
 import pandas as pd
 from docplex.mp.model import Model
 
-from .config import (
+from src.globals.config import (
     DATA_PROCESSED_DIR,
     DATA_RAW_DIR,
     DEPOT_INDEX,
@@ -51,14 +51,14 @@ from .config import (
     VEHICLE_CAPACITY,
     WEEKDAYS,
 )
-from vrptw.memory import MemoryAbortListener, check_memory_budget, log_memory_usage
-from vrptw.model_builder import (
+from src.models.solver.memory import MemoryAbortListener, check_memory_budget, log_memory_usage
+from src.models.solver.builder import (
     add_subtour_cuts,
     build_model,
     format_route_string,
     relax_model,
 )
-from vrptw.utils import build_routes, calculate_distances
+from src.pipeline.utils import build_routes, calculate_distances
 
 logger = logging.getLogger(__name__)
 

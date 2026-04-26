@@ -6,7 +6,7 @@ route extraction from the CPLEX solution, and data preparation for temporal
 demand partitioning.
 
 Usage example:
-    >>> from vrptw.utils import haversine
+    >>> from src.models.utils import haversine
     >>> dist = haversine(-22.70, -43.46, -22.90, -43.20)
     >>> print(f"Distance: {dist:.0f} m")
 """
@@ -17,7 +17,7 @@ from typing import Any
 
 import pandas as pd
 
-from .config import MUNICIPALITY_SPEED_KMH, DEFAULT_SPEED_KMH
+from src.globals.config import MUNICIPALITY_SPEED_KMH, DEFAULT_SPEED_KMH
 
 logger = logging.getLogger(__name__)
 

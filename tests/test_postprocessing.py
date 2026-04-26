@@ -1,6 +1,6 @@
 """Tests for vrptw.postprocessing — partition generation."""
 
-from vrptw.postprocessing import generate_partitions
+from src.pipeline.postprocessing import generate_partitions
 
 
 class TestGeneratePartitions:

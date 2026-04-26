@@ -9,7 +9,7 @@ that aborts the CPLEX solve **mid-flight** when RSS exceeds a threshold,
 preventing the OS OOM killer from terminating the process.
 
 Usage example:
-    >>> from vrptw.memory import check_memory_budget, log_memory_usage
+    >>> from src.models.solver.memory import check_memory_budget, log_memory_usage
     >>> if not check_memory_budget(8192):
     ...     print("Memory budget exceeded — skipping scenario")
     >>> log_memory_usage("after solve")

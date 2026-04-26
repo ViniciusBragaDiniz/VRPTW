@@ -21,9 +21,9 @@ Usage example:
 from docplex.mp.linear import LinearExpr
 from docplex.mp.model import Model
 
-from .config import TIME_SLOT_DURATION
-from .constraints import EXECUTION_ORDER as CONSTRAINT_ORDER
-from .variables import EXECUTION_ORDER as VARIABLE_ORDER
+from src.globals.config import TIME_SLOT_DURATION
+from src.models.constraints import EXECUTION_ORDER as CONSTRAINT_ORDER
+from src.models.variables import EXECUTION_ORDER as VARIABLE_ORDER
 
 
 # ---------------------------------------------------------------------------

@@ -6,7 +6,7 @@ by other researchers. Changing any parameter here is automatically
 reflected in all modules that use it.
 
 Usage example:
-    >>> from vrptw.config import VEHICLE_CAPACITY, TIME_LIMIT
+    >>> from src.models.config import VEHICLE_CAPACITY, TIME_LIMIT
     >>> print(f"Capacity: {VEHICLE_CAPACITY} passengers")
     Capacity: 50 passengers
 """
@@ -16,7 +16,7 @@ from pathlib import Path
 # ---------------------------------------------------------------------------
 # Project directories
 # ---------------------------------------------------------------------------
-PROJECT_ROOT = Path(__file__).resolve().parent.parent
+PROJECT_ROOT = Path(__file__).resolve().parent.parent.parent
 
 #: Base data directory (also the ``data`` Python package).
 DATA_DIR = PROJECT_ROOT / "data"

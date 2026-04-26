@@ -25,8 +25,8 @@ logging.basicConfig(
     handlers=[logging.StreamHandler(sys.stdout)],
 )
 
-from vrptw.config import DATA_PROCESSED_DIR
-from data.point_generation import generate_bus_stops
+from src.globals.config import DATA_PROCESSED_DIR
+from src.pipeline.point_generation import generate_bus_stops
 
 logger = logging.getLogger(__name__)
 

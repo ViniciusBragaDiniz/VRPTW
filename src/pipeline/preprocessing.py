@@ -36,7 +36,7 @@ import pandas as pd
 import requests
 import glob
 
-from vrptw.config import DATA_PROCESSED_DIR, DATA_RAW_DIR, PROJECT_ROOT
+from src.globals.config import DATA_PROCESSED_DIR, DATA_RAW_DIR, PROJECT_ROOT
 
 logger = logging.getLogger(__name__)
 

@@ -2,7 +2,7 @@
 
 import numpy as np
 
-from data.point_generation import find_elbow
+from src.pipeline.point_generation import find_elbow
 
 
 class TestFindElbow:
